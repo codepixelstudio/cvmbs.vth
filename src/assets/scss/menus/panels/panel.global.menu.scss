@@ -1,0 +1,831 @@
+// stylesheet :: panel.about component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-global {
+
+        padding: 5rem 0 0 0;
+
+        @include gradient( 0deg, $g140, 0.565, 0%, transparent, 1.000, 50% );
+
+        // header
+        .panel-header {
+
+            @include color( $gold, 0.000 );
+
+            @include fill( $dark, 0.215 );
+            @include fill( $g140, 0.465 );
+
+            // close button
+            #close-global-menu {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+
+                z-index: 10;
+
+                @include flex-v-b-h-s( false );
+
+                width: 5rem;
+                height: 5rem;
+                margin: 0;
+                padding: 0 0 1rem 0.25rem;
+
+                cursor: pointer;
+
+                // label
+                .label {
+
+                    @include flex-h-s-v-c( true );
+
+                    height: 1rem;
+
+                    @include font( $industry, 0.65625rem, 700 );
+
+                    @include typo( 0.5rem, 0.115em );
+
+                    @include text( $up );
+
+                    @include color( white, 0.000 );
+
+                    // before
+                    &:before {
+
+                        @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\EDCA' );
+
+                        margin: 0 0.25rem 0 0;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // menu container
+        #menu-panel-global-menu {
+
+            width: 100%;
+
+            @include flex-v-t-h-s( false );
+
+            width: 100%;
+            height: 100%;
+
+            // @include hide;
+
+            // menu
+            > .menu {
+
+                display: block;
+
+                width: 100%;
+                min-height: 100%;
+
+            }
+
+            // menu item
+            .menu-item {
+
+                @include flex-h-s-v-c( false );
+
+                flex-wrap: wrap;
+
+                width: 100%;
+                min-height: 3rem;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+
+                // parent item
+                &.menu-item-has-children {
+
+                    position: relative;
+
+                    // expanded class
+                    &[aria-expanded='true'] {
+
+                        > a {
+
+                            // color: $g140;
+                            color: $gold;
+
+                            @include fill( $dark, 0.465 );
+
+                            // arrow
+                            &:after {
+
+                                transform: rotate( -180deg );
+
+                                transition: all 360ms $outex 0ms;
+
+                            }
+
+                        }
+
+                        // arrow
+                        &:after {
+
+                            transform: rotate( -180deg );
+
+                            transition: all 360ms $outex 0ms;
+
+                        }
+
+                    }
+
+                    // arrow
+                    &:after {
+
+                        // @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\edc9' );
+
+                        position: absolute;
+
+                        top: 1rem;
+                        right: 1rem;
+                        bottom: 1rem;
+
+                        z-index: 0;
+
+                        transform: rotate( 0deg );
+                        transform-origin: center center;
+
+                        transition: all 360ms $outex 0ms;
+
+                        cursor: pointer;
+
+                    }
+
+                    // link
+                    > a {
+
+                        // arrow
+                        &:after {
+
+                            @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\edc9' );
+
+                            position: absolute;
+
+                            top: 1rem;
+                            right: 1rem;
+                            bottom: 1rem;
+
+                            z-index: 0;
+
+                            transform: rotate( 0deg );
+                            transform-origin: center center;
+
+                            transition: all 360ms $outex 0ms;
+
+                            cursor: pointer;
+
+                        }
+
+                    }
+
+                    // submenu
+                    .submenu {
+
+                        @include fill( white, 0.000 );
+
+                        background: {
+
+                            color:
+
+                                adjust-color(
+
+                                    $midnite,
+                                    $hue          : 0%,
+                                    $saturation : -10%,
+                                    $lightness  : 0%,
+                                    $alpha         : -0.215
+
+                                )
+
+                            ;
+
+                        }
+
+                        @include fill( $dark, 0.465 );
+
+                        a {
+
+                            color: white;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( $gold, 0.000 );
+
+                                @include fill( white, 0.965 );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                // link
+                a {
+
+                    position: relative;
+
+                    z-index: 1;
+
+                    @include flex-h-s-v-c( false );
+
+                    width: 100%;
+                    height: 3.0625rem;
+                    margin: 0 0 0 0;
+                    padding: 0.0625rem 1rem 0 1rem;
+
+                    border-bottom: 1px solid transparentize( white, 0.895 );
+
+                    @include font( $industry, 0.875rem, 500 );
+
+                    line-height: 0.75rem;
+
+                    letter-spacing: 0.095em;
+
+                    @include text( none );
+
+                    @include color( white, 0.000 );
+
+                    @include fill( white, 1.000 );
+
+                    transition: all 220ms linear 0ms;
+
+                    // hover state
+                    &:hover {
+
+                        color: $gold;
+
+                        @include fill( white, 0.965 );
+
+                    }
+
+                }
+
+                // submenu
+                .submenu {
+
+                    @include flex-v-t-h-s( false );
+
+                    width: 100%;
+
+                }
+
+            }
+
+            // global link
+            #global-menu-link {
+
+                // link
+                button {
+
+                    position: relative;
+
+                    z-index: 1;
+
+                    @include flex-h-s-v-c( false );
+
+                    width: 100%;
+                    height: 3.0625rem;
+                    margin: 0 0 0 0;
+                    padding: 0 1rem 0 1rem;
+
+                    border-bottom: 1px solid transparentize( white, 0.895 );
+
+                    @include font( $industry, 0.875rem, 500 );
+
+                    line-height: 0.75rem;
+
+                    letter-spacing: 0.065em;
+
+                    @include text( none );
+
+                    @include color( white, 0.000 );
+
+                    @include fill( white, 0.965 );
+
+                    transition: all 220ms linear 0ms;
+
+                    cursor: pointer;
+
+                    // hover state
+                    &:hover {
+
+                        // color: $gold;
+
+                        @include fill( white, 0.865 );
+
+                    }
+
+                    // icon
+                    &:before {
+
+                        @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\E904' );
+
+                        margin: 0 0.5rem 0 0;
+
+                    }
+
+                    // arrow
+                    &:after {
+
+                        @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\EDC8' );
+
+                        position: absolute;
+
+                        top: 1rem;
+                        right: 1rem;
+                        bottom: 1rem;
+
+                        z-index: 0;
+
+                        cursor: pointer;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // menu list
+        #global-menu-list {
+
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            // item
+            li {
+
+                width: 100%;
+                height: 5rem;
+                margin: 0;
+                padding: 0;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: 4rem;
+
+                }
+
+            }
+
+            // home
+            #menu-link-home {
+
+                @include fill( $g140, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.home.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $midnite, 0.465, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                }
+
+            }
+
+            // about
+            #menu-link-about {
+
+                @include fill( $cvellow, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.about.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $nite, 0.165, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include fill( $cvellow, 0.865 );
+
+                        mix-blend-mode: multiply;
+
+                    }
+
+                }
+
+            }
+
+            // students
+            #menu-link-students {
+
+                @include fill( $blue, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.students.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $midnite, 0.465, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include fill( $blue, 0.785 );
+
+                        mix-blend-mode: multiply;
+
+                    }
+
+                }
+
+            }
+
+            // research
+            #menu-link-research {
+
+                @include fill( $cvnavy, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.research.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $midnite, 0.465, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include fill( $cvnavy, 0.685 );
+
+                        mix-blend-mode: overlay;
+
+                    }
+
+                }
+
+            }
+
+            // outreach
+            #menu-link-outreach {
+
+                @include fill( $roarange, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.service.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $midnite, 0.465, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include fill( $roarange, 0.765 );
+
+                        mix-blend-mode: multiply;
+
+                    }
+
+                }
+
+            }
+
+            // alumni
+            #menu-link-alumni {
+
+                @include fill( $orange, 0.785 );
+
+                // artwork
+                .link-artwork {
+
+                    background-image: none;
+
+                    // load on menu open
+                    &.loaded {
+
+                        background: {
+
+                            image: url(../img/menus/menu.item.alumni.jpg);
+
+                        }
+
+                    }
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    // before
+                    &:before {
+
+                        @include gradient(
+
+                            90deg,
+                            $midnite, 0.465, 0%,
+                            $g135, 1.000, 100%
+
+                        );
+
+                    }
+
+                    // after
+                    &:after {
+
+                        @include fill( $orange, 0.725 );
+
+                        // mix-blend-mode: multiply;
+
+                    }
+
+                }
+
+            }
+
+            // link
+            .menu-link {
+
+                position: relative;
+
+                @include flex-h-s-v-b( false );
+
+                width: 100%;
+                height: 5rem;
+                margin: 0;
+                padding: 0 1rem 1rem 2rem;
+
+                transition: all 720ms $ocirc 0ms;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: 4rem;
+
+                }
+
+                // hover state
+                &:hover,
+                &:focus {
+
+                    // @include fill( white, 0.965 );
+
+                    // text
+                    .link-text {
+
+                        @include color( white, 0.000 );
+
+                        transform: translate3d( 1rem, 0, 0 );
+
+                        transition: all 360ms $ocirc 0ms;
+
+                    }
+
+                }
+
+                // artwork
+                .link-artwork,
+                .link-overlay {
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    width: 100%;
+                    height: 100%;
+
+                    background: {
+
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                    // layers
+                    &:before,
+                    &:after {
+
+                        content: '';
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 5rem;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        z-index: 50;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        z-index: 40;
+
+                    }
+
+                }
+
+                // artwork
+                .link-artwork {
+
+                    z-index: 10;
+
+                    opacity: 0.215;
+
+                }
+
+                // overlay
+                .link-overlay {
+
+                    z-index: 20;
+
+                }
+
+                // text
+                .link-text {
+
+                    position: relative;
+
+                    z-index: 100;
+
+                    @include flex-h-s-v-c( false );
+
+                    @include font( $industry, 0.875rem, 500 );
+
+                    @include typo( 0.75rem, 0.065em );
+
+                    @include text( $up );
+
+                    @include color( white, 0.285 );
+
+                    transform: translate3d( 0, 0, 0 );
+
+                    transition: all 360ms $ocirc 0ms;
+
+                }
+
+            }
+
+        }
+
+    }

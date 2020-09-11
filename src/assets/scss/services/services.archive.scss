@@ -1,0 +1,251 @@
+// stylesheet :: service archive page styles
+
+    // settings
+    $service : 1rem;
+
+    $faderade : adjust-color(
+
+        $g140,
+        $hue          : 0%,
+        $saturation : -25%,
+        $lightness  : 10%,
+        $alpha         : -0.000
+
+    );
+
+    // styles
+    .blog,
+    .search,
+    .archive {
+
+        // class
+        &.post-type-archive-service {
+
+            // content
+            #news_content {
+
+                padding: 5rem 5rem 3rem 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 3rem 3rem 1rem 3rem;
+
+                }
+
+            }
+
+            // header
+            #news_header {
+
+                // heading
+                h1 {
+
+                    margin: 0 0 0 0;
+
+                }
+
+                // link
+                a {
+
+                    @include flex-v-b-h-e( true );
+
+                    height: 3rem;
+                    margin: 0 1rem 1rem 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include typo( 0.5rem, 0.045em );
+
+                    @include text( $up );
+
+                    @include color( $g140 );
+
+                }
+
+            }
+
+            // tags
+            #news_controls {
+
+                @include hide;
+
+                margin: 1rem 0 0 0;
+                padding: 0 0 0 0;
+
+            }
+
+        }
+
+        // post
+        .service {
+
+            position: relative;
+
+            height: auto;
+            margin: 0 0 2rem 0;
+
+            @include text( $up );
+
+            text-decoration: none;
+
+            @include color( white );
+
+            @include fill( $app05 );
+
+            @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+            // hover state
+            &:hover {
+
+                // content
+                .article_content {
+
+                    // title
+                    .article_title {
+
+                        @include color( $gold );
+
+                    }
+
+                }
+
+            }
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                margin: 0 0 2rem 0;
+
+                // last child
+                &:last-child {
+
+                    margin: 0 0 0 0;
+
+                }
+
+            }
+
+            // image
+            .article_image {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                z-index: 10;
+
+                @include flex-v-b-h-c( false );
+
+                flex-grow: 1;
+
+                width: 100%;
+                height: 16rem;
+                margin: 0 2rem 0 0;
+
+                overflow: hidden;
+
+                text-indent: -999rem;
+
+                background: {
+
+                    image: url(../img/billboard.00.jpg);
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+                    margin: 0 0 1rem 0;
+
+                }
+
+            }
+
+            // content
+            .article_content {
+
+                position: relative;
+
+                z-index: 20;
+
+                @include flex-v-b-h-s( false );
+
+                height: 16rem;
+                padding: 2rem 2rem 2rem 2rem;
+
+                @include gradient(
+
+                    15deg,
+                    $dark, 0.115, 20%,
+                    transparent, 1.000, 100%
+
+                );
+
+                // topic
+                .article_topic {
+
+                    @include flex-h-s-v-c( false );
+
+                    margin: 0 0 0.25rem 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include color( $cvellow, 0.000 );
+
+                }
+
+                // title
+                .article_title {
+
+                    margin: 0 0 0 0;
+
+                    @include font( $klavislim, 1.25rem, 400 );
+
+                    @include color( white );
+
+                    transition: $all220;
+
+                }
+
+                // metadata
+                .article_metadata {
+
+                    margin: 0 0 0.25rem 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include color( white, 0.415 );
+
+                    // common
+                    span {
+
+                        display: inline-block;
+
+                    }
+
+                }
+
+                // excerpt
+                p {
+
+                    margin: 0 0 0 0;
+
+                    @include font( $industry, 0.875rem, 500 );
+
+                    @include typo( 1.25rem, 0.035em );
+
+                }
+
+            }
+
+        }
+
+    }

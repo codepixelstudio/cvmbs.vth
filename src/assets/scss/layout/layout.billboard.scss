@@ -1,0 +1,906 @@
+// stylesheet :: VTH billboard layout styles
+
+    // settings
+    $billboard : 100vh;
+
+    // styles
+    #site-layout.vth {
+
+        // parent class
+        .home & {
+
+            padding: 100vh 0 0 0;
+
+        }
+
+        // menu open
+        &.site-menu-open {
+
+            -webkit-filter: blur( 16px );
+                    filter: blur( 16px );
+
+            transition: all 0ms linear 0ms;
+
+        }
+
+        // billboard
+        #special-billboard {
+
+            @include fullscreen( absolute, 10, false, hidden );
+
+            @include flex-v-c-h-st( false );
+
+            height: 100vh;
+
+            background: {
+
+                repeat: no-repeat;
+                size: cover;
+                position: center center;
+                attachment: fixed;
+
+            }
+
+            @include shadowbox( 3rem, 6rem, black, 0.365 );
+
+            -webkit-filter: blur( 0px );
+                    filter: blur( 0px );
+
+            transition: all 0ms linear 120ms;
+
+            // mobile
+            @include breakpoint ( large down ) {
+
+                background: {
+
+                    attachment: scroll;
+                    // position: 80% center;
+
+                }
+
+            }
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+
+
+            }
+
+            // overlay
+            .billboard-overlay {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                z-index: 0;
+
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+
+                background: {
+
+                    image:
+
+                        linear-gradient(
+
+                            -45deg,
+                            transparentize( $dark, 0.215 ) 0%,
+                            transparent 50%
+
+                        ),
+
+                        linear-gradient(
+
+                            315deg,
+                            transparentize( $dark, 0.215 ) 0%,
+                            transparent 40%
+
+                        ),
+
+                        linear-gradient(
+
+                            20deg,
+                            transparentize( $dark, 0.215 ) 0%,
+                            transparent 50%
+
+                        )
+
+                    ;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    background: {
+
+                        image:
+
+                            linear-gradient(
+
+                                -45deg,
+                                transparentize( $dark, 0.215 ) 0%,
+                                transparent 70%
+
+                            ),
+
+                            linear-gradient(
+
+                                315deg,
+                                transparentize( $dark, 0.215 ) 0%,
+                                transparent 70%
+
+                            ),
+
+                            linear-gradient(
+
+                                10deg,
+                                transparentize( $cvnavy, 0.000 ) 0%,
+                                transparent 100%
+
+                            )
+
+                        ;
+
+                    }
+
+                }
+
+            }
+
+            // billboard content
+            #billboard-container {
+
+                position: relative;
+
+                z-index: 10;
+
+                @include flex-v-b-h-s( false );
+
+                width: 100%;
+                height: 100%;
+                padding: 5rem 2rem 10rem 5rem;
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    padding: 5rem 2rem 16rem 2rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 4rem 2rem 2rem 2rem;
+
+                }
+
+                // common
+                span {
+
+                    display: block;
+
+                }
+
+                // headline
+                .headline {
+
+                    @include font( $klavislim, 4rem, 400 );
+
+                    @include text( $up );
+
+                    @include typo( 4.5rem, 0.045em );
+
+                    // @include fill( red, 0.645 );
+
+                    br {
+
+                        // mobile
+                        @include breakpoint ( medium down ) {
+
+                            @include hide;
+
+                        }
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include font( $klavislim, 2rem, 400 );
+
+                        @include typo( 2.5rem, 0.045em );
+
+                    }
+
+                }
+
+                // description
+                .description {
+
+                    margin: 1rem 0 0 0;
+
+                    @include font( $industry, 0.875rem, 600 );
+
+                    @include typo( 1.25rem, 0.045em );
+
+                    @include color( white, 0.185 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        margin: 0.5rem 0 0 0;
+
+                        @include font( $industry, 0.75rem, 600 );
+
+                    }
+
+                }
+
+                // button
+                .billboard-button {
+
+                    @include flex-h-c-v-c( false );
+
+                    height: 4rem;
+                    margin: 2rem 0 0 0;
+                    padding: 0.0625rem 1.75rem 0 1.75rem;
+
+                    @include font( $klavislim, 1rem, 400 );
+
+                    @include text( $up );
+
+                    @include typo( 0.75rem, 0.045em );
+
+                    text-decoration: none;
+
+                    @include color( white, 0.000 );
+
+                    // @include fill( darken( $blue, 5% ), 0.000 );
+                    @include fill( white, 0.925 );
+
+                    @include shadowbox( 1rem, 2.5rem, black, 0.585 );
+
+                    transition: $all220;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: 3rem;
+                        margin: 1rem 0 0 0;
+                        padding: 0.0625rem 1.25rem 0 1.25rem;
+
+                        @include font( $klavislim, 0.875rem, 400 );
+
+                    }
+
+                    // hover state
+                    &:hover {
+
+                        // @include color( $cvellow, 0.000 );
+
+                        @include fill( $g140, 0.000 );
+
+                    }
+
+                }
+
+            }
+
+            // button group
+            #service-buttons {
+
+                position: absolute;
+
+                right: 2rem;
+                bottom: 2rem;
+
+                z-index: 20;
+
+                @include flex-v-b-h-st( false );
+
+                width: 22rem;
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    bottom: 6rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    right: 1rem;
+                    // bottom: 1rem;
+                    left: 1rem;
+
+                    @include flex-h-j-v-s( false );
+
+                    width: auto;
+                    height: 8rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    position: static;
+
+                    // @include flex-v-b-h-s( false );
+
+                    width: 100%;
+                    margin: 0 0 7rem 0;
+                    padding: 0 2rem 0 2rem;
+
+                }
+
+            }
+
+            // button
+            .button-link {
+
+                position: relative;
+
+                @include flex-v-b-h-s( false );
+
+                width: 22rem;
+                height: 9rem;
+                margin: 2rem 0 0 0;
+                padding: 0 5rem 1.875rem 1.875rem;
+
+                @include text( none );
+
+                text-decoration: none;
+
+                @include color( white, 0.000 );
+
+                @include fill( white, 0.925 );
+
+                @include gradient(
+
+                    180deg,
+                    // $blue, 0.365, 0%,
+                    $cvnavy, 0.365, 0%,
+                    transparent, 0.000, 100%
+
+                );
+
+                @include shadowbox( 1.5rem, 4rem, black, 0.525 );
+
+                transition: all 360ms $outex 0ms;
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    
+                    min-height: 7rem;
+                    // height: auto;
+                    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( medium down ) {
+
+                    height: auto;
+                    margin: 0 1rem 0 1rem;
+                    padding: 1.5rem 1rem 1.5rem 1.5rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-b-h-s( false );
+
+                    width: 100%;
+                    // width: auto;
+                    // height: 9rem;
+                    margin: 0 0 0 0;
+                    padding: 1rem 1rem 1rem 1rem;
+
+                    // first child
+                    &:first-child {
+
+                        margin: 0 1rem 0 0;
+
+                    }
+
+                    // last child
+                    &:last-child {
+
+                        margin: 0 0 0 1rem;
+
+                    }
+
+                }
+
+                // before
+                &:before {
+
+                    content: '\EDDE';
+
+                    position: absolute;
+
+                    bottom: 1rem;
+                    right: 1.5rem;
+
+                    z-index: 1;
+
+                    @include flex-v-c-h-c( false );
+
+                    width: 2rem;
+                    height: 2rem;
+
+                    @include font( $codicons, 1rem, 400 );
+
+                    @include color( white, 0.000 );
+
+                    // @include fill( red, 0.565 );
+
+                    opacity: 0.000;
+
+                    transform: translate3d( 0, 0, 0 );
+
+                    transition: all 360ms $outex 0ms;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        right: auto;
+                        left: 0;
+
+                    }
+
+                }
+
+                // hover state
+                &:hover {
+
+                    // @include fill( $cvnavy, 0.165 );
+                    @include fill( $blue, 0.365 );
+
+                    // before
+                    &:before {
+
+                        opacity: 1.000;
+
+                        transform: translate3d( 0.75rem, 0, 0 );
+
+                    }
+
+                }
+
+                // title
+                .button-title {
+
+                    position: relative;
+
+                    @include flex-h-s-v-b( false );
+
+                    margin: 0 0 0 0;
+
+                    @include font( $klavislim, 1.5rem, 400 );
+
+                    @include text( $up );
+
+                    @include typo( 0.875rem, 0.055em );
+
+                    @include color( $cvellow, 0.000 );
+
+                    // mobile
+                    @include breakpoint ( medium down ) {
+
+                        @include font( $klavislim, 1.25rem, 400 );
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include font( $klavislim, 0.875rem, 400 );
+
+                    }
+
+                }
+
+                // text
+                .button-text {
+
+                    display: inline-block;
+
+                    margin: 0.75rem 0 0 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include typo( 1rem, 0.035em );
+
+                    @include color( white, 0.225 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                        @include font( $industry, 0.625rem, 600 );
+
+                    }
+
+                }
+
+                // hover state
+                &:hover {
+
+                    // title line
+                    .button-title {
+
+                        // before
+                        &:before {
+
+                            width: 3rem;
+
+                            transition: all 360ms $outex 0ms;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // toolbar
+            #vth-toolbar {
+
+                position: absolute;
+
+                top: 7rem;
+                right: 2rem;
+
+                z-index: 20;
+
+                @include flex-h-e-v-t( false );
+
+                height: 2rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-h-j-v-t( false );
+
+                    top: 6rem;
+                    left: 2rem;
+
+                }
+
+                // button.common
+                .toolbar-button {
+
+                    position: relative;
+
+                    @include flex-h-j-v-c( true );
+
+                    height: 2rem;
+                    margin: 0 0 0 1rem;
+                    padding: 0.0625rem 0.75rem 0 2rem;
+
+                    text-decoration: none;
+
+                    @include fill( $dark, 0.165 );
+
+                    @include shadowbox( 1rem, 2.5rem, black, 0.585 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( lighten( $g140, 5% ), 0.000 );
+                        // @include fill( $dark, 0.000 );
+
+                    }
+
+                    // before
+                    &:before {
+
+                        content: '';
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 1;
+
+                        @include flex-v-c-h-c( false );
+
+                        width: 2rem;
+                        height: 2rem;
+
+                        @include font( $codicons, 1rem, normal );
+
+                        @include color( white, 0.000 );
+
+                    }
+
+                    // first
+                    &:first-child {
+
+                        margin: 0 0 0 0;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        padding: 0 0.75rem 0 2rem;
+
+                    }
+
+                    // text
+                    span {
+
+                        @include font( $industry, 0.625rem, 900 );
+
+                        @include text( $up );
+
+                        @include typo( 0.5rem, 0.045em );
+
+                        @include color( white, 0.000 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 0.5625rem, 700 );
+
+                        }
+
+                    }
+
+                }
+
+                // veterinarians
+                #veterinarians-button {
+
+                    // before
+                    &:before {
+
+                        content: '\EB70';
+
+                    }
+
+                }
+
+                // directory
+                #directory-button {
+
+                    // before
+                    &:before {
+
+                        content: '\EB11';
+
+                    }
+
+                }
+
+                // emergency
+                #emergency-button {
+
+                    @include fill( $roarange, 0.000 );
+                    @include fill( #FD4C3F, 0.000 );
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $roarange, 0.000 );
+
+                    }
+
+                    // before
+                    &:before {
+
+                        content: '\ED59';
+
+                        font-size: 0.75rem;
+
+                    }
+
+                }
+
+            }
+
+            // infobar
+            #infobar {
+
+                position: absolute;
+
+                bottom: 1.25rem;
+                left: 1rem;
+
+                z-index: 20;
+
+                @include flex-h-s-v-st( false );
+
+                height: 3rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    right: 1rem;
+
+                    display: grid;
+
+                    grid-template-columns: 50% 50%;
+
+                    height: auto;
+
+                }
+
+                // item
+                .infobar-box {
+
+                    position: relative;
+
+                    @include flex-v-c-h-s( false );
+
+                    padding: 0.25rem 1rem 0 2.5rem;
+
+                    // icon
+                    .icon {
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 10;
+
+                        @include flex-v-c-h-c( false );
+
+                        width: 3rem;
+                        height: 3rem;
+
+                        // before
+                        &:before {
+
+                            content: '';
+
+                            @include font( $codicons, 1rem, 400 );
+
+                            @include color( $cvellow, 0.000 );
+
+                        }
+
+                    }
+
+                    // label
+                    .label {
+
+                        @include flex-h-s-v-c( false );
+
+                        @include font( $industry, 0.625rem, 700 );
+
+                        @include text( $up );
+
+                        @include typo( 0.5rem, 0.035em );
+
+                        @include color( white, 0.425 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 0.5625rem, 600 );
+
+                        }
+
+                    }
+
+                    // info
+                    .info {
+
+                        @include flex-h-s-v-c( false );
+
+                        @include font( $klavislim, 1rem, 500 );
+
+                        @include text( $up );
+
+                        @include typo( 1.5rem, 0.035em );
+
+                        @include color( white, 0.000 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $klavislim, 0.75rem, 400 );
+
+                        }
+
+                    }
+
+                }
+
+                // hours
+                #info-hours {
+
+                    // icon
+                    .icon {
+
+                        // before
+                        &:before {
+
+                            content: '\EA4E';
+
+                        }
+
+                    }
+
+                }
+
+                // emergency
+                #info-emergency {
+
+                    // icon
+                    .icon {
+
+                        // before
+                        &:before {
+
+                            content: '\EA4E';
+
+                            @include color( $roarange, 0.000 );
+
+                        }
+
+                    }
+
+                }
+
+                // directions
+                #info-directions {
+
+                    // icon
+                    .icon {
+
+                        // before
+                        &:before {
+
+                            content: '\EA3A';
+
+                        }
+
+                    }
+
+                }
+
+                // appointment
+                #info-appointment {
+
+                    // icon
+                    .icon {
+
+                        // before
+                        &:before {
+
+                            content: '\EA61';
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

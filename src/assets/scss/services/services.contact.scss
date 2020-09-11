@@ -1,0 +1,54 @@
+// stylesheet :: contact block styles
+
+    // settings
+    $contact : 1rem;
+
+    // styles
+    .contact_info {
+
+        @include flex-h-j-v-s( false );
+
+        // section
+        .service_sidebar_section {
+
+            width: 50vw;
+            padding: 5rem 5rem 5rem 5rem;
+
+        }
+
+        // contact
+        .contact {
+
+            @include color( white );
+
+            @include fill( $dark, 0.000 );
+
+            // title
+            h2 {
+
+                @include color( $beige );
+
+            }
+
+            // entry
+            .entry {
+
+                // email
+                .email {
+
+                    @include color( $gold );
+
+                }
+
+            }
+
+        }
+
+        // staff
+        .staff {
+
+            @include fill( $app05, 0.765 );
+
+        }
+
+    }

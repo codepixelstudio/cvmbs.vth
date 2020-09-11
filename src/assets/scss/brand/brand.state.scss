@@ -1,0 +1,148 @@
+// stylesheet :: brand.state styles
+
+    // styles
+    #brand-state {
+
+        position: relative;
+
+        z-index: 10;
+
+        @include flex-h-s-v-c( false );
+
+        height: 5rem;
+
+        padding: 0 0 0 0;
+
+        color: white;
+
+        text-decoration: none;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            height: 4rem;
+
+        }
+
+        // after
+        &:after {
+
+            content: '';
+
+            position: absolute;
+
+            top: 1.5rem;
+            right: 0;
+            bottom: 1.5rem;
+
+            width: 1px;
+            height: 2rem;
+
+            @include fill( white, 0.000 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                top: 1rem;
+                bottom: 1rem;
+
+            }
+
+        }
+
+        // menu open state
+        .site-menu-open &,
+        .ui-contrast &,
+        .single-degree-program &,
+        .page-template-secondary &,
+        .archive & {
+
+            color: white;
+
+        }
+
+        // default
+        #default_text {
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include hide;
+
+            }
+
+        }
+
+        // acronym
+        #acronym_text {
+
+            @include hide;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include flex-h-s-v-c( true );
+
+            }
+
+        }
+
+        // text class
+        .brand-state-text {
+
+            // default
+            &.default {
+
+                @include flex-h-s-v-c( true );
+
+                margin: 0;
+                padding: 0.1875rem 0.75rem 0 0;
+
+                @include font( $industry, 1.125rem, 700 );
+
+                @include text( $up, left );
+
+                @include typo( 1.1875rem, 0.015em );
+
+                // mobile
+                @include breakpoint ( large up ) {
+
+                    @include font( $industry, 1.375rem, 700 );
+
+                    // line break
+                    br {
+
+                        @include hide;
+
+                    }
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include font( $industry, 0.9375rem, 700 );
+
+                }
+
+            }
+
+            // acronym
+            &.acronym {
+
+                position: relative;
+
+                margin: 0;
+                padding: 0.1875rem 0.75rem 0 0;
+
+                @include font( $industry, 1.75rem, 700 );
+
+                @include text( $up, left );
+
+                @include typo( 1.1875rem, 0.015em );
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,228 @@
+// stylesheet :: global service post styles
+
+    // settings
+    $page    : #E5E7E7;
+    $sidebar : adjust-color(
+
+        $beige,
+        $hue          : 0%,
+        $saturation : -5%,
+        $lightness  : 3%,
+        $alpha         : -0.000
+
+    );
+
+    // container
+    .service_container {
+
+        @include fill( $page );
+
+    }
+
+    // styles
+    .service {
+
+        padding: 0 0 0 0;
+
+        // header
+        header {
+
+            position: relative;
+
+            @include flex-h-j-v-b( false );
+
+            height: 70vh;
+            padding: 0 5rem 3rem 5rem;
+
+            // @include fill( red, 0.465 );
+
+            background: {
+
+                repeat: no-repeat;
+                size: cover;
+                position: top center;
+
+            }
+
+            // title
+            .service-title,
+            .service-info {
+
+                position: relative;
+
+                z-index: 100;
+
+            }
+
+            // label
+            .header-label {
+
+                @include font( $klavislim, 1rem, 400 );
+
+                @include text( $up );
+
+                @include typo( 1rem, 0.075em );
+
+                @include color( white, 0.265 );
+
+            }
+
+            // title
+            h1 {
+
+                margin: 0 0 0 0;
+
+                @include typo( 2.5rem, 0.065em );
+
+                @include color( white );
+
+            }
+
+            // gradients
+            &:before,
+            &:after {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+            }
+
+            // before
+            &:before {
+
+                background: {
+
+                    image:
+
+                        linear-gradient(
+
+                            180deg,
+                            transparent 0%,
+                            $dark 100%
+
+                        ),
+
+                        linear-gradient(
+
+                            135deg,
+                            transparent 30%,
+                            $g140 100%
+
+                        )
+
+                    ;
+
+                }
+
+                // @include gradient(
+
+                    // 180deg,
+                    // transparent, 1.000, 0%,
+                    // $dark, 0.000, 100%
+
+                // );
+
+            }
+
+        }
+
+        // info box
+        .service-info {
+
+            @include flex-v-b-h-st( false );
+
+            // flex-grow: 1;
+
+        }
+
+        .service_content {
+
+            // developer
+            pre {
+
+                // @include hide;
+
+            }
+
+        }
+
+        // wrapper
+        .content_wrapper {
+
+            @include flex-h-j-v-t( false );
+
+        }
+
+        // sections
+        .service_section {
+
+            padding: 1rem 5rem 1rem 5rem;
+
+            font-size: 1rem;
+
+            @include color( $app05, 0.215 );
+
+        }
+
+        // main
+        .service_column {
+
+            width: 60vw;
+
+        }
+
+        // sidebar
+        .service_sidebar {
+
+            flex-grow: 1;
+
+            width: 40vw;
+            margin: 1rem 5rem 0 2rem;
+            // padding: 2rem 2rem 2rem 2rem;
+
+            @include color( $app05, 0.125 );
+
+            @include fill( $sidebar, 0.000 );
+
+            @include shadowbox( 1rem, 3rem, black, 0.645 );
+
+            // sections
+            .service_sidebar_section {
+
+                // margin: 0 0 2rem 0;
+                // padding: 2rem 2rem 2rem 2rem;
+
+                // last child
+                &:last-child {
+
+                    margin: 0 0 0 0;
+
+                }
+
+            }
+
+            // headings
+            h2 {
+
+                font-size: 1.25rem;
+
+                @include color( $g140 );
+
+            }
+
+            // text
+            p {
+
+                font-size: 0.875rem;
+
+            }
+
+        }
+
+    }

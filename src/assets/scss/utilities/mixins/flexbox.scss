@@ -1,0 +1,613 @@
+// stylesheet :: flexbox mixin definitions
+
+    // row + horizontal
+
+        // horizontal row -> space between -> v + center
+        @mixin flex-h-b-v-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        // horizontal row -> left -> v + center
+        @mixin flex-h-s-v-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+
+        // horizontal row -> left -> v + top
+        @mixin flex-h-s-v-t( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+
+        // horizontal row -> left -> v + stretch
+        @mixin flex-h-s-v-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+
+        }
+
+        // horizontal row -> left -> v + bottom
+        @mixin flex-h-s-v-b( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+        }
+
+        // horizontal row -> center -> v + center
+        @mixin flex-h-c-v-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        // horizontal row -> right -> v + center
+        @mixin flex-h-c-v-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+
+        }
+
+        // horizontal row -> right -> v + center
+        @mixin flex-h-e-v-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+
+        // horizontal row -> right -> v + top
+        @mixin flex-h-e-v-t( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+        }
+
+        // horizontal row -> right -> v + bottom
+        @mixin flex-h-e-v-b( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+        }
+
+        // horizontal row -> justify -> v + stretch
+        @mixin flex-h-j-v-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+
+        }
+
+        // horizontal row -> justify -> v + bottom
+        @mixin flex-h-j-v-b( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+        }
+
+        // horizontal row -> justify -> v + top
+        @mixin flex-h-j-v-t( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+        }
+
+        // horizontal row -> justify -> v + center
+        @mixin flex-h-j-v-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        // horizontal row -> center -> v + top
+        @mixin flex-h-c-v-t( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+
+        }
+
+        // horizontal row -> center -> v + bottom
+        @mixin flex-h-c-v-b( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+
+        }
+
+        // horizontal row -> center -> v + stretch
+        @mixin flex-h-c-v-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+
+        }
+
+    // column + vertical
+
+        // vertical column -> top -> h + center
+        @mixin flex-v-t-h-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+
+        // vertical column -> top -> h + left
+        @mixin flex-v-t-h-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+
+        // vertical column -> top -> h + right
+        @mixin flex-v-t-h-e( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+        }
+
+        // vertical column -> top -> h + right
+        @mixin flex-v-t-h-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+
+        }
+
+        // vertical column -> center -> h + center
+        @mixin flex-v-c-h-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        // vertical column -> center -> h + left
+        @mixin flex-v-c-h-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+        }
+
+        // vertical column -> center -> h + right
+        @mixin flex-v-c-h-e( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+        }
+
+        // vertical column -> center -> h + stretch
+        @mixin flex-v-c-h-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+
+        }
+
+        // vertical column -> bottom-> h + center
+        @mixin flex-v-b-h-c( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+
+        // vertical column -> bottom -> h + left
+        @mixin flex-v-b-h-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+        }
+
+        // vertical column -> bottom -> h + right
+        @mixin flex-v-b-h-e( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+        }
+
+        // vertical column -> bottom -> h + stretch
+        @mixin flex-v-b-h-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: stretch;
+
+        }
+
+        // vertical column -> justify -> h + stretch
+        @mixin flex-v-j-h-e( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+        }
+
+        // vertical column -> justify -> h + right
+        @mixin flex-v-j-h-s( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+        }
+
+        // vertical column -> justify -> h + right
+        @mixin flex-v-j-h-st( $inline ) {
+
+            @if $inline {
+
+                display: inline-flex;
+
+            } @else {
+
+                display: flex;
+
+            }
+
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+
+        }

@@ -1,0 +1,52 @@
+// stylesheet :: menu.options button styles
+
+    // settings
+    $site_menu : 1rem;
+
+    // styles
+    #site-options-button {
+
+        right: 0;
+
+        &:hover {
+
+            background: {
+
+                color: transparentize( $nite, 0.585 );
+
+            }
+
+            .button-icon {
+
+                .path {
+
+                    fill-opacity: 1.000;
+
+                    transition: $button_hover;
+
+                }
+
+            }
+
+        }
+
+        &[aria-expanded='true'] {
+
+            //
+
+        }
+
+        .button-icon {
+
+            .path {
+
+                fill: white;
+                fill-opacity: 0.565;
+
+                transition: $button_hover;
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,32 @@
+// stylesheet :: single pet health post styles
+
+    // settings
+    $pagebase : #E5E7E7;
+
+    // styles
+    .single-pet-health {
+
+        padding: 5rem 0 0 0;
+
+        // post
+        .pet-health {
+
+            padding: 5rem 5rem 5rem 5rem;
+
+            // metadata
+            .entry_metadata {
+
+                @include hide;
+
+            }
+
+            // taxonomy filters
+            #news_taxonomy {
+
+                @include hide;
+
+            }
+
+        }
+
+    }

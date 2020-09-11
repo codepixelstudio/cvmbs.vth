@@ -1,0 +1,58 @@
+// stylesheet :: brand.pixels styles
+
+    // settings
+    $brand_square : 4rem;
+
+    // styles
+    #brand-pixels {
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+
+        z-index: 100;
+
+        width: $brand_square;
+        height: $brand_square;
+        margin: 0;
+        padding: 1rem;
+
+        &:before,
+        &:after {
+
+            // content: '';
+
+            position: absolute;
+
+            left: 2rem;
+
+            width: 1px;
+            height: 2rem;
+
+            background: {
+
+                color: $linepixel;
+
+            }
+
+            @include boxmodel( white, 0.905 );
+
+        }
+
+        &:before {
+
+            top: -2rem;
+
+        }
+
+        &:after {
+
+            bottom: -2rem;
+
+            height: 2rem;
+
+        }
+
+    }

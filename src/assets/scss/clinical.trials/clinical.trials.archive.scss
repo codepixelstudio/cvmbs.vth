@@ -1,0 +1,103 @@
+// stylesheet :: clinical trials archive page styles
+
+    // settings
+    $clinical_trials : 1rem;
+
+    // styles
+    .blog,
+    .search,
+    .archive {
+
+        // class
+        &.post-type-archive-clinical_trial {
+
+            // content
+            #news_content {
+
+                padding: 5rem 5rem 3rem 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 3rem 3rem 1rem 3rem;
+
+                }
+
+                // grid
+                #news_grid {
+
+                    display: block;
+
+                    // flex-wrap: wrap;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include flex-v-t-h-st( false );
+
+                    }
+
+                }
+
+            }
+
+            // text
+            #clinical_trial_info {
+
+                margin: 1rem 0 0 0;
+
+            }
+
+            // tags
+            #news_controls {
+
+                margin: 1rem 0 0 0;
+                padding: 0 0 0 0;
+
+            }
+
+        }
+
+        // post
+        .clinical_trial {
+
+            position: relative;
+
+            display: block;
+
+            width: auto;
+            height: auto;
+            margin: 0 0 1rem 0;
+
+            text-decoration: none;
+
+            @include color( $blue );
+
+            // @include fill( red, 0.565 );
+
+            transition: all 220ms linear 0ms;
+
+            // mobile
+            @include breakpoint ( medium down ) {
+
+                width: 50%;
+
+            }
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 100%;
+
+            }
+
+            // hover state
+            &:hover {
+
+                color: $roarange;
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,56 @@
+// stylesheet :: brand.cvmbs styles
+
+    // settings
+    $brand_local : 1rem;
+
+    // styles
+    #brand-local {
+
+        @include flex-h-s-v-c( false );
+
+        height: 5rem;
+        padding: 0.0625rem 0 0 0.75rem;
+
+        @include font( $proxima, 1rem, 500 );
+
+        @include typo( 1.1875rem, 0.035em );
+
+        @include text( $up );
+
+        @include color( white, 0.000 );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            height: 4rem;
+
+            @include font( $proxima, 0.75rem, 500 );
+
+            @include typo( 1rem, 0.015em );
+
+        }
+
+        // svg container
+        .local_icon {
+
+            width: 3.5rem;
+            height: 3.5rem;
+
+            // svg
+            svg {
+
+                width: 3.5rem;
+                height: 3.5rem;
+
+                // path
+                path {
+
+                    fill: white;
+
+                }
+
+            }
+
+        }
+
+    }

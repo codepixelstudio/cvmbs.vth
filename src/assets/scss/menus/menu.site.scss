@@ -1,0 +1,135 @@
+// stylesheet :: site menu component styles
+
+    // settings
+    $menu_width  : 28rem;
+    $menu_height : calc( 100vh - 5rem );
+
+    // colors
+    $menu_fill:
+
+        adjust-color(
+
+            $midnite,
+            $hue          : 0%,
+            $saturation : -10%,
+            $lightness  : 0%,
+            $alpha         : -0.000
+
+        )
+
+    ;
+
+    // styles
+    #site-menu {
+
+        position: fixed;
+
+        top: 5rem;
+        bottom: 0;
+
+        z-index: 110;
+
+        width: $menu_width;
+        height: $menu_height;
+        margin: 0;
+        padding: 0;
+
+        overflow: visible;
+
+        visibility: hidden;
+
+        @include fill( $menu_fill, 1.000 );
+
+        box-shadow: none;
+
+        transform: translate3d( 28rem, 0, 0 );
+
+        transition: none;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            top: 4rem;
+
+            width: calc( 100vw - 4rem );
+            // width: 100vw;
+            height: calc( 100vh - 4rem );
+
+            transform: translate3d( 100%, 0, 0 );
+
+        }
+
+        // open state
+        &.is-open {
+
+            visibility: visible;
+
+        }
+
+        // parent class
+        .page-template-secondary &,
+        .single-degree-program &,
+        .archive & {
+
+            transform: translate3d( 28rem, 0, 0 );
+
+        }
+
+        // close button
+        #close-site-menu {
+
+            position: absolute;
+
+            top: -4rem;
+            right: 0;
+
+            z-index: 20;
+
+            width: 4rem;
+            height: 4rem;
+            margin: 0;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+            @include fill( $roarange, 0.345 );
+
+            // transition: all 220ms linear 0ms;
+
+            // hover state
+            &:hover {
+
+                @include fill( $px-orange, 0.125 );
+
+            }
+
+            // svg
+            .icon {
+
+                width: 1.5rem;
+                height: 1.5rem;
+
+                // path
+                .path {
+
+                    fill: white;
+
+                }
+
+            }
+
+        }
+
+        // tabs
+        .tabs-content {
+
+            position: relative;
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+
+            background: transparent;
+
+        }
+
+    }

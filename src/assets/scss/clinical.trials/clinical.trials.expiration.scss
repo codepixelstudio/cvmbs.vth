@@ -1,0 +1,21 @@
+// stylesheet :: clinical trial expiration styles
+
+    // settings
+    $expiration : 1rem;
+
+    // styles
+    .trial_section {
+
+        // class
+        &.expiration {
+
+            // bold
+            strong {
+
+                font-weight: 700;
+
+            }
+
+        }
+
+    }

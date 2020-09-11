@@ -1,0 +1,140 @@
+// stylesheet :: keyframes definitions
+
+    // browser.sync
+    @keyframes sync-spinner {
+
+        0%   {
+
+            transform: rotate(0deg);
+        }
+
+        100% {
+
+            transform: rotate(-360deg);
+
+        }
+
+    }
+
+    // button.in
+    @keyframes button-in {
+
+        0% {
+
+            // visibility: visible;
+
+            opacity: 0.000;
+
+            background: {
+
+                // color: transparent;
+
+            }
+
+            transform: scale3d( 0, 0, 0 );
+
+        }
+
+        50% {
+
+            opacity: 0.785;
+
+            transform: sscale3d( 1, 1, 1 );
+
+        }
+
+        100% {
+
+            // visibility: visible;
+
+            background: {
+
+                // color: $px-orange;
+
+            }
+
+            opacity: 0.785;
+
+            transform: sscale3d( 2, 2, 2 );
+
+        }
+
+    }
+
+    // button.out
+    @keyframes button-out {
+
+        0% {
+
+            opacity: 1.000;
+
+            transform: scale3d( 2, 2, 2 );
+
+        }
+
+        50% {
+
+            opacity: 1.000;
+
+            transform: sscale3d( 1, 1, 1 );
+
+        }
+
+        100% {
+
+            visibility: hidden;
+
+            opacity: 0.000;
+
+            transform: sscale3d( 0, 0, 0 );
+
+        }
+
+    }
+
+    // button.faderade
+    @keyframes button-faderade {
+
+        0% {
+
+            border-color: $gold;
+
+        }
+
+        17% {
+
+            border-color: $cvellow;
+
+        }
+
+        33% {
+
+            border-color: $roarange;
+
+        }
+
+        50% {
+
+            border-color: $blue;
+
+        }
+
+        66% {
+
+            border-color: $g140;
+
+        }
+
+        83% {
+
+            border-color: $green;
+
+        }
+
+        100% {
+
+            border-color: $gold;
+
+        }
+
+    }

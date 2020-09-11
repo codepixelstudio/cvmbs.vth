@@ -1,0 +1,67 @@
+// stylesheet :: service giving styles
+
+    // settings
+    $give : 1rem;
+
+    // styles
+    .service_section {
+
+        // class
+        &.giving {
+
+            position: relative;
+
+            margin: 2rem 0 0 0;
+            padding: 0 0 0 0;
+
+            @include color( white );
+
+            @include fill( $app05, 0.125 );
+
+            // class
+            &.last {
+
+                margin: 2.5rem 0 0 0;
+
+            }
+
+            // background
+            .section_background {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                z-index: 10;
+
+                background: {
+
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+            }
+
+            // content
+            .section_content {
+
+                position: relative;
+
+                z-index: 20;
+
+                padding: 5rem 5rem 5rem 5rem;
+
+                @include text( none, left );
+
+                @include fill( $dark, 0.285 );
+
+            }
+
+        }
+
+    }

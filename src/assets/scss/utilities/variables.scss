@@ -1,0 +1,177 @@
+// stylesheet :: variables
+
+// colors.codepixels
+
+	// highlights
+	$blue 		: #30B9F8;
+	$brite	    : #A8E347;
+	$spotify    : #32B955;
+
+	// brand
+	$px-green   : #00FE6D;
+	$px-blue 	: #1C75BB;
+	$px-pink    : #DB1B89;
+	$px-purple  : #074570;
+	$px-orange  : #EF4136;
+	$px-yellow  : #F9EC32;
+
+	// blue.greens
+	$bg-base    : #13524B;
+	$bg-dark    : #0E3732;
+
+	// backdrops
+	$app-canvas : #151B1E;
+
+	// text
+	$rite-lite  : #DADEEB;
+
+// colors.codepixel.state
+
+	// brand
+	$used-gold  : #AA974D;
+	$faux-gold  : #EAE8C5;
+	$lite-gold  : #E2DFB2;
+	$gold       : #D7D392;
+	$g140		: #156140;
+	$g135		: #115135;
+	$dark		: #0A3321;
+	$nite 		: #082818;
+	$midnite	: #051910;
+	$dark-nite 	: #050F08;
+
+	// cvmbs
+	$blue       : #349AAA;
+	$beige 		: #EFEEDA;
+	$roarange   : #E35530;
+	$cvellow    : #C0D62A;
+	$cvnavy     : #022531;
+	$neutral    : #E8E7E3;
+
+	// accent pallette
+	$yellow     : #D0DB42;
+	$red 		: #AA482E;
+	$green 		: #85BAAF;
+	$navy 		: #003E46;
+	$orange 	: #E1963E;
+
+	// dark desaturated pallete
+	$yellow-m 	: #909640;
+	$red-m 		: #743C2E;
+	$green-m 	: #698781;
+	$navy-m 	: #06292E;
+	$orange-m	: #996F3E;
+
+	// bright highlight pallete
+	$yellow-h 	: #EDFB4E;
+	$red-h 		: #D06143;
+	$green-h 	: #94D1C4;
+	$navy-h 	: #276E77;
+	$orange-h 	: #FFAC4D;
+
+	// canvas
+	$app05		: #172D2A;
+	$app10	 	: #161C1A;
+	$app20 		: #1B211E;
+	$app30		: #1D2421;
+	$app40		: #232B28;
+	$app45      : #21332D;
+	$app50		: #2B3631;
+	$app60		: #2F3B36;
+	$app65 		: #263832;
+	$app70		: #33403A;
+	$app80 		: #394741;
+	$app90		: #34574C;
+
+	// secondary template colors
+	$sec_temp_white        : #ffffff;
+	$sec_temp_off_white    : #f3f3f3;
+	$sec_temp_grey         : #ededed;
+	$sec_temp_black        : #000000;
+	$sec_temp_brown        : #44372e;
+	$sec_temp_link_color   : #0F718E;
+	$sec_temp_link_visited : #137094;
+	$sec_temp_dark_green   : #163d20;
+
+	// degree program colors
+	$deg_temp_teal : #125d70;
+
+// randoms
+
+	// customs
+	$hot-yellow : #C4D82E;
+	$iron 		: #CCCCCC;
+	$charcoal 	: #666666;
+	$steel 		: #545454;
+	$oil        : #333333;
+	$proper 	: #141414;
+	$campaign   : #97CA3D;
+	$admin		: #23282D;
+	$wp 		: #0073AA;
+	$lights		: #F1F1F1;
+	$jumbo 		: #888888;
+	$hotstuff 	: #1D3732;
+	$dashboard  : #202428;
+
+	// social media
+	$twitter 	: #00ACED;
+	$facebook 	: #3B5998;
+	$googleplus : #DD4B39;
+	$pinterest 	: #CB2027;
+	$linkedin 	: #007BB6;
+	$youtube 	: #BB0000;
+	$vimeo 		: #AAD450;
+	$tumblr 	: #32506D;
+	$instagram 	: #517FA4;
+	$plickr 	: #F40072;
+	$blickr 	: #1B56D1;
+
+// shortcuts
+
+	// common typography  settings
+	$up 	  : uppercase;
+	$low 	  : lowercase;
+	$pixper : geometricPrecision;
+
+	// transition hover states
+	$all160 : all 160ms linear 0ms;
+	$all220 : all 220ms linear 0ms;
+
+	// pixel.line
+	$linepixel : transparentize( white, 0.765 );
+
+	// theme.swatch
+	$themeUI : all 720ms linear 0ms !important;
+
+	// borders
+	$borders : 1px solid transparentize( white, 0.685 );
+
+// easing animations
+
+	// OutCubic
+	$ocubic : cubic-bezier( 0.215, 0.61, 0.355, 1 );
+
+	// OutExpo
+	$outex : cubic-bezier( 0.19, 1, 0.22, 1 );
+
+	// InOutExpo
+	$ioexpo : cubic-bezier( 1, 0, 0, 1 );
+
+	// OutCirc
+	$ocirc  : cubic-bezier( 0.075, 0.82, 0.165, 1);
+
+	// OutQuint
+	$oquin : cubic-bezier( 0.23, 1, 0.32, 1 );
+
+	// InOutQuint
+	$ioquin : cubic-bezier( 0.86, 0, 0.07, 1 );
+
+
+	/* CSU Signature Sizes
+	 * acronym:  609 x 229 -- min: 113 -- max: 146
+	 * stacked:  929 x 229 -- min: 172 -- max: 221
+	 * oneline: 1883 x 229 -- min: 350 -- max: 450
+	 */
+	$signature_height: 2.75em;
+	$acronym_width: 7.3125em;
+	$stacked_width: 11.125em;
+	$oneline_width: 22.625em;

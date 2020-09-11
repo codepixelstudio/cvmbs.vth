@@ -1,0 +1,18 @@
+// stylesheet :: panel.resources component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-resources {
+
+        @include gradient( 0deg, $cvellow, 0.485, 0%, transparent, 1.000, 50% );
+
+        // header
+        .panel-header {
+
+            @include fill( $cvellow, 0.565 );
+
+        }
+
+    }

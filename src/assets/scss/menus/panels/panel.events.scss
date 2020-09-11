@@ -1,0 +1,798 @@
+// stylesheet :: panel.events component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-events {
+
+        @include fill( $cvnavy, 0.145 );
+
+        @include gradient( 0deg, $blue, 0.565, 0%, transparent, 1.000, 50% );
+
+        // header
+        .panel-header {
+
+            @include fill( $blue, 0.565 );
+
+            // view all link
+            #view-calendar-link {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+
+                z-index: 10;
+
+                @include flex-v-b-h-s( false );
+
+                width: 6rem;
+                height: 5rem;
+                margin: 0;
+                padding: 0 0 1rem 0.25rem;
+
+                text-decoration: none;
+
+                cursor: pointer;
+
+                // label
+                .label {
+
+                    @include flex-h-s-v-c( true );
+
+                    height: 1rem;
+
+                    @include font( $industry, 0.65625rem, 700 );
+
+                    @include typo( 0.5rem, 0.115em );
+
+                    @include text( $up );
+
+                    @include color( white, 0.000 );
+
+                    // after
+                    &:after {
+
+                        @include codicon( 1rem, 1rem, 0, 1rem, $gold, '\EDC8' );
+
+                        margin: 0 0.25rem 0 0;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        #calendar-links-container {
+
+			position: absolute;
+
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			z-index: 10;
+
+			width: 100%;
+			height: 64px;
+			margin: 0;
+			padding: 16px 16px 16px 16px;
+
+			box-sizing: border-box;
+
+			background: {
+
+				color:
+
+					adjust-color(
+
+						$cvnavy,
+						$hue 	 	: -5%,
+						$saturation : -10%,
+						$lightness  : -8.5%,
+						$alpha 		: -0.525
+
+					)
+
+				;
+
+			}
+
+			.calendar-links {
+
+				display: flex;
+
+				flex-direction: row;
+				justify-content: center;
+				align-items: stretch;
+
+				width: 100%;
+				height: 32px;
+				margin: 0;
+				padding: 0;
+
+				.calendar-link {
+
+					display: inline-flex;
+
+					height: 32px;
+					margin: 0;
+					padding-top: 1px;
+
+					font: {
+
+						family: $industry;
+						size: 10px;
+						weight: 700;
+
+					}
+
+					line-height: 32px;
+
+					letter-spacing: 0.015em;
+
+					text: {
+
+						transform: $up;
+						rendering: $pixper;
+
+					}
+
+					transition: $all220;
+
+					@include breakpoint(medium down) {
+
+						font: {
+
+							size: 9px;
+
+						}
+
+					}
+
+					&.local-link {
+
+						position: relative;
+
+						flex-grow: 1;
+
+						padding-left: 40px;
+
+						color:
+
+							transparentize(white, 0.105)
+
+						;
+
+						background-color:
+
+							transparentize(white, 0.945)
+
+						;
+
+						&:hover {
+
+							// color: white;
+							color: $gold;
+
+							background-color:
+
+								transparentize(white, 0.885)
+
+							;
+
+							&:before {
+
+								background-color:
+
+									adjust-color(
+
+										$green,
+										$hue 	 	: 0%,
+										$saturation : 3.5%,
+										$lightness  : -5%,
+										$alpha 		: -0.745
+
+									)
+
+								;
+
+								opacity: 1.000;
+
+								transition: $all220;
+
+							}
+
+						}
+
+						&:before {
+
+							content: '';
+
+							position: absolute;
+
+							top: 0;
+							bottom: 0;
+							left: 0;
+
+							z-index: 1;
+
+							width: 31px;
+							height: 32px;
+							margin: 0;
+							padding: 0;
+
+							background: {
+
+								color:
+
+									transparentize(white, 0.945)
+
+								;
+
+								image: url(../img/icons/UI/icon_department_events.svg);
+								repeat: no-repeat;
+								size: 32px 32px;
+								position: 0px 0px;
+
+							}
+
+							opacity: 0.735;
+
+							transition: $all220;
+
+						}
+
+					}
+
+					&.global-link {
+
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+
+						flex-grow: 0;
+
+						width: 132px;
+
+						text: {
+
+							align: center;
+
+						}
+
+						color:
+
+							transparentize($gold, 0.105)
+
+						;
+
+						background-color:
+
+							adjust-color(
+
+								$green,
+								$hue 	 	: 0%,
+								$saturation : 3.5%,
+								$lightness  : -5%,
+								$alpha 		: -0.745
+
+							)
+
+						;
+
+						&:hover {
+
+							color: white;
+
+							background-color:
+
+								transparentize($green, 0.525)
+
+							;
+
+						}
+
+						@include breakpoint(medium down) {
+
+							width: auto;
+							padding: 1px 12px 0 12px;
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+        .panel-interior {
+
+            overflow-y: scroll;
+
+        }
+
+		#calendar-panel {
+
+			position: absolute;
+
+			// top: 64px;
+            top: 5rem;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			z-index: 10;
+
+			width: 100%;
+			height: calc( 100% - 5rem );
+			margin: 0;
+			padding: 0 0 0 0;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                top: 4rem;
+
+                height: calc( 100% - 4rem );
+
+            }
+
+			.calendar-fail {
+
+				display: flex;
+
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				width: 100%;
+				height: calc(100% - 64px);
+				margin: 0;
+				padding: 0 48px 0 48px;
+
+				box-sizing: border-box;
+
+				.container {
+
+					display: flex;
+
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					width: 100%;
+					padding: 24px 16px 24px 16px;
+
+					border: 1px solid transparentize(white, 0.925);
+
+					background: {
+
+						color: transparentize(white, 0.965);
+
+					}
+
+					svg {
+
+						width: 32px;
+						height: 32px;
+
+						opacity: 0.725;
+
+					}
+
+					span {
+
+						display: block;
+
+						font: {
+
+							family: $industry;
+							size: 12px;
+							weight: 600;
+
+						}
+
+						letter-spacing: 0.045em;
+
+						text: {
+
+							align: center;
+							rendering: $pixper;
+
+						}
+
+						color: transparentize(white, 0.115);
+
+					}
+
+				}
+
+			}
+
+			.events-list {
+
+				height: 100%;
+				margin: 0;
+				padding: 0;
+
+				list-style: none;
+
+				background: transparent;
+
+			}
+
+			.event {
+
+                @include flex-h-j-v-t( false );
+
+                padding: 1rem 1rem 1rem 1rem;
+
+                text-decoration: none;
+
+                @include color( white, 0.000 );
+
+				border-bottom: 1px solid transparentize(white, 0.865);
+
+				background-color: transparentize(white, 1.000);
+
+				transition: $all220;
+
+				&:nth-child(odd) {
+
+					background-color:
+
+						transparentize(white, 1.000)
+
+					;
+
+				}
+
+				&:nth-child(even) {
+
+					background-color:
+
+						transparentize(white, 1.000)
+
+					;
+
+				}
+
+				&:last-child {
+
+					border-bottom: none;
+
+				}
+
+				&:hover {
+
+					background-color:
+
+						adjust-color(
+
+							$navy,
+							$lightness  : -12%,
+							$saturation : 0%,
+							$alpha 		: -0.765
+
+						)
+
+					;
+
+				}
+
+				.event-link {
+
+                    //
+
+				}
+
+				.calendar-icon {
+
+					display: inline-flex;
+
+					flex-direction: column;
+
+					width: 64px;
+					height: 64px;
+
+					span {
+
+						box-sizing: border-box;
+
+						text: {
+
+							align: center;
+							transform: $up;
+							rendering: $pixper;
+
+						}
+
+					}
+
+					.calendar-month {
+
+						height: 24px;
+						padding: 1px 0 0 0;
+
+						font: {
+
+							family: $klavislim;
+							size: 11px;
+							weight: normal;
+
+						}
+
+                        @include font( $klavislim, 0.6875rem, 500 );
+
+						line-height: 24px;
+
+						letter-spacing: 0.065em;
+
+						text: {
+
+							rendering: $pixper;
+
+						}
+
+						@include color( $gold, 0.000 );
+
+                        @include fill(
+
+                            adjust-color(
+
+                                $blue,
+                                $lightness  : -2.5%,
+                                $saturation : 1.5%,
+                                $alpha 		: -0.525
+
+                            ), 0.000
+
+                        );
+
+					}
+
+					.calendar-day {
+
+                        @include font( $decima, 1.75rem, 700 );
+
+                        @include typo( 2.5rem, -0.025em );
+
+						color: white;
+						background-color: transparentize(white, 0.945);
+
+					}
+
+				}
+
+                // link
+                .entry-title {
+
+                    order: 0;
+
+                    @include font( $industry, 0.875rem, 700 );
+
+                    text-decoration: none;
+
+                    @include color( $gold, 0.000 );
+
+                    // hover state
+                    &:hover {
+
+                        text-decoration: underline;
+
+                    }
+
+                }
+
+				.entry-info {
+
+					@include flex-v-t-h-s( false );
+
+					width: calc(100% - 64px);
+					padding: 0 0 0 16px;
+
+				}
+
+                // date
+                .entry-date {
+
+                    order: 10;
+
+                    margin: 0 0 0 0;
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    @include text( $up );
+
+                }
+
+                // text
+				.entry-description {
+
+                    order: 30;
+
+					margin: 0 0 0 0;
+
+					@include font( $industry, 0.875rem, 500 );
+
+					line-height: 18px;
+
+					letter-spacing: 0.025em;
+
+					text: {
+
+						transform: none;
+
+					}
+
+					@include color( $white, 0.135 );
+
+					a {
+
+						color: $gold;
+
+					}
+
+				}
+
+				.calendar-footer {
+
+					display: flex;
+
+					flex-direction: row;
+
+					justify-content: space-between;
+
+					width: 100%;
+
+					background-color: transparentize(white, 0.925);
+
+					transition: $all220;
+
+					span {
+
+						text-rendering: $pixper;
+
+					}
+
+					.event-location {
+
+						position: relative;
+
+						display: inline-flex;
+
+						flex-grow: 1;
+
+						height: 32px;
+						padding: 1px 12px 0 40px;
+
+						box-sizing: border-box;
+
+						font: {
+
+							family: $industry;
+							size: 10px;
+                            weight: 600;
+
+						}
+
+						line-height: 32px;
+
+						letter-spacing: 0.045em;
+
+						text: {
+
+							transform: $up;
+
+						}
+
+						color: transparentize(white, 0.065);
+
+						&:before {
+
+							position: absolute;
+
+							top: 0;
+							left: 0;
+
+							// content: '';
+
+							width: 32px;
+							height: 32px;
+
+							background: {
+
+								image: url(../img/icons/UI/icon_direction_arrow.svg);
+								repeat: no-repeat;
+								size: 32px 32px;
+								position: 0 0;
+
+							}
+
+                            @include fill(
+
+                                adjust-color(
+
+                                    $blue,
+                                    $lightness  : -2.5%,
+                                    $saturation : 1.5%,
+                                    $alpha 		: -0.525
+
+                                ), 0.000
+
+                            );
+
+						}
+
+					}
+
+					.event-link {
+
+						a {
+
+							display: inline-flex;
+
+							align-self: flex-end;
+
+							height: 32px;
+							padding: 1px 12px 0 12px;
+
+							box-sizing: border-box;
+
+							font: {
+
+								family: $industry;
+								size: 10px;
+								weight: 600;
+
+							}
+
+							line-height: 32px;
+
+							letter-spacing: 0.065em;
+
+							@include text( $up );
+
+                            text-decoration: none;
+
+							color: white;
+
+                            @include fill(
+
+                                adjust-color(
+
+                                    $blue,
+                                    $lightness  : -2.5%,
+                                    $saturation : 1.5%,
+                                    $alpha 		: -0.525
+
+                                ), 0.000
+
+                            );
+
+							transition: $all220;
+
+							&:hover {
+
+								@include fill( $blue, 0.235 );
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+    }

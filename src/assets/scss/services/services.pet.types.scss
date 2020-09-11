@@ -1,0 +1,183 @@
+// stylesheet :: pet types styles
+
+    // settings
+    $pet_type : 1rem;
+
+    // styles
+    .pet_types {
+
+        position: relative;
+
+        z-index: 100;
+
+        @include flex-h-e-v-c( true );
+
+        margin: 2rem 0 0 0;
+        padding: 2rem 2rem 2rem 2rem;
+
+        @include fill( white, 0.925 );
+
+        @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+        // title
+        h4 {
+
+            position: absolute;
+
+            top: -1rem;
+            left: 1rem;
+
+            z-index: 10;
+
+            height: 2rem;
+            margin: 0 0 0 0;
+            padding: 0 1rem 0 1rem;
+
+            @include font( $klavislim, 0.875rem, 500 );
+
+            @include text( $up, right );
+
+            @include typo( 2rem, 0.025em );
+
+            @include color( white );
+
+            @include fill( $g135 );
+
+            @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+        }
+
+        // list
+        .pet_type {
+
+            position: relative;
+
+            @include flex-v-b-h-c( true )
+
+            width: 5rem;
+            height: 5rem;
+            padding: 0 0 0 0;
+
+            font-size: 0.875rem;
+
+            @include typo( 2rem, inherit );
+
+            @include color( white );
+
+            // @include fill( red, 0.565 );
+
+            background: {
+
+                repeat: no-repeat;
+                size: 4rem 4rem;
+                position: top center;
+
+            }
+
+            // before
+            &:before {
+
+                // @include codicon( 3rem, 3rem, 0.5rem, 2rem, $cvellow, '\ED39' );
+
+                position: absolute;
+
+                top: 0;
+                bottom: 0;
+                left: 0;
+
+                @include flex-v-c-h-c( false );
+
+                @include color( $campaign, 0.000 );
+
+            }
+
+            // companion
+            &.companion {
+
+                background: {
+
+                    image: url(../img/icons/services/companion.svg);
+
+                }
+
+                // before
+                &:before {
+
+                    // content: '\ECD1';
+
+                }
+
+            }
+
+            // exotic
+            &.exotic {
+
+                background: {
+
+                    image: url(../img/icons/services/exotic.svg);
+
+                }
+
+                // before
+                &:before {
+
+                    // content: '\ECFA';
+
+                }
+
+            }
+
+            // equine
+            &.equine {
+
+                background: {
+
+                    image: url(../img/icons/services/equine.svg);
+
+                }
+
+                // before
+                &:before {
+
+                    // content: '\E976';
+
+                }
+
+            }
+
+            // livestock
+            &.livestock {
+
+                background: {
+
+                    image: url(../img/icons/services/livestock.svg);
+
+                }
+
+                // before
+                &:before {
+
+                    // content: '\ED7D';
+
+                }
+
+            }
+
+            // label
+            .pet_type_label {
+
+                // overflow: hidden;
+
+                @include font( $industry, 0.75rem, 700 );
+
+                @include text( center );
+
+                @include typo( 0.75rem, 0.025em );
+
+                @include color( white, 0.365 );
+
+            }
+
+        }
+
+    }

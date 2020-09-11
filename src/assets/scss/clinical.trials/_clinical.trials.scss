@@ -1,0 +1,28 @@
+// stylesheet :: clinical trials post stylesheet compiler
+
+    // globals
+    @import 'clinical.trials.global';
+
+    // archive
+    @import 'clinical.trials.archive';
+
+    // notification
+    @import 'clinical.trials.notification';
+
+    // description
+    @import 'clinical.trials.description';
+
+    // eligibility
+    @import 'clinical.trials.eligibility';
+
+    // expiration
+    @import 'clinical.trials.expiration';
+
+    // contact
+    @import 'clinical.trials.contact';
+
+    // source
+    @import 'clinical.trials.source';
+
+    // statistics
+    @import 'clinical.trials.statistics';

@@ -1,0 +1,81 @@
+// stylesheet :: clinical trial notification styles
+
+    // settings
+    $notification : 1rem;
+
+    // styles
+    .trial_section {
+
+        // class
+        &.notification {
+
+            margin: 2rem 0 2rem 0;
+            // padding: 2rem 5rem 2rem 5rem;
+
+            .notification-box {
+
+            	// margin: 1.5em auto;
+            	box-shadow: 0 .125em .5em .125em rgba(black,.1);
+
+            	background: white;
+            	padding: 1.5em;
+
+            	@include shadowbox( 1rem, 3.5rem, black, 0.685 );
+
+            	&.box {
+
+            		&--date {
+
+            			border-left: 0.3125rem solid $campaign;
+
+            		}
+
+            		&--info {
+
+            			border-left: 0.3125rem solid $blue;
+
+            		}
+
+            		&--notice {
+
+            			border-left: 0.3125rem solid $yellow-h;
+
+            		}
+
+            		&--warning,
+            		&--warn {
+
+            			border-left: 0.3125rem solid $roarange;
+
+            		}
+
+            	}
+
+            	&__image {
+            		display: none;
+            	}
+
+            	&__icon {
+            		display: none;
+            	}
+
+            	&__title {
+            		font-size: 1.75rem;
+            		line-height: 1;
+
+            		@include bpoint(40em) {
+            			font-size: 2em;
+            		}
+            	}
+
+            	&__content {
+            		> *:last-child {
+            			margin-bottom: 0;
+            		}
+            	}
+            }
+
+
+        }
+
+    }

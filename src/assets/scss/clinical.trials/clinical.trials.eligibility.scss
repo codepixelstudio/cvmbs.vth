@@ -1,0 +1,21 @@
+// stylesheet :: clinical trial eligibility styles
+
+    // settings
+    $eligibility : 1rem;
+
+    // styles
+    .trial_section {
+
+        // class
+        &.eligibility {
+
+            // bold
+            strong {
+
+                font-weight: 700;
+
+            }
+
+        }
+
+    }

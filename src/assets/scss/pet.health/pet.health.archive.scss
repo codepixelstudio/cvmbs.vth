@@ -1,0 +1,755 @@
+// stylesheet :: pet health archive page styles
+
+    // settings
+    $pagebase : #E5E7E7;
+
+    // styles
+    .blog,
+    .search,
+    .archive,
+    .single {
+
+        font-size: 1rem;
+
+        @include color( $app05, 0.245 );
+
+        @include fill( $pagebase, 0.000 );
+
+        // site layout
+        #site-layout {
+
+            min-height: 0;
+
+            @include fill( white, 1.000 );
+
+            background: {
+
+                image: none;
+
+            }
+
+        }
+
+        // news
+        #news_content {
+
+            @include flex-v-t-h-st( false );
+
+            padding: 5rem 5rem 2.5rem 5rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 2rem 2rem 2rem 2rem;
+
+            }
+
+            // header
+            #news_header {
+
+                @include flex-h-j-v-s( false );
+
+                // search
+                #news_search,
+                #searchform {
+
+                    width: 20rem;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                        // width: 60%;
+
+                    }
+
+                    // wrap
+                    .input_wrap {
+
+                        position: relative;
+
+                        @include flex-h-j-v-s( false );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 100%;
+                            margin: 0 0 2rem 0;
+
+                            // last child
+                            &:last-child {
+
+                                margin: 0 0 1rem 0;
+
+                            }
+
+                        }
+
+                        // submit
+                        input[ type='submit' ] {
+
+                            position: absolute;
+
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+
+                            z-index: 10;
+
+                            // width: 3rem;
+                            height: 3rem;
+                            padding: 0 1rem 0 1rem;
+
+                            overflow: hidden;
+
+                            border: none;
+
+                            // text-indent: -999rem;
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                            @include color( white );
+
+                            @include fill( $g135, 0.000 );
+
+                            // after
+                            &:after {
+
+                                @include flex-v-c-h-c( false );
+
+                                @include codicon( 3rem, 3rem, 1rem, 1rem, white, '\EB37' );
+
+                                position: absolute;
+
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+
+                                z-index: 10;
+
+                                text-indent: 0;
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    width: 2rem;
+                                    height: 2rem;
+                                    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+                                }
+
+                            }
+
+
+                        }
+
+                        // label
+                        label {
+
+                            position: absolute;
+
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+
+                            z-index: 10;
+
+                            width: 3rem;
+                            height: 3rem;
+
+                            overflow: hidden;
+
+                            text-indent: -999rem;
+
+                            transform: scaleX( -1 );
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                width: 2rem;
+                                height: 2rem;
+
+                            }
+
+                            // after
+                            &:after {
+
+                                @include flex-v-c-h-c( false );
+
+                                @include codicon( 3rem, 3rem, 1rem, 1rem, transparentize( white, 0.365 ), '\EB37' );
+
+                                position: absolute;
+
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+
+                                z-index: 10;
+
+                                text-indent: 0;
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    width: 2rem;
+                                    height: 2rem;
+                                    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    // text
+                    input[ type='text' ] {
+
+                        @include flex-h-s-v-c( false );
+
+                        width: 100%;
+                        height: 3rem;
+                        margin: 0 0 0 0;
+                        padding: 0.0625rem 3rem 0 3rem;
+
+                        border: none;
+
+                        @include font( $industry, 0.875rem, 500 );
+
+                        @include color( white, 0.000 );
+
+                        @include fill( $app05, 0.365 );
+
+                        @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            height: 2rem;
+                            padding: 0.0625rem 1rem 0 2rem;
+
+                        }
+
+                        // focus state
+                        &:focus {
+
+                            @include fill( $dark, 0.000 );
+
+                        }
+
+                        // placeholder
+                        &::placeholder {
+
+                            @include font( $industry, 0.875rem, 600 );
+
+                            @include color( white, 0.365 );
+
+                            // mobile
+                            @include breakpoint ( large down ) {
+
+                                @include font( $industry, 0.6875rem, 600 );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // heading
+            h1 {
+
+                @include flex-h-s-v-c( true );
+
+                flex-grow: 1;
+
+                position: relative;
+
+                margin: 0 0 0 0;
+                // padding: 0 0 0 2.75rem;
+
+                @include typo( 3rem, 0.025em );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    // padding: 0 0 0 1.5rem;
+
+                }
+
+            }
+
+            // grid
+            #news_grid {
+
+                display: grid;
+
+                grid-template-columns: calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem );
+                // grid-template-columns: calc( 25% - 1.5rem ) calc( 25% - 1.5rem ) calc( 25% - 1.5rem ) calc( 25% - 1.5rem );
+
+                grid-gap: 2rem;
+
+                margin: 2.5rem 0 0 0;
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    grid-template-columns: calc( 50% - 1rem ) calc( 50% - 1rem );
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                    order: 10;
+
+                    margin: 0 0 2rem 0;
+
+                }
+
+            }
+
+            // post
+            .pet-health {
+
+                // padding: 2rem 2rem 2rem 2rem;
+
+                $faderade : adjust-color(
+
+                    $g140,
+                    $hue          : 0%,
+                    $saturation : -25%,
+                    $lightness  : 10%,
+                    $alpha         : -0.000
+
+                );
+
+                @include color( white );
+
+                @include fill( $app05 );
+
+                @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+                @include gradient(
+
+                    25deg,
+                    $faderade, 0.000, 0%,
+                    transparent, 1.000, 70%
+
+                );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 2rem 0;
+
+                    // last child
+                    &:last-child {
+
+                        margin: 0 0 0 0;
+
+                    }
+
+                }
+
+                // image
+                .article_image {
+
+                    position: relative;
+
+                    @include flex-v-b-h-c( false );
+
+                    flex-grow: 1;
+
+                    width: 100%;
+                    height: 16rem;
+                    margin: 0 2rem 0 0;
+
+                    overflow: hidden;
+
+                    text-indent: -999rem;
+
+                    background: {
+
+                        image: url(../img/billboard.00.jpg);
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( xlarge up ) {
+
+                        height: 24rem;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 100%;
+                        margin: 0 0 1rem 0;
+
+                    }
+
+                }
+
+                // content
+                .article_content {
+
+                    padding: 2rem 2rem 2rem 2rem;
+
+                    // topic
+                    .article_topic {
+
+                        @include flex-h-s-v-c( false );
+
+                        margin: 0 0 0.25rem 0;
+
+                        @include font( $industry, 0.75rem, 700 );
+
+                        @include color( $cvellow, 0.000 );
+
+                    }
+
+                    // title
+                    .article_title {
+
+                        margin: 0 0 0.25rem 0;
+
+                        @include font( $klavislim, 1.25rem, 400 );
+
+                        @include color( white );
+
+                        // link
+                        a {
+
+                            @include color( white );
+
+                            @include text( $up );
+
+                            transition: $all220;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( $blue );
+
+                            }
+
+                        }
+
+                    }
+
+                    // metadata
+                    .article_metadata {
+
+                        margin: 0 0 0.25rem 0;
+
+                        @include font( $industry, 0.75rem, 700 );
+
+                        @include color( white, 0.415 );
+
+                        // common
+                        span {
+
+                            display: inline-block;
+
+                        }
+
+                    }
+
+                    // excerpt
+                    p {
+
+                        margin: 0 0 0 0;
+
+                        @include font( $industry, 0.875rem, 500 );
+
+                        @include typo( 1.25rem, 0.035em );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // pagination
+        #news_navigation {
+
+            padding: 0 5rem 0 5rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                order: 30;
+
+                margin: 2rem 0 0 0;
+
+            }
+
+            // list
+            .pagination {
+
+                @include flex-h-c-v-c( false );
+
+                height: 3rem;
+                margin: 0 0 0 0;
+
+                list-style: none;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: 2rem;
+
+                }
+
+                // items
+                li {
+
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 0 0 0;
+                    padding: 0 0 0 0;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 2rem;
+                        height: 2rem;
+
+                    }
+
+                    // common
+                    span,
+                    a {
+
+                        @include flex-h-c-v-c( false );
+
+                        width: 3rem;
+                        height: 3rem;
+                        margin: 0 0 0 0;
+                        padding: 0 0 0 0;
+
+                        @include font( $industry, 0.875rem, 700 );
+
+                        @include text( inherit );
+
+                        @include color( $app05, 0.265  );
+
+                        transition: $all220;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 2rem;
+                            height: 2rem;
+
+                            @include font( $industry, 0.75rem, 700 );
+
+                        }
+
+                    }
+
+                    // link
+                    a {
+
+                        // hover state
+                        &:hover {
+
+                            @include color( $g140 );
+
+                            @include fill( $campaign );
+
+                        }
+
+                    }
+
+                    // span
+                    .current {
+
+                        padding: 0 0 0 0;
+
+                        @include color( $campaign );
+
+                        @include fill( $g140 );
+
+                    }
+
+                    // ellipsis
+                    &.ellipsis {
+
+                        // after
+                        &:after {
+
+                            @include flex-h-c-v-c( false );
+
+                            width: 3rem;
+                            height: 3rem;
+                            padding: 0 0 0.5rem 0;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // controls
+        #news_controls {
+
+            padding: 2.5rem 5rem 5rem 5rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                // @include hide;
+
+                order: 20;
+
+            }
+
+            // taxonomy filters
+            #news_taxonomy {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 0 0;
+
+                }
+
+                // title
+                .metadata_title {
+
+                    display: block;
+
+                    // margin: 0 0 0.75rem 0;
+                    margin: 0 0 0.25rem 0;
+
+                    @include font( $klavislim, 1rem, 400 );
+
+                    @include text( $up );
+
+                    @include typo( 1rem, 0.045em );
+
+                    @include color( $app05, 0.265 );
+
+                    // span
+                    em {
+
+                        @include font( $klavislim, 1rem, 500 );
+
+                        @include color( red );
+
+                    }
+
+                }
+
+                // common
+                .metadata {
+
+                    // mobile
+                    @include breakpoint ( medium down ) {
+
+                        // last child
+                        &:last-child {
+
+                            margin: 0 0 0 0;
+
+                        }
+
+                    }
+
+                    // group
+                    .taxonomy_group {
+
+                        @include flex-h-s-v-st( false );
+
+                        flex-wrap: wrap;
+
+                        // tags
+                        .taxonomy_item {
+
+                            @include flex-h-c-v-c( true );
+
+                            height: 2rem;
+                            // margin: 0 0.5rem 0.5rem 0;
+                            margin: 0.5rem 0.5rem 0 0;
+                            padding: 0.625rem 0.75rem 0.5rem 0.75rem;
+
+                            @include font( $industry, 0.6875rem, 600 );
+
+                            @include text( lowercase );
+
+                            @include typo( 0.875rem, 0.035em );
+
+                            @include color( white, 0.000 );
+
+                            @include fill( $g135, 0.000 );
+
+                            transition: $all220;
+
+                            @include shadowbox( 1rem, 3rem, black, 0.465 );
+
+                            // hover state
+                            &:hover {
+
+                                @include color( white, 0.000 );
+
+                                // @include fill( $campaign, 0.000 );
+                                @include fill( $blue, 0.000 );
+
+                            }
+
+                        }
+
+                    }
+
+                    // description
+                    &.description {
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include hide;
+
+                        }
+
+                    }
+
+                    // topics
+                    &.topics {
+
+                        margin: 0 0 2rem 0;
+
+                    }
+
+                    // animal types
+                    &.animal_types {
+
+                        margin: 0 0 2rem 0;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

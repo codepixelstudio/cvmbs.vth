@@ -1,0 +1,8 @@
+// stylesheet :: header styles
+
+    // styles
+    .site-header {
+
+        @include flex-h-s-v-st( false )
+
+    }

@@ -1,0 +1,408 @@
+// stylesheet :: service highlights styles
+
+    // settings
+    $highlights  : 1rem;
+    $pagebase    : #E5E7E7;
+    $testimonial : adjust-color(
+
+        $beige,
+        $hue          : 0%,
+        $saturation : -20%,
+        $lightness  : -15%,
+        $alpha         : -0.000
+
+    );
+
+    // styles
+    .highlights {
+
+        @include flex-v-c-h-c( false );
+
+        padding: 5rem 5rem 5rem 5rem;
+
+        @include fill( darken( $pagebase, 10% ) );
+
+        // testimonials class
+        &.testimonial,
+        &.statistic {
+
+            padding: 0 0 0 0;
+
+            @include fill( $pagebase );
+
+        }
+
+        // video
+        &.video {
+
+            padding: 0 0 0 0;
+
+            // highlight
+            .highlight {
+
+                width: 100%;
+
+            }
+
+            // layers
+            .layers {
+
+                position: relative;
+
+                @include flex-v-c-h-c( false );
+
+                width: 100%;
+                height: 100%;
+                padding: 5rem 5rem 5rem 5rem;
+
+                @include fill( red );
+
+                // common
+                &:before,
+                &:after {
+
+                    content: '';
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                }
+
+                // before
+                &:before {
+
+                    // @include hide;
+
+                    z-index: 10;
+
+                    background: {
+
+                        image: url(../img/billboards/billboard.18.jpg);
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                }
+
+                // after
+                &:after {
+
+                    z-index: 20;
+
+                    @include fill( $testimonial, 0.085 );
+
+                }
+
+            }
+
+            // highlight
+            .video {
+
+                // container
+                .video-container {
+
+                    position: relative;
+
+                    z-index: 100;
+
+                    width: 50vw;
+
+                    @include shadowbox( 1rem, 3.5rem, black, 0.465 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 100%;
+
+                    }
+
+                }
+
+                // video
+                .video {
+
+                    position: relative;
+
+                    padding: 56.25% 0 0 0;
+
+                    // @include shadowbox( 1rem, 4rem, black, 0.285 );
+
+                    // iframe
+                    iframe {
+
+                        position: absolute;
+
+                        top: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // statistic
+        &.stats {
+
+            position: relative;
+
+            @include flex-v-c-h-c( false );
+
+            width: 100%;
+            height: 100%;
+            margin: 0 0 0 0;
+            padding: 10rem 10rem 10rem 10rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 4rem 4rem 4rem 4rem;
+
+            }
+
+            // common
+            &:before,
+            &:after {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+            }
+
+            // before
+            &:before {
+
+                z-index: 10;
+
+                background: {
+
+                    image: url(../img/billboards/billboard.18.jpg);
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+                filter: grayscale( 0.5 );
+
+            }
+
+            // after
+            &:after {
+
+                z-index: 20;
+
+                @include fill( $testimonial, 0.085 );
+
+            }
+
+            // class
+            .entry {
+
+                position: relative;
+
+                z-index: 100;
+
+                display: block;
+
+                @include text( inherit, center );
+
+                // number
+                &.number {
+
+                    @include font( $vitesse, 5rem, 600 );
+
+                    @include typo( 6rem, 0.045em );
+
+                    @include color( $g140 );
+
+                }
+
+                // label
+                &.label {
+
+                    @include font( $klavislim, 1.5rem, 400 );
+                    // @include font( $industry, 1.25rem, 700 );
+
+                    @include text( $up, center );
+
+                    @include typo( 3rem, 0.045em );
+
+                    @include color( $app05, 0.265 );
+
+                }
+
+                // text
+                &.text {
+
+                    @include font( $industry, 1.25rem, 600 );
+                    // @include font( $klavislim, 2rem, 400 );
+
+                    @include color( $g135, 0.000 );
+
+                }
+
+            }
+
+        }
+
+        // testimonial
+        .testimonial {
+
+            position: relative;
+
+            @include flex-h-c-v-c( false );
+
+            width: 100%;
+            height: 100%;
+            margin: 0 0 2rem 0;
+            padding: 10rem 10rem 10rem 10rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 4rem 4rem 4rem 4rem;
+
+            }
+
+            // common
+            &:before,
+            &:after {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+            }
+
+            // before
+            &:before {
+
+                z-index: 10;
+
+                background: {
+
+                    image: url(../img/billboards/billboard.21.jpg);
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+            }
+
+            // after
+            &:after {
+
+                z-index: 20;
+
+                @include fill( $testimonial, 0.125 );
+
+            }
+
+            // content
+            .testimonial_content {
+
+                position: relative;
+
+                z-index: 100;
+
+                // quotation
+                .testimonial_quotation {
+
+                    position: relative;
+
+                    @include color( $app05 );
+
+                    // quote
+                    .quote {
+
+                        position: absolute;
+
+                        @include flex-v-c-h-c( true );
+
+                        width: 4rem;
+                        height: 4rem;
+                        padding: 2rem 0 0 0;
+
+                        @include font( $industry, 6rem, 600, italic );
+
+                        @include typo( 2rem, 0em );
+
+                        @include color( $g135, 0.765 );
+
+                    }
+
+                    // open
+                    .open {
+
+                        top: -1rem;
+                        left: -3.5rem;
+
+                    }
+
+                    // close
+                    .close {
+
+                        margin: 0 0 0 -1rem;
+
+                        // right: -4rem;
+                        bottom: -2rem;
+
+                    }
+
+                }
+
+                // attribution
+                .testimonial_attribution {
+
+                    margin: 0 0 0.5rem 0;
+
+                    @include font( $industry, 0.9375rem, 900 );
+
+                    @include text( $up );
+
+                    @include typo( 1rem, 0.025em );
+
+                    @include color( $g140 );
+
+                }
+
+                // context
+                .testimonial_context {
+
+                    @include font( $industry, 0.6875rem, 700 );
+
+                    @include text( $up );
+
+                    @include typo( 0.5rem, 0.0125em );
+
+                }
+
+            }
+
+        }
+
+    }

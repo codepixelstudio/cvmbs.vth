@@ -1,0 +1,74 @@
+// stylesheet :: brand.foundation styles
+
+    // settings
+    $brand_linear : 4rem;
+
+    // styles
+    #brand-foundation {
+
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+        left: 4rem;
+
+        z-index: 100;
+
+        @include flex-h-s-v-c( false );
+
+        width: 10rem;
+        height: $brand_linear;
+        margin: 0;
+        padding: 0;
+
+        .brand-primary {
+
+            @include flex-h-s-v-c( false );
+
+            font: {
+
+                family: $industry;
+                size: 0.6875rem;
+                weight: 700;
+
+            }
+
+            line-height: 0.75rem;
+
+            letter-spacing: 0.105em;
+
+            text: {
+
+                transform: $up;
+
+            }
+
+            color: white;
+
+            .dot {
+
+                font: {
+
+                    style: normal;
+
+                }
+
+                color: transparentize( white, 0.425 );
+
+            }
+
+            .accent {
+
+                font: {
+
+                    weight: 700;
+
+                }
+
+                color: $gold;
+
+            }
+
+        }
+
+    }

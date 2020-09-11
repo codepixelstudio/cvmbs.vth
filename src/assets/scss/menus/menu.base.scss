@@ -1,0 +1,97 @@
+// stylesheet :: site menu component styles
+
+    // settings
+    $menu_width  : -24rem;
+    $menu_height : calc( 100vh - 4rem );
+    // $menu_height : 100vh;
+
+    // styles
+    #base-menu {
+
+        position: fixed;
+
+        top: 4rem;
+        bottom: 0;
+        left: 0;
+
+        z-index: 200;
+
+        @include flex-v-c-h-c( false );
+
+        width: $menu_width;
+        height: $menu_height;
+        margin: 0;
+        padding: 0;
+
+        // border-left: $borders;
+
+        overflow: visible;
+
+        visibility: visible;
+
+        @include fill( $dark-nite, 0.415 );
+
+        box-shadow: none;
+
+        transform: translate3d( $menu_width, 0, 0 );
+
+        transition: none;
+
+        // open state
+        &.is-open {
+
+            // the emptiness
+
+        }
+
+        // remove !!!
+        &.site-menu-open {
+
+            //
+
+        }
+
+        // close button
+        #close-site-menu {
+
+            position: absolute;
+
+            top: -4rem;
+            right: 0;
+
+            z-index: 20;
+
+            width: 4rem;
+            height: 4rem;
+            margin: 0;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+            @include fill( $px-orange, 0.345 );
+
+            transition: all 220ms linear 0ms;
+
+            // hover state
+            &:hover {
+
+                @include fill( $px-orange, 0.125 );
+
+            }
+
+            // svg
+            .icon {
+
+                width: 1.5rem;
+                height: 1.5rem;
+
+                // path
+                .path {
+
+                    fill: white;
+
+                }
+
+            }
+
+        }
+
+    }

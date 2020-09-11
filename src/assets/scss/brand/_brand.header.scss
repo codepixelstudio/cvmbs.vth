@@ -1,0 +1,114 @@
+.site-branding {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: .75em;
+	color: white;
+	font-size: 1em;
+
+	@include bpoint(40em) {
+		padding: .9375em 1.25em .9375em .625em;
+		padding-left: 1em;
+	}
+}
+
+.csu-signature {
+	margin-right: .75em;
+	padding-right: .75em;
+	border-right: .125em solid white;
+	font-size: 1em;
+
+	@include bpoint(phone) {
+		margin-right: .875em;
+		padding-right: .875em;
+	}
+
+	@include bpoint(40em) {
+		margin-right: .9375em;
+		padding-right: .9375em;
+		font-size: 1.3125em;
+	}
+}
+
+.signature-link {
+	display: block;
+	width: $acronym_width;
+	height: $signature_height;
+	background: url(../img/signatures/signature-acronym.svg) no-repeat center center / contain;
+	color: white;
+
+	@include bpoint(50em) {
+		width: $stacked_width;
+		background-image: url(../img/signatures/signature-stacked.svg);
+	}
+
+	@include bpoint(70em) {
+		width: $oneline_width;
+		background-image: url(../img/signatures/signature-oneline.svg);
+	}
+}
+
+.site-identifier {
+	max-width: 25em;
+	margin: 0 auto 0 0;
+	font-family: $proxima;
+	font-size: .875em;
+	font-weight: 600;
+	letter-spacing: .015em;
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	@include bpoint(phone) {
+		font-size: 1em;
+	}
+
+	@include bpoint(40em) {
+		font-size: 1.0625em;
+	}
+
+	@include bpoint(50em) {
+		font-size: 1.125em;
+	}
+
+	@include bpoint(60em) {
+		font-size: 1.1875em;
+	}
+
+	@include bpoint(70em) {
+		font-size: 1.25em;
+	}
+
+	& + & {
+		display: none;
+		text-align: right;
+
+		@include bpoint(50em) {
+			flex-shrink: 0;
+			display: block;
+			margin: 0 0 0 2.25em;
+			font-size: .875em;
+		}
+
+		@include bpoint(70em) {
+			font-size: 1em;
+		}
+	}
+
+	&.identifier--college {
+		max-width: 18em;
+	}
+}
+
+.identifier-link {
+	color: white;
+	text-decoration: none;
+
+	&:visited {
+		color: white;
+	}
+
+	&:hover, &:active, &:focus {
+		color: white;
+	}
+}

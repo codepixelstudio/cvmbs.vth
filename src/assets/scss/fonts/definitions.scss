@@ -1,0 +1,488 @@
+// stylesheet :: font definitions
+
+/* Decima Mono */
+    // lite
+    @font-face {
+        font-family: 'Decima Mono';
+        src: url('../fonts/decima/DecimaMonoPro_Lite.otf')
+             format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+    // regular
+    @font-face {
+        font-family: 'Decima Mono';
+        src: url('../fonts/decima/DecimaMonoPro_Font.otf')
+             format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    // bold
+    @font-face {
+        font-family: 'Decima Mono';
+        src: url('../fonts/decima/DecimaMonoPro_Bold.otf')
+             format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+    /* codicons */
+    // regular
+    @font-face {
+        font-family: 'codicons';
+        src: url('../fonts/codicons/codicons.woff')
+             format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+/* Saira */
+    // condensed
+        // 400 - Regular
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Regular.ttf')
+                 format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Regular.ttf')
+                 format('truetype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        // 500 - Medium
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Medium.ttf')
+                 format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Medium.ttf')
+                 format('truetype');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        // 700 - Bold
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Bold.ttf')
+                 format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Saira Condensed';
+            src: url('../fonts/saira/SairaCondensed-Bold.ttf')
+                 format('truetype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+    // standard
+        // 300 - Light
+        @font-face {
+            font-family: 'Saira';
+            src: url('../fonts/saira/SairaSemiCondensed-Light.ttf')
+                 format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Saira';
+            src: url('../fonts/saira/SairaSemiCondensed-Light.ttf')
+                 format('truetype');
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+        // 400 - Regular
+        @font-face {
+            font-family: 'Saira';
+            src: url('../fonts/saira/SairaSemiCondensed-Regular.ttf')
+                 format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Saira';
+            src: url('../fonts/saira/SairaSemiCondensed-Regular.ttf')
+                 format('truetype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+
+/* Klavika */
+    // condensed
+        // regular
+        @font-face {
+            font-family: 'Klavika Condensed';
+            src: url('../fonts/klavika/Klavika-RegularCond.otf')
+                    format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Klavika Condensed';
+            src: url('../fonts/klavika/Klavika-RegularCondItalic.otf')
+                    format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        // medium
+        @font-face {
+            font-family: 'Klavika Condensed';
+            src: url('../fonts/klavika/Klavika-MediumCond.otf')
+                    format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+
+        }
+        // bold
+        @font-face {
+            font-family: 'Klavika Condensed';
+            src: url('../fonts/klavika/Klavika-BoldCond.otf')
+                format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Klavika Condensed';
+            src: url('../fonts/klavika/Klavika-BoldCondItalic.otf')
+                    format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+    // standard
+        // light
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-Light.otf')
+                    format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-LightItalic.otf')
+                    format('opentype');
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+        // regular
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-Regular.otf')
+                    format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-RegularItalic.otf')
+                    format('opentype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+        // medium
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-Medium.otf')
+                    format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-MediumItalic.otf')
+                    format('opentype');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        // bold
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-Bold.otf')
+                    format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Klavika';
+            src: url('../fonts/klavika/Klavika-BoldItalic.otf')
+                    format('opentype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+
+/* Industry */
+    // regular
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_book_macroman/Industry-Book-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_book_macroman/Industry-Book-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_book_macroman/Industry-Book-webfont.ttf')
+             format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_bookitalic_macroman/Industry-BookItalic-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_bookitalic_macroman/Industry-BookItalic-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_bookitalic_macroman/Industry-BookItalic-webfont.ttf')
+             format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
+    // medium
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_medium_macroman/Industry-Medium-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_medium_macroman/Industry-Medium-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_medium_macroman/Industry-Medium-webfont.ttf')
+             format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_mediumitalic_macroman/Industry-MediumItalic-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_mediumitalic_macroman/Industry-MediumItalic-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_mediumitalic_macroman/Industry-MediumItalic-webfont.ttf')
+             format('truetype');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+    // demi
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_demi_macroman/Industry-Demi-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_demi_macroman/Industry-Demi-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_demi_macroman/Industry-Demi-webfont.ttf')
+             format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_demiitalic_macroman/Industry-DemiItalic-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_demiitalic_macroman/Industry-DemiItalic-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_demiitalic_macroman/Industry-DemiItalic-webfont.ttf')
+             format('truetype');
+        font-weight: 600;
+        font-style: italic;
+        font-display: swap;
+    }
+    // bold
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_bold_macroman/Industry-Bold-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_bold_macroman/Industry-Bold-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_bold_macroman/Industry-Bold-webfont.ttf')
+             format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_bolditalic_macroman/Industry-BoldItalic-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_bolditalic_macroman/Industry-BoldItalic-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_bolditalic_macroman/Industry-BoldItalic-webfont.ttf')
+             format('truetype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
+    // black
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_black_macroman/Industry-Black-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_black_macroman/Industry-Black-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_black_macroman/Industry-Black-webfont.ttf')
+             format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Industry';
+        src: url('//static.colostate.edu/fonts/industry/industry_blackitalic_macroman/Industry-BlackItalic-webfont.woff2')
+             format('woff2'),
+             url('//static.colostate.edu/fonts/industry/industry_blackitalic_macroman/Industry-BlackItalic-webfont.woff')
+             format('woff'),
+             url('//static.colostate.edu/fonts/industry/industry_blackitalic_macroman/Industry-BlackItalic-webfont.ttf')
+             format('truetype');
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+    }
+
+
+/* Proxima Nova */
+    // regular
+    @font-face {
+        font-family: 'ProximaNova';
+        src: url('../fonts/proxima/ProximaNova_SemiBold.woff')
+             format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    // bold
+    @font-face {
+        font-family: 'ProximaNova';
+        src: url('../fonts/proxima/ProximaNova_Bold.woff')
+             format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+/* Vitesse */
+    // regular
+    @font-face {
+        font-family: 'Vitesse';
+        src: url('../fonts/vitesse/Vitesse-Medium.woff')
+             format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    // bold
+    @font-face {
+        font-family: 'Vitesse';
+        src: url('../fonts/vitesse/Vitesse-Bold.woff')
+             format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+/* Factoria */
+    // 500 - Medium
+    @font-face {
+        font-family: 'Factoria';
+        src: url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.eot');
+        src: url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.eot?#iefix')
+            format('embedded-opentype'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.woff2')
+            format('woff2'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.woff')
+            format('woff'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.ttf')
+            format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Factoria';
+        src: url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.eot');
+        src: url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.eot?#iefix')
+            format('embedded-opentype'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.woff2')
+            format('woff2'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.woff')
+            format('woff'),
+            url('//static.colostate.edu/fonts/factoria/factoria_medium_macroman/Factoria-Medium-webfont.ttf')
+            format('truetype');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    // 700 - Bold
+    @font-face {
+        font-family: 'Factoria';
+        src: url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.eot');
+        src: url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.eot?#iefix')
+            format('embedded-opentype'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.woff2')
+            format('woff2'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.woff')
+            format('woff'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.ttf')
+            format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Factoria';
+        src: url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.eot');
+        src: url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.eot?#iefix')
+            format('embedded-opentype'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.woff2')
+            format('woff2'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.woff')
+            format('woff'),
+            url('//static.colostate.edu/fonts/factoria/factoria_bold_macroman/Factoria-Bold-webfont.ttf')
+            format('truetype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }

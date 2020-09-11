@@ -1,0 +1,775 @@
+// stylesheet :: panel.social.media component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-social {
+
+        @include gradient( 0deg, $roarange, 0.425, 0%, transparent, 1.000, 50% );
+
+        // padding: 4rem 1rem 0 1rem;
+
+        overflow-y: scroll;
+
+        // header
+        .panel-header {
+
+            @include fill( $roarange, 0.565 );
+
+        }
+
+        // social feed
+        #social-stream {
+
+			.sm-container {
+
+				// padding: 32px;
+				padding: 16px;
+
+				background: {
+
+					color: transparent;
+
+				}
+
+			}
+
+			.sm-card {
+
+				margin: 0 0 16px 0;
+
+				color: white;
+
+				background: {
+
+					color: transparentize(white, 0.965);
+
+				}
+
+				opacity: 0.000;
+
+				transition: background-color 220ms linear 0ms;
+
+				&:last-child {
+
+					margin-bottom: 0;
+
+				}
+
+				&:hover {
+
+					background: {
+
+						color: transparentize(white, 0.915);
+
+					}
+
+				}
+
+				a {
+
+					color: $gold;
+
+				}
+
+				.sm-card-header {
+
+					position: relative;
+
+					padding: 24px 40px 0px 24px;
+
+					.platform-label {
+
+						position: absolute;
+
+						top: 0;
+						right: 0;
+
+						z-index: 100;
+
+						.platform-icon-box {
+
+							position: relative;
+
+							z-index: 100;
+
+							display: inline-block;
+
+							width: 32px;
+							height: 32px;
+
+							&:before {
+
+								content: '';
+
+								position: absolute;
+
+								top: 0;
+								right: 0;
+
+								width: 0;
+								height: 0;
+
+								border-style: solid;
+								border-width: 0 60px 60px 0;
+
+							}
+
+							&.twitter {
+
+								&:before {
+
+									border-top-color: transparent;
+									border-bottom-color: transparent;
+									border-left-color: transparent;
+									border-right-color:
+
+										adjust-color(
+
+											$twitter,
+											$hue 	 	: 0%,
+											$saturation : -30%,
+											$lightness  : 2.5%,
+											$alpha 		: -0.105
+
+										)
+
+									;
+
+
+								}
+
+							}
+
+							&.facebook {
+
+								&:before {
+
+									border-top-color: transparent;
+									border-bottom-color: transparent;
+									border-left-color: transparent;
+									border-right-color:
+
+										adjust-color(
+
+											$facebook,
+											$hue 	 	: 0%,
+											$saturation : -5%,
+											$lightness  : 0%,
+											$alpha 		: -0.115
+
+										)
+
+									;
+
+
+								}
+
+							}
+
+							&.youtube {
+
+								&:before {
+
+									border-top-color: transparent;
+									border-bottom-color: transparent;
+									border-left-color: transparent;
+									border-right-color:
+
+										adjust-color(
+
+											$youtube,
+											$hue 	 	: 0%,
+											$saturation : -20%,
+											$lightness  : 5%,
+											$alpha 		: -0.285
+
+										)
+
+									;
+
+
+								}
+
+							}
+
+							&.instagram {
+
+								&:before {
+
+									width: 60px;
+									height: 60px;
+
+									border: none;
+
+									background: {
+
+										image: url(../img/patterns/instagram_corner.png);
+										repeat: no-repeat;
+										size: 60px 60px;
+										position: top right;
+
+									}
+
+									opacity: 0.815;
+
+								}
+
+								&:after {
+
+									// content: '';
+
+									position: absolute;
+
+									top: 0;
+									right: 0;
+
+									width: 0;
+									height: 0;
+
+									border-style: solid;
+									border-width: 0 60px 60px 0;
+
+									border-top-color: transparent;
+									border-bottom-color: transparent;
+									border-left-color: transparent;
+									border-right-color:transparent;
+
+									border-image:
+
+										linear-gradient(
+
+											-125deg,
+											transparentize(#F38548, 0.125) 0%,
+											transparent 40%,
+											transparent 100%
+
+										)
+
+									;
+
+								}
+
+							}
+
+							.platform-icon {
+
+								position: absolute;
+
+								top: 0;
+								right: 0;
+
+								z-index: 10;
+
+								display: flex;
+
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+
+								width: 32px;
+								height: 32px;
+								padding: 2px 0 0 0;
+
+								font: {
+
+									size: 20px;
+
+								}
+
+								line-height: 32px;
+
+								color: white;
+
+							}
+
+						}
+
+					}
+
+				}
+
+				.sm-card-user {
+
+					position: relative;
+
+					z-index: 200;
+
+					display: flex;
+
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+
+					padding: 0;
+
+					&.retweet-user-shift-class {
+
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
+
+					}
+
+					.sm-user {
+
+						display: flex;
+
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+
+						&.retweet-user-sm-user-rt {
+
+							.user-link {
+
+								justify-content: flex-start;
+
+							}
+
+							.sm-avatar {
+
+								display: none;
+
+							}
+
+							.sm-user-name {
+
+								&.retweet-user-shift-class {
+
+									.name {
+
+										position: relative;
+
+										display: flex;
+
+										flex-direction: row;
+										justify-content: flex-start;
+										align-items: center;
+
+										height: 24px;
+										padding: 0 0 0 24px;
+
+										font: {
+
+											family: $industry;
+											size: 10px;
+                                            style: italic;
+
+										}
+
+										line-height: initial;
+
+										letter-spacing: 0.035em;
+
+										color: transparentize(white, 0.525);
+
+										.fa {
+
+											position: absolute;
+
+											top: 0;
+											bottom: 0;
+											left: 0;
+
+											z-index: 10;
+
+											display: inline-flex;
+
+											flex-direction: column;
+											justify-content: center;
+											align-items: center;
+
+											width: 24px;
+											height: 24px;
+											margin: 0;
+											padding: 0;
+
+											font: {
+
+												size: 12px;
+
+											}
+
+											&:before {
+
+												margin: 0 0 1px 0;
+
+											}
+
+										}
+
+									}
+
+									.handle {
+
+										display: none;
+
+									}
+
+								}
+
+							}
+
+						}
+
+						.user-link {
+
+							display: flex;
+
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: center;
+
+						}
+
+						.sm-avatar {
+
+							flex-grow: 1;
+
+							width: 48px;
+							min-width: 48px;
+							height: 48px;
+							margin: 0 12px 0 0;
+
+							background: {
+
+								repeat: no-repeat;
+								size: cover;
+								position: center center;
+
+							}
+
+						}
+
+						.sm-user-name {
+
+							display: flex;
+
+							flex-direction: column;
+							justify-content: center;
+							align-items: flex-start;
+
+							flex-grow: 0;
+
+							.sm-name {
+
+								display: block;
+
+								line-height: 16px;
+
+								&.name {
+
+									font: {
+
+										family: $industry;
+										size: 12px;
+                                        weight: 700;
+
+									}
+
+									color: $orange;
+
+								}
+
+								&.handle {
+
+									font: {
+
+										family: $industry;
+										size: 10px;
+                                        weight: 600;
+
+									}
+
+									letter-spacing: 0.035em;
+
+									color: transparentize(white, 0.315);
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+				.sm-card-content {
+
+					display: block;
+
+					padding: 8px 0 16px 0;
+
+				}
+
+				.sm-content-component {
+
+					display: block;
+
+					margin: 0;
+					padding: 8px 24px 8px 24px;
+
+				}
+
+				.sm-image-box {
+
+					&.slick-slider {
+
+						.slick-arrow {
+
+							position: absolute;
+
+							top: 50%;
+
+							z-index: 20;
+
+							display: flex;
+
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+
+							width: 32px;
+							height: 32px;
+							margin-top: -16px;
+
+							overflow: hidden;
+
+							background-color: transparentize(white, 0.825);
+
+							transition: $all220;
+
+							&:hover {
+
+								background-color: transparentize($orange, 0.215);
+
+							}
+
+							&.slick-prev {
+
+								left: 24px;
+
+							}
+
+							&.slick-next {
+
+								right: 24px;
+
+							}
+
+							.arrow-icon {
+
+								position: absolute;
+
+								top: -8px;
+								right: -8px;
+								bottom: -8px;
+								left: -8px;
+
+								width: 48px;
+								height: 48px;
+
+							}
+
+						}
+
+						.slick-list {
+
+							z-index: 10;
+
+						}
+
+					}
+
+				}
+
+				.sm-text,
+				.sm-message-text {
+
+					font: {
+
+						family: $industry;
+						size: 11px;
+                        weight: 600;
+						weight: normal;
+
+					}
+
+					line-height: 16px;
+
+					letter-spacing: 0.025em;
+
+					color: transparentize(white, 0.035);
+
+				}
+
+				.sm-title {
+
+					font: {
+
+						family: $klavislim;
+						size: 16px;
+
+					}
+
+					line-height: 22px;
+
+					letter-spacing: 0.045em;
+
+					a {
+
+						// color: $green;
+
+					}
+
+				}
+
+				.sm-message-text {
+
+					margin: 0;
+
+				}
+
+				.sm-card-footer {
+
+					display: flex;
+
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+
+					height: 32px;
+					margin: 0;
+					padding: 0 16px 0 16px;
+
+					border: none;
+
+					font: {
+
+						family: $industry;
+						size: 11px;
+                        weight: 600;
+						weight: normal;
+
+					}
+
+					background-color: transparentize(white, 0.945);
+
+					.sm-like-box {
+
+						display: flex;
+
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+
+						height: 32px;
+
+						color: transparentize(white, 0.435);
+
+						.sm-icon {
+
+							display: inline-flex;
+
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: center;
+
+							height: 32px;
+							margin: 0 12px 0 0 ;
+
+						}
+
+						.fa {
+
+							display: inline-flex;
+
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+
+							height: 32px;
+							margin: 0 6px 0 0;
+
+							font: {
+
+								size: 14px;
+								weight: normal;
+
+							}
+
+							&.fa-retweet {
+
+								color: $green;
+
+							}
+
+							&.fa-heart {
+
+								font: {
+
+									size: 12px;
+
+								}
+
+								color: $red;
+
+							}
+
+							&.fa-comment,
+							&.fa-comments,
+							&.fa-comments-o {
+
+								color: $gold;
+
+							}
+
+							&.fa-thumbs-up {
+
+								color: $green;
+
+							}
+
+							&.fa-share,
+							&.fa-tv {
+
+								color: $orange;
+
+							}
+
+						}
+
+					}
+
+					.sm-time-point {
+
+						display: flex;
+
+						flex-direction: row;
+						justify-content: flex-end;
+						align-items: center;
+
+						height: 32px;
+
+						font: {
+
+							family: $industry;
+							size: 9px;
+                            weight: 600;
+
+						}
+
+						color: transparentize(white, 0.185);
+
+					}
+
+				}
+
+			}
+
+		}
+
+    }

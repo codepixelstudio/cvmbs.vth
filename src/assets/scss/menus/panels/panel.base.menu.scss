@@ -1,0 +1,45 @@
+// stylesheet :: panel.site.menu component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #base-menu-panels {
+
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        z-index: 10;
+
+        width: calc( 100% - 4rem );
+        height: calc( 100vh - 4rem );
+        margin: 0;
+        padding: 0;
+
+        // @include fill( white, 1.000 );
+
+        // menu open state
+        .is-open & {
+
+            // the emptiness
+
+        }
+
+        // main menu
+        #menu-panel-main {
+
+            @include gradient( 0deg, $g140, 0.325, 0%, transparent, 1.000, 50% );
+
+            // header
+            .panel-header {
+
+                @include fill( $g135, 0.445 );
+
+            }
+
+        }
+
+    }

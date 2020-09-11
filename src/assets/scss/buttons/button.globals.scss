@@ -1,0 +1,304 @@
+// stylesheet :: global menu button styles
+
+    // settings
+    $button_width  : 4rem;
+    $button_height : 4rem;
+    $button_hover  : all 280ms linear 0ms;
+
+    // menu.button
+    .menu-button {
+
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+
+        width: $button_width;
+        height: $button_height;
+        margin: 0;
+        padding: 0;
+
+        transition: $button_hover;
+
+    }
+
+    // ui.button
+    .ui-button {
+
+        position: relative;
+
+        @include flex-h-c-v-c( false );
+
+        height: 3rem;
+        margin: 0;
+        padding: 1px 1.5rem 0 1.5rem;
+
+        border: 1px solid transparent;
+
+        @include fill( white, 0.965 );
+
+        transition: all 480ms $outex 0ms;
+
+        &:before,
+        &:after {
+
+            position: absolute;
+
+            z-index: 0;
+
+        }
+
+        &:hover {
+
+            border-color: transparentize( $gold, 0.385 );
+
+        }
+
+        @include font( $industry, 0.6875rem, 600 );
+
+        @include typo( 0.75rem, 0.085em );
+
+        @include text( $up );
+
+        @include color( white, 0.000 );
+
+        em {
+
+            font: {
+
+                weight: 900;
+                style: normal;
+
+            }
+
+            color: transparentize( white, 0.565 );
+
+        }
+
+        strong {
+
+            font: {
+
+                weight: inherit;
+
+            }
+
+            color: $gold;
+
+        }
+
+    }
+
+    // corners button
+    .corners-button {
+
+        position: relative;
+
+        @include flex-h-c-v-c( false );
+
+        height: 4rem;
+        margin: 1.375rem 0 0 0;
+        padding: 0 1.5rem 0 1.5rem;
+
+        @include font( $klavislim, 0.875rem, 500 );
+
+        line-height: 0.6875rem;
+
+        letter-spacing: 0.115em;
+
+        @include text( $up );
+
+        color: white;
+
+        @include fill( white, 1.000 );
+
+        transition: all 220ms linear 0ms;
+
+        // hover state
+        &:hover {
+
+            // corners
+            .corners {
+
+                // common
+                &.right,
+                &.left {
+
+                    // lines
+                    &:before,
+                    &:after {
+
+                        transition: all 120ms $ocirc 0ms;
+
+                    }
+
+                }
+
+                // left
+                &.left {
+
+                    // top
+                    &:before {
+
+                        height: calc( 100% - 0.75rem );
+
+                        transition-delay: 0ms;
+
+                    }
+
+                    // bottom
+                    &:after {
+
+                        width: calc( 100% - 0.75rem );
+
+                        transition-delay: 30ms;
+
+                    }
+
+                }
+
+                // right
+                &.right {
+
+                    // top
+                    &:before {
+
+                        width: calc( 100% - 0.75rem );
+
+                        transition-delay: 0ms;
+
+                    }
+
+                    // bottom
+                    &:after {
+
+                        height: calc( 100% - 0.75rem );
+
+                        transition-delay: 30ms;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // corners
+        .corners {
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            z-index: 0;
+
+            width: 100%;
+            height: 4rem;
+
+            // left
+            &.left {
+
+                left: 0;
+
+                // common
+                &:before,
+                &:after {
+
+                    left: 0;
+
+                    border-right: none;
+
+                }
+
+                // top
+                &:before {
+
+                    top: 0;
+
+                    border-bottom: none;
+
+                    transition-delay: 0ms;
+
+                }
+
+                // bottom
+                &:after {
+
+                    bottom: 0;
+
+                    border-top: none;
+
+                    transition-delay: 30ms;
+
+                }
+
+            }
+
+            // right
+            &.right {
+
+                right: 0;
+
+                // common
+                &:before,
+                &:after {
+
+                    right: 0;
+
+                    border-left: none;
+
+                }
+
+                // top
+                &:before {
+
+                    top: 0;
+
+                    border-bottom: none;
+
+                    transition-delay: 0ms;
+
+                }
+
+                // bottom
+                &:after {
+
+                    bottom: 0;
+
+                    border-top: none;
+
+                    transition-delay: 30ms;
+
+                }
+
+            }
+
+            // lines
+            &:before,
+            &:after {
+
+                content: '';
+
+                position: absolute;
+
+                width: 0.75rem;
+                height: 0.75rem;
+
+                border: 1px solid $gold;
+
+                transition: all 240ms $ocirc 0ms;
+
+            }
+
+        }
+
+        // hide
+        .hide {
+
+            @include hide;
+
+        }
+
+    }

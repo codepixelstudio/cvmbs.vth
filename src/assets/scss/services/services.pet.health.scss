@@ -1,0 +1,126 @@
+// stylesheet :: service pet health styles
+
+    // settings
+    $pet_health : 1rem;
+
+    // styles
+    .service_section {
+
+        // class
+        &.pet_health {
+
+            padding: 2rem calc( 8vw - 1rem ) 2rem calc( 8vw - 1rem );
+            padding: 2.5rem 4rem 2.5rem 4rem;
+
+            // header
+            .header_block {
+
+                @include flex-h-j-v-b( false );
+
+                // heading
+                h2 {
+
+                    margin: 0 0 0.5rem 1rem;
+
+                }
+
+                // link
+                a {
+
+                    @include flex-v-b-h-e( true );
+
+                    height: 3rem;
+                    margin: 0 1rem 1rem 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include typo( 0.5rem, 0.045em );
+
+                    @include text( $up );
+
+                    @include color( $g140 );
+
+                }
+
+            }
+
+            // container
+            .links {
+
+                @include flex-h-s-v-st( false );
+
+            }
+
+            // links
+            .post_link {
+
+                position: relative;
+
+                @include flex-v-b-h-s( true );
+
+                width: 33.3333333%;
+                // min-width: 16rem;
+                min-height: 12rem;
+                margin: 0 1rem 0 1rem;
+                padding: 2rem 2rem 1.75rem 2rem;
+
+                @include text( none );
+
+                background: {
+
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+                @include shadowbox( 1rem, 3rem, black, 0.635 );
+
+                // after
+                &:after {
+
+                    content: '';
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 10;
+
+                    @include gradient(
+
+                        180deg,
+                        transparent, 1.000, 0%,
+                        $beige, 0.000, 100%
+
+                    );
+
+                }
+
+                // label
+                .post_link_label {
+
+                    position: relative;
+
+                    z-index: 100;
+
+                    @include flex-h-s-v-c( false );
+
+                    height: 1rem;
+
+                    @include font( $industry, 0.875rem, 600 );
+
+                    @include text( none );
+
+                    @include color( $g135 );
+
+                }
+
+            }
+
+        }
+
+    }

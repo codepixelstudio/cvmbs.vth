@@ -1,0 +1,108 @@
+// stylesheet :: appointments block styles
+
+    // settings
+    $appointments : 1rem;
+
+    // styles
+    .referrals {
+
+        @include flex-h-e-v-c( false );
+
+        // block
+        .referral_block {
+
+            position: relative;
+
+            @include flex-h-s-v-c( true );
+
+            width: auto;
+            height: 3rem;
+            margin: 1rem 0 0 0;
+            padding: 0 1rem 0 2.5rem;
+
+            border: 1px solid;
+
+            @include font( $industry, 0.75rem, 700 );
+
+            @include color( white );
+
+            // @include fill( red, 0.615 );
+
+            @include shadowbox( 1rem, 2.5rem, black, 0.565 );
+
+            // before
+            &:before {
+
+                @include codicon( 1rem, 1rem, 0, 1rem, white, '\ED50' );
+
+                position: absolute;
+
+                top: 0.875rem;
+                bottom: 1rem;
+                left: 0.875rem;
+
+            }
+
+            // required
+            &.required {
+
+                // width: 100%;
+
+                border-color: $roarange;
+
+                @include fill( darken( $roarange, 15% ), 0.365 );
+
+                // before
+                &:before {
+
+                    @include color( $roarange );
+
+                }
+
+            }
+
+            // schedule
+            &.schedule {
+
+                border-color: $px-green;
+
+                @include fill( $dark, 0.365 );
+
+                // before
+                &:before {
+
+                    content: '\ED72';
+
+                    @include color( $px-green );
+
+                }
+
+            }
+
+        }
+
+        // link
+        .referral_link {
+
+            @include flex-h-c-v-c( false );
+
+            // width: 100%;
+            height: 3rem;
+            margin: 1rem 0 0 1rem;
+            padding: 0 1rem 0 1rem;
+
+            @include font( $klavislim, 0.875rem, 400 );
+
+            @include text( $up );
+
+            @include typo( 0.75rem, 0.025em );
+
+            @include fill( white, 0.965 );
+
+            @include color( white );
+
+            @include shadowbox( 1rem, 2.5rem, black, 0.565 );
+
+        }
+
+    }

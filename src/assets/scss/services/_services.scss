@@ -1,0 +1,43 @@
+// stylesheet :: services post stylesheet compiler
+
+    // globals
+    @import 'services.global';
+
+    // archive
+    @import 'services.archive';
+
+    // description
+    @import 'services.description';
+
+    // highlight
+    @import 'services.highlight';
+
+    // pet types
+    @import 'services.pet.types';
+
+    // appointments
+    @import 'services.appointments';
+
+    // referrals
+    @import 'services.referrals';
+
+    // staff
+    @import 'services.staff';
+
+    // contact
+    @import 'services.contact';
+
+    // clinical trials
+    @import 'services.clinical.trials';
+
+    // pet health
+    @import 'services.pet.health';
+
+    // giving
+    @import 'services.giving';
+
+    // forms
+    @import 'services.forms';
+
+    // notification
+    @import 'services.notification';

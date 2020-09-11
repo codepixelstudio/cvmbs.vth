@@ -1,0 +1,357 @@
+// stylesheet :: menu.site button styles
+
+    // settings
+    $site_menu : 1rem;
+
+    // styles
+    .main-menu-button {
+
+        // @include hide;
+
+        width: 5rem;
+        height: 5rem;
+        margin: 0 0 0 auto;
+        padding: 0;
+
+        @include fill( white, 0.925 );
+
+        transform: translate3d( 0, 0, 0 );
+
+        transition: all 320ms $outex 0ms;
+
+        -webkit-backface-visibility: visible;
+
+        // mobile
+        @include breakpoint ( medium down ) {
+
+            flex: 0 0 auto;
+
+            display: block;
+
+        }
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            width: 4rem;
+            height: 4rem;
+
+        }
+
+        // line
+        &:after {
+
+            -webkit-backface-visibility: visible;
+
+        }
+
+        // hover state
+        &:hover {
+
+            @include fill( white, 0.865 );
+
+            cursor: pointer;
+
+            // icon
+            .button-icon {
+
+                // open
+                &.open-menu {
+
+                    transition: all 220ms linear 0ms;
+
+                    // lines
+                    .line {
+
+                        width: 1.625rem;
+
+                        fill-opacity: 1.000;
+
+                        transform: translate3d( -0.25rem, 0, 0 );
+
+                        transition: all 480ms $oquin 0ms;
+
+                    }
+
+                    // dots
+                    .dot {
+
+                        width: 0.25rem;
+
+                        fill-opacity: 1.000;
+
+                        transform: translate3d( -0.125rem, 0, 0 );
+
+                        transition: all 480ms $oquin 0ms;
+
+                    }
+
+                    // open group
+                    .open {
+
+                        // line 1
+                        .l1 {
+
+                            transition-delay: 0ms;
+
+                        }
+
+                        // line 2
+                        .l2 {
+
+                            transition-delay: 10ms;
+
+                        }
+
+                        // line 3
+                        .l3 {
+
+                            transition-delay: 25ms;
+
+                        }
+
+                        // line 4
+                        .l4 {
+
+                            transition-delay: 45ms;
+
+                        }
+
+                        // line 5
+                        .l5 {
+
+                            transition-delay: 70ms;
+
+                        }
+
+                        // line 6
+                        .l6 {
+
+                            transition-delay: 100ms;
+
+                        }
+
+                        // dot 1
+                        .d1 {
+
+                            transition-delay: 0ms;
+
+                        }
+
+                        // dot 2
+                        .d2 {
+
+                            transition-delay: 10ms;
+
+                        }
+
+                        // dot 3
+                        .d3 {
+
+                            transition-delay: 25ms;
+
+                        }
+
+                        // dot 4
+                        .d4 {
+
+                            transition-delay: 45ms;
+
+                        }
+
+                        // dot 5
+                        .d5 {
+
+                            transition-delay: 70ms;
+
+                        }
+
+                        // dot 6
+                        .d6 {
+
+                            transition-delay: 100ms;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // open
+            .open {
+
+                color: $gold;
+
+            }
+
+            // close
+            .close {
+
+                @include color( white, 0.000 );
+
+            }
+
+        }
+
+        // menu open state
+        &.site-menu-open {
+
+            // hover state
+            &:hover {
+
+                cursor: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNy40MTQsMTZsNy43NzgsNy43NzhsLTEuNDE0LDEuNDE0TDE2LDE3LjQxNGwtNy43NzgsNy43NzhsLTEuNDE0LTEuNDE0TDE0LjU4NiwxNkw2LjgwOCw4LjIyMiBsMS40MTQtMS40MTRMMTYsMTQuNTg2bDcuNzc4LTcuNzc4bDEuNDE0LDEuNDE0TDE3LjQxNCwxNnoiPjwvcGF0aD48L3N2Zz4=) 16 16, auto;
+
+                .close {
+
+                    @include color( white, 0.000 );
+
+                    @include fill( #8F3D25, 0.000 );
+
+                    transition: background-color 480ms $outex 480ms;
+
+                }
+
+            }
+
+            // label
+            .label {
+
+                // open menu
+                &.open {
+
+                    opacity: 0.000;
+
+                    transform: rotateY( 180deg );
+
+                    transition:
+
+                        background-color 220ms linear 0ms,
+                               transform 420ms $outex 0ms,
+                                 opacity 420ms $outex 0ms
+
+                    ;
+
+                }
+
+                // close menu
+                &.close {
+
+                    color: white;
+
+                    opacity: 1.000;
+
+                    transform: rotateY( 0deg );
+
+                    transition:
+
+                        background-color 220ms linear 0ms,
+                               transform 420ms $outex 0ms,
+                                 opacity 420ms $outex 0ms
+
+                    ;
+
+                }
+
+            }
+
+        }
+
+        // label
+        .label {
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            z-index: 10;
+
+            @include flex-v-c-h-c( false );
+
+            width: 5rem;
+            height: 5rem;
+            margin: 0;
+            padding: 0.0625rem 0 0 0;
+
+            @include font( $industry, 0.65625rem, 700 );
+
+            @include typo( 0.375rem, 0.085em );
+
+            @include text( $up );
+
+            @include color( white, 0.225 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 4rem;
+                height: 4rem;
+
+                @include font( $industry, 0.5625rem, 700 );
+
+            }
+
+            // base
+            &.open {
+
+                z-index: 20;
+
+                opacity: 1.000;
+
+            }
+
+            // animation
+            &.open {
+
+                @include fill( white, 1.000 );
+
+                transform: rotateY( 0deg );
+
+                transition:
+
+                    background-color 220ms linear 0ms,
+                           transform 420ms $outex 0ms,
+                             opacity 420ms $outex 0ms,
+                               color 220ms linear 0ms
+
+                ;
+
+            }
+
+            // base
+            &.close {
+
+                z-index: 10;
+
+                padding: 1.25rem;
+
+                @include fill( $roarange, 0.485 );
+
+                @include fill( #8F3D25, 0.000 );
+
+            }
+
+            // animation
+            &.close {
+
+                opacity: 0.000;
+
+                transform: rotateY( -180deg );
+
+                transition:
+
+                    background-color 220ms linear 0ms,
+                           transform 420ms $outex 0ms,
+                             opacity 420ms $outex 0ms
+
+                ;
+
+            }
+
+        }
+
+    }

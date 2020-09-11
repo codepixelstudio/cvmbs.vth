@@ -1,0 +1,72 @@
+// stylesheet :: print styles
+
+    // settings
+    $print : 1rem;
+
+    // styles
+    @media print {
+
+        // hide
+        #site-header,
+        footer {
+
+            @include hide;
+
+        }
+
+        // headings
+        h1, h2, h3, h4, h5, h6 {
+
+            margin: 1.5rem 0 1rem 0;
+
+            // @include font( $klavislim, 1.5rem, 400 );
+
+        }
+
+        // h1
+        h1 {
+
+            // @include font( $klavislim, 2.25rem, 400 );
+
+        }
+
+        // page headers
+        .flexible-page-header--styled {
+
+            // before
+            &:before {
+
+                display: none;
+
+            }
+
+            // class
+            &__inner {
+
+                min-height: 0 !important;
+                padding: 4rem 8vw 0 8vw !important;
+
+            }
+
+        }
+
+        // page container
+        .flexible-page-content {
+
+            padding-top: 0 !important;
+
+            // first child
+            .template-block {
+
+                // first child
+                &:first-child {
+
+                    padding-top: 0 !important;
+
+                }
+
+            }
+
+        }
+
+    }

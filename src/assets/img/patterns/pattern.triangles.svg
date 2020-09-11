@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1536 1024" style="enable-background:new 0 0 1536 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#192125;}
+	.st2{opacity:0.5;fill:#FFFFFF;}
+	.st3{opacity:0.7;fill:#FFFFFF;}
+	.st4{fill:#FFFFFF;}
+	.st5{opacity:0.4;fill:#FFFFFF;}
+	.st6{display:inline;opacity:0.5;fill:#FFFFFF;}
+	.st7{display:inline;opacity:0.7;fill:#FFFFFF;}
+	.st8{display:inline;fill:#FFFFFF;}
+	.st9{display:inline;opacity:0.4;fill:#FFFFFF;}
+</style>
+<g id="base" class="st0">
+	<rect class="st1" width="1536" height="1024"/>
+</g>
+<g id="triangles">
+	<g id="vertical">
+		<polygon class="st2" points="0.9,670.7 337.9,335.4 0.9,0 		"/>
+		<polygon class="st3" points="337,1008.2 674,672.8 337,337.4 		"/>
+		<polygon class="st3" points="0,335.4 337,670.8 674,335.4 		"/>
+		<polygon class="st4" points="0,0.7 337,336.1 674,0.7 		"/>
+		<polygon class="st2" points="674,335.4 337,670.8 674,1006.1 		"/>
+		<polygon class="st5" points="674,0.7 337,336.1 674,671.4 		"/>
+		<polygon class="st3" points="0.9,1341.5 337.9,1006.1 0.9,670.8 		"/>
+	</g>
+	<g id="horizontal" class="st0">
+		<polygon class="st6" points="777.9,1.4 1287.5,513.4 1797,1.4 		"/>
+		<polygon class="st7" points="265.3,512 774.8,1024 1284.4,512 		"/>
+		<polygon class="st7" points="1287.5,0 777.9,512 1287.5,1024 		"/>
+		<polygon class="st8" points="1795.9,0 1286.4,512 1795.9,1024 		"/>
+		<polygon class="st6" points="1287.5,1024 777.9,512 268.4,1024 		"/>
+		<polygon class="st9" points="1795.9,1024 1286.4,512 776.9,1024 		"/>
+		<polygon class="st7" points="-241.1,1.4 268.4,513.4 777.9,1.4 		"/>
+	</g>
+</g>
+</svg>

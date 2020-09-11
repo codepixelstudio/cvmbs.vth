@@ -1,0 +1,30 @@
+// stylesheet :: service description styles
+
+    // settings
+    $description : 1rem;
+
+    // styles
+    .service_section {
+
+        // class
+        &.description {
+
+            padding-top: 3rem;
+
+            // class
+            &.standalone {
+
+                padding: 3rem 5rem 1rem 5rem;
+
+            }
+
+            // bold
+            strong {
+
+                // the emptiness
+
+            }
+
+        }
+
+    }

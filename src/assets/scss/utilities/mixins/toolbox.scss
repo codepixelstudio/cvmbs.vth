@@ -1,0 +1,466 @@
+// stylesheet :: toolbox/utility mixin definitions
+
+    // codicons
+    @mixin codicon( $width, $height, $padding, $size, $color, $unicode ) {
+
+        content: $unicode;
+
+        display: block;
+
+        width: $width;
+        height: $height;
+        margin: 0;
+        padding: $padding;
+
+        font: {
+
+            family: $codicons !important;
+            size: $size;
+            weight: normal;
+            style: normal;
+
+        }
+
+        line-height: 1rem;
+
+        text: {
+
+            rendering: $pixper;
+
+        }
+
+        color: $color;
+
+    }
+
+    // scrollbars
+    @mixin scrolls( $show, $scrollbar, $thumb, $track ) {
+
+        @if $show {
+
+            &::-webkit-scrollbar {
+
+                position: absolute;
+
+                right: 0;
+
+                z-index: 1000;
+
+                display: block;
+
+                // width: 0.125rem;
+                width: 0;
+                // height: 0.125rem;
+                height: 0;
+
+                background: {
+
+                    color: $scrollbar;
+
+                }
+
+                &:horizontal {
+
+                    display: none;
+
+                }
+
+                &:hover {
+
+                    opacity: 1.000;
+
+                    transition: $all220;
+
+                }
+
+            }
+
+            &::-webkit-scrollbar-button {
+
+                @include hide;
+
+            }
+
+            &::-webkit-scrollbar-thumb {
+
+                border: none;
+                border-radius: 0px;
+
+                background: {
+
+                    color: $thumb;
+
+                }
+
+            }
+
+            &::-webkit-scrollbar-track {
+
+                background: {
+
+                    color: $track;
+
+                }
+
+            }
+
+            &::-webkit-scrollbar-thumb,
+            &::-webkit-scrollbar-track {
+
+                // visibility: hidden;
+
+                // opacity: 0.000;
+
+                // transition: $all220;
+
+            }
+
+            &.scrolling {
+
+                &::-webkit-scrollbar-thumb,
+                &::-webkit-scrollbar-track {
+
+                    // visibility: visible;
+
+                    // opacity: 1.000;
+
+                    // transition: $all220;
+
+                }
+
+            }
+
+        } @else {
+
+            ::-webkit-scrollbar {
+
+                @include hide;
+
+            }
+
+        }
+
+    }
+
+    // svg gradient magic
+    @mixin loadarrows( $opacity, $right, $left ) {
+
+        .arrow-left,
+        .arrow-right {
+
+            fill-opacity: $opacity;
+
+            transition: all 720ms $outex 0ms;
+
+        }
+
+        .arrow-right {
+
+            fill: $right;
+
+        }
+
+        .arrow-left {
+
+            fill: $left;
+
+        }
+
+    }
+
+    // hidden
+    @mixin hide {
+
+        display: none;
+
+    }
+
+    // full.screen
+    @mixin fullscreen( $position, $stack, $viewport, $overflow ) {
+
+        position: $position;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        z-index: $stack;
+
+        @if $viewport {
+
+            width: 100vw;
+            height: 100vh
+
+        } @else {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+        margin: 0;
+        padding: 0;
+
+        overflow: $overflow;
+
+    }
+
+    // debug box model
+    @mixin boxmodel( $dye, $haze ) {
+
+        background: {
+
+            color: transparentize( $dye, $haze );
+
+        }
+
+    }
+
+    // background color
+    @mixin color( $dye, $haze: 0.000 ) {
+
+        color: transparentize( $dye, $haze );
+
+    }
+
+    // background color
+    @mixin fill( $dye, $haze: 0.000 ) {
+
+        background: {
+
+            color: transparentize( $dye, $haze );
+
+        }
+
+    }
+
+    // box shadow
+    @mixin shadowbox( $yax, $blur, $dye, $haze ) {
+
+        box-shadow: 0 $yax $blur 0 transparentize( $dye, $haze );
+
+    }
+
+    // borders
+    @mixin border( $horizontal, $top, $right, $bottom, $left ) {
+
+        content: '';
+
+        position: absolute;
+
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+
+        z-index: 20;
+
+        @if $horizontal {
+
+            width: 100%;
+            height: 1px;
+
+        } @else {
+
+            width: 1px;
+            height: 100%;
+
+        }
+
+        @include fill( white, 0.685 );
+
+    }
+
+    // font
+    @mixin font( $family: $industry, $size: 1rem, $weight: 400, $style: normal ) {
+
+        font: {
+
+            family: $family;
+            size: $size;
+            weight: $weight;
+            style: $style;
+
+        }
+
+    }
+
+    // text
+    @mixin text( $case, $align: inherit, $deco: none ) {
+
+        text: {
+
+            align: $align;
+            transform: $case;
+            decoration: $deco;
+
+        }
+
+    }
+
+    // typography
+    @mixin typo( $height: 1rem, $space: 0.025em ) {
+
+        line-height: $height;
+
+        letter-spacing: $space;
+
+    }
+
+    // transparentize
+    @mixin fade( $type, $dye, $haze ) {
+
+        @if $type == fill {
+
+            background: {
+
+                color: transparentize( $dye, $haze );
+
+            }
+
+        } @else if $type == border {
+
+            border-color: transparentize( $dye, $haze );
+
+        } @else if $type == text {
+
+            color: transparentize( $dye, $haze );
+
+        }
+
+    }
+
+    // drop shadow
+    @mixin shadowboxdrop( $yax, $blur, $dye, $haze ) {
+
+        -webkit-filter:
+
+            drop-shadow(
+
+                0 $yax $blur
+                transparentize( $dye, $haze )
+
+            )
+
+        ;
+
+        filter:
+
+            drop-shadow(
+
+                0 $yax $blur
+                transparentize( $dye, $haze )
+
+            )
+
+        ;
+
+    }
+
+    // text shadow
+    @mixin shadowtext( $yax, $blur, $dye, $haze ) {
+
+        text-shadow: 0 $yax $blur transparentize( $dye, $haze );
+
+    }
+
+    // background image
+    @mixin background( $src, $repeat, $size, $position ){
+
+        background: {
+
+            image: url(#{$src});
+
+            @if $repeat {
+
+                repeat: repeat;
+
+            } @else {
+
+                repeat: no-repeat;
+
+            }
+
+            size: $size;
+            position: $position;
+
+        }
+
+    }
+
+    // background gradient
+    @mixin gradient( $angle, $dyehead, $hazehead, $lochead, $dyetail, $hazetail, $loctail ) {
+
+        background: {
+
+            image:
+
+                linear-gradient(
+
+                    $angle,
+                    transparentize( $dyehead, $hazehead ) $lochead,
+                    transparentize( $dyetail, $hazetail ) $loctail
+
+                )
+
+            ;
+
+        }
+
+    }
+
+    // media queries
+    @mixin bpoint( $point ) {
+
+        @if $point == phone {
+
+            @media ( min-width: 30em ) {
+
+                @content;
+
+            }
+
+        }
+
+        @else if $point == tablet {
+
+            @media ( min-width: 45em ) {
+
+                @content;
+
+            }
+
+        }
+
+        @else if $point == desktop {
+
+            @media ( min-width: 60em ) {
+
+                @content;
+
+            }
+
+        }
+
+        @else if $point == widescreen {
+
+            @media ( min-width: 100em ) {
+
+                @content;
+
+            }
+
+        }
+
+        @else {
+
+            @media ( min-width: $point ) {
+
+                @content;
+
+            }
+
+        }
+
+    }

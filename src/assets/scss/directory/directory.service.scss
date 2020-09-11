@@ -1,0 +1,127 @@
+// stylesheet :: service staff directory styles
+
+    // settings
+    $directory : adjust-color(
+
+        $beige,
+        $hue          : 0%,
+        $saturation : -5%,
+        $lightness  : 5%,
+        $alpha         : -0.000
+
+    );
+
+    // styles
+    #directory {
+
+        padding: 10rem 4rem 4rem 4rem;
+
+        @include fill( $directory, 0.000 );
+
+        // debug
+        .developer {
+
+            @include hide;
+
+            @include color( white );
+
+            @include fill( $dark );
+
+        }
+
+        // header
+        header {
+
+            margin: 0 0 0 1rem;
+
+        }
+
+        // contact cards
+        .contact_cards {
+
+            @include flex-h-j-v-s( false );
+
+            flex-wrap: wrap;
+
+        }
+
+        // contact card
+        .contact {
+
+            @include flex-h-s-v-t( true );
+
+            width: calc( 50% - 2rem );
+            margin: 1rem 1rem 1rem 1rem;
+            padding: 2rem 2rem 0 0;
+
+            @include fill( white, 0.000 );
+
+            @include shadowbox( 1rem, 3rem, black, 0.625 );
+
+            // mobile
+            @include breakpoint ( xxlarge up ) {
+
+                width: calc( 33.3333333% - 2rem );
+
+            }
+
+            // photo
+            .contact_photo {
+
+                position: relative;
+
+                width: 10rem;
+                min-width: 10rem;
+                height: 10rem;
+                margin: 0 2rem 0 0;
+
+                background: {
+
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+
+                }
+
+                // mobile
+                @include breakpoint ( large down ) {
+
+                    //
+
+                }
+
+                // link
+                .contact_photo_link {
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                }
+
+            }
+
+            // info
+            .contact_info {
+
+                @include flex-v-t-h-s( true );
+
+                // link
+                .contact_link {
+
+                    @include font( $klavislim, 1.5rem, 400 );
+
+                    @include text( $up, none );
+
+                    @include color( $g140 );
+
+                }
+
+            }
+
+        }
+
+    }

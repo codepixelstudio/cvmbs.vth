@@ -1,0 +1,79 @@
+// stylesheet :: HTML text element formatting
+
+    // settings
+    $type-base : 1rem;
+
+    // common
+    h1, h2, h3, h4, h5, h6 {
+
+        font: {
+
+            family: $klavislim;
+            weight: 400;
+
+        }
+
+        text: {
+
+            transform: $up;
+
+        }
+
+    }
+
+    // h2
+    .page-title {
+
+        width: 100%;
+        margin: 0 0 1rem 0;
+        padding: 0 0 0 0;
+
+        border-bottom: 1px solid $gold;
+
+        letter-spacing: 0.085em;
+
+        color: $g135;
+
+    }
+
+    // h3
+    h3 {
+
+        margin: 0 0 1rem 0;
+
+        @include font( $klavislim, 1.5rem, 500 );
+
+        line-height: 1.5rem;
+
+        letter-spacing: 0.075em;
+
+        color: $g140;
+
+    }
+
+    // h4
+    h4 {
+
+        @include font( $klavislim, 1.25rem, 500 );
+
+        line-height: 1.25rem;
+
+        letter-spacing: 0.065em;
+
+        color: $steel;
+
+    }
+
+    // ul
+    ul {
+
+        list-style: square;
+
+    }
+
+    // pre
+    pre {
+
+        @include font( 'Roboto Mono', 0.6875rem, 500 );
+
+    }

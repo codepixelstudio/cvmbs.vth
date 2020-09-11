@@ -1,0 +1,39 @@
+// stylesheet :: global service post styles
+
+    // settings
+    $page    : #E5E7E7;
+    $sidebar : adjust-color(
+
+        $beige,
+        $hue          : 0%,
+        $saturation : -5%,
+        $lightness  : 3%,
+        $alpha         : -0.000
+
+    );
+
+    // container
+    .clinical_trial_container {
+
+        @include fill( $page );
+
+    }
+
+    // styles
+    .clinical_trial {
+
+        // parent class
+        .single & {
+
+            padding: 10rem 5rem 5rem 5rem;
+
+            // wrapper
+            .content_wrapper {
+
+                @include flex-h-j-v-t( false );
+
+            }
+
+        }
+
+    }

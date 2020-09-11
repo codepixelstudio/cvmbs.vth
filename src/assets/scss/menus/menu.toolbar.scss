@@ -1,0 +1,159 @@
+// stylesheet :: site menu component styles
+
+    // settings
+    $toolbar_width  : 5rem;
+    $toolbar_height : calc( 100vh - 5rem );
+
+    // styles
+    #site-menu-toolbar {
+
+        position: absolute;
+
+        top: 0;
+        right: -5rem;
+        bottom: 0;
+
+        z-index: 100;
+
+        @include flex-v-t-h-c( false );
+
+        width: $toolbar_width;
+        height: $toolbar_height;
+        margin: 0;
+        padding: 0;
+
+        border: none;
+
+        @include fill( $nite, 0.615 );
+
+        @include gradient( 0deg, $nite, 0.565, 0%, $nite, 0.325, 100% );
+
+        transition: background-color 360ms linear 0ms;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            // top: 4rem;
+            right: -4rem;
+
+            width: 4rem;
+            height: calc( 100vh - 4rem );
+
+            // transform: translate3d( 4rem, 0, 0 );
+
+        }
+
+        // hover state
+        &:hover {
+
+            //
+
+        }
+
+        // menu open state
+        &.site-menu-open {
+
+            // @include gradient( 0deg, $blue, 1.000, 0%, $cvnavy, 0.465, 100% );
+
+            // hover state
+            &:hover {
+
+                //
+
+            }
+
+        }
+
+        // common
+        .site-menu-button {
+
+            position: relative;
+
+            display: block;
+
+            width: 5rem;
+            height: 5rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+            @include fill( white, 1.000 );
+
+            transition: all 220ms linear 0ms;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 4rem;
+                height: 4rem;
+                padding: 0 0 0 0;
+
+            }
+
+            // hover state
+            &:hover {
+
+                @include fill( white, 0.945 );
+                // @include fill( $g135, 0.145 );
+
+                // svg
+                .icon {
+
+                    // path
+                    .path {
+
+                        fill: white;
+
+                        opacity: 1.000;
+
+                        transition: all 220ms linear 0ms;
+
+                    }
+
+                }
+
+            }
+
+            // focus state
+            &:focus {
+
+                @include fill( white, 0.925 );
+
+            }
+
+            // link label
+            .link-label {
+
+                position: absolute;
+
+                visibility: hidden;
+
+            }
+
+            // svg
+            .icon {
+
+                width: 4rem;
+                height: 4rem;
+
+                // hidden class
+                &.hidden {
+
+                    display: none;
+
+                }
+
+                // path
+                .path {
+
+                    fill: white;
+
+                    opacity: 0.765;
+
+                    transition: all 220ms linear 0ms;
+
+                }
+
+            }
+
+        }
+
+    }

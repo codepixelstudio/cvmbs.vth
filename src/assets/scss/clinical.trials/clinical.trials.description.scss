@@ -1,0 +1,23 @@
+// stylesheet :: clinical trial description styles
+
+    // settings
+    $description : 1rem;
+
+    // styles
+    .trial_section {
+
+        // class
+        &.description {
+
+            margin: 0 0 2rem 0;
+
+            // bold
+            strong {
+
+                font-weight: 700;
+
+            }
+
+        }
+
+    }

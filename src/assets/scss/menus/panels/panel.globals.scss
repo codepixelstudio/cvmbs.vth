@@ -1,0 +1,148 @@
+// stylesheet :: menu panel globals
+
+    // settings
+    $header_width  : 100%;
+    $header_height : 5rem;
+
+// styles
+
+    // panel
+    .menu-panel {
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 5rem 0 0 0;
+
+        border: none;
+
+        overflow: hidden;
+
+        -ms-overflow-style: none !important;
+
+        @include font( $industry, 0.5625rem, 700 );
+
+        @include color( white, 0.000 );
+
+        @include fill( $app05, 0.345 );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            height: calc( 100vh - 4rem );
+            padding: 4rem 0 0 0;
+
+        }
+
+        // inactive state
+        &.inactive {
+
+            z-index: 0;
+
+            // visibility: hidden;
+
+            // opacity: 0.000;
+
+            // transform: translate3d( 28rem, 0, 0 );
+
+            transition: all 240ms $ocirc 60ms;
+
+        }
+
+        // active state
+        &.active {
+
+            z-index: 10;
+
+            // visibility: visible;
+
+            // opacity: 1.000;
+
+            // transform: translate3d( 0, 0, 0 );
+
+            transition: all 360ms $ocirc 60ms;
+
+        }
+
+        .panel-text {
+
+            // margin: 1rem 2rem 1rem 2rem;
+
+            @include font( $industry, 0.875rem, 600 );
+
+            @include typo( 1.55rem, 0.035em );
+
+        }
+
+    }
+
+    // header
+    .panel-header {
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        left: 0;
+
+        z-index: 20;
+
+        @include flex-h-s-v-b( false );
+
+        width: 100%;
+        height: $header_height;
+        margin: 0;
+        padding: 0.1875rem 1rem 1rem 1rem;
+
+        @include font( $industry, 0.875rem, 600 );
+
+        line-height: 0.75rem;
+
+        letter-spacing: 0.085em;
+
+        @include text( $up );
+
+        @include fill( white, 0.945 );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            height: 4rem;
+
+        }
+
+    }
+
+    #menu-panel-build {
+
+        padding: 0 0 0 0;
+
+        overflow: scroll;
+
+        .panel-interior {
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            height: 100%;
+            padding: 2rem 2rem 2rem 2rem;
+
+            overflow: scroll !important;
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+    }

@@ -1,0 +1,646 @@
+// stylesheet :: panel.search component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-search {
+
+        @include gradient( 0deg, $cvnavy, 0.325, 0%, transparent, 1.000, 50% );
+
+        // display: block;
+
+        padding: 0 0 0 0;
+
+        // header
+        .panel-header {
+
+            @include fill( $cvnavy, 0.345 );
+
+        }
+
+        // container
+        .panel-interior {
+
+            height: 100%;
+
+        }
+
+        // search panel
+        #___gcse_0 {
+
+            height: 100%;
+
+        }
+
+        // search field base
+        .gsc-control-cse {
+
+            height: 100%;
+            padding: 0 0 0 0;
+
+            border: none;
+
+            @include fill( $cvnavy, 1.000 );
+
+        }
+
+        // cse wrapper
+        .gsc-control-wrapper-cse {
+
+            position: relative;
+
+            height: 100%;
+            padding: 5rem 0 0 0;
+
+            overflow: hidden;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 4rem 0 0 0;
+
+            }
+
+            // search form
+            .gsc-search-box-tools {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                left: 0;
+
+                z-index: 20;
+
+                height: 5rem;
+                margin: 0 0 0 0;
+
+                @include fill( $cvnavy, 0.345 );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: 4rem;
+
+                }
+
+                // input container
+                td.gsc-input {
+
+                    padding: 1rem 0 1rem 1rem;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        // padding:
+
+                    }
+
+                }
+
+                table.gsc-search-box {
+
+                    margin: 0;
+
+                }
+
+                // box
+                .gsc-input-box {
+
+                    height: 3rem;
+
+                    border: none;
+
+                    @include fill( white, 1.000 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: 2rem;
+                        padding: 0 0 0 0;
+
+                    }
+
+                    // input container
+                    .gsib_a {
+
+                        height: 3rem;
+                        padding: 0 0 0 0;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 100%;
+                            height: 2rem;
+
+                        }
+
+                    }
+
+                    // clear input container
+                    .gsib_b {
+
+                        // clear element
+                        .gsst_a .gscb_a {
+
+                            @include color( white, 0.675 );
+
+                        }
+
+                    }
+
+                }
+
+                // search field input
+                input[name='search'] {
+
+                    height: 3rem !important;
+                    margin: 0 0 0 0 !important;
+                    padding: 0 1rem 0 0.75rem !important;
+
+                    text-indent: 0 !important;
+
+                    background: none !important;
+
+                    @include font( $industry, 1rem, 600 );
+
+                    @include color( white, 0.000 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: 2rem !important;
+                        padding: 0 0 0 0 !important;
+
+                    }
+
+                }
+
+                // form container
+                #gs_id50 {
+
+                    height: 3rem;
+                    margin: 0 0 0 0 !important;
+
+                    @include fill( white, 0.965 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: 2rem;
+
+                    }
+
+                }
+
+                // button table cell
+                td.gsc-search-button {
+
+                    width: 4rem;
+                    padding: 1rem 1rem 1rem 0;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 3rem;
+
+                    }
+
+                }
+
+                // button
+                button.gsc-search-button {
+
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 0 0 0;
+                    padding: 0 0 0 0;
+
+                    border: none;
+
+                    box-sizing: border-box;
+
+                    @include fill( $blue, 0.365 );
+
+                    transition: all 220ms linear 0ms;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 2rem;
+                        height: 2rem;
+
+                    }
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $blue, 0.000 );
+
+                    }
+
+                    // svg
+                    svg {
+
+                        width: 1rem;
+                        height: 1rem;
+
+                        fill: white;
+
+                    }
+
+                }
+
+            }
+
+            // results
+            .gsc-results-wrapper-visible {
+
+                position: absolute;
+
+                top: 5rem;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                z-index: 10;
+
+                height: calc( 100% - 5rem );
+
+                overflow: scroll;
+
+                // random space above results
+                .gsc-above-wrapper-area {
+
+                    padding: 0 0 0 0;
+
+                    border: none;
+
+                }
+
+                // something
+                .gsc-above-wrapper-area-container {
+
+                    margin: 0 0 0 0;
+
+                }
+
+                // results count container
+                .gsc-result-info-container {
+
+                    height: 2rem;
+                    padding: 0 0 0 0;
+
+                    @include fill( white, 0.925 );
+
+                    // results count
+                    .gsc-result-info {
+
+                        @include flex-h-s-v-c( false );
+
+                        height: 2rem;
+                        padding: 0.0625rem 0 0 1rem;
+
+                        @include font( $industry, 0.5625rem, 700 );
+
+                        @include text( $up );
+
+                        @include typo( 0.5rem, 0.025em );
+
+                        @include color( white, 0.365 );
+
+                    }
+
+                }
+
+                // empty header box
+                .gsc-resultsHeader {
+
+                    @include hide;
+
+                }
+
+                // results list
+                .gsc-results {
+
+                    width: 100%;
+                    margin: 0 0 0 0;
+                    padding: 0 0 0 0;
+
+                }
+
+                // search on google link
+                .gcsc-more-maybe-branding-root {
+
+                    // first link
+                    > a {
+
+                        @include hide;
+
+                    }
+
+                    // powered by
+                    .gcsc-find-more-on-google-branding {
+
+                        @include flex-h-c-v-c( false );
+
+                        float: none;
+
+                        width: 100%;
+
+                        // branding
+                        .gcsc-branding {
+
+                            @include flex-h-c-v-c( false );
+
+                            // text
+                            .gcsc-branding-text {
+
+                                @include font( $industry, 0.6875rem, 600 );
+
+                                @include color( white, 0.685 );
+
+                            }
+
+                            // image
+                            .gcsc-branding-clickable {
+
+                                margin: 0 0 0.1875rem 0;
+
+                                -webkit-filter: brightness( 2 ) opacity( 0.565 );
+                                        filter: brightness( 3 ) opacity( 0.565 );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                // result entry
+                .gsc-result {
+
+                    padding: 1rem 1rem 1rem 1rem;
+
+                    border: none;
+
+                    @include color( white, 0.000 );
+
+                    @include fill( white, 1.000 );
+
+                    transition: all 220ms linear 0ms;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( white, 0.965 );
+
+                    }
+
+                    // common
+                    div {
+
+                        padding: 0 0 0 0;
+
+                    }
+
+                    // image link
+                    a.gs-image {
+
+                        display: block;
+
+                    }
+
+                    // table result
+                    .gsc-table-result {
+
+                        @include flex-h-j-v-t( false );
+
+                        margin: 0.75rem 0 0 0;
+
+                    }
+
+                    // misspelling
+                    .gs-spelling {
+
+                        @include font( $industry, 1rem, 500 );
+
+                        @include color( white, 0.000 );
+
+                        // link
+                        a {
+
+                            text-decoration: none;
+
+                            @include color( $gold, 0.000 );
+
+                        }
+
+                    }
+
+                    // no result container
+                    .gs-no-results-result {
+
+                        // content
+                        .gs-snippet {
+
+                            border: none;
+
+                            background: transparent;
+
+                        }
+
+                    }
+
+                    // title
+                    .gs-title {
+
+                        margin: 0 0 0.5rem 0;
+
+                        @include font( $industry, 0.8125rem, 700 );
+
+                        text-decoration: none;
+
+                        @include typo( 1rem, 0.015em );
+
+                        @include color( white, 0.000 );
+
+                        transition: all 220ms linear 0ms;
+
+                        // hover state
+                        &:hover {
+
+                            @include color( $cvellow, 0.000 );
+
+                            // highlight match text
+                            b {
+
+                                @include color( $cvellow, 0.000 );
+
+                            }
+
+                        }
+
+                        // highlight match text
+                        b {
+
+                            @include font( $industry, 0.8125rem, 700 );
+
+                            text-decoration: none;
+
+                            @include typo( 1rem, 0.015em );
+
+                            @include color( $blue, 0.000 );
+
+                            transition: all 220ms linear 0ms;
+
+                        }
+
+                    }
+
+                    // url
+                    .gsc-url-top {
+
+                        @include font( $industry, 0.6875rem, 600 );
+
+                        @include typo( 0.75rem, 0.035em );
+
+                        // url text
+                        .gs-visibleUrl {
+
+                            overflow: visible;
+
+                            @include color( $gold, 0.000 );
+
+                            // highlight match text
+                            b {
+
+                                // @include color( $cvellow, 0.125 );
+                                @include color( $blue, 0.000 );
+
+                            }
+
+                        }
+
+                    }
+
+                    // file format
+                    .gs-fileFormat {
+
+                        // span
+                        span {
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                            // label
+                            &.gs-fileFormat {
+
+                                @include color( white, 0.645 );
+
+                            }
+
+                            // type
+                            &.gs-fileFormatType {
+
+                                @include color( white, 0.325 );
+
+                            }
+
+                        }
+
+                    }
+
+                    // snippets
+                    .gs-snippet {
+
+                        margin: 0 0 0 0;
+
+                        @include font( $industry, 0.8125rem, 500 );
+
+                        @include typo( 1rem, 0.015em );
+
+                        @include color( white, 0.145 );
+
+                        // highlight match text
+                        b {
+
+                            // @include color( $cvellow, 0.125 );
+                            @include color( $blue, 0.000 );
+
+                        }
+
+                    }
+
+                    // image
+                    .gs-image-box {
+
+                        float: none;
+
+                        // width: 4rem;
+                        height: auto;
+                        // margin: 0 0.5rem 0 0;
+
+                        overflow: visible;
+
+                    }
+
+                }
+
+                // pagination
+                .gsc-cursor-box {
+
+                    @include flex-h-c-v-c( false );
+
+                    margin: 1rem 0 1rem 0;
+
+                    // common
+                    .gsc-cursor-page {
+
+                        @include flex-h-c-v-c( true );
+
+                        width: 2rem;
+                        height: 2rem;
+                        margin: 0 0 0 0;
+                        padding: 0.0625rem 0 0 0;
+
+                        border: none;
+
+                        @include font( $industry, 0.75rem, 600 );
+
+                        @include color( white, 0.565 );
+
+                        @include fill( white, 1.000 );
+
+                        transition: all 220ms linear 0ms;
+
+                        // hover state
+                        &:hover {
+
+                            text-decoration: none;
+
+                            @include color( $cvellow, 0.000 );
+
+                            @include fill( white, 0.965 );
+
+                        }
+
+                    }
+
+                    // current page
+                    .gsc-cursor-current-page {
+
+                        @include color( white, 0.000 );
+
+                        @include fill( white, 0.925 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

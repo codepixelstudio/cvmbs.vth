@@ -1,0 +1,98 @@
+// stylesheet :: header menu styles
+
+    // settings
+    $menu_header : 1rem;
+
+    // styles
+    #menu_header {
+
+        @include flex-h-e-v-c( false );
+
+        flex-grow: 1;
+
+        height: 5rem;
+        padding: 0 0 0 0;
+
+        // mobile
+        @include breakpoint ( medium down ) {
+
+            @include hide;
+
+        }
+
+        // mobile
+        @include breakpoint ( xlarge up ) {
+
+            padding: 0 1rem 0 0;
+
+        }
+
+        // links
+        .menu_link {
+
+            @include flex-h-c-v-c( true );
+
+            height: 2rem;
+            margin: 0 0 0 0;
+            padding: 0 1rem 0 1rem;
+
+            // @include font( $industry, inherit, 700 );
+            @include font( $klavislim, 0.875rem, 400 );
+
+            @include text( $up, inherit, none );
+
+            @include typo( 0.75rem, 0.025em );
+
+            @include color( white, 0.000 );
+
+            transition: $all220;
+
+            // hover state
+            &:hover {
+
+                @include color( white, 0.000 );
+                @include color( $gold, 0.000 );
+
+                @include fill( white, 0.925 );
+                // @include fill( $g140, 0.000 );
+
+            }
+
+            // donate
+            &.donate {
+
+                @include color( $campaign, 0.000 );
+
+                // hover state
+                &:hover {
+
+                    @include color( white, 0.000 );
+
+                    @include fill( $campaign, 0.165 );
+
+                }
+
+            }
+
+            // mobile
+            @include breakpoint ( large down ) {
+
+                padding: 0 0.75rem 0 0.75rem;
+
+            }
+
+            // mobile
+            @include breakpoint ( xlarge up ) {
+
+                height: 3rem;
+                padding: 0.0625rem 1rem 0 1rem;
+
+                @include font( $klavislim, 1rem, 400 );
+
+                @include typo( 0.875rem, 0.025em );
+
+            }
+
+        }
+
+    }

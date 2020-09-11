@@ -1,0 +1,123 @@
+// stylesheet :: brand.cvmbs styles
+
+    // settings
+        $brand_height : 4rem;
+
+    // styles
+    #brand-cvmbs {
+        display: none !important;
+
+        position: relative;
+
+        z-index: 10;
+
+        @include flex-h-s-v-c( false );
+
+        height: 5rem;
+
+        padding: 1rem 0 1rem 0;
+
+        color: white;
+
+        text-decoration: none;
+
+        // department
+        &.department {
+
+            // desktop
+            .brand-desktop {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include hide;
+
+                }
+
+            }
+
+        }
+
+        // menu open state + page templates
+        .site-menu-open &,
+        .ui-contrast &,
+        .single-degree-program &,
+        .page-template-secondary &,
+        .archive & {
+
+            color: white;
+
+            #brand-cvmbs-text {
+
+                border-left: 1px solid transparentize( white, 0.245 );
+
+            }
+
+        }
+
+        #brand-cvmbs-text {
+
+            @include flex-h-s-v-c( true );
+
+            height: 2rem;
+            margin: 0;
+            padding: 0 0 0 0.75rem;
+
+            border-left: 1px solid transparentize( white, 0.000 );
+
+            letter-spacing: 0.015em;
+
+            text: {
+
+                align: left;
+                transform: $up;
+
+            }
+
+            // color: $g135;
+
+            .brand-desktop {
+
+                height: 2rem;
+
+                font: {
+
+                    family: $proxima;
+                    size: 0.75rem;
+                    weight: 600;
+
+                }
+
+                line-height: 1rem;
+
+                @include breakpoint ( small only ) {
+
+                    font: {
+
+                        size: 0.5625rem;
+
+                    }
+
+                }
+
+            }
+
+            .brand-mobile {
+
+                font: {
+
+                    size: 0.625rem;
+
+                }
+
+                @include breakpoint ( small only ) {
+
+                    @include flex-h-s-v-c( true );
+
+                }
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,155 @@
+// stylesheet :: panel.about component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-about {
+
+        padding: 5rem 0 8rem 0;
+
+        // header
+        .panel-header {
+
+            @include fill( $dark, 0.415 );
+
+        }
+
+        // menu container
+        #menu-panel-global-menu {
+
+            width: 100%;
+
+            // global menu
+            #global-menu {
+
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+
+                // list
+                ul {
+
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+
+                    list-style: none;
+
+                    // item
+                    li {
+
+                        width: 100%;
+                        height: 5rem;
+                        margin: 0;
+                        padding: 0;
+
+                    }
+
+                    // home
+                    #home {
+
+                        @include fill( $g140, 0.785 );
+
+                    }
+
+                    // about
+                    #about {
+
+                        @include fill( $cvellow, 0.785 );
+
+                    }
+
+                    // students
+                    #students {
+
+                        @include fill( $blue, 0.785 );
+
+                    }
+
+                    // research
+                    #research {
+
+                        @include fill( $cvnavy, 0.785 );
+
+                    }
+
+                    // outreach
+                    #outreach {
+
+                        @include fill( $roarange, 0.785 );
+
+                    }
+
+                    // alumni
+                    #alumni {
+
+                        @include fill( $orange, 0.785 );
+
+                    }
+
+                    // link
+                    .menu-link {
+
+                        position: relative;
+
+                        @include flex-h-s-v-b( false );
+
+                        width: 100%;
+                        height: 5rem;
+                        margin: 0;
+                        padding: 0 1rem 1rem 2rem;
+
+                        transition: all 720ms $ocirc 0ms;
+
+                        // hover state
+                        &:hover {
+
+                            @include fill( white, 0.965 );
+
+                            // text
+                            .link-text {
+
+                                @include color( white, 0.000 );
+
+                                transform: translate3d( 1rem, 0, 0 );
+
+                                transition: all 360ms $ocirc 0ms;
+
+                            }
+
+                        }
+
+                        // text
+                        .link-text {
+
+                            position: relative;
+
+                            z-index: 100;
+
+                            @include flex-h-s-v-c( false );
+
+                            @include font( $industry, 0.875rem, 500 );
+
+                            @include typo( 0.75rem, 0.065em );
+
+                            @include text( $up );
+
+                            @include color( white, 0.285 );
+
+                            transform: translate3d( 0, 0, 0 );
+
+                            transition: all 360ms $ocirc 0ms;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

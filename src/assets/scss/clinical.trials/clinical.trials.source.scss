@@ -1,0 +1,286 @@
+// stylesheet :: clinical trial source feed
+
+    // settings
+    $section_color : transparentize( $beige, 0.085 );
+
+    // styles
+    #clinical_trial_source_feed {
+
+        @include fill( $section_color, 0.000 );
+
+        padding: 2rem 1rem 0rem 1rem;
+
+        @include bpoint(tablet) {
+
+            padding: 5rem 4rem 5rem 4rem;
+
+        }
+
+        & > a {
+
+            text-decoration: none;
+
+        }
+
+        // title
+        .section-title {
+
+            position: relative;
+
+            @include flex-h-j-v-b( false );
+
+            height: 3rem;
+            margin: 0 0 1rem 1rem;
+            padding: 0 0 1rem 1rem;
+
+            @include font( $klavislim, 2rem, 400 );
+
+            @include typo( 1.25rem, 0.135em );
+
+            @include color( $dark, 0.125 );
+
+            text-decoration: none;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include font( $klavislim, 1.5rem, 400 );
+
+                @include text( $up, left );
+
+            }
+
+            // before
+            &:before {
+
+                content: '';
+
+                position: absolute;
+
+                top: 0.5rem;
+                bottom: 0.25rem;
+                left: 0;
+
+                z-index: 10;
+
+                width: 2px;
+                height: 1.5rem;
+
+                @include fill( lighten( $g140, 7.5% ), 0.000 );
+
+            }
+
+            // hover state
+            &:hover,
+            &:focus,
+            &:active {
+
+                cursor: pointer;
+
+                // link
+                .title-link {
+
+                    @include color( $dark, 0.000 );
+
+                    transform: translate3d( -1.5rem, 0, 0 );
+
+                    transition: all 360ms $outex 0ms;
+
+                    // after
+                    &:after {
+
+                        opacity: 1.000;
+
+                        transform: translate3d( 0, 0, 0 );
+
+                        transition: all 360ms $outex 0ms;
+
+                    }
+
+                }
+
+            }
+
+            // link
+            .title-link {
+
+                @include flex-h-e-v-b( true );
+
+                height: 2rem;
+                margin: 0 1rem 0 0;
+
+                @include font( $industry, 0.6875rem, 700 );
+
+                @include typo( 0.5rem, 0.075em );
+
+                @include color( $dark, 0.000 );
+
+                transform: translate3d( 0, 0, 0 );
+
+                transition: all 360ms $outex 0ms;
+
+                // after
+                &:after {
+
+                    // @include codicon( 1rem, 2.25rem, 1.25rem 0 0 0, 1rem, $dark, '\EDC8' );
+
+                    position: absolute;
+
+                    top: 0;
+                    right: -1.5rem;
+                    bottom: 0;
+
+                    opacity: 0.000;
+
+                    transform: translate3d( -2rem, 0, 0 );
+
+                    transition: all 360ms $outex 0ms;
+
+                }
+
+            }
+
+        }
+
+        // source feed
+        .source-feed {
+
+            display: flex;
+            flex-direction: column;
+
+            @include bpoint(tablet) {
+                flex-direction: row;
+            }
+
+            // article
+            .article {
+
+                display: flex;
+                flex-direction: column;
+
+                @include fill( white, 0.185 );
+
+                @include shadowbox( 1.5rem, 4rem, black, 0.615 );
+
+                transform: translate3d( 0, 0, 0 );
+
+                transition: all 240ms $outex 0ms;
+
+                text-decoration: none;
+
+                margin: 0 1rem 2rem 1rem;
+
+                @include bpoint(tablet) {
+                    width: calc((100% / 3) - 2rem  - .1px); // remove .1px to fix IE not calculating percentages the same as real browsers
+                    margin: 0 1rem 0 1rem;
+                }
+
+                // hover state
+                &:hover,
+                &:focus,
+                &:active {
+
+                    cursor: pointer;
+
+                    transform: translate3d( 0, -1rem, 0 );
+
+                    @include fill( white, 0.000 );
+
+                    // header
+                    .header {
+
+                        // image
+                        .image {
+
+                            -webkit-filter:
+
+                                grayscale( 0.000 )
+                                opacity( 1.000 )
+
+                            ;
+
+                            transition: all 220ms linear 0ms;
+
+                        }
+
+                    }
+
+                }
+
+                // header
+                .header {
+
+                    background: no-repeat center center / cover;
+
+                    padding-top: 60%;
+
+                    // image
+                    .image {
+
+                        position: relative;
+
+                        z-index: 10;
+
+                        @include flex-v-b-h-c( false );
+
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+
+                        background: {
+
+                            repeat: no-repeat;
+                            size: cover;
+                            position: center center;
+
+                        }
+
+                        -webkit-filter: grayscale( 0.000 ) opacity( 1.000 );
+
+                        transition: all 220ms linear 0ms;
+
+                    }
+
+                }
+
+                // content
+                .content {
+
+                    flex-grow: 1;
+
+                    padding: 1rem 2rem 2rem 2rem;
+
+                    // title
+                    .title {
+
+                        @include font( $klavislim, 1rem, 500 );
+
+                        @include text( $up );
+
+                        @include typo( 1.5rem, 0.025em );
+
+                        color: $g140;
+
+                    }
+
+                    // text
+                    p {
+
+                        margin: 0;
+
+                        @include font( $industry, 0.75rem, 500 );
+
+                        @include typo( 1.25rem, 0.035em );
+
+                        color: $oil;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

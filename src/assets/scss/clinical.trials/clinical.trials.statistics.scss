@@ -1,0 +1,128 @@
+// stylesheet :: clinical trial statistics
+
+    // settings
+    $statistics : 1rem;
+
+    // styles
+    #clinical_trial_statistics {
+
+        .fast-facts {
+
+            @include color( white );
+
+            @include fill( $sec_temp_white );
+
+        	background: {
+
+                image: url(../img/billboards/billboard.18.jpg);
+                repeat: no-repeat;
+                size: cover;
+                position: center center;
+
+            }
+
+        	&__inner {
+
+                display: flex;
+        		align-items: center;
+        		justify-content: center;
+        		padding: 5vw;
+
+                @include fill( $cvnavy, 0.185 );
+
+                @include gradient(
+
+                    135deg,
+                    red, 0.000, 0%,
+                    transparent, 0.000, 100%
+
+                );
+
+                background-image: none;
+
+        		@include bpoint(tablet) {
+
+                	padding: 8vw;
+
+                }
+
+        	}
+
+        	&__grid {
+
+                display: flex;
+        		flex-direction: column;
+        		align-items: center;
+        		width: 100%;
+
+        		@include bpoint(tablet) {
+
+                	flex-direction: row;
+        			align-items: flex-start;
+        			justify-content: space-around;
+
+                }
+
+            }
+
+        }
+
+        .fast-fact {
+
+        	max-width: 13rem;
+        	margin: 3vw;
+        	font-family: $vitesse;
+        	letter-spacing: .04em;
+        	text-align: center;
+        	text-transform: uppercase;
+
+        	@include bpoint(tablet) {
+        		width: 30%;
+        		margin: 0;
+        	}
+
+        	&__value {
+
+        		display: block;
+
+                @include color( white );
+
+        		font-size: 3.5em;
+        		letter-spacing: 0;
+        		line-height: 1;
+
+            }
+
+        	&__rate {
+
+        		display: block;
+
+                @include color( lighten( $blue, 10% ) );
+
+        		font-size: 1.5em;
+        		line-height: 1;
+
+            }
+
+        	&__desc {
+
+        		display: block;
+        		padding-top: .2em;
+        		line-height: 1.2;
+
+                @include color ( white );
+
+            }
+
+        	&__source {
+
+        		display: block;
+        		font-family: $klavislim;
+
+                @include color( white, 0.465 );
+
+            }
+
+        }
+
+    }

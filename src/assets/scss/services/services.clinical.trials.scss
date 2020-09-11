@@ -1,0 +1,81 @@
+// stylesheet :: service clinical trials styles
+
+    // settings
+    $clinical_trials : 1rem;
+
+    // styles
+    .service_section {
+
+        // class
+        &.clinical_trials {
+
+            padding: 2rem calc( 8vw - 1rem ) 2rem calc( 8vw - 1rem );
+            padding: 5rem 4rem 2.5rem 4rem;
+
+            // header
+            .header_block {
+
+                @include flex-h-j-v-b( false );
+
+                // heading
+                h2 {
+
+                    margin: 0 0 0.5rem 1rem;
+
+                }
+
+                // link
+                a {
+
+                    @include flex-v-b-h-e( true );
+
+                    height: 3rem;
+                    margin: 0 1rem 1rem 0;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    @include typo( 0.5rem, 0.045em );
+
+                    @include text( $up );
+
+                    @include color( $g140 );
+
+                }
+
+            }
+
+            // container
+            .links {
+
+                @include flex-h-s-v-st( false );
+
+            }
+
+            // links
+            .post_link {
+
+                @include flex-v-b-h-s( true );
+
+                width: 33.3333333%;
+                // min-width: 16rem;
+                // height: 16rem;
+                margin: 0 1rem 0 1rem;
+                padding: 2rem 2rem 2rem 2rem;
+
+                @include font( $industry, 0.875rem, 600 );
+
+                @include text( none );
+
+                @include typo( 1.25rem, 0.035em );
+
+                @include color( white );
+
+                @include fill( $g140 );
+
+                @include shadowbox( 1rem, 3rem, black, 0.635 );
+
+            }
+
+        }
+
+    }

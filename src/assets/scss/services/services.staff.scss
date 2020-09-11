@@ -1,0 +1,40 @@
+// stylesheet :: service staff styles
+
+    // settings
+    $staff : 1rem;
+
+    // styles
+    .staff {
+
+        padding: 1rem 2rem 2rem 2rem;
+
+        // title
+        h2 {
+
+            @include color( $g140 );
+
+        }
+
+        // link
+        .staff_link {
+
+            @include flex-h-c-v-c( true );
+
+            height: 4rem;
+            padding: 0.0625rem 1.5rem 0 1.5rem;
+
+            @include font( $klavislim, 1rem, 400 );
+
+            @include text( $up );
+
+            @include typo( 0.75rem, 0.035em );
+
+            @include color( white );
+
+            @include fill( $g135, 0.000 );
+
+            @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+        }
+
+    }

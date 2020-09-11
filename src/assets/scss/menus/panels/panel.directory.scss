@@ -1,0 +1,798 @@
+// stylesheet :: panel.contact component styles
+
+    // settings
+    $panel_size : calc( 100% - 4rem );
+
+    // styles
+    #menu-panel-directory {
+
+        // padding: 4rem 0 1rem 0;
+
+        overflow-y: scroll;
+
+        @include fill( $dark-nite, 0.365 );
+
+        @include gradient( 0deg, $g140, 0.625, 0%, transparent, 1.000, 50% );
+
+        // header
+        .panel-header {
+
+            // @include fill( $roarange, 0.215 );
+            @include fill( $g140, 0.000 );
+
+        }
+
+        // panel interior
+        .panel-interior {
+
+            height: 100%;
+
+            overflow-y: scroll;
+
+        }
+
+        // panel content
+        .panel-content {
+
+            display: block;
+
+            height: 100%;
+            padding: 0 0 6rem 0;
+
+            overflow-y: scroll;
+
+        }
+
+        // controls
+        #menu-directory-controls {
+
+            position: fixed;
+
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            z-index: 100;
+
+            @include flex-v-t-h-st( false );
+
+            width: 100%;
+            height: 6rem;
+
+            @include fill( $dark, 0.000 );
+
+            // directory info
+            .dataTables_info {
+
+                @include flex-h-c-v-c( false );
+
+                width: 100%;
+                height: 3rem;
+
+                @include font( $industry, 0.75rem, 600 );
+
+            }
+
+        }
+
+        // toolbar
+        #directory-toolbar {
+
+            @include font( $industry, 0.6875rem, 600 );
+
+            width: 100%;
+
+            // alphabet
+            .alphabet {
+
+                @include flex-h-s-v-c( false );
+
+                flex-wrap: wrap;
+
+                // width: 100%;
+                // height: 2rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    display: block;
+
+                    padding: 1rem 0 1rem 0;
+
+                    height: auto;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                    text-align: center;
+
+                }
+
+                // label
+                .alphabet-label {
+
+                    // @include hide;
+
+                    @include flex-h-c-v-c( false );
+
+                    height: 2rem;
+                    padding: 0 0.5rem 0 0.75rem;
+
+                    @include color( white, 0.425 );
+
+                    @include fill( white, 0.965 );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        margin: 0 0.25rem 0 0;
+
+                    }
+
+                }
+
+                // letters
+                .alphabet-control {
+
+                    @include flex-h-c-v-c( true );
+
+                    min-width: 2rem;
+                    // width: 1rem;
+                    height: 2rem;
+                    padding: 0 0.25rem 0 0.25rem;
+
+                    @include fill( white, 1.000 );
+
+                    transition: all 220ms linear 0ms;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        // height: 1.5rem;
+                        padding: 0.0625rem 0.5rem 0 0.5rem;
+
+                    }
+
+                    // hover state
+                    &:hover {
+
+                        @include color( $campaign, 0.000 );
+
+                        @include fill( $g135, 0.000 );
+
+                        cursor: pointer;
+
+                    }
+
+                    // active state
+                    &.active {
+
+                        @include color( white, 0.000 );
+
+                        @include fill( $g140, 0.000 );
+
+                    }
+
+                    // clear control
+                    &.clear {
+
+                        padding: 0 0.75rem 0 0.75rem;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // control group
+        #directory-fields {
+
+            @include flex-h-j-v-c( false );
+
+            width: 100%;
+            height: 2rem;
+            padding: 0 0 0 0.75rem;
+
+            @include fill( white, 0.965 );
+
+            // common
+            .dataTables_length,
+            .dataTables_filter {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                }
+
+            }
+
+        }
+
+        // control directory view(s)
+        #directory-records_length {
+
+            @include flex-h-j-v-c( true );
+
+            height: 2rem;
+
+            // label
+            label {
+
+                @include flex-h-j-v-c( true );
+
+            }
+
+            // select
+            select {
+
+                @include flex-h-e-v-c( true );
+
+                // width: 3rem;
+                height: 2rem;
+                margin: 0 0.5rem 0 0.5rem;
+                padding: 0 0.25rem 0 0.5rem;
+
+                border: none;
+                border-radius: 0px;
+
+                @include font( $industry, 0.875rem, 700 );
+
+                @include text( none, center );
+
+                @include color( white, 0.000 );
+
+                @include fill( $cvnavy, 0.165 );
+
+                background: {
+
+                    // image: url(../img/icons/admin/icon_billboard.svg);
+                    repeat: no-repeat;
+                    size: 1.25rem 1.25rem;
+                    position: center right;
+
+                }
+
+                appearance: none;
+
+                // after
+                &:before {
+
+                    @include codicon( 1rem, 2rem, 0.5rem 0 0.5rem 0, 1rem, white, '\EDC9' );
+
+                }
+
+            }
+
+        }
+
+        // control directory view(s)
+        #directory-records_filter {
+
+            // label
+            label {
+
+                @include flex-h-j-v-c( true );
+
+            }
+
+            // input
+            input {
+
+                @include flex-h-s-v-c( true );
+
+                height: 2rem;
+                margin: 0 0 0 0.5rem;
+                padding: 0 0.5rem 0 0.5rem;
+
+                border: none;
+
+                @include color( white, 0.000 );
+
+                @include fill( $cvnavy, 0.165 );
+
+            }
+
+        }
+
+        // views
+        #menu-directory-views {
+
+            @include flex-h-j-v-s( false );
+
+            width: 100%;
+            height: 3rem;
+
+            // filter
+            .dataTables_filter {
+
+                width: 50%;
+                height: 3rem;
+
+                // label
+                label {
+
+                    position: relative;
+
+                    @include flex-h-j-v-c( true );
+
+                    width: 100%;
+                    padding: 0 0 0 1rem;
+
+                    @include font( $industry, 0.6875rem, 700 );
+
+                    // @include text( $up );
+
+                    @include fill( white, 0.965 );
+
+                    // text
+                    &:before {
+
+                        content: '';
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: -1;
+
+                        width: 4.25rem;
+                        height: 3rem;
+
+                        @include fill( white, 0.945 );
+
+                    }
+
+                }
+
+                // input
+                input {
+
+                    @include flex-h-s-v-c( true );
+
+                    flex-grow: 1;
+
+                    height: 3rem;
+                    margin: 0 0 0 0.75rem;
+                    padding: 0 0.5rem 0 0.5rem;
+
+                    border: none;
+
+                    @include color( white, 0.000 );
+
+                    @include fill( white, 1.000 );
+
+                }
+
+            }
+
+            // control directory view(s)
+            .dataTables_length {
+
+                @include flex-h-e-v-c( true );
+
+                width: 50%;
+                height: 3rem;
+                padding: 0 1rem 0 0;
+
+                @include fill( white, 0.965 );
+
+                // label
+                label {
+
+                    @include flex-h-j-v-c( true );
+
+                }
+
+                // select
+                select {
+
+                    @include flex-h-e-v-c( true );
+
+                    // width: 3rem;
+                    height: 2rem;
+                    margin: 0 0.5rem 0 0.5rem;
+                    padding: 0 0.25rem 0 0.5rem;
+
+                    border: none;
+                    border-radius: 0px;
+
+                    @include font( $industry, 0.875rem, 700 );
+
+                    @include text( none, center );
+
+                    @include color( white, 0.000 );
+
+                    @include fill( white, 0.925 );
+
+                    background: {
+
+                        // image: url(../img/icons/admin/icon_billboard.svg);
+                        repeat: no-repeat;
+                        size: 1.25rem 1.25rem;
+                        position: center right;
+
+                    }
+
+                    // appearance: none;
+
+                }
+
+            }
+
+        }
+
+        // wrapper
+        #menu-directory-records_wrapper {
+
+            width: 100%;
+
+        }
+
+        // table
+        #menu-directory-records {
+
+            width: 100% !important;
+            margin: 0 0 0 0;
+
+            @include font( $industry, 0.75rem, 600 );
+
+            // header
+            thead {
+
+                // @include fill( white, 0.885 );
+
+                // row
+                tr {
+
+                    height: 3rem;
+
+                }
+
+                // head
+                th {
+
+                    padding: 0.125rem 0.75rem 0 1rem;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include fill( $dark, 0.085 );
+
+                }
+
+            }
+
+            // row
+            .record {
+
+                height: 3rem;
+
+                @include font( $industry, 0.875rem, 600 );
+
+                @include typo( inherit, -0.005em );
+
+                @include color( white, 0.285 );
+
+                transition: all 320ms $outex 0ms;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    position: relative;
+
+                    // icons
+                    &:before,
+                    &:after {
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        @include flex-v-c-h-c( false );
+
+                        @include codicon( 1.5rem, 2.3125rem, 0.6875rem 0 0.4375rem 0.5rem, 0.5rem, $blue, inherit );
+
+                        transition: all 220ms linear 0ms;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        // content: '\ED5B';
+
+                        opacity: 1.000;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        // content: '\ED5C';
+
+                        opacity: 0.000;
+
+                    }
+
+                }
+
+                // hover state
+                &:hover {
+
+                    @include color( $campaign, 0.000 );
+
+                    @include fill( $g135, 0.165 );
+
+                    cursor: pointer;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include fill( $g140, 0.000 );
+
+                    }
+
+                    // toggle controls
+                    .mobile-toggle {
+
+                        // before->open
+                        &:before {
+
+                            @include color( $campaign, 0.000 );
+
+                        }
+
+                        // after->close
+                        &:after {
+
+                            //
+
+                        }
+
+                    }
+
+                    // email
+                    .email-link,
+                    .member-link {
+
+                        @include color( $cvellow, 0.000 );
+
+                        transition: all 320ms $outex 0ms;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include color( white, 0.000 );
+
+                        }
+
+                    }
+
+                }
+
+                // expanded state
+                &.parent {
+
+                    @include fill( $g135, 0.000 );
+
+                    // hover state
+                    &:hover {
+
+                        @include color( white, 0.000 );
+
+                        // @include fill( $roarange, 0.000 );
+
+                        // toggle controls
+                        .mobile-toggle {
+
+                            // before->open
+                            &:before {
+
+                                //
+
+                            }
+
+                            // after->close
+                            &:after {
+
+                                @include color( $roarange, 0.000 );
+
+                            }
+
+                        }
+
+                        // member
+                        .member-link {
+
+                            @include color( white, 0.000 );
+
+                            transition: all 320ms $outex 0ms;
+
+                        }
+
+                    }
+
+                    // toggle controls
+                    .mobile-toggle {
+
+                        // icons
+                        &:before,
+                        &:after {
+
+                            // @include color( red, 0.000 );
+
+                        }
+
+                        // before->open
+                        &:before {
+
+                            opacity: 0.000;
+
+                        }
+
+                        // after->close
+                        &:after {
+
+                            opacity: 1.000;
+
+                        }
+
+                    }
+
+                    // link
+                    .member-link {
+
+                        @include color( white, 0.000 );
+
+                    }
+
+                }
+
+                // columns
+                .link-column {
+
+                    padding: 0.125rem 0.75rem 0 1rem;
+
+                }
+
+                // member
+                .member-link {
+
+                    display: block;
+
+                    padding: 0.125rem 0.75rem 0rem 0;
+
+                    text-decoration: none;
+
+                    @include color( white, 0.285 );
+
+                    transition: all 320ms $outex 0ms;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        position: relative;
+
+                        display: inline-block;
+
+                        padding: 0.5625rem 0.75rem 0.4375rem 0rem;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // pagination controls
+        .dataTables_paginate {
+
+            @include flex-h-c-v-c( false );
+
+            width: 100%;
+            height: 3rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 100%;
+
+            }
+
+            // directions
+            .dataTables_previous,
+            .dataTables_next {
+
+                // disabled
+                &.disabled {
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( white, 0.000 );
+
+                    }
+
+                }
+
+            }
+
+            // ellipsis
+            .ellipsis {
+
+                @include flex-v-c-h-c( true );
+
+                padding: 0 0.5rem 0 0.5rem;
+
+            }
+
+            // button
+            .paginate_button {
+
+                @include flex-v-c-h-c( true );
+
+                min-width: 3rem;
+                height: 3rem;
+                padding: 0 0.5rem 0 0.5rem;
+
+                @include font( $industry, 0.75rem, 600 );
+
+                @include color( white, 0.265 );
+
+                text-decoration: none;
+
+                transition: all 320ms $outex 0ms;
+
+                // hover state
+                &:hover {
+
+                    @include color( $campaign, 0.000 );
+
+                    @include fill( $g135, 0.000 );
+
+                }
+
+                // disabled state
+                &.disabled {
+
+                    @include color( white, 0.625 );
+
+                }
+
+                // current state
+                &.current {
+
+                    @include color( white, 0.000 );
+
+                    @include fill( $g140, 0.000 );
+
+                    transition: all 320ms $outex 0ms;
+
+                }
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    min-width: 1.5rem;
+                    height: 1.5rem;
+                    padding: 0.0625rem 0.5rem 0 0.5rem;
+
+                    @include font( $industry, 0.75rem, 700 );
+
+                }
+
+            }
+
+        }
+
+    }

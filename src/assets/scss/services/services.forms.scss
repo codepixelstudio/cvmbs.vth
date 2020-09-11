@@ -1,0 +1,119 @@
+// stylesheet :: service forms styles
+
+    // settings
+    $forms : adjust-color(
+
+        $dark,
+        $hue          : 0%,
+        $saturation : -30%,
+        $lightness  : 10%,
+        $alpha         : -0.000
+
+    );
+
+    // styles
+    .service_section {
+
+        // class
+        &.forms {
+
+            padding: 5rem 4rem 3rem 4rem;
+
+            @include color( white );
+
+            @include fill( $forms );
+
+            // heading
+            h2 {
+
+                margin-left: 1rem;
+
+            }
+
+            // container
+            .forms_container {
+
+                @include flex-h-s-v-t( false );
+
+                flex-wrap: wrap;
+
+            }
+
+            // links
+            .form_link {
+
+                position: relative;
+
+                @include flex-h-c-v-c( true );
+
+                width: calc( 20% - 2rem );
+                width: auto;
+                height: 4rem;
+                margin: 0 1rem 2rem 1rem;
+                padding: 0.0625rem 1.25rem 0 2.75rem;
+
+                @include font( $industry, 0.875rem, 500 );
+
+                text-decoration: none;
+
+                @include color( white );
+
+                @include fill( white, 0.965 );
+
+                @include shadowbox( 1rem, 3rem, black, 0.645 );
+
+                transition: all 220ms linear 0ms;
+
+                // hover state
+                &:hover {
+
+                    @include color( $gold );
+
+                    @include fill( $dark );
+
+                }
+
+                // digital
+                &.digital {
+
+                    // before
+                    &:before {
+
+                        content: '\EA77';
+
+                    }
+
+                }
+
+                // upload
+                &.upload {
+
+                    // before
+                    &:before {
+
+                        content: '\EF3E';
+
+                    }
+
+                }
+
+                // before
+                &:before {
+
+                    @include codicon( 1rem, 1rem, 0, 1rem, transparentize( white, 0.365 ), '\E99D' );
+
+                    position: absolute;
+
+                    top: 1.5rem;
+                    bottom: 1.5rem;
+                    left: 1.25rem;
+
+                    z-index: 0;
+
+                }
+
+            }
+
+        }
+
+    }
