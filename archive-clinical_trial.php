@@ -234,6 +234,10 @@
     </section>
     <!-- END navigation -->
 
+    <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
+
+    <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
+
 	<?php get_template_part( 'elements/layout/layout.footer' ); ?>
 
 </main>
