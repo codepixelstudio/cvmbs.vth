@@ -32,7 +32,7 @@
         ?>
 
         <!-- link -->
-        <a class="form_link <?php echo $form_class; ?>" href="<?php echo $form[ 'url' ]; ?>">
+        <a class="form_link <?php echo $form_class; ?>" href="<?php echo $form_url; ?>">
 
             <?php echo $form[ 'name' ]; ?>
 
@@ -40,6 +40,12 @@
         <!-- END link -->
 
         <?php endforeach; ?>
+
+        <pre class="developer">
+
+            <?php print_r( $forms ); ?>
+
+        </pre>
 
     </div>
     <!-- END links -->
