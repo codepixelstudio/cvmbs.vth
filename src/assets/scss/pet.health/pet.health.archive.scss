@@ -487,6 +487,9 @@
         // pagination
         #news_navigation {
 
+            @include flex-h-c-v-c( false );
+
+            height: 3rem;
             padding: 0 5rem 0 5rem;
 
             // mobile
@@ -498,108 +501,73 @@
 
             }
 
-            // list
-            .pagination {
+            // mobile
+            @include breakpoint ( small only ) {
 
-                @include flex-h-c-v-c( false );
+                height: 2rem;
 
+            }
+
+            // items
+            span,
+            a {
+
+                @include flex-h-c-v-c( true );
+
+                width: 3rem;
                 height: 3rem;
                 margin: 0 0 0 0;
+                padding: 0 0 0 0;
 
-                list-style: none;
+                @include font( $industry, 0.875rem, 700 );
+
+                @include text( inherit );
+
+                @include color( $app05, 0.265  );
+
+                transition: $all220;
 
                 // mobile
                 @include breakpoint ( small only ) {
 
+                    width: 2rem;
                     height: 2rem;
+
+                    @include font( $industry, 0.75rem, 700 );
 
                 }
 
-                // items
-                li {
+                // hover state
+                &:hover {
 
-                    width: 3rem;
-                    height: 3rem;
-                    margin: 0 0 0 0;
+                    @include color( $g140 );
+
+                    @include fill( $campaign );
+
+                }
+
+                // span
+                &.current {
+
                     padding: 0 0 0 0;
 
-                    // mobile
-                    @include breakpoint ( small only ) {
+                    @include color( $campaign );
 
-                        width: 2rem;
-                        height: 2rem;
+                    @include fill( $g140 );
 
-                    }
+                }
 
-                    // common
-                    span,
-                    a {
+                // ellipsis
+                &.ellipsis {
+
+                    // after
+                    &:after {
 
                         @include flex-h-c-v-c( false );
 
                         width: 3rem;
                         height: 3rem;
-                        margin: 0 0 0 0;
-                        padding: 0 0 0 0;
-
-                        @include font( $industry, 0.875rem, 700 );
-
-                        @include text( inherit );
-
-                        @include color( $app05, 0.265  );
-
-                        transition: $all220;
-
-                        // mobile
-                        @include breakpoint ( small only ) {
-
-                            width: 2rem;
-                            height: 2rem;
-
-                            @include font( $industry, 0.75rem, 700 );
-
-                        }
-
-                    }
-
-                    // link
-                    a {
-
-                        // hover state
-                        &:hover {
-
-                            @include color( $g140 );
-
-                            @include fill( $campaign );
-
-                        }
-
-                    }
-
-                    // span
-                    .current {
-
-                        padding: 0 0 0 0;
-
-                        @include color( $campaign );
-
-                        @include fill( $g140 );
-
-                    }
-
-                    // ellipsis
-                    &.ellipsis {
-
-                        // after
-                        &:after {
-
-                            @include flex-h-c-v-c( false );
-
-                            width: 3rem;
-                            height: 3rem;
-                            padding: 0 0 0.5rem 0;
-
-                        }
+                        padding: 0 0 0.5rem 0;
 
                     }
 

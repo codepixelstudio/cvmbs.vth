@@ -197,15 +197,12 @@
     <!-- navigation -->
     <section id="news_navigation">
 
-        <?php // echo foundationpress_pagination(); ?>
+        <?php echo paginate_links( array(
 
-    </section>
-    <!-- END navigation -->
+            'prev_text' => '&laquo;',
+            'next_text' => '&raquo;'
 
-    <!-- navigation -->
-    <section id="news_navigation">
-
-        <?php echo paginate_links(); ?>
+        )); ?>
 
         <?php // echo get_posts_nav_link(); ?>
 
