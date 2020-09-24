@@ -9,12 +9,12 @@
 <?php
 
     // hit database for ID and pass through
-    function get_research_topic_ID ( $topic_ID ) {
+    function get_staff_directory_group_ID ( $topic_ID ) {
 
         // get topicID
-        $topic_ID = get_field( 'research_topic_id' );
+        $group_ID = get_field( 'staff_directory_group_id' );
 
-        return $topic_ID;
+        return $group_ID;
 
     }
 
@@ -30,7 +30,7 @@
     // output magic
     $directory = $service->GetMembersByGroupId(
 
-        array( 'id' => get_research_topic_ID( $topic_ID ) )
+        array( 'id' => get_staff_directory_group_ID( $group_ID ) )
 
     );
 
@@ -151,6 +151,16 @@
                 // $phone      = $phone;
                 $department = $directoryGroupName;
 
+                if ( $phone ) {
+
+                    $phoneHTML = '<span class="contact_phone">Phone: ' . $phone . '</span>';
+
+                } else {
+
+                    $phoneHTML = '';
+
+                }
+
                 $records .= '
 
                     <div class="contact">
@@ -169,15 +179,11 @@
 
                                 . $member->EmployeeTitle .
 
-                            '</span>
+                            '</span>'
 
-                            <span class="contact_phone">
+                            . $phoneHTML .
 
-                                Phone: ' . $phone . '
-
-                            </span>
-
-                            <a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
+                            '<a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
 
                         </div>
 

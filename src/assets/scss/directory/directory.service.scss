@@ -31,7 +31,7 @@
             // debug
             .developer {
 
-                // @include hide;
+                @include hide;
 
                 @include color( white );
 
