@@ -64,7 +64,7 @@
 <main id="site-layout" class="off-canvas-content <?php echo $site_type; ?>" data-off-canvas-content>
 
     <!-- directory -->
-    <div id="directory" class="page-container">
+    <div id="directory" class="vth page-container">
 
         <!-- page header -->
         <header class="header">
@@ -163,7 +163,21 @@
 
                         <div class="contact_info">
 
-                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '">' . $FirstName . ' ' . $LastName . '</a><a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
+                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '">' . $FirstName . ' ' . $LastName . '</a>
+
+                            <span class="contact_title">'
+
+                                . $member->EmployeeTitle .
+
+                            '</span>
+
+                            <span class="contact_phone">
+
+                                Phone: ' . $phone . '
+
+                            </span>
+
+                            <a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
 
                         </div>
 

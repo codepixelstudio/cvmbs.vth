@@ -10,6 +10,12 @@
     // option
     $alert_option = $homepage_alert[ 'alert_option' ];
 
+    // toolbar links
+    $toolbar_links      = $homepage_options[ 'quick_links' ];
+    $veterinarians_link = $toolbar_links[ 'veterinarians_button' ];
+    $directory_link     = $toolbar_links[ 'directory_button' ];
+    $emergency_link     = $toolbar_links[ 'emergency_button' ];
+
 ?>
 
 <!-- special.billboard -->
@@ -85,7 +91,7 @@
     <div id="vth-toolbar">
 
         <!-- veterinarians -->
-        <a href="#" id="veterinarians-button" class="toolbar-button">
+        <a href="<?php echo $veterinarians_link; ?>" id="veterinarians-button" class="toolbar-button">
 
             <!-- text -->
             <span>
@@ -99,7 +105,7 @@
         <!-- END veterinarians -->
 
         <!-- directory -->
-        <a href="#" id="directory-button" class="toolbar-button">
+        <a href="<?php echo $directory_link; ?>" id="directory-button" class="toolbar-button">
 
             <!-- text -->
             <span>
@@ -113,7 +119,7 @@
         <!-- END directory -->
 
         <!-- emergency -->
-        <a href="#" id="emergency-button" class="toolbar-button">
+        <a href="<?php echo $emergency_link; ?>" id="emergency-button" class="toolbar-button">
 
             <!-- text -->
             <span>

@@ -8,11 +8,25 @@
 
         @include flex-h-j-v-s( false );
 
+        // mobile
+        @include breakpoint ( small only ) {
+
+            @include flex-v-t-h-st( false );
+
+        }
+
         // section
         .service_sidebar_section {
 
             width: 50vw;
             padding: 5rem 5rem 5rem 5rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 100vw;
+
+            }
 
         }
 

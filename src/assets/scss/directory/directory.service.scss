@@ -14,109 +14,231 @@
     // styles
     #directory {
 
-        padding: 10rem 4rem 4rem 4rem;
+        // class
+        &.vth {
 
-        @include fill( $directory, 0.000 );
+            padding: 10rem 4rem 4rem 4rem;
 
-        // debug
-        .developer {
-
-            @include hide;
-
-            @include color( white );
-
-            @include fill( $dark );
-
-        }
-
-        // header
-        header {
-
-            margin: 0 0 0 1rem;
-
-        }
-
-        // contact cards
-        .contact_cards {
-
-            @include flex-h-j-v-s( false );
-
-            flex-wrap: wrap;
-
-        }
-
-        // contact card
-        .contact {
-
-            @include flex-h-s-v-t( true );
-
-            width: calc( 50% - 2rem );
-            margin: 1rem 1rem 1rem 1rem;
-            padding: 2rem 2rem 0 0;
-
-            @include fill( white, 0.000 );
-
-            @include shadowbox( 1rem, 3rem, black, 0.625 );
+            @include fill( $directory, 0.000 );
 
             // mobile
-            @include breakpoint ( xxlarge up ) {
+            @include breakpoint ( small only ) {
 
-                width: calc( 33.3333333% - 2rem );
+                padding: 6rem 2rem 0rem 2rem;
 
             }
 
-            // photo
-            .contact_photo {
+            // debug
+            .developer {
 
-                position: relative;
+                // @include hide;
 
-                width: 10rem;
-                min-width: 10rem;
-                height: 10rem;
-                margin: 0 2rem 0 0;
+                @include color( white );
 
-                background: {
+                @include fill( $dark );
 
-                    repeat: no-repeat;
-                    size: cover;
-                    position: center center;
+            }
+
+            // header
+            header {
+
+                margin: 0 0 0 1rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 0 0;
+
+                }
+
+            }
+
+            // contact cards
+            .contact_cards {
+
+                @include flex-h-j-v-s( false );
+
+                flex-wrap: wrap;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 2rem 0 0 0;
+
+                }
+
+            }
+
+            // contact card
+            .contact {
+
+                @include flex-h-s-v-t( true );
+
+                width: calc( 50% - 2rem );
+                margin: 1rem 1rem 1rem 1rem;
+                padding: 1rem 2rem 0 0;
+
+                @include fill( white, 0.000 );
+
+                @include shadowbox( 1rem, 3rem, black, 0.625 );
+
+                // mobile
+                @include breakpoint ( xxlarge up ) {
+
+                    width: calc( 33.3333333% - 2rem );
 
                 }
 
                 // mobile
-                @include breakpoint ( large down ) {
+                @include breakpoint ( medium down ) {
 
-                    //
-
-                }
-
-                // link
-                .contact_photo_link {
-
-                    position: absolute;
-
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
+                    width: 100%;
 
                 }
 
-            }
+                // mobile
+                @include breakpoint ( small only ) {
 
-            // info
-            .contact_info {
+                    @include flex-h-s-v-b( false )
 
-                @include flex-v-t-h-s( true );
+                    margin: 0 0 2rem 0;
+                    padding: 1rem 1rem 0 0;
 
-                // link
-                .contact_link {
+                }
 
-                    @include font( $klavislim, 1.5rem, 400 );
+                // photo
+                .contact_photo {
 
-                    @include text( $up, none );
+                    position: relative;
 
-                    @include color( $g140 );
+                    width: 10rem;
+                    min-width: 10rem;
+                    height: 10rem;
+                    margin: 0 2rem 0 0;
+
+                    background: {
+
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( large only ) {
+
+                        width: 8rem;
+                        min-width: 8rem;
+                        height: 8rem;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 6rem;
+                        min-width: 6rem;
+                        height: 6rem;
+                        margin: 0 1rem 0 0;
+
+                    }
+
+                    // link
+                    .contact_photo_link {
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                    }
+
+                }
+
+                // info
+                .contact_info {
+
+                    @include flex-v-t-h-s( true );
+
+                    // padding: 0 0 2rem 0;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        padding: 0 0 1rem 0;
+
+                    }
+
+                    // link
+                    .contact_link {
+
+                        @include font( $klavislim, 1.5rem, 400 );
+
+                        @include text( $up, none );
+
+                        @include color( $g140 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $klavislim, 1rem, 400 );
+
+                        }
+
+                    }
+
+                    // common
+                    span {
+
+                        display: block;
+
+                    }
+
+                    // title
+                    .contact_title {
+
+                        margin: 0 0 0.5rem 0;
+
+                        @include font( $industry, 0.75rem, 700 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            margin: 0 0 0.5rem 0;
+
+                            @include font( $industry, 0.6875rem, 700 );
+
+                        }
+
+                    }
+
+                    // phone
+                    .contact_phone {
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 0.6875rem, 600 );
+
+                        }
+
+                    }
+
+                    // email
+                    .email_link {
+
+                        @include color( $g140 );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            @include font( $industry, 0.6875rem, 600 );
+
+                        }
+
+                    }
 
                 }
 

@@ -104,12 +104,6 @@
 
 				<?php endif; ?>
 
-				<?php if ( $forms_option ) : ?>
-
-				<?php get_template_part( 'elements/services/service.forms' ); ?>
-
-				<?php endif; ?>
-
 				<?php if ( $contact_option ) : ?>
 
 				<!-- contact -->
@@ -121,6 +115,12 @@
 
 				</div>
 				<!-- END contact -->
+
+				<?php endif; ?>
+
+				<?php if ( $forms_option ) : ?>
+
+				<?php get_template_part( 'elements/services/service.forms' ); ?>
 
 				<?php endif; ?>
 
