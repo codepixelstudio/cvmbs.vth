@@ -4,6 +4,8 @@
     $service_highlight = get_field( 'service_highlight' );
     $highlight_type    = $service_highlight[ 'highlight_type' ];
 
+
+
 ?>
 
 <!-- service section -->
@@ -23,7 +25,7 @@
                 <!-- embed -->
                 <div class="video">
 
-                    <iframe src="<?php echo $service_highlight[ 'video_url' ]; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/<?php echo $service_highlight[ 'video_ID' ]; ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
                 <!-- END embed -->

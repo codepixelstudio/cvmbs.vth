@@ -814,9 +814,9 @@
                 },
                 {
                     "key": "field_5ec3f5cd7e132",
-                    "label": "Video URL",
-                    "name": "video_url",
-                    "type": "url",
+                    "label": "Video ID",
+                    "name": "video_ID",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -834,7 +834,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5ec3f5ecf95f0",
@@ -1187,5 +1190,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1597941069
+    "modified": 1600975155
 }
