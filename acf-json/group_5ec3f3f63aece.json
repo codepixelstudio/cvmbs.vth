@@ -817,7 +817,7 @@
                     "label": "Video ID",
                     "name": "video_ID",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "provide the YouTube video ID (i.e. EQ30qkVIrs4)",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -1190,5 +1190,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1600975155
+    "modified": 1600975320
 }
