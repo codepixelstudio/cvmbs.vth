@@ -41,12 +41,6 @@
 
         <?php endforeach; ?>
 
-        <pre class="developer">
-
-            <?php print_r( $forms ); ?>
-
-        </pre>
-
     </div>
     <!-- END links -->
 
