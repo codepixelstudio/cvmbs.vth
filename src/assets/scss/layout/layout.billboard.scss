@@ -380,7 +380,7 @@
                 // mobile
                 @include breakpoint ( large down ) {
 
-                    
+
                     min-height: 7rem;
                     // height: auto;
                     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -574,10 +574,12 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    @include flex-h-j-v-t( false );
+                    @include flex-v-t-h-e( false );
 
-                    top: 6rem;
-                    left: 2rem;
+                    top: 5rem;
+                    right: 1rem;
+
+                    height: auto;
 
                 }
 
@@ -635,13 +637,14 @@
                     // first
                     &:first-child {
 
-                        margin: 0 0 0 0;
+                        // margin: 0 0 0 0;
 
                     }
 
                     // mobile
                     @include breakpoint ( small only ) {
 
+                        margin: 0 0 1rem 0;
                         padding: 0 0.75rem 0 2rem;
 
                     }
@@ -668,8 +671,20 @@
 
                 }
 
+                // clients
+                #client-portal {
+
+                    // before
+                    &:before {
+
+                        content: '\ED7A';
+
+                    }
+
+                }
+
                 // veterinarians
-                #veterinarians-button {
+                #veterinarians {
 
                     // before
                     &:before {
@@ -681,7 +696,7 @@
                 }
 
                 // directory
-                #directory-button {
+                #staff-directory {
 
                     // before
                     &:before {
@@ -693,7 +708,7 @@
                 }
 
                 // emergency
-                #emergency-button {
+                #emergency {
 
                     @include fill( $roarange, 0.000 );
                     @include fill( #FD4C3F, 0.000 );

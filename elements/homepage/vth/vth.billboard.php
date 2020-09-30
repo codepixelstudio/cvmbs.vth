@@ -11,7 +11,7 @@
     $alert_option = $homepage_alert[ 'alert_option' ];
 
     // toolbar links
-    $toolbar_links      = $homepage_options[ 'quick_links' ];
+    $quick_links        = $homepage_options[ 'links' ];
     $veterinarians_link = $toolbar_links[ 'veterinarians_button' ];
     $directory_link     = $toolbar_links[ 'directory_button' ];
     $emergency_link     = $toolbar_links[ 'emergency_button' ];
@@ -90,47 +90,59 @@
     <!-- toolbar -->
     <div id="vth-toolbar">
 
-        <!-- veterinarians -->
-        <a href="<?php echo $veterinarians_link; ?>" id="veterinarians-button" class="toolbar-button">
+        <?php if ( $quick_links ) : ?>
+
+        <?php foreach( $quick_links as $quick_link ) : ?>
+
+        <?php
+
+            // get titles
+            $quick_link_title = $quick_link[ 'link' ][ 'title' ];
+
+            // setup icons
+            switch ( true ) {
+
+                case $quick_link_title == 'client portal' :
+
+                    $link_ID = 'client-portal';
+                    break;
+
+                case $quick_link_title == 'for veterinarians' :
+
+                    $link_ID = 'veterinarians';
+                    break;
+
+                case $quick_link_title == 'staff directory' :
+
+                    $link_ID = 'staff-directory';
+                    break;
+
+                case $quick_link_title == 'emergency' :
+
+                    $link_ID = 'emergency';
+                    break;
+
+            }
+
+        ?>
+
+        <!-- clients -->
+        <a href="<?php echo $quick_link[ 'link' ][ 'url' ]; ?>" id="<?php echo $link_ID; ?>" class="toolbar-button">
 
             <!-- text -->
             <span>
 
-                veterinarians
+                <?php echo $quick_link[ 'link' ][ 'title' ]; ?>
 
             </span>
             <!-- END text -->
 
         </a>
-        <!-- END veterinarians -->
+        <!-- END clients -->
 
-        <!-- directory -->
-        <a href="<?php echo $directory_link; ?>" id="directory-button" class="toolbar-button">
+        <?php endforeach; ?>
 
-            <!-- text -->
-            <span>
-
-                directory
-
-            </span>
-            <!-- END text -->
-
-        </a>
-        <!-- END directory -->
-
-        <!-- emergency -->
-        <a href="<?php echo $emergency_link; ?>" id="emergency-button" class="toolbar-button">
-
-            <!-- text -->
-            <span>
-
-                emergency
-
-            </span>
-            <!-- END text -->
-
-        </a>
-        <!-- END emergency -->
+        <?php endif; ?>
 
     </div>
     <!-- END toolbar -->
