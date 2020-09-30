@@ -3,93 +3,8 @@
     // setup today
     $today = date( 'Ymd' );
 
-    // test for URL query string
-    if ( $_GET ) {
-
-        echo 'ball so hard';
-
-        // retrieve query string
-        $query = $_GET[ 'tag' ];
-
-        // setup query
-        if ( $query ) {
-
-            // setup query parameters
-            $clinical_trials = array(
-
-                'post_type'      => 'clinical_trial',
-                'post_tag'       => $query,
-                'posts_per_page' => -1,
-                'orderby'        => 'meta_value',
-                'meta_query'     => array(
-
-                    array(
-
-                        'key'     => 'trial_expiration',
-                        'value'   => $today,
-                        'compare' => '>'
-
-                    )
-
-                ),
-                'order'          => 'ASC'
-
-            );
-
-        } else {
-
-            // setup query parameters
-            $clinical_trials = array(
-
-                'post_type'      => 'clinical_trial',
-                'posts_per_page' => -1,
-                'orderby'        => 'meta_value',
-                'meta_query'     => array(
-
-                    array(
-
-                        'key'     => 'trial_expiration',
-                        'value'   => $today,
-                        'compare' => '>'
-
-                    )
-
-                ),
-                'order'          => 'ASC'
-
-            );
-
-        }
-
-    } else {
-
-        echo 'nice try';
-
-        // setup query parameters
-        $clinical_trials = array(
-
-            'post_type'      => 'clinical_trial',
-            'posts_per_page' => -1,
-            'orderby'        => 'meta_value',
-            'meta_query'     => array(
-
-                array(
-
-                    'key'     => 'trial_expiration',
-                    'value'   => $today,
-                    'compare' => '>'
-
-                )
-
-            ),
-            'order'          => 'ASC'
-
-        );
-
-    }
-
     // setup query
-    $clinical_trials_query = new WP_Query( $clinical_trials );
+    // $clinical_trials_query = new WP_Query( $clinical_trials );
 
     // text content
     $clinical_trials_info = get_field( 'clinical_trial_info', 'options' );
@@ -190,9 +105,104 @@
         <!-- grid -->
         <div id="news_grid">
 
-            <?php if ( $clinical_trials_query->have_posts() ) : ?>
+            <?php if ( have_posts() ) : ?>
 
-        	<?php while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
+            <?php
+
+                // test for URL query string
+                if ( $_GET ) {
+
+                    // echo 'ball so hard';
+
+                    // retrieve query string
+                    $query = $_GET[ 'tag' ];
+
+                    // setup query
+                    if ( $query ) {
+
+                        // setup query parameters
+                        $clinical_trials = array(
+
+                            'post_type'      => 'clinical_trial',
+                            'post_tag'       => $query,
+                            'posts_per_page' => -1,
+                            'orderby'        => 'meta_value',
+                            'meta_query'     => array(
+
+                                array(
+
+                                    'key'     => 'trial_expiration',
+                                    'value'   => $today,
+                                    'compare' => '>'
+
+                                )
+
+                            ),
+                            'order'          => 'ASC'
+
+                        );
+
+                    } else {
+
+                        // setup query parameters
+                        $clinical_trials = array(
+
+                            'post_type'      => 'clinical_trial',
+                            'posts_per_page' => -1,
+                            'orderby'        => 'meta_value',
+                            'meta_query'     => array(
+
+                                array(
+
+                                    'key'     => 'trial_expiration',
+                                    'value'   => $today,
+                                    'compare' => '>'
+
+                                )
+
+                            ),
+                            'order'          => 'ASC'
+
+                        );
+
+                    }
+
+                } else {
+
+                    // echo 'nice try';
+
+                    // setup query parameters
+                    $clinical_trials = array(
+
+                        'post_type'      => 'clinical_trial',
+                        'posts_per_page' => -1,
+                        'orderby'        => 'meta_value',
+                        'meta_query'     => array(
+
+                            array(
+
+                                'key'     => 'trial_expiration',
+                                'value'   => $today,
+                                'compare' => '>'
+
+                            )
+
+                        ),
+                        'order'          => 'ASC'
+
+                    );
+
+                }
+
+            ?>
+
+            <?php // $clinical_trials_query = new WP_Query( $clinical_trials ); ?>
+
+            <?php // if ( $clinical_trials_query->have_posts() ) : ?>
+
+        	<?php // while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
+
+            <?php while ( have_posts() ) : the_post(); ?>
 
             <?php
 

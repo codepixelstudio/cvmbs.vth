@@ -1,10 +1,11 @@
 <?php
 
     // setup REST API request
-    $requestURL  = wp_remote_get( 'https://cvmbs.source.colostate.edu/wp-json/wp/v2/posts/?filter[tag]=clinical-trial&per_page=3' );
+    $source_tag  = get_field( 'source_tag', 'options' );
+    $requestURL  = wp_remote_get( 'https://cvmbs.source.colostate.edu/wp-json/wp/v2/posts/?filter[tag]=' . $source_tag . '&per_page=4' );
     $data        = wp_remote_retrieve_body( $requestURL );
     $articles    = json_decode( $data );
-    $sourceURL   = 'https://cvmbs.source.colostate.edu/tag/clinical-trial';
+    $sourceURL   = 'https://cvmbs.source.colostate.edu/tag/' . $source_tag;
 
 ?>
 
@@ -35,9 +36,7 @@
     <!-- source-feed -->
     <div id="source-feed" class="source-feed">
 
-        <?php
-
-        foreach( $articles as $article ) :
+        <?php foreach ( $articles as $article ) :
 
             $permalink = $article->link;
             $thumbnail = $article->featured_image->source_url;
