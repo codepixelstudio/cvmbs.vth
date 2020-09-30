@@ -455,6 +455,8 @@
                     // mobile
                     @include breakpoint ( small only ) {
 
+                        @include hide;
+
                         right: auto;
                         left: 0;
 
@@ -528,7 +530,7 @@
                     // mobile
                     @include breakpoint ( small only ) {
 
-                        @include hide;
+                        // @include hide;
 
                         @include font( $industry, 0.625rem, 600 );
 
