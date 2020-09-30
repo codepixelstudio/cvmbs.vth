@@ -8,40 +8,56 @@
 
     <?php foreach ( $contacts as $contact ) : ?>
 
+    <?php $contact_entry = $contact[ 'contact_entry' ]; ?>
+
     <!-- contact entry -->
     <div class="entry <?php echo $contact[ 'type' ]; ?>">
 
-        <?php if ( $contact[ 'type' ][ 'value' ] !== 'name' ) : ?>
+        <?php if ( $contact[ 'contact_label' ] ) : ?>
 
-        <span class="type">
+        <span class="contact_label">
 
-            <?php echo $contact[ 'type' ][ 'label' ]; ?>:
+            <?php echo $contact[ 'contact_label' ]; ?>
 
         </span>
 
         <?php endif; ?>
 
-        <?php if ( $contact[ 'type' ][ 'value' ] == 'email' ) : ?>
+        <?php foreach ( $contact_entry as $entry ) : ?>
 
-        <!-- email -->
-        <a class="email" href="mailto:<?php echo $contact[ 'info' ]; ?>">
+        <?php if ( $entry[ 'contact_type'][ 'value' ] == 'phone' || $entry[ 'contact_type'][ 'value' ] == 'fax' ) : ?>
 
-            <?php echo $contact[ 'info' ]; ?>
+        <span class="contact_info phone">
 
-        </a>
-        <!-- END email -->
-
-        <?php else : ?>
-
-        <!-- text -->
-        <span class="info">
-
-            <?php echo $contact[ 'info' ]; ?>
+            <?php echo $entry[ 'contact_type' ][ 'label' ]; ?>: <?php echo $entry[ 'contact_info' ]; ?>
 
         </span>
-        <!-- END text -->
+
+        <?php elseif ( $entry[ 'contact_type'][ 'value' ] == 'name' ) : ?>
+
+        <span class="contact_info name">
+
+            <?php echo $entry[ 'contact_info' ]; ?>
+
+        </span>
+
+        <?php elseif ( $entry[ 'contact_type' ][ 'value' ] == 'email' ) : ?>
+
+        <span class="contact_info email">E-mail:
+
+            <!-- email -->
+            <a class="email_link" href="mailto:<?php echo $entry[ 'info' ]; ?>">
+
+                <?php echo $entry[ 'contact_info' ]; ?>
+
+            </a>
+            <!-- END email -->
+
+        </span>
 
         <?php endif; ?>
+
+        <?php endforeach; ?>
 
     </div>
     <!-- END contact entry -->

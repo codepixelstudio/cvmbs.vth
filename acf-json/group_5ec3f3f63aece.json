@@ -464,43 +464,16 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_5f224dce2fb91",
+            "collapsed": "field_5f74eef4a80b6",
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "Add Contact",
+            "button_label": "Add Contact Entry",
             "sub_fields": [
                 {
-                    "key": "field_5f224dce2fb91",
-                    "label": "Contact Type",
-                    "name": "type",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "name": "Name",
-                        "phone": "Phone",
-                        "fax": "Fax",
-                        "email": "E-mail"
-                    },
-                    "default_value": false,
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "array",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5f224e312fb92",
-                    "label": "Contact Info",
-                    "name": "info",
+                    "key": "field_5f74eef4a80b6",
+                    "label": "Contact Label",
+                    "name": "contact_label",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -515,6 +488,73 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5f74ef57a80b7",
+                    "label": "Contact Entry",
+                    "name": "contact_entry",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "field_5f74f514d61ee",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "row",
+                    "button_label": "Add Contact Info",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f74f514d61ee",
+                            "label": "Contact Type",
+                            "name": "contact_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "name": "Name",
+                                "phone": "Phone",
+                                "fax": "Fax",
+                                "email": "E-mail"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "array",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5f74f525d61ef",
+                            "label": "Contact Info",
+                            "name": "contact_info",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1190,5 +1230,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1600975320
+    "modified": 1601501286
 }

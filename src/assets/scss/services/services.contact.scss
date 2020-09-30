@@ -44,11 +44,34 @@
 
             }
 
+            // common
+            span {
+
+                display: block;
+
+            }
+
             // entry
             .entry {
 
+                margin: 0 0 1rem 0;
+
+                // contact label
+                .contact_label {
+
+                    @include font( $industry, 0.875rem, 700 );
+
+                }
+
+                // contact info
+                .contact_info {
+
+                    @include font( $industry, 0.875rem, 500 );
+
+                }
+
                 // email
-                .email {
+                .email_link {
 
                     @include color( $gold );
 
@@ -61,7 +84,7 @@
         // staff
         .staff {
 
-            @include fill( $app05, 0.765 );
+            @include fill( $app05, 0.665 );
 
         }
 
