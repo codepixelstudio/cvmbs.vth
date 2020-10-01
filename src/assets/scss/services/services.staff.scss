@@ -6,12 +6,52 @@
     // styles
     .staff {
 
+        position: relative;
+
+        @include flex-v-b-h-s( false );
+
         padding: 1rem 2rem 2rem 2rem;
+
+        background: {
+
+            image: url(../img/billboard.00.jpg);
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+            attachment: fixed;
+
+        }
+
+        // overlay
+        .section_overlay {
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            z-index: 20;
+
+            @include fill( $nite, 0.385 );
+
+        }
+
+        // content
+        .section_content {
+
+            position: relative;
+
+            z-index: 100;
+
+        }
 
         // title
         h2 {
 
             @include color( $g140 );
+            @include color( white );
 
         }
 
@@ -31,7 +71,7 @@
 
             @include color( white );
 
-            @include fill( $g135, 0.000 );
+            @include fill( $g140, 0.000 );
 
             @include shadowbox( 1rem, 3rem, black, 0.685 );
 

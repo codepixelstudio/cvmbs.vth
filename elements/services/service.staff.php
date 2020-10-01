@@ -8,19 +8,33 @@
 <!-- service section -->
 <div class="service_sidebar_section staff">
 
-    <h2><?php the_title(); ?> staff</h2>
+    <!-- overlay -->
+    <div class="section_overlay">
 
-    <p>
+        <!--  -->
 
-        <?php echo $staff_content[ 'text' ]; ?>
+    </div>
+    <!-- END overlay -->
 
-    </p>
+    <!-- content -->
+    <div class="section_content">
 
-    <a class="staff_link" href="<?php echo $staff_content[ 'link' ]; ?>">
+        <h2><?php the_title(); ?> staff</h2>
 
-        <?php the_title(); ?> staff directory
+        <p>
 
-    </a>
+            <?php echo $staff_content[ 'text' ]; ?>
+
+        </p>
+
+        <a class="staff_link" href="<?php echo $staff_content[ 'link' ]; ?>">
+
+            <?php the_title(); ?> staff directory
+
+        </a>
+
+    </div>
+    <!-- END content -->
 
 </div>
 <!-- END service section -->
