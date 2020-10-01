@@ -28,6 +28,8 @@
     <!-- content -->
     <div class="content-layer">
 
+        <?php if ( $giving_button[ 'layout' ] ) : ?>
+
         <span class="headline">
 
             <?php echo $giving_button[ 'title' ]; ?>
@@ -39,6 +41,8 @@
             <?php echo $giving_button[ 'text' ]; ?>
 
         </span>
+
+        <?php endif; ?>
 
         <a href="<?php echo $giving_button[ 'button' ][ 'url' ]; ?>" class="content-button">
 
