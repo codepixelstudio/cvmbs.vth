@@ -3,7 +3,7 @@
 <!-- service section -->
 <div class="pet_types">
 
-    <h4>pet types</h4>
+    <h4>animal types</h4>
 
     <?php foreach ( $pet_types as $pet_type ) : ?>
 
