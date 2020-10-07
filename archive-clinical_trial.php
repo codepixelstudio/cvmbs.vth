@@ -3,8 +3,106 @@
     // setup today
     $today = date( 'Ymd' );
 
+    // test for URL query string
+    if ( $_GET ) {
+
+        // retrieve query string
+        $query_URL = $_GET[ 'tag' ];
+
+        // setup query
+        if ( $query_URL ) {
+
+            // setup query parameters
+            $clinical_trials = array(
+
+                'post_type'      => 'clinical_trial',
+                'post_tag'       => $query_URL,
+                'posts_per_page' => -1,
+                'orderby'        => 'meta_value',
+                'meta_query'     => array(
+
+                    array(
+
+                        'key'     => 'trial_expiration',
+                        'value'   => $today,
+                        'compare' => '>'
+
+                    )
+
+                ),
+                'order'          => 'ASC'
+
+            );
+
+        } else {
+
+            // setup query parameters
+            $clinical_trials = array(
+
+                'post_type'      => 'clinical_trial',
+                'posts_per_page' => -1,
+                'orderby'        => 'meta_value',
+                'meta_query'     => array(
+
+                    array(
+
+                        'key'     => 'trial_expiration',
+                        'value'   => $today,
+                        'compare' => '>'
+
+                    )
+
+                ),
+                'order'          => 'ASC'
+
+            );
+
+        }
+
+    } else {
+
+        // setup query parameters
+        $clinical_trials = array(
+
+            'post_type'      => 'clinical_trial',
+            'posts_per_page' => -1,
+            'orderby'        => 'meta_value',
+            'meta_query'     => array(
+
+                array(
+
+                    'key'     => 'trial_expiration',
+                    'value'   => $today,
+                    'compare' => '>'
+
+                )
+
+            ),
+            'order'          => 'ASC'
+
+        );
+
+    }
+
     // setup query
     // $clinical_trials_query = new WP_Query( $clinical_trials );
+
+    global $query;
+
+    // restrict expired trials
+    $meta_query = array(
+
+        array(
+
+            'key'     => 'trial_expiration',
+            'value'   => $today,
+            'compare' => '>'
+
+        )
+
+    );
+
+    // $query->set( 'meta_query', $meta_query );
 
     // text content
     $clinical_trials_info = get_field( 'clinical_trial_info', 'options' );
@@ -37,11 +135,13 @@
         <div id="clinical_trial_info">
 
             <?php echo $clinical_trials_info; ?>
-            <br />
-            <?php echo $query; ?>
 
         </div>
         <!-- END custom archive page content -->
+
+        <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
+
+        <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
 
         <!-- news navigation -->
         <div id="news_controls" class="news_navigation">
@@ -55,7 +155,7 @@
                     <!-- title -->
                     <span class="metadata_title">
 
-                        browse clinical trials by <em>some label name here</em>
+                        browse clinical trials
 
                     </span>
                     <!-- END title -->
@@ -68,7 +168,7 @@
                             // setup tag cloud
                             $tags = get_terms( array(
 
-                                'taxonomy' => 'post_tag',
+                                'taxonomy'   => 'clinical_trial_tag',
                                 'hide_empty' => true,
 
                             ));
@@ -78,7 +178,22 @@
 
                                 $tag_link = get_tag_link( $tag->term_id );
 
-                                $tag_list .= '<a href="?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
+                                // retrieve query string
+                                $query_URL = $_GET[ 'tag' ];
+
+                                $tag_list = '';
+
+                                if ( $tag->slug == $query_URL ) {
+
+                                    $active_class = 'active';
+
+                                } else {
+
+                                    $active_class = 'inactive';
+
+                                }
+
+                                $tag_list .= '<a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">' . $tag->name . '</a>';
 
                             }
 
@@ -106,97 +221,6 @@
         <div id="news_grid">
 
             <?php if ( have_posts() ) : ?>
-
-            <?php
-
-                // test for URL query string
-                if ( $_GET ) {
-
-                    // echo 'ball so hard';
-
-                    // retrieve query string
-                    $query = $_GET[ 'tag' ];
-
-                    // setup query
-                    if ( $query ) {
-
-                        // setup query parameters
-                        $clinical_trials = array(
-
-                            'post_type'      => 'clinical_trial',
-                            'post_tag'       => $query,
-                            'posts_per_page' => -1,
-                            'orderby'        => 'meta_value',
-                            'meta_query'     => array(
-
-                                array(
-
-                                    'key'     => 'trial_expiration',
-                                    'value'   => $today,
-                                    'compare' => '>'
-
-                                )
-
-                            ),
-                            'order'          => 'ASC'
-
-                        );
-
-                    } else {
-
-                        // setup query parameters
-                        $clinical_trials = array(
-
-                            'post_type'      => 'clinical_trial',
-                            'posts_per_page' => -1,
-                            'orderby'        => 'meta_value',
-                            'meta_query'     => array(
-
-                                array(
-
-                                    'key'     => 'trial_expiration',
-                                    'value'   => $today,
-                                    'compare' => '>'
-
-                                )
-
-                            ),
-                            'order'          => 'ASC'
-
-                        );
-
-                    }
-
-                } else {
-
-                    // echo 'nice try';
-
-                    // setup query parameters
-                    $clinical_trials = array(
-
-                        'post_type'      => 'clinical_trial',
-                        'posts_per_page' => -1,
-                        'orderby'        => 'meta_value',
-                        'meta_query'     => array(
-
-                            array(
-
-                                'key'     => 'trial_expiration',
-                                'value'   => $today,
-                                'compare' => '>'
-
-                            )
-
-                        ),
-                        'order'          => 'ASC'
-
-                    );
-
-                }
-
-            ?>
-
-            <?php // $clinical_trials_query = new WP_Query( $clinical_trials ); ?>
 
             <?php // if ( $clinical_trials_query->have_posts() ) : ?>
 
@@ -226,7 +250,7 @@
 
             <?php else : ?>
 
-            Currently, there are no active/ongoing clinical trials.
+            Currently, there are no active/ongoing clinical trials matching the selected criteria.
 
             <?php endif; ?>
 
@@ -243,10 +267,6 @@
 
     </section>
     <!-- END navigation -->
-
-    <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
-
-    <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
 
 	<?php get_template_part( 'elements/layout/layout.footer' ); ?>
 
