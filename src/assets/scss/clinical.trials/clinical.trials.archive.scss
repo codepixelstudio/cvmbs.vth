@@ -14,26 +14,30 @@
             // content
             #news_content {
 
-                padding: 5rem 5rem 3rem 5rem;
+                padding: 5rem 0 0 0;
 
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    padding: 3rem 3rem 1rem 3rem;
+                    padding: 3rem 0 0 0;
 
                 }
 
                 // grid
                 #news_grid {
 
+                    order: 0;
+
                     display: block;
 
-                    // flex-wrap: wrap;
+                    margin: 0 0 0 0;
+                    padding: 3rem 5rem 4rem 5rem;
 
                     // mobile
                     @include breakpoint ( small only ) {
 
-                        @include flex-v-t-h-st( false );
+                        margin: 0 0 0 0;
+                        padding: 0 3rem 3rem 3rem;
 
                     }
 
@@ -45,14 +49,54 @@
             #clinical_trial_info {
 
                 margin: 1rem 0 0 0;
+                padding-bottom: 4rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding-bottom: 3rem;
+
+                }
 
             }
 
             // tags
             #news_controls {
 
-                margin: 1rem 0 0 0;
-                padding: 0 0 0 0;
+                order: 0;
+
+                margin: 0 0 0 0;
+                padding: 5rem 5rem 0 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 3rem 3rem 3rem 3rem;
+
+                }
+
+            }
+
+            // pagination
+            #news_navigation {
+
+                @include hide;
+
+            }
+
+            // common
+            .fixed_width {
+
+                padding-right: 5rem;
+                padding-left: 5rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding-right: 3rem;
+                    padding-left: 3rem;
+
+                }
 
             }
 
@@ -66,7 +110,7 @@
             display: block;
 
             width: auto;
-            height: auto;
+            // height: auto;
             margin: 0 0 1rem 0;
 
             text-decoration: none;

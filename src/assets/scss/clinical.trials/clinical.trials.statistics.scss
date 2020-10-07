@@ -6,6 +6,15 @@
     // styles
     #clinical_trial_statistics {
 
+        // margin-top: 5rem;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            // margin-top: 2rem;
+
+        }
+
         .fast-facts {
 
             @include color( white );

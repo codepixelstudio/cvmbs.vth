@@ -118,7 +118,7 @@
     <section id="news_content">
 
         <!-- header -->
-        <div id="news_header">
+        <div id="news_header" class="fixed_width">
 
             <!-- heading -->
             <h1>
@@ -132,7 +132,7 @@
         <!-- END header -->
 
         <!-- custom archive page content -->
-        <div id="clinical_trial_info">
+        <div id="clinical_trial_info" class="fixed_width">
 
             <?php echo $clinical_trials_info; ?>
 
@@ -141,10 +141,8 @@
 
         <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
 
-        <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
-
         <!-- news navigation -->
-        <div id="news_controls" class="news_navigation">
+        <div id="news_controls" class="news_navigation fixed_width">
 
             <!-- navigation -->
             <aside id="news_taxonomy">
@@ -218,7 +216,7 @@
         <!-- END news navigation -->
 
         <!-- grid -->
-        <div id="news_grid">
+        <div id="news_grid" class="fixed_width">
 
             <?php if ( have_posts() ) : ?>
 
@@ -256,6 +254,8 @@
 
         </div>
         <!-- END grid -->
+
+        <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
 
     </section>
     <!-- END news -->
