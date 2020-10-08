@@ -58,7 +58,7 @@
 
             <?php // print_r( $_GET ); ?>
 
-            <?php get_template_part( 'elements/search/search.posts' ); ?>
+            <?php // get_template_part( 'elements/search/search.posts' ); ?>
 
         </div>
         <!-- END header -->
@@ -229,7 +229,38 @@
                 <!-- taxonomy group -->
                 <div class="taxonomy_group">
 
-                    <?php get_template_part( 'elements/pet.health/pet.health.topics' ); ?>
+                    <?php // get_template_part( 'elements/pet.health/pet.health.topics' ); ?>
+
+                    <?php
+
+                        // setup topics list
+                        $topics = get_terms( array(
+
+                            'taxonomy' => 'topic',
+                            'hide_empty' => true,
+
+                        ));
+
+                        // topics list iteration
+                        foreach ( $topics as $topic ) {
+
+                            if ( $topic->slug != 'uncategorized' ) {
+
+                                $topic_link = get_category_link( $topic->term_id );
+
+                                $topic_list .= '<a href="?topic=' . $topic->slug . '" class="taxonomy_item">' . $topic->name . '</a>';
+
+                            }
+
+                        }
+
+                        // output topics
+                        echo $topic_list;
+
+                        // view all
+                        echo '<a href="' . get_site_url() . '/pet-health" class="taxonomy_item clear">all</a>';
+
+                    ?>
 
                 </div>
                 <!-- END taxonomy group -->
@@ -238,7 +269,7 @@
             <!-- END metadata group -->
 
             <!-- metadata group -->
-            <section class="metadata tags">
+            <section id="metadata_tags" class="metadata tags">
 
                 <!-- title -->
                 <span class="metadata_title">
@@ -251,7 +282,35 @@
                 <!-- taxonomy group -->
                 <div class="taxonomy_group">
 
-                    <?php get_template_part( 'elements/pet.health/pet.health.tags' ); ?>
+                    <?php // get_template_part( 'elements/pet.health/pet.health.tags' ); ?>
+
+                    <?php
+
+                        // setup topics list
+                        $tags = get_terms( array(
+
+                            'taxonomy' => 'post_tag',
+                            'hide_empty' => true,
+
+                        ));
+
+                        // topics list iteration
+                        foreach ( $tags as $tag ) {
+
+                            if ( $tag->slug != 'uncategorized' ) {
+
+                                $tag_link = get_category_link( $tag->term_id );
+
+                                $tag_list .= '<a href="?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
+
+                            }
+
+                        }
+
+                        // output topics
+                        echo $tag_list;
+
+                    ?>
 
                 </div>
                 <!-- END taxonomy group -->

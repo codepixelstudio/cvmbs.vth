@@ -544,6 +544,8 @@
 
                     @include fill( $campaign );
 
+                    // @include shadowbox( 1rem, 3rem, black, 0.645 );
+
                 }
 
                 // span
@@ -554,6 +556,8 @@
                     @include color( $campaign );
 
                     @include fill( $g140 );
+
+                    @include shadowbox( 1rem, 3rem, black, 0.645 );
 
                 }
 
@@ -628,6 +632,13 @@
 
                 }
 
+                // hide
+                #metadata_tags {
+
+                    // @include hide;
+
+                }
+
                 // common
                 .metadata {
 
@@ -681,6 +692,15 @@
 
                                 // @include fill( $campaign, 0.000 );
                                 @include fill( $blue, 0.000 );
+
+                            }
+
+                            // active state
+                            &.active {
+
+                                @include color( $g135 );
+
+                                @include fill( $campaign );
 
                             }
 
