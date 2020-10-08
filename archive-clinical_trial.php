@@ -234,10 +234,27 @@
                 $publish  = get_the_date();
                 $image    = has_post_thumbnail() ? 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'x-large' ) . ');"' : '';
 
+                // get redirect status
+                $redirect = get_field( 'post_redirect' );
+
+                // set link var
+                $permalink;
+
+                // test for redirect
+                if ( $redirect ) {
+
+                    $permalink = get_field( 'redirect_url' );
+
+                } else {
+
+                    $permalink = get_the_permalink();
+
+                }
+
             ?>
 
             <!-- post -->
-            <a href="<?php the_permalink(); ?>" <?php post_class(); ?>>
+            <a href="<?php echo $permalink; ?>" <?php post_class(); ?>>
 
                 <?php the_title(); ?>
 
