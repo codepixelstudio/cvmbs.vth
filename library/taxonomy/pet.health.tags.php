@@ -37,7 +37,7 @@
     	$post_types = array(
 
             // 'pet-health',
-            'clinical_trial',
+            // 'clinical_trial',
             'service'
 
     	);
