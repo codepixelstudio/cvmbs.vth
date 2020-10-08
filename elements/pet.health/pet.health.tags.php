@@ -1,4 +1,3 @@
-
 <?php
 
     // setup topics list
