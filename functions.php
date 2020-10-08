@@ -18,4 +18,7 @@
     // taxonomy
     require_once( 'library/taxonomy.php' );
 
+    // cleanup
+    require_once( 'library/cleanup.php' );
+
 ?>
