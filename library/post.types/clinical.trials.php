@@ -40,7 +40,7 @@
             'label'                 => __( 'Clinical Trials', 'vth' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'thumbnail', 'post_tag' ),
-            'taxonomies'            => array( 'category', 'post_tag', 'animal' ),
+            'taxonomies'            => array( 'post_tag', 'clinical_trial_tag' ),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
