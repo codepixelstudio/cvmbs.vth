@@ -81,7 +81,7 @@
 
         <?php if ( $total_posts > 3 ) : ?>
 
-        <a href="<?php echo get_site_url() . '/clinical-trials/?=tag=' . $slug; ?>">
+        <a href="<?php echo get_site_url() . '/clinical-trials/?tag=' . $slug; ?>">
 
             view all &raquo;
 

@@ -48,7 +48,7 @@
 
         <?php if ( $total_posts > 3 ) : ?>
 
-        <a href="<?php echo get_site_url() . '/pet-health/?=tag=' . $slug; ?>">
+        <a href="<?php echo get_site_url() . '/pet-health/?tag=' . $slug; ?>">
 
             view all &raquo;
 
