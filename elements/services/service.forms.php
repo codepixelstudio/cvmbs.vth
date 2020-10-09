@@ -8,7 +8,7 @@
 <!-- service section -->
 <div class="service_section forms">
 
-    <h2>forms</h2>
+    <h2>forms and resources</h2>
 
     <!-- links -->
     <div class="forms_container">
