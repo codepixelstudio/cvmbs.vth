@@ -15,11 +15,11 @@
             // setup query parameters
             $clinical_trials = array(
 
-                'post_type'      => 'clinical_trial',
-                'post_tag'       => $query_URL,
-                'posts_per_page' => -1,
-                'orderby'        => 'meta_value',
-                'meta_query'     => array(
+                'post_type'          => 'clinical_trial',
+                'clinical_trial_tag' => $query_URL,
+                'posts_per_page'     => -1,
+                'orderby'            => 'meta_value',
+                'meta_query'         => array(
 
                     array(
 
@@ -85,24 +85,7 @@
     }
 
     // setup query
-    // $clinical_trials_query = new WP_Query( $clinical_trials );
-
-    global $query;
-
-    // restrict expired trials
-    $meta_query = array(
-
-        array(
-
-            'key'     => 'trial_expiration',
-            'value'   => $today,
-            'compare' => '>'
-
-        )
-
-    );
-
-    // $query->set( 'meta_query', $meta_query );
+    $clinical_trials_query = new WP_Query( $clinical_trials );
 
     // text content
     $clinical_trials_info = get_field( 'clinical_trial_info', 'options' );
@@ -179,8 +162,6 @@
                                 // retrieve query string
                                 $query_URL = $_GET[ 'tag' ];
 
-                                $tag_list = '';
-
                                 if ( $tag->slug == $query_URL ) {
 
                                     $active_class = 'active';
@@ -191,7 +172,15 @@
 
                                 }
 
-                                $tag_list .= '<a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">' . $tag->name . '</a>';
+                                $tag_list .= '
+
+                                    <a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
+
+                                        ' . $tag->name . '
+
+                                    </a>
+
+                                ';
 
                             }
 
@@ -218,13 +207,13 @@
         <!-- grid -->
         <div id="news_grid" class="fixed_width">
 
-            <?php if ( have_posts() ) : ?>
+            <?php // if ( have_posts() ) : ?>
 
-            <?php // if ( $clinical_trials_query->have_posts() ) : ?>
+            <?php if ( $clinical_trials_query->have_posts() ) : ?>
 
-        	<?php // while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
+        	<?php while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
 
-            <?php while ( have_posts() ) : the_post(); ?>
+            <?php // while ( have_posts() ) : the_post(); ?>
 
             <?php
 
