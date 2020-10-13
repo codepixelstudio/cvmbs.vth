@@ -12,8 +12,9 @@
             // query
             $services = array(
 
-                'post_type' => 'service',
-                'animal'    => array(
+                'posts_per_page' => -1,
+                'post_type'      => 'service',
+                'animal'         => array(
 
                     'exotic',
                     'companion'
@@ -30,8 +31,9 @@
             // query
             $services = array(
 
-                'post_type' => 'service',
-                'animal'    => array(
+                'posts_per_page' => -1,
+                'post_type'      => 'service',
+                'animal'         => array(
 
                     'equine',
                     'livestock'
@@ -48,8 +50,9 @@
             // query
             $services = array(
 
-                'post_type' => 'service',
-                'animal'    => $query
+                'posts_per_page' => -1,
+                'post_type'      => 'service',
+                'animal'         => $query
 
             );
 
@@ -62,8 +65,9 @@
 
         // setup query parameters
         $services = array(
+
             'post_type'      => 'service',
-            // 'posts_per_page' => 3
+            'posts_per_page' => -1
 
         );
 
