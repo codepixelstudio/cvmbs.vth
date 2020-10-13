@@ -16,13 +16,29 @@
         'orderby'        => 'meta_value',
         'meta_query'     => array(
 
+            'relation'       => 'OR',
             array(
 
-                'key'     => 'trial_expiration',
-                'value'   => $today,
-                'compare' => '>'
+                'key'        => 'trial_expiration',
+                'value'      => $today,
+                'compare'    => '>'
 
-            )
+            ),
+
+            array(
+
+                'key'        => 'trial_expiration',
+                'compare'    => 'NOT EXISTS'
+
+            ),
+
+            array(
+
+                'key'        => 'trial_expiration',
+                'value'      => '',
+                'compare'    => '='
+
+            ),
 
         ),
         'order'          => 'ASC'
