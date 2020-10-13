@@ -1,19 +1,5 @@
 <?php
 
-    // setup expiration date comparison
-    $trial_expiration = get_field( 'trial_expiration' );
-
-    // test expiration status
-    if ( !$trial_expiration ) {
-
-        $today = date( 'Ymd' );
-
-    } else {
-
-        $today = '20220101';
-
-    }
-
     // setup default today
     $today = date( 'Ymd' );
 
