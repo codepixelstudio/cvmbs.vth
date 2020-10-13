@@ -1,84 +1,105 @@
 <?php
 
-    // setup today
+    // setup expiration date comparison
+    $trial_expiration = get_field( 'trial_expiration' );
+
+    // test expiration status
+    if ( !$trial_expiration ) {
+
+        $today = date( 'Ymd' );
+
+    } else {
+
+        $today = '20220101';
+
+    }
+
+    // setup default today
     $today = date( 'Ymd' );
 
-    // test for URL query string
-    if ( $_GET ) {
+    // retrieve query string
+    $query_URL = $_GET[ 'tag' ];
 
-        // retrieve query string
-        $query_URL = $_GET[ 'tag' ];
+    // setup query
+    if ( $query_URL ) {
 
-        // setup query
-        if ( $query_URL ) {
+        // setup query parameters
+        $clinical_trials = array(
 
-            // setup query parameters
-            $clinical_trials = array(
+            'post_type'          => 'clinical_trial',
+            'clinical_trial_tag' => $query_URL,
+            'posts_per_page'     => -1,
+            'orderby'            => 'meta_value',
+            'meta_query'         => array(
 
-                'post_type'          => 'clinical_trial',
-                'clinical_trial_tag' => $query_URL,
-                'posts_per_page'     => -1,
-                'orderby'            => 'meta_value',
-                'meta_query'         => array(
+                'relation'       => 'OR',
+                array(
 
-                    array(
-
-                        'key'     => 'trial_expiration',
-                        'value'   => $today,
-                        'compare' => '>'
-
-                    )
+                    'key'        => 'trial_expiration',
+                    'value'      => $today,
+                    'compare'    => '>'
 
                 ),
-                'order'          => 'ASC'
 
-            );
+                array(
 
-        } else {
-
-            // setup query parameters
-            $clinical_trials = array(
-
-                'post_type'      => 'clinical_trial',
-                'posts_per_page' => -1,
-                'orderby'        => 'meta_value',
-                'meta_query'     => array(
-
-                    array(
-
-                        'key'     => 'trial_expiration',
-                        'value'   => $today,
-                        'compare' => '>'
-
-                    )
+                    'key'        => 'trial_expiration',
+                    'compare'    => 'NOT EXISTS'
 
                 ),
-                'order'          => 'ASC'
 
-            );
+                array(
 
-        }
+                    'key'        => 'trial_expiration',
+                    'value'      => '',
+                    'compare'    => '='
+
+                ),
+
+            ),
+
+            'order'              => 'ASC'
+
+        );
 
     } else {
 
         // setup query parameters
         $clinical_trials = array(
 
-            'post_type'      => 'clinical_trial',
-            'posts_per_page' => -1,
-            'orderby'        => 'meta_value',
-            'meta_query'     => array(
+            'post_type'          => 'clinical_trial',
+            // 'clinical_trial_tag' => $query_URL,
+            'posts_per_page'     => -1,
+            'orderby'            => 'meta_value',
+            'meta_query'         => array(
+
+                'relation'       => 'OR',
+                array(
+
+                    'key'        => 'trial_expiration',
+                    'value'      => $today,
+                    'compare'    => '>'
+
+                ),
 
                 array(
 
-                    'key'     => 'trial_expiration',
-                    'value'   => $today,
-                    'compare' => '>'
+                    'key'        => 'trial_expiration',
+                    'compare'    => 'NOT EXISTS'
 
-                )
+                ),
+
+                array(
+
+                    'key'        => 'trial_expiration',
+                    'value'      => '',
+                    'compare'    => '='
+
+                ),
 
             ),
-            'order'          => 'ASC'
+
+            'order'              => 'ASC'
 
         );
 
@@ -207,13 +228,9 @@
         <!-- grid -->
         <div id="news_grid" class="fixed_width">
 
-            <?php // if ( have_posts() ) : ?>
-
             <?php if ( $clinical_trials_query->have_posts() ) : ?>
 
         	<?php while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
-
-            <?php // while ( have_posts() ) : the_post(); ?>
 
             <?php
 
