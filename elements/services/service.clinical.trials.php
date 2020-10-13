@@ -97,7 +97,25 @@
 
         <?php while ( $clinical_trials->have_posts() ) : $clinical_trials->the_post(); ?>
 
-        <a class="post_link" href="<?php the_permalink(); ?>">
+        <?php
+
+            // get redirect status
+            $redirect = get_field( 'post_redirect' );
+
+            // test for redirect
+            if ( $redirect ) {
+
+                $permalink = get_field( 'redirect_url' );
+
+            } else {
+
+                $permalink = get_the_permalink();
+
+            }
+
+        ?>
+
+        <a class="post_link" href="<?php echo $permalink; ?>">
 
             <?php the_title(); ?>
 
