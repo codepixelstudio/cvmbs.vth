@@ -8,6 +8,13 @@
 
         padding: 5rem 0 0 0;
 
+        // mobile
+        @include breakpoint ( small only ) {
+
+            padding: 4rem 0 0 0;
+
+        }
+
         // post
         .pet-health {
 
@@ -56,7 +63,7 @@
                 margin: 0 0 0 0;
                 padding: 5rem 5rem 1.5rem 5rem;
 
-                // @include color( $roarange );
+                @include color( $g140 );
 
                 // mobile
                 @include breakpoint ( xlarge ) {
@@ -68,7 +75,7 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    padding: 3rem 3rem 1.5rem 3rem;
+                    padding: 2rem 2rem 1.5rem 2rem;
 
                 }
 
@@ -81,6 +88,8 @@
 
                 @include font( $industry, 0.875rem, 700 );
 
+                @include color( $app05, 0.385 );
+
                 // mobile
                 @include breakpoint ( xlarge ) {
 
@@ -91,7 +100,7 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    padding: 0 3rem 0 3rem;
+                    padding: 0 2rem 0 2rem;
 
                 }
 
@@ -107,7 +116,7 @@
             // mobile
             @include breakpoint ( small only ) {
 
-                padding: 2rem 3rem 1.5rem 3rem;
+                padding: 2rem 2rem 1.5rem 2rem;
 
             }
 
@@ -151,7 +160,7 @@
 
                 order: 20;
 
-                padding: 1.5rem 3rem 3rem 3rem;
+                padding: 1.5rem 2rem 3rem 2rem;
 
             }
 
