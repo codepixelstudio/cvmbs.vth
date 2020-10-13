@@ -37,6 +37,36 @@
     // get returned data object
     $members = $directory->GetMembersByGroupIdResult->MemberResponse;
 
+    // setup empty storage arrays
+    $faculty   = array();
+    $residents = array();
+    $staff     = array();
+
+    // push members to corresponding arrays
+    foreach ( $members as $member ) {
+
+        // get employee group
+        $memberCategory = $member->EmployeeCategory;
+
+        if ( $memberCategory === 'Faculty' ) {
+
+            array_push( $faculty, $member );
+
+        } elseif ( $memberCategory === 'PostDoctoral' || $memberCategory === 'ResidentsInterns' ) {
+
+            array_push( $residents, $member );
+
+        } elseif ( $memberCategory === 'Staff' ) {
+
+            array_push( $staff, $member );
+
+        }
+
+    }
+
+    // count members
+    $count = count( $members );
+
     // set global post object
     global $post;
 
@@ -84,52 +114,22 @@
         </header>
         <!-- END page header -->
 
+        <?php if ( $faculty ) : ?>
+
+        <h2>Faculty</h2>
+
         <!-- contact cards -->
         <div class="contact_cards">
 
         <?php
 
-            foreach ( $members as $member ) {
-
-                // setup ID for additional WSDL queries
-                $memberID = $member->Id;
-
-                // get department groups
-                $groups = $service->GetGroupsByMemberId( array( 'memberId' => $memberID ) );
+            foreach ( $faculty as $faculty_member ) {
 
                 // get contact info
-                $contacts = $service->GetMemberContactsByMemberId( array( 'id' => $memberID ) );
+                $contacts = $service->GetMemberContactsByMemberId( array( 'id' => $faculty_member->Id ) );
 
                 // get returned data object(s)
-                $memberGroups   = $groups->GetGroupsByMemberIdResult->GroupResponse;
                 $memberContacts = $contacts->GetMemberContactsByMemberIdResult->MemberContactResponse;
-
-                // test for department group data type
-                if ( is_array( $memberGroups ) ) {
-
-                    $multipleGroups = true;
-
-                    foreach ( $memberGroups as $memberGroup ) {
-
-                        $departmentID = $memberGroup->IsPrimaryGroup;
-
-                        if ( $departmentID ) {
-
-                            $department     = $memberGroup->GroupFriendlyName;
-                            $primaryGroupId = $memberGroup->Id;
-
-                        }
-
-                    }
-
-                } else {
-
-                    $multipleGroups = false;
-
-                    $department     = $memberGroups->GroupFriendlyName;
-                    $primaryGroupId = $memberGroups->Id;
-
-                }
 
                 // test for contact info data type
                 if ( is_array( $memberContacts ) ) {
@@ -142,15 +142,7 @@
 
                 }
 
-                // setup variables
-                // $staffID    = $member->Id;
-                $LastName   = $member->LastName;
-                $FirstName  = $member->FirstName;
-                $tableName  = $LastName . ', ' . $FirstName;
-                $eMail      = strtolower( $member->EmailAddress );
-                // $phone      = $phone;
-                $department = $directoryGroupName;
-
+                // test for phone array
                 if ( $phone ) {
 
                     $phoneHTML = '<span class="contact_phone">Phone: ' . $phone . '</span>';
@@ -161,7 +153,15 @@
 
                 }
 
-                $records .= '
+                // setup ID for additional WSDL queries
+                $memberID   = $faculty_member->Id;
+                // setup variables
+                $LastName   = $faculty_member->LastName;
+                $FirstName  = $faculty_member->FirstName;
+                $tableName  = $LastName . ', ' . $FirstName;
+                $eMail      = strtolower( $faculty_member->EmailAddress );
+
+                $faculty_group .= '
 
                     <div class="contact">
 
@@ -177,7 +177,7 @@
 
                             <span class="contact_title">'
 
-                                . $member->EmployeeTitle .
+                                . $faculty_member->EmployeeTitle .
 
                             '</span>'
 
@@ -187,22 +187,196 @@
 
                         </div>
 
-                    </div>';
+                    </div>
+
+                ';
 
             }
 
-            echo $records;
+            echo $faculty_group;
 
         ?>
 
         </div>
         <!-- END contact cards -->
 
-        <pre class="developer">
+        <?php endif; ?>
 
-            <?php print_r( $members ); ?>
+        <?php if ( $residents ) : ?>
 
-        </pre>
+        <h2>Residents, Interns, and Post Docs</h2>
+
+        <!-- contact cards -->
+        <div class="contact_cards">
+
+        <?php
+
+            foreach ( $residents as $resident ) {
+
+                // get contact info
+                $contacts = $service->GetMemberContactsByMemberId( array( 'id' => $resident->Id ) );
+
+                // get returned data object(s)
+                $memberContacts = $contacts->GetMemberContactsByMemberIdResult->MemberContactResponse;
+
+                // test for contact info data type
+                if ( is_array( $memberContacts ) ) {
+
+                    $phone = $memberContacts[0]->PhoneNumber;
+
+                } else {
+
+                    $phone = $memberContacts->PhoneNumber;
+
+                }
+
+                // test for phone array
+                if ( $phone ) {
+
+                    $phoneHTML = '<span class="contact_phone">Phone: ' . $phone . '</span>';
+
+                } else {
+
+                    $phoneHTML = '';
+
+                }
+
+                // setup ID for additional WSDL queries
+                $memberID   = $resident->Id;
+                // setup variables
+                $LastName   = $resident->LastName;
+                $FirstName  = $resident->FirstName;
+                $tableName  = $LastName . ', ' . $FirstName;
+                $eMail      = strtolower( $resident->EmailAddress );
+
+                $residents_group .= '
+
+                    <div class="contact">
+
+                        <div class="contact_photo" style="background-image:url(https://www.cvmbs.colostate.edu/DirectorySearch/Search/MemberPhoto/' . $memberID . ')">
+
+                            <a class="contact_photo_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '"></a>
+
+                        </div>
+
+                        <div class="contact_info">
+
+                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '">' . $FirstName . ' ' . $LastName . '</a>
+
+                            <span class="contact_title">'
+
+                                . $resident->EmployeeTitle .
+
+                            '</span>'
+
+                            . $phoneHTML .
+
+                            '<a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
+
+                        </div>
+
+                    </div>
+
+                ';
+
+            }
+
+            echo $residents_group;
+
+        ?>
+
+        </div>
+        <!-- END contact cards -->
+
+        <?php endif; ?>
+
+        <?php if ( $staff ) : ?>
+
+        <h2>Staff</h2>
+
+        <!-- contact cards -->
+        <div class="contact_cards">
+
+        <?php
+
+            foreach ( $staff as $staff_member ) {
+
+                // get contact info
+                $contacts = $service->GetMemberContactsByMemberId( array( 'id' => $staff_member->Id ) );
+
+                // get returned data object(s)
+                $memberContacts = $contacts->GetMemberContactsByMemberIdResult->MemberContactResponse;
+
+                // test for contact info data type
+                if ( is_array( $memberContacts ) ) {
+
+                    $phone = $memberContacts[0]->PhoneNumber;
+
+                } else {
+
+                    $phone = $memberContacts->PhoneNumber;
+
+                }
+
+                // test for phone array
+                if ( $phone ) {
+
+                    $phoneHTML = '<span class="contact_phone">Phone: ' . $phone . '</span>';
+
+                } else {
+
+                    $phoneHTML = '';
+
+                }
+
+                // setup ID for additional WSDL queries
+                $memberID   = $staff_member->Id;
+                // setup variables
+                $LastName   = $staff_member->LastName;
+                $FirstName  = $staff_member->FirstName;
+                $tableName  = $LastName . ', ' . $FirstName;
+                $eMail      = strtolower( $staff_member->EmailAddress );
+
+                $staff_group .= '
+
+                    <div class="contact">
+
+                        <div class="contact_photo" style="background-image:url(https://www.cvmbs.colostate.edu/DirectorySearch/Search/MemberPhoto/' . $memberID . ')">
+
+                            <a class="contact_photo_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '"></a>
+
+                        </div>
+
+                        <div class="contact_info">
+
+                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=' . $memberID . '">' . $FirstName . ' ' . $LastName . '</a>
+
+                            <span class="contact_title">'
+
+                                . $staff_member->EmployeeTitle .
+
+                            '</span>'
+
+                            . $phoneHTML .
+
+                            '<a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
+
+                        </div>
+
+                    </div>
+
+                ';
+
+            }
+
+            echo $staff_group;
+
+        ?>
+
+        </div>
+        <!-- END contact cards -->
+
+        <?php endif; ?>
 
     </div>
     <!-- END directory -->

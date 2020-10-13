@@ -31,7 +31,7 @@
             // debug
             .developer {
 
-                // @include hide;
+                @include hide;
 
                 @include color( white );
 
@@ -53,6 +53,13 @@
 
             }
 
+            // headings
+            h2 {
+
+                margin: 0 0 0 1rem;
+
+            }
+
             // contact cards
             .contact_cards {
 
@@ -60,10 +67,19 @@
 
                 flex-wrap: wrap;
 
+                margin: 0 0 2rem 0;
+
                 // mobile
                 @include breakpoint ( small only ) {
 
                     margin: 2rem 0 0 0;
+
+                }
+
+                // last child
+                &:last-child {
+
+                    margin-bottom: 0;
 
                 }
 
