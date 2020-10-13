@@ -1,32 +1,5 @@
 <?php
 
-	// setup topics list
-	$topics = get_categories( array( 'get' => 'all' ));
-
-	// topics list iteration
-	foreach ( $topics as $topic ) {
-
-		if ( $topic->slug != 'uncategorized' ) {
-
-			$topic_link = get_category_link( $topic->term_id );
-
-			$topic_list .= '<a href="' . $topic_link . '" class="taxonomy_item">' . $topic->name . '</a>';
-
-		}
-
-	}
-
-	// setup tag cloud
-	$tags = get_tags( array( 'get' => 'all' ));
-
-	// tag cloud iteration
-	foreach ( $tags as $tag ) {
-
-		$tag_link = get_tag_link( $tag->term_id );
-
-		$tag_list .= '<a href="' . $tag_link . '" class="taxonomy_item">' . $tag->name . '</a>';
-
-	}
 
 ?>
 
@@ -211,7 +184,15 @@
 
 								// $tag_link = get_category_link( $tag->term_id );
 
-								$tag_list .= '<a href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
+								$tag_list .= '
+
+									<a href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">
+
+										' . $tag->name . '
+
+									</a>
+
+								';
 
 	                        }
 
