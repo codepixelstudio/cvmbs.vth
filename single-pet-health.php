@@ -40,9 +40,24 @@
 	<?php // post vars
 
 		$category = get_the_category();
-		$author   = get_the_author();
+		// $author   = get_the_author();
 		$publish  = get_the_date();
 		$image    = has_post_thumbnail() ? 'style="background-image:url(' . get_the_post_thumbnail_url( get_the_id(), 'x-large' ) . ');"' : '';
+
+		$author   = get_field( 'author_name' );
+
+		// test for author
+		if ( $author ) {
+
+			// set var
+			$author_name = $author;
+
+		} else {
+
+			// set var
+			$author_name = get_the_author();
+
+		}
 
 	?>
 
@@ -181,10 +196,20 @@
 
 	                        ));
 
+						?>
+
+						<!-- <pre class="developer hide"> -->
+
+							<?php // print_r( $tags ); ?>
+
+						<!-- </pre> -->
+
+						<?php
+
 	                        // topics list iteration
 	                        foreach ( $tags as $tag ) {
 
-								$tag_link = get_category_link( $tag->term_id );
+								// $tag_link = get_category_link( $tag->term_id );
 
 								$tag_list .= '<a href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
 
