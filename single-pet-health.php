@@ -171,18 +171,10 @@
 
 						?>
 
-						<!-- <pre class="developer hide"> -->
-
-							<?php // print_r( $tags ); ?>
-
-						<!-- </pre> -->
-
 						<?php
 
 	                        // topics list iteration
 	                        foreach ( $tags as $tag ) {
-
-								// $tag_link = get_category_link( $tag->term_id );
 
 								$tag_list .= '
 
