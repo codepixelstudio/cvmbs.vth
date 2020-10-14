@@ -35,7 +35,7 @@
 
     <?php if ( $appointments[ 'veterinarian_info' ] ) : ?>
 
-    <h2>information for veterinarians</h2>
+    <h2>consultations and referrals</h2>
 
     <?php echo $appointments[ 'veterinarian_info' ]; ?>
 
