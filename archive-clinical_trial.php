@@ -15,7 +15,7 @@
             'post_type'          => 'clinical_trial',
             'clinical_trial_tag' => $query_URL,
             'posts_per_page'     => -1,
-            'orderby'            => 'meta_value',
+            'orderby'            => 'title',
             'meta_query'         => array(
 
                 'relation'       => 'OR',
@@ -56,7 +56,7 @@
             'post_type'          => 'clinical_trial',
             // 'clinical_trial_tag' => $query_URL,
             'posts_per_page'     => -1,
-            'orderby'            => 'meta_value',
+            'orderby'            => 'title',
             'meta_query'         => array(
 
                 'relation'       => 'OR',

@@ -14,6 +14,8 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
                 'animal'         => array(
 
                     'exotic',
@@ -33,6 +35,8 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
                 'animal'         => array(
 
                     'equine',
@@ -52,7 +56,9 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
-                'animal'         => $query
+                'animal'         => $query,
+                'orderby'        => 'title',
+                'order'          => 'ASC'
 
             );
 
@@ -67,7 +73,9 @@
         $services = array(
 
             'post_type'      => 'service',
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
+            'orderby'        => 'title',
+            'order'          => 'ASC'
 
         );
 
