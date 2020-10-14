@@ -42,23 +42,47 @@
     $residents = array();
     $staff     = array();
 
-    // push members to corresponding arrays
-    foreach ( $members as $member ) {
+    // test for standard object or array
+    if ( is_array( $members ) ) {
+
+        // push members to corresponding arrays
+        foreach ( $members as $member ) {
+
+            // get employee group
+            $memberCategory = $member->EmployeeCategory;
+
+            if ( $memberCategory === 'Faculty' ) {
+
+                array_push( $faculty, $member );
+
+            } elseif ( $memberCategory === 'PostDoctoral' || $memberCategory === 'ResidentsInterns' ) {
+
+                array_push( $residents, $member );
+
+            } elseif ( $memberCategory === 'Staff' ) {
+
+                array_push( $staff, $member );
+
+            }
+
+        }
+
+    } else {
 
         // get employee group
-        $memberCategory = $member->EmployeeCategory;
+        $memberCategory = $members->EmployeeCategory;
 
         if ( $memberCategory === 'Faculty' ) {
 
-            array_push( $faculty, $member );
+            array_push( $faculty, $members );
 
         } elseif ( $memberCategory === 'PostDoctoral' || $memberCategory === 'ResidentsInterns' ) {
 
-            array_push( $residents, $member );
+            array_push( $residents, $members );
 
         } elseif ( $memberCategory === 'Staff' ) {
 
-            array_push( $staff, $member );
+            array_push( $staff, $members );
 
         }
 
@@ -107,7 +131,7 @@
 
                 </span>
 
-                <?php echo the_title(); ?>
+                <?php echo the_title(); ?>&nbsp;<em class="count">[<?php echo $count; ?>]</em>
 
             </h1>
 
@@ -377,6 +401,32 @@
         <!-- END contact cards -->
 
         <?php endif; ?>
+
+        <pre class="developer">
+
+            <?php
+
+                if ( is_array( $members ) ) {
+
+                    echo 'data is array';
+
+                } else {
+
+                    echo 'not an array';
+
+                }
+
+            ?>
+
+            Faculty<br />
+            <?php print_r( $faculty ); ?><br />
+            Residents, Interns, and Post Docs<br />
+            <?php print_r( $residents ); ?><br />
+            Staff<br />
+            <?php print_r( $staff ); ?><br />
+            <?php print_r( $members ); ?>
+
+        </pre>
 
     </div>
     <!-- END directory -->

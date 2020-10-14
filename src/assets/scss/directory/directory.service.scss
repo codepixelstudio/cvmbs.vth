@@ -51,6 +51,15 @@
 
                 }
 
+                // count
+                .count {
+
+                    @include hide;
+
+                    font-style: normal;
+
+                }
+
             }
 
             // headings
