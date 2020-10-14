@@ -15,7 +15,7 @@
 
     <?php if ( $appointments[ 'appointment_info' ] ) : ?>
 
-    <h2>appointment info</h2>
+    <h2>visit information</h2>
 
     <?php echo $appointments[ 'appointment_info' ]; ?>
 
@@ -25,7 +25,7 @@
 
     <?php if ( $appointments[ 'client_info' ] ) : ?>
 
-    <h2>client information</h2>
+    <h2>visit information</h2>
 
     <?php echo $appointments[ 'client_info' ]; ?>
 
