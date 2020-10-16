@@ -18,10 +18,17 @@
 
             @include fill( $app05, 0.125 );
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                margin: 0 0 0 0;
+
+            }
+
             // class
             &.last {
 
-                margin: 2.5rem 0 0 0;
+                // margin: 2.5rem 0 0 0;
 
             }
 

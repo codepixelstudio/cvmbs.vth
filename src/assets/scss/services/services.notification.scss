@@ -12,6 +12,14 @@
             margin: 3rem 0 0 0;
             padding: 0 5rem 0 5rem;
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                margin: 2rem 0 0 0;
+                padding: 0 2rem 0 2rem;
+
+            }
+
             .notification-box {
 
             	// margin: 1.5em auto;

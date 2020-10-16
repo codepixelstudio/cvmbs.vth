@@ -12,6 +12,13 @@
             padding: 2rem calc( 8vw - 1rem ) 2rem calc( 8vw - 1rem );
             padding: 2.5rem 4rem 2.5rem 4rem;
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 2rem 2rem 2rem 2rem;
+
+            }
+
             // header
             .header_block {
 
@@ -21,6 +28,13 @@
                 h2 {
 
                     margin: 0 0 0.5rem 1rem;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        margin: 0 0 1rem 0;
+
+                    }
 
                 }
 
@@ -40,6 +54,14 @@
 
                     @include color( $g140 );
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        height: auto;
+                        margin: 0 0 1.75rem 0;
+
+                    }
+
                 }
 
             }
@@ -48,6 +70,13 @@
             .links {
 
                 @include flex-h-s-v-st( false );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                }
 
             }
 
@@ -75,6 +104,21 @@
                 }
 
                 @include shadowbox( 1rem, 3rem, black, 0.635 );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+
+                }
+
+                // last child
+                &:last-child {
+
+                    margin: 0 0 0 0;
+
+                }
 
                 // after
                 &:after {

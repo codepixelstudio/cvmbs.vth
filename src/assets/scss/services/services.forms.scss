@@ -23,10 +23,24 @@
 
             @include fill( $forms );
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 2rem 2rem 2rem 2rem;
+
+            }
+
             // heading
             h2 {
 
                 margin-left: 1rem;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 1rem 0;
+
+                }
 
             }
 
@@ -63,6 +77,21 @@
                 @include shadowbox( 1rem, 3rem, black, 0.645 );
 
                 transition: all 220ms linear 0ms;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    min-height: 4rem;
+                    margin: 0 0 2rem 0;
+
+                    // last child
+                    &:last-child {
+
+                        margin-bottom: 0;
+
+                    }
+
+                }
 
                 // hover state
                 &:hover {

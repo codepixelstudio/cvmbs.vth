@@ -17,7 +17,24 @@
 
         @include fill( white, 0.925 );
 
+        @include gradient(
+
+            180deg,
+            $g135, 0.000, 0%,
+            transparent, 0.000, 100%
+
+        );
+
         @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            @include flex-v-b-h-e( true );
+
+            // padding: 1rem 1rem 1rem 1rem;
+
+        }
 
         // title
         h4 {
@@ -41,9 +58,24 @@
 
             @include color( white );
 
-            @include fill( $g135 );
+            @include fill( $g140 );
 
             @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                // position: static;
+                right: 0;
+                left: 0;
+
+                padding: 0 0.75rem 0 0.75rem;
+
+                @include font( $klavislim, 0.75rem, 500 );
+
+                @include text( $up, center );
+
+            }
 
         }
 
@@ -71,6 +103,21 @@
                 repeat: no-repeat;
                 size: 4rem 4rem;
                 position: top center;
+
+            }
+
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                width: 3rem;
+                height: 3rem;
+
+                background: {
+
+                    size: 2rem 2rem;
+
+                }
 
             }
 

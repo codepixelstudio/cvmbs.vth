@@ -55,7 +55,14 @@
                 height: 100%;
                 padding: 5rem 5rem 5rem 5rem;
 
-                @include fill( red );
+                // @include fill( red );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    padding: 2rem 2rem 2rem 2rem;
+
+                }
 
                 // common
                 &:before,
@@ -278,7 +285,8 @@
             // mobile
             @include breakpoint ( small only ) {
 
-                padding: 4rem 4rem 4rem 4rem;
+                margin: 0 0 0 0;
+                padding: 4rem 4rem 3rem 4rem;
 
             }
 

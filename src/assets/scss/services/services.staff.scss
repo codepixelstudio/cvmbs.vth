@@ -22,6 +22,13 @@
 
         }
 
+        // mobile
+        @include breakpoint ( small only ) {
+
+            // padding: 2rem 2rem 2rem 2rem;
+
+        }
+
         // overlay
         .section_overlay {
 

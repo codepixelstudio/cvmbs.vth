@@ -44,6 +44,15 @@
 
             }
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                // @include flex-v-b-h-st( false );
+
+                padding: 0 2rem 2rem 2rem;
+
+            }
+
             // title
             .service-title,
             .service-info {
@@ -51,6 +60,18 @@
                 position: relative;
 
                 z-index: 100;
+
+            }
+
+            // title
+            .service-title {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    max-width: 50%;
+
+                }
 
             }
 
@@ -139,8 +160,16 @@
 
             // flex-grow: 1;
 
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include flex-v-b-h-e( false );
+
+            }
+
         }
 
+        // content
         .service_content {
 
             // developer
@@ -167,6 +196,13 @@
             font-size: 1rem;
 
             @include color( $app05, 0.215 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding: 1rem 2rem 1rem 2rem;
+
+            }
 
         }
 

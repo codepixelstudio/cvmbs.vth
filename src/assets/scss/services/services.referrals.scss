@@ -8,6 +8,15 @@
 
         @include flex-h-e-v-c( false );
 
+        // mobile
+        @include breakpoint ( small only ) {
+
+            order: 20;
+
+            // @include hide;
+
+        }
+
         // block
         .referral_block {
 
