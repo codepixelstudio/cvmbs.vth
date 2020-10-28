@@ -6,8 +6,13 @@
         // comments
         remove_menu_page( 'edit-comments.php' );
 
-        // tools
-        remove_menu_page( 'tools.php' );
+        // test for user role -> conditionally remove tools.php
+        if ( !current_user_can( 'administrator' ) ) {
+
+            // tools
+            remove_menu_page( 'tools.php' );
+
+        }
 
     }
 
