@@ -69,7 +69,7 @@
 
 					<?php if ( !$service_type ) : ?>
 
-					<?php get_template_part( 'elements/services/service.referrals' ); ?>
+					<?php // get_template_part( 'elements/services/service.referrals' ); ?>
 
 					<?php endif; ?>
 
