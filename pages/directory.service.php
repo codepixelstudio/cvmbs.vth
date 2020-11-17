@@ -181,8 +181,8 @@
                 $memberID   = $faculty_member->Id;
                 // setup variables
                 $LastName   = $faculty_member->LastName;
-                $FirstName  = $faculty_member->FirstName;
-                $tableName  = $LastName . ', ' . $FirstName;
+                $FirstName  = $faculty_member->OtherName;
+                // $tableName  = $LastName . ', ' . $FirstName;
                 $eMail      = strtolower( $faculty_member->EmailAddress );
 
                 $faculty_group .= '
@@ -269,8 +269,9 @@
                 $memberID   = $resident->Id;
                 // setup variables
                 $LastName   = $resident->LastName;
-                $FirstName  = $resident->FirstName;
-                $tableName  = $LastName . ', ' . $FirstName;
+                // $FirstName  = $resident->FirstName;
+                $FirstName  = $resident->OtherName;
+                // $tableName  = $LastName . ', ' . $FirstName;
                 $eMail      = strtolower( $resident->EmailAddress );
 
                 $residents_group .= '
@@ -357,8 +358,8 @@
                 $memberID   = $staff_member->Id;
                 // setup variables
                 $LastName   = $staff_member->LastName;
-                $FirstName  = $staff_member->FirstName;
-                $tableName  = $LastName . ', ' . $FirstName;
+                $FirstName  = $staff_member->OtherName;
+                // $tableName  = $LastName . ', ' . $FirstName;
                 $eMail      = strtolower( $staff_member->EmailAddress );
 
                 $staff_group .= '
