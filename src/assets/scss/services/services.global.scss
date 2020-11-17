@@ -17,6 +17,18 @@
 
         @include fill( $page );
 
+        // child service
+        &.child_service {
+
+            // content
+            .service {
+
+                padding: 10rem 5rem 4rem 5rem;
+
+            }
+
+        }
+
     }
 
     // styles

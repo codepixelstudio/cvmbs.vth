@@ -1216,6 +1216,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "service"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -1225,10 +1230,11 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "the_content",
         "categories",
         "tags"
     ],
     "active": true,
     "description": "",
-    "modified": 1601501286
+    "modified": 1605629324
 }
