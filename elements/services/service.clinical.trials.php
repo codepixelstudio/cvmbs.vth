@@ -79,6 +79,9 @@
     // count total posts
     $total_posts = count( $view_all->posts );
 
+    // clinical trial text
+    $clinical_trial_text = get_field( 'clinical_trial_service_page', 'options' );
+
 ?>
 
 <?php if ( $clinical_trials->have_posts() ) : ?>
@@ -107,6 +110,14 @@
 
     </div>
     <!-- END header -->
+
+    <!-- text info -->
+    <div class="text_info">
+
+        <?php echo $clinical_trial_text; ?>
+
+    </div>
+    <!-- END text info -->
 
     <!-- container -->
     <div class="links">

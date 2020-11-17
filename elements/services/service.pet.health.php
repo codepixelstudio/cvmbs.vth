@@ -30,6 +30,9 @@
     // count total posts
     $total_posts = count( $view_all->posts );
 
+    // pet health text
+    $pet_health_text = get_field( 'pet_health_service_page', 'options' );
+
 ?>
 
 <?php if ( $pet_health_query->have_posts() ) : ?>
@@ -58,6 +61,14 @@
 
     </div>
     <!-- END header -->
+
+    <!-- text info -->
+    <div class="text_info">
+
+        <?php echo $pet_health_text; ?>
+
+    </div>
+    <!-- END text info -->
 
     <!-- container -->
     <div class="links">

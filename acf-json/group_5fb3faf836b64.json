@@ -1,0 +1,79 @@
+{
+    "key": "group_5fb3faf836b64",
+    "title": "Pet Health Archive Options",
+    "fields": [
+        {
+            "key": "field_5fb3ff058dcf2",
+            "label": "Pet Health Archive View(s)",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Use this options page to manage static content displayed on the Pet Health archive page views and elsewhere.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5fb3fff73d5b1",
+            "label": "Pet Health Info",
+            "name": "pet_health_info",
+            "type": "wysiwyg",
+            "instructions": "This text appears on the Pet Health archive page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5fb3fb1668cf2",
+            "label": "Text for Service Page(s)",
+            "name": "pet_health_service_page",
+            "type": "wysiwyg",
+            "instructions": "This text appears on the individual Service pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "pet_health_options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1605632090
+}

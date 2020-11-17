@@ -24,7 +24,7 @@
             "label": "Clinical Trial Info",
             "name": "clinical_trial_info",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "This text appears on the Clinical Trial archive page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -35,7 +35,26 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1,
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5fb3f9ed2ff2a",
+            "label": "Text for Service Page(s)",
+            "name": "clinical_trial_service_page",
+            "type": "wysiwyg",
+            "instructions": "This text appears on the individual Service pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
             "delay": 0
         },
         {
@@ -172,5 +191,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "something goes here",
-    "modified": 1601495202
+    "modified": 1605632182
 }
