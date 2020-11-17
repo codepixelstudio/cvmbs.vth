@@ -35,6 +35,9 @@
     // setup query
     $pet_health_query = new WP_Query( $pet_health );
 
+    // text content
+    $pet_health_info = get_field( 'pet_health_info', 'options' );
+
 ?>
 
 <?php get_header(); ?>
@@ -62,6 +65,14 @@
 
         </div>
         <!-- END header -->
+
+        <!-- custom archive page content -->
+        <div id="pet_health_info" class="fixed_width">
+
+            <?php echo $pet_health_info; ?>
+
+        </div>
+        <!-- END custom archive page content -->
 
         <?php if ( have_posts() ) : ?>
 

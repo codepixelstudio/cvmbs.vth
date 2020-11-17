@@ -30,6 +30,21 @@
 
         }
 
+        // text
+        #pet_health_info {
+
+            margin: 1rem 0 0 0;
+            // padding-bottom: 4rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                padding-bottom: 3rem;
+
+            }
+
+        }
+
         // news
         #news_content {
 
