@@ -121,7 +121,7 @@
                     <?php
 
                         // college data
-                        if ( $site_type == 'college' || $site_type == 'dvm' || $site_type == 'special' || $site_type == 'laboratory' ) {
+                        if ( $site_type == 'college' || $site_type == 'dvm' || $site_type == 'special' || $site_type == 'laboratory' || $site_type == 'vth' ) {
 
                             foreach ( $members as $member ) {
 
