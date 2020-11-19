@@ -147,6 +147,12 @@
 
         <?php
 
+            usort( $faculty, function( $a, $b ) {
+
+                return $a->LastName <=> $b->LastName;
+
+            });
+
             foreach ( $faculty as $faculty_member ) {
 
                 // get contact info
@@ -234,6 +240,12 @@
         <div class="contact_cards">
 
         <?php
+
+            usort( $residents, function( $a, $b ) {
+
+                return $a->LastName <=> $b->LastName;
+
+            });
 
             foreach ( $residents as $resident ) {
 
@@ -323,6 +335,12 @@
         <div class="contact_cards">
 
         <?php
+
+            usort( $staff, function( $a, $b ) {
+
+                return $a->LastName <=> $b->LastName;
+
+            });
 
             foreach ( $staff as $staff_member ) {
 
