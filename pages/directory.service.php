@@ -1,6 +1,7 @@
 <?php
 
     // template name: Service Directory
+    // notes : VTH specific
 
 ?>
 

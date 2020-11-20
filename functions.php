@@ -21,4 +21,7 @@
     // cleanup
     require_once( 'library/cleanup.php' );
 
+    // menus
+    require_once( 'library/menus.php' );
+
 ?>

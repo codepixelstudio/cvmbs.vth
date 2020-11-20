@@ -1,0 +1,84 @@
+// stylesheet :: custom LocalHR directory view -> VTH
+
+    // settings
+    $fake_news : 1rem;
+
+    // styles
+    #directory {
+
+        // class hook
+        &.vth-main {
+
+            #service_directory_menu {
+
+                margin: 0 0 0 0;
+
+                // @include fill( red );
+
+                // menu
+                #menu-vth-directory-menu {
+
+                    margin: 0 0 0 0;
+
+                    // list
+                    ul {
+
+                        @include flex-h-s-v-t( false );
+
+                        flex-wrap: wrap;
+
+                        margin: 0 -0.5rem 0 -0.5rem;
+
+                        list-style: none;
+
+                    }
+
+                    // menu items
+                    li {
+
+                        @include flex-h-c-v-c( true );
+
+                        height: 3rem;
+                        margin: 0 0.5rem 1rem 0.5rem;
+
+                        // link
+                        a {
+
+                            @include flex-h-c-v-c( true );
+
+                            width: 100%;
+                            height: 3rem;
+                            padding: 0.0625rem 1rem 0 1rem;
+
+                            @include font( $industry, 0.875rem, 600 );
+
+                            text-decoration: none;
+
+                            @include typo( 0.75rem, 0.035em );
+
+                            @include color( $g140, 0.000 );
+
+                            @include fill( $app05, 0.865 );
+
+                            transition: all 220ms linear 0ms;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( white, 0.000 );
+
+                                @include fill( $g135, 0.000 );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
