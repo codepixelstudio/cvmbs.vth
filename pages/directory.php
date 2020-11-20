@@ -88,13 +88,41 @@
         </header>
         <!-- END page header -->
 
-        <!-- custom menu -->
-        <div id="service_directory_menu">
+        <!-- special buttons -->
+        <div id="directory_buttons">
 
-            <?php vth_directory_menu(); ?>
+            <!-- cue -->
+            <h4 class="header">
+
+                view by service area
+
+            </h4>
+            <!-- END cue -->
+
+            <!-- custom menu -->
+            <div id="service_directory_menu">
+
+                <?php vth_directory_menu(); ?>
+
+            </div>
+            <!-- END custom menu -->
 
         </div>
-        <!-- END custom menu -->
+        <!-- END special buttons -->
+
+        <!-- refine container -->
+        <div class="refine-me">
+
+            <!-- cue -->
+            <h4 class="header">
+
+                search by name
+
+            </h4>
+            <!-- END cue -->
+
+        </div>
+        <!-- END refine container -->
 
         <!-- toolbar.DEV -->
         <div id="directory-toolbar" class="toolbar">

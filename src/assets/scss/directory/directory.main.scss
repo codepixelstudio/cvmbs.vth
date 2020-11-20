@@ -9,6 +9,18 @@
         // class hook
         &.vth-main {
 
+            // the header
+            header {
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 1rem 0;
+
+                }
+
+            }
+
             #service_directory_menu {
 
                 margin: 0 0 0 0;
@@ -27,7 +39,7 @@
 
                         flex-wrap: wrap;
 
-                        margin: 0 -0.5rem 0 -0.5rem;
+                        margin: 0 0 0 0;
 
                         list-style: none;
 
@@ -39,7 +51,15 @@
                         @include flex-h-c-v-c( true );
 
                         height: 3rem;
-                        margin: 0 0.5rem 1rem 0.5rem;
+                        margin: 0 1rem 1rem 0rem;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            height: 2rem;
+                            margin: 0 0.25rem 1rem 0;
+
+                        }
 
                         // link
                         a {
@@ -62,6 +82,15 @@
 
                             transition: all 220ms linear 0ms;
 
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                height: 2rem;
+
+                                @include font( $industry, 0.6875rem, 600 );
+
+                            }
+
                             // hover state
                             &:hover {
 
@@ -76,6 +105,27 @@
                     }
 
                 }
+
+            }
+
+            // headingsies
+            h4.header {
+
+                margin: 0 0 1rem 0;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    // margin: 0 0 0 0;
+
+                }
+
+            }
+
+            // button cloud
+            #directory_buttons {
+
+                margin: 0 0 2rem 0;
 
             }
 
