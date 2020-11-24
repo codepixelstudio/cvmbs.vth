@@ -16,34 +16,6 @@
     // get site path
     $siteinfo = get_blog_details();
 
-    // parse URL for site path
-    $siteurl = str_replace( '/', '', $siteinfo->path );
-
-    // set department ID for REST API tasks
-    switch ( $siteurl ) {
-
-        case 'cs' :
-
-            $department_ID = 1002;
-            break;
-
-        case 'bms' :
-
-            $department_ID = 1003;
-            break;
-
-        case 'mip' :
-
-            $department_ID = 1004;
-            break;
-
-        case 'erhs' :
-
-            $department_ID = 1005;
-            break;
-
-    }
-
 ?>
 
 <!-- panel.directory -->
@@ -60,7 +32,6 @@
 
                 $directory_type = 'department';
 
-            // } elseif ( $site_type == 'college' ) {
             } else {
 
                 $directory_type = 'college';
@@ -120,53 +91,22 @@
 
                     <?php
 
-                        // college data
-                        if ( $site_type == 'college' || $site_type == 'dvm' || $site_type == 'special' || $site_type == 'laboratory' || $site_type == 'vth' ) {
+                        foreach ( $members as $member ) {
 
-                            foreach ( $members as $member ) {
+                            $query      = $member->memberID;
+                            $ename      = $member->eName;
+                            $lastName   = $member->lastName;
+                            $firstName  = $member->otherName;
+                            $tableName  = $lastName . ', ' . $firstName;
+                            $eMail      = strtolower( $member->email );
+                            $phone      = $member->phone;
+                            $department = $member->directoryGroup;
 
-                                $query      = $member->memberID;
-                                $ename      = $member->eName;
-                                $lastName   = $member->lastName;
-                                $firstName  = $member->firstName;
-                                $tableName  = $lastName . ', ' . $firstName;
-                                $eMail      = strtolower( $member->email );
-                                $phone      = $member->phone;
-                                $department = $member->directoryGroup;
-
-                                $results .= '<tr class="record"><td class="link-column"><span class="mobile-toggle"></span><a class="member-link" href="' . esc_url( home_url() ) . '/directory/member/?id=' . $query . '">' . $tableName . '</a></td><td>' . $phone . '</td></tr>';
-
-                            }
-
-                            echo $results;
+                            $results .= '<tr class="record"><td class="link-column"><span class="mobile-toggle"></span><a class="member-link" href="https://vetmedbiosci.colostate.edu/directory/member/?id=' . $query . '">' . $tableName . '</a></td><td>' . $phone . '</td></tr>';
 
                         }
 
-                        // department data
-                        if ( $site_type == 'department' ) {
-
-                            foreach ( $members as $member ) {
-
-                                if ( $member->directoryGroupID == $department_ID ) {
-
-                                    $query      = $member->memberID;
-                                    $ename      = $member->eName;
-                                    $lastName   = $member->lastName;
-                                    $firstName  = $member->firstName;
-                                    $tableName  = $lastName . ', ' . $firstName;
-                                    $eMail      = strtolower( $member->email );
-                                    $phone      = $member->phone;
-                                    $department = $member->directoryGroup;
-
-                                    $results .= '<tr class="record"><td class="link-column"><span class="mobile-toggle"></span><a class="member-link" href="' . esc_url( home_url() ) . '/member/?id=' . $query . '">' . $tableName . '</a></td><td>' . $phone . '</td></tr>';
-
-                                }
-
-                            }
-
-                            echo $results;
-
-                        }
+                        echo $results;
 
                     ?>
 
