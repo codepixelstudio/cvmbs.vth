@@ -49,22 +49,36 @@
     <section id="news_content">
 
         <!-- header -->
-        <div id="news_header">
+        <header id="news_header">
 
             <!-- heading -->
             <h1>
 
+                <?php if ( $_GET ) : ?>
+
+                <span class="tagline">
+
+                    pet health articles
+
+                </span>
+
+                <?php echo $_GET[ 'tag' ]; ?>
+
+                <?php else : ?>
+
                 pet health
+
+                <?php endif; ?>
 
             </h1>
             <!-- END heading -->
 
-            <?php // print_r( $_GET ); ?>
-
             <?php // get_template_part( 'elements/search/search.posts' ); ?>
 
-        </div>
+        </header>
         <!-- END header -->
+
+        <?php if ( !$_GET ) : ?>
 
         <!-- custom archive page content -->
         <div id="pet_health_info" class="fixed_width">
@@ -73,6 +87,8 @@
 
         </div>
         <!-- END custom archive page content -->
+
+        <?php endif; ?>
 
         <?php if ( have_posts() ) : ?>
 
