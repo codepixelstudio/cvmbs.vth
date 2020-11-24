@@ -30,18 +30,18 @@
                 // menu
                 #menu-vth-directory-menu {
 
+                    @include flex-h-s-v-t( false );
+
+                    flex-wrap: wrap;
+
                     margin: 0 0 0 0;
+
+                    list-style: none;
 
                     // list
                     ul {
 
-                        @include flex-h-s-v-t( false );
 
-                        flex-wrap: wrap;
-
-                        margin: 0 0 0 0;
-
-                        list-style: none;
 
                     }
 
@@ -50,7 +50,8 @@
 
                         @include flex-h-c-v-c( true );
 
-                        height: 3rem;
+                        // height: 3rem;
+                        height: 2rem;
                         margin: 0 1rem 1rem 0rem;
 
                         // mobile
@@ -67,10 +68,11 @@
                             @include flex-h-c-v-c( true );
 
                             width: 100%;
-                            height: 3rem;
+                            // height: 3rem;
+                            height: 2rem;
                             padding: 0.0625rem 1rem 0 1rem;
 
-                            @include font( $industry, 0.875rem, 600 );
+                            @include font( $industry, 0.75rem, 600 );
 
                             text-decoration: none;
 
