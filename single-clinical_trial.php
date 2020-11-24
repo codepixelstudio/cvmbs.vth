@@ -19,6 +19,12 @@
 				// image
 				$header_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
+				// get raw date
+			    $clinical_trial_expiration = get_field( 'trial_expiration' );
+
+				// set human readable
+			    $expiration_date = strtotime( $clinical_trial_expiration );
+
 			?>
 
 			<div class="post-header">
@@ -47,7 +53,11 @@
 
 			<?php get_template_part( 'elements/clinical.trials/clinical.trial.eligibility' ); ?>
 
+			<?php if ( $clinical_trial_expiration ) : ?>
+
 			<?php get_template_part( 'elements/clinical.trials/clinical.trial.expiration' ); ?>
+
+			<?php endif; ?>
 
 			<?php get_template_part( 'elements/clinical.trials/clinical.trial.contact' ); ?>
 

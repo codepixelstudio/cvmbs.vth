@@ -13,13 +13,13 @@
 
     <h3>
 
-        dates and deadlines
+        deadline
 
     </h3>
 
     <p class="expiration_text">
 
-        trial applications close after <?php echo date( 'F j, Y' , $expiration_date ); ?>
+        Trial ends <?php echo date( 'n/j/Y' , $expiration_date ); ?>
 
     </p>
 
