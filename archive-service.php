@@ -14,6 +14,7 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
+                'post_parent'    => 0,
                 'orderby'        => 'title',
                 'order'          => 'ASC',
                 'animal'         => array(
@@ -35,6 +36,7 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
+                'post_parent'    => 0,
                 'orderby'        => 'title',
                 'order'          => 'ASC',
                 'animal'         => array(
@@ -56,6 +58,7 @@
 
                 'posts_per_page' => -1,
                 'post_type'      => 'service',
+                'post_parent'    => 0,
                 'animal'         => $query,
                 'orderby'        => 'title',
                 'order'          => 'ASC'
@@ -73,6 +76,7 @@
         $services = array(
 
             'post_type'      => 'service',
+            'post_parent'    => 0,
             'posts_per_page' => -1,
             'orderby'        => 'title',
             'order'          => 'ASC'
