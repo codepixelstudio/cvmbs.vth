@@ -31,7 +31,21 @@
     // you know what it is bruh
     $(document).ready( function() {
 
-        // console.log( 'ready' );
+        console.log( 'ready' );
+
+        // archive views
+        var pagination = $('#news_navigation');
+
+        // test for pagination
+        if ( pagination.children().length > 0 ) {
+
+            pagination.addClass( 'paginated' );
+
+        } else {
+
+            pagination.addClass( 'unpaginated' );
+
+        }
 
     });
 
