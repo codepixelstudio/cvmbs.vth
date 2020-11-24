@@ -62,7 +62,29 @@
 
                 </span>
 
-                <?php echo $_GET[ 'tag' ]; ?>
+                <?php// echo key( $_GET ); ?>
+
+                <?php
+
+                    if ( key( $_GET ) === 'tag' ) {
+
+                        $get_title  = $_GET[ 'tag' ];
+                        $page_title = explode( '-', $get_title );
+
+                    } else if ( key( $_GET ) === 'topic' ) {
+
+                        $get_title  = $_GET[ 'topic' ];
+                        $page_title = explode( '-', $get_title );
+
+                    }
+
+                ?>
+
+                <?php foreach ( $page_title as $title ) {
+
+                    echo $title . '&nbsp;';
+
+                } ?>
 
                 <?php else : ?>
 
