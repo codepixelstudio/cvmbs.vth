@@ -84,25 +84,53 @@
 			<!-- content -->
 			<div class="service_content">
 
-				<?php if ( $notification_option ) : ?>
+				<?php if ( $appointments_option ) {
 
-				<!-- notification -->
-				<div class="notification_wrapper">
+					$lead_content_class = 'split';
 
-				<?php get_template_part( 'elements/services/service.notification' ); ?>
+				} else {
+
+					$lead_content_class = 'unified';
+
+				} ?>
+
+				<!-- conditional layout -->
+				<div class="lead_content <?php echo $lead_content_class; ?>">
+
+					<!-- service description -->
+					<div class="service_column main">
+
+						<?php if ( $notification_option ) : ?>
+
+						<!-- notification -->
+						<div class="notification_wrapper">
+
+						<?php get_template_part( 'elements/services/service.notification' ); ?>
+
+						</div>
+						<!-- END notification -->
+
+						<?php endif; ?>
+
+						<?php get_template_part( 'elements/services/service.description' ); ?>
+
+					</div>
+					<!-- END service description -->
+
+					<!-- service sidebar -->
+					<div class="service_column sidebar">
+
+						<?php if ( $appointments_option ) : ?>
+
+						<?php get_template_part( 'elements/services/service.appointments' ); ?>
+
+						<?php endif; ?>
+
+					</div>
+					<!-- END service sidebar -->
 
 				</div>
-				<!-- END notification -->
-
-				<?php endif; ?>
-
-				<?php get_template_part( 'elements/services/service.description' ); ?>
-
-				<?php if ( $appointments_option ) : ?>
-
-				<?php get_template_part( 'elements/services/service.appointments' ); ?>
-
-				<?php endif; ?>
+				<!-- END conditional layout -->
 
 				<?php if ( $contact_option ) : ?>
 

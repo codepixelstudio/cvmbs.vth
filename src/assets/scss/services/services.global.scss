@@ -203,23 +203,68 @@
         // sections
         .service_section {
 
-            padding: 1rem 5rem 1rem 5rem;
-
-            font-size: 1rem;
-
             @include color( $app05, 0.215 );
 
             // mobile
             @include breakpoint ( small only ) {
 
-                padding: 1rem 2rem 1rem 2rem;
+                //
 
             }
 
             // text info
             .text_info {
 
-                margin: 0 1rem 2rem 1rem;
+                //
+
+            }
+
+        }
+
+        // lead content
+        .lead_content {
+
+            // single (?)
+            &.unified {
+
+
+
+            }
+
+            // split
+            &.split {
+
+                @include flex-h-s-v-st( false );
+
+                .main {
+
+                    padding: 0 3rem 0 5rem;
+
+                    .notification {
+
+                        padding: 0 0 0 0;
+
+                    }
+
+                }
+
+                .sidebar {
+
+                    padding: 3rem 5rem 3rem 3rem;
+
+                    $sidebar : adjust-color(
+
+                        $beige,
+                        $hue          : 0%,
+                        $saturation : -10%,
+                        $lightness  : 10%,
+                        $alpha         : -0.000
+
+                    );
+
+                    @include fill( $sidebar );
+
+                }
 
             }
 
@@ -228,55 +273,14 @@
         // main
         .service_column {
 
-            width: 60vw;
+            //
 
         }
 
         // sidebar
         .service_sidebar {
 
-            flex-grow: 1;
 
-            width: 40vw;
-            margin: 1rem 5rem 0 2rem;
-            // padding: 2rem 2rem 2rem 2rem;
-
-            @include color( $app05, 0.125 );
-
-            @include fill( $sidebar, 0.000 );
-
-            @include shadowbox( 1rem, 3rem, black, 0.645 );
-
-            // sections
-            .service_sidebar_section {
-
-                // margin: 0 0 2rem 0;
-                // padding: 2rem 2rem 2rem 2rem;
-
-                // last child
-                &:last-child {
-
-                    margin: 0 0 0 0;
-
-                }
-
-            }
-
-            // headings
-            h2 {
-
-                font-size: 1.25rem;
-
-                @include color( $g140 );
-
-            }
-
-            // text
-            p {
-
-                font-size: 0.875rem;
-
-            }
 
         }
 
