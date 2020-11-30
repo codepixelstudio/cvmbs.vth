@@ -872,7 +872,7 @@
                         // before
                         &:before {
 
-                            content: '\EA4E';
+                            content: '\EB70';
 
                             @include color( $roarange, 0.000 );
 
@@ -892,6 +892,8 @@
                         &:before {
 
                             content: '\EA3A';
+
+                            @include color( $blue, 0.000 );
 
                         }
 

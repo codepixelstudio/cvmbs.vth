@@ -236,10 +236,40 @@
 
                 @include flex-h-s-v-st( false );
 
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-st( false );
+
+                }
+
+                // common
+                p {
+
+                    // last child
+                    &:last-child {
+
+                        margin-bottom: 0;
+
+                    }
+
+                }
+
+                // main content
                 .main {
 
-                    padding: 0 3rem 0 5rem;
+                    width: 65vw;
+                    padding: 0 3rem 2rem 5rem;
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 100vw;
+                        padding: 2rem 2rem 2rem 2rem;
+
+                    }
+
+                    // notification block
                     .notification {
 
                         padding: 0 0 0 0;
@@ -248,8 +278,10 @@
 
                 }
 
+                // sidebar content
                 .sidebar {
 
+                    width: 35vw;
                     padding: 3rem 5rem 3rem 3rem;
 
                     $sidebar : adjust-color(
@@ -263,6 +295,21 @@
                     );
 
                     @include fill( $sidebar );
+
+                    // mobile
+                    @include breakpoint ( medium only ) {
+
+                        width: 40vw;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 100vw;
+                        padding: 2rem 2rem 2rem 2rem;
+
+                    }
 
                 }
 

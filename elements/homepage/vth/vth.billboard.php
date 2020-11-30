@@ -232,7 +232,7 @@
             <!-- label -->
             <span class="label">
 
-                open today
+                open monday - friday
 
             </span>
             <!-- END label -->
