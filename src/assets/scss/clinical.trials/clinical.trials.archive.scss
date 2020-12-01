@@ -23,6 +23,55 @@
 
                 }
 
+                // heading
+                h1 {
+
+                    @include flex-v-c-h-s( true );
+
+                    flex-grow: 1;
+
+                    position: relative;
+
+                    margin: 0 0 0 0;
+                    // padding: 0 0 0 2.75rem;
+
+                    @include typo( 3rem, 0.025em );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        // padding: 0 0 0 1.5rem;
+
+                    }
+
+                    // page parent title
+                    span {
+
+                        @include flex-h-s-v-c( false );
+
+                        height: 0.75rem;
+                        margin: 0 0 0.25rem 0;
+
+                        // @include font( $industry, 0.875rem, 700 );
+                        @include font( $klavislim, 1.125rem, 400 );
+
+                        @include typo( 0.6875rem, 0.035em );
+
+                        @include color( $app05, 0.365 );
+
+                    }
+
+                    // tagline
+                    .tagline {
+
+                        display: block;
+
+                        // @include font( $);
+
+                    }
+
+                }
+
                 // grid
                 #news_grid {
 

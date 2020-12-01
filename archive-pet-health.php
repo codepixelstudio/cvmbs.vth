@@ -62,19 +62,29 @@
 
                 </span>
 
-                <?php// echo key( $_GET ); ?>
+                <?php // echo key( $_GET ); ?>
 
                 <?php
 
                     if ( key( $_GET ) === 'tag' ) {
 
-                        $get_title  = $_GET[ 'tag' ];
-                        $page_title = explode( '-', $get_title );
+                        $get_title   = $_GET[ 'tag' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'tag' ], 'post_tag'
+
+                        );
 
                     } else if ( key( $_GET ) === 'topic' ) {
 
-                        $get_title  = $_GET[ 'topic' ];
-                        $page_title = explode( '-', $get_title );
+                        $get_title   = $_GET[ 'topic' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'topic' ], 'topic'
+
+                        );
 
                     }
 
@@ -117,7 +127,7 @@
         <!-- grid -->
         <div id="news_grid">
 
-        	<?php // while ( $pet_health_query->have_posts() ) : $pet_health_query->the_post(); ?>
+        	<?php //while ( $pet_health_query->have_posts() ) : $pet_health_query->the_post(); ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
             <?php
@@ -297,7 +307,28 @@
 
                                 $topic_link = get_category_link( $topic->term_id );
 
-                                $topic_list .= '<a href="?topic=' . $topic->slug . '" class="taxonomy_item">' . $topic->name . '</a>';
+                                // retrieve query string
+                                $query_URL = $_GET[ 'topic' ];
+
+                                if ( $topic->slug == $query_URL ) {
+
+                                    $active_class = 'active';
+
+                                } else {
+
+                                    $active_class = 'inactive';
+
+                                }
+
+                                $topic_list .= '
+
+                                    <a href="?topic=' . $topic->slug . '" class="taxonomy_item ' . $active_class . '">
+
+                                        ' . $topic->name . '
+
+                                    </a>
+
+                                ';
 
                             }
 
@@ -350,7 +381,28 @@
 
                                 $tag_link = get_category_link( $tag->term_id );
 
-                                $tag_list .= '<a href="?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
+                                // retrieve query string
+                                $query_URL = $_GET[ 'tag' ];
+
+                                if ( $tag->slug == $query_URL ) {
+
+                                    $active_class = 'active';
+
+                                } else {
+
+                                    $active_class = 'inactive';
+
+                                }
+
+                                $tag_list .= '
+
+                                    <a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
+
+                                        ' . $tag->name . '
+
+                                    </a>
+
+                                ';
 
                             }
 

@@ -483,7 +483,7 @@
                             // hover state
                             &:hover {
 
-                                @include color( $blue );
+                                @include color( $campaign );
 
                             }
 
@@ -741,19 +741,21 @@
                             // hover state
                             &:hover {
 
-                                @include color( white, 0.000 );
+                                @include color( $g135 );
 
-                                // @include fill( $campaign, 0.000 );
-                                @include fill( $blue, 0.000 );
+                                @include fill( $campaign, 0.000 );
+                                // @include fill( $blue, 0.000 );
 
                             }
 
                             // active state
                             &.active {
 
-                                @include color( $g135 );
+                                font-weight: 700;
 
-                                @include fill( $campaign );
+                                @include color( $campaign );
+
+                                @include fill( $g135 );
 
                             }
 

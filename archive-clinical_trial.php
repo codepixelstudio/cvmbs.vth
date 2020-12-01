@@ -113,7 +113,53 @@
             <!-- heading -->
             <h1>
 
-                Clinical Trials
+                <?php if ( $_GET ) : ?>
+
+                <span class="tagline">
+
+                    clinical trials
+
+                </span>
+
+                <?php // echo key( $_GET ); ?>
+
+                <?php
+
+                    if ( key( $_GET ) === 'tag' ) {
+
+                        $get_title   = $_GET[ 'tag' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'tag' ], 'post_tag'
+
+                        );
+
+                    } else if ( key( $_GET ) === 'topic' ) {
+
+                        $get_title   = $_GET[ 'topic' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'topic' ], 'topic'
+
+                        );
+
+                    }
+
+                ?>
+
+                <?php foreach ( $page_title as $title ) {
+
+                    echo $title . '&nbsp;';
+
+                } ?>
+
+                <?php else : ?>
+
+                clinical trials
+
+                <?php endif; ?>
 
             </h1>
             <!-- END heading -->
