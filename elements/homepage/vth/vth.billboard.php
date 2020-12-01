@@ -1,7 +1,9 @@
 <?php
 
+    // ACF group
     $homepage_options = get_field( 'vth_homepage_options' );
 
+    // billboard contents
     $billboard_content = $homepage_options[ 'billboard_content' ];
 
     // homepage alert
@@ -218,21 +220,34 @@
     <!-- infobar -->
     <div id="infobar">
 
+        <?php
+
+            // setup info bar
+            $info_bar = $homepage_options[ 'info_bar' ];
+
+            // get individual values
+            $business    = $info_bar[ 'business' ];
+            $emergency   = $info_bar[ 'emergency' ];
+            $directions  = $info_bar[ 'directions' ];
+            $appointment = $info_bar[ 'appointment' ];
+
+        ?>
+
         <!-- item -->
         <div id="info-hours" class="infobar-box">
 
             <!-- icon -->
-            <span class="icon">
+            <div class="icon">
 
                 <!--  -->
 
-            </span>
+            </div>
             <!-- END icon -->
 
             <!-- label -->
             <span class="label">
 
-                open monday - friday
+                <?php echo $business[ 'label' ]; ?>
 
             </span>
             <!-- END label -->
@@ -240,7 +255,7 @@
             <!-- info -->
             <span class="info">
 
-                8:00 AM - 5:00 PM
+                <?php echo $business[ 'content' ]; ?>
 
             </span>
             <!-- END info -->
@@ -252,17 +267,17 @@
         <div id="info-emergency" class="infobar-box">
 
             <!-- icon -->
-            <span class="icon">
+            <div class="icon">
 
                 <!--  -->
 
-            </span>
+            </div>
             <!-- END icon -->
 
             <!-- label -->
             <span class="label">
 
-                emergency
+                <?php echo $emergency[ 'label' ]; ?>
 
             </span>
             <!-- END label -->
@@ -270,7 +285,7 @@
             <!-- info -->
             <span class="info">
 
-                open 24 hours
+                <?php echo $emergency[ 'content' ]; ?>
 
             </span>
             <!-- END info -->
@@ -282,17 +297,17 @@
         <div id="info-directions" class="infobar-box">
 
             <!-- icon -->
-            <span class="icon">
+            <div class="icon">
 
                 <!--  -->
 
-            </span>
+            </div>
             <!-- END icon -->
 
             <!-- label -->
             <span class="label">
 
-                directions
+                <?php echo $directions[ 'label' ]; ?>
 
             </span>
             <!-- END label -->
@@ -300,7 +315,7 @@
             <!-- info -->
             <span class="info">
 
-                300 west drake road
+                <?php echo $directions[ 'content' ]; ?>
 
             </span>
             <!-- END info -->
@@ -312,17 +327,17 @@
         <div id="info-appointment" class="infobar-box">
 
             <!-- icon -->
-            <span class="icon">
+            <div class="icon">
 
                 <!--  -->
 
-            </span>
+            </div>
             <!-- END icon -->
 
             <!-- label -->
             <span class="label">
 
-                make an appointment
+                <?php echo $appointment[ 'label' ]; ?>
 
             </span>
             <!-- END label -->
@@ -330,7 +345,7 @@
             <!-- info -->
             <span class="info">
 
-                (970) 297-5000
+                <?php echo $appointment[ 'content' ]; ?>
 
             </span>
             <!-- END info -->
