@@ -117,17 +117,17 @@
 					</div>
 					<!-- END service description -->
 
+					<?php if ( $appointments_option ) : ?>
+
 					<!-- service sidebar -->
 					<div class="service_column sidebar">
 
-						<?php if ( $appointments_option ) : ?>
-
 						<?php get_template_part( 'elements/services/service.appointments' ); ?>
-
-						<?php endif; ?>
 
 					</div>
 					<!-- END service sidebar -->
+
+					<?php endif; ?>
 
 				</div>
 				<!-- END conditional layout -->

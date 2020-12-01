@@ -1,16 +1,31 @@
 // stylesheet :: global service post styles
 
     // settings
-    $page    : #E5E7E7;
-    $sidebar : adjust-color(
 
-        $beige,
-        $hue          : 0%,
-        $saturation : -5%,
-        $lightness  : 3%,
-        $alpha         : -0.000
+        // pagebase
+        $page    : #E5E7E7;
 
-    );
+        // main
+        $main : adjust-color(
+
+            $beige,
+            $hue          : 0%,
+            $saturation : -20%,
+            $lightness  : 10%,
+            $alpha         : -0.665
+
+        );
+
+        // sidebar
+        $sidebar : adjust-color(
+
+            $beige,
+            $hue          : 0%,
+            $saturation : -40%,
+            $lightness  : -10%,
+            $alpha         : -0.465
+
+        );
 
     // container
     .service_container {
@@ -227,7 +242,29 @@
             // single (?)
             &.unified {
 
+                // main content
+                .main {
 
+                    padding: 5rem 5rem 5rem 5rem;
+
+                    @include fill( $main );
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        width: 100vw;
+                        padding: 2rem 2rem 2rem 2rem;
+
+                    }
+
+                    // notification block
+                    .notification {
+
+                        padding: 0 0 0 0;
+
+                    }
+
+                }
 
             }
 
@@ -259,7 +296,9 @@
                 .main {
 
                     width: 65vw;
-                    padding: 0 3rem 2rem 5rem;
+                    padding: 5rem 5rem 5rem 5rem;
+
+                    @include fill( $main );
 
                     // mobile
                     @include breakpoint ( small only ) {
@@ -282,17 +321,7 @@
                 .sidebar {
 
                     width: 35vw;
-                    padding: 3rem 5rem 3rem 3rem;
-
-                    $sidebar : adjust-color(
-
-                        $beige,
-                        $hue          : 0%,
-                        $saturation : -10%,
-                        $lightness  : 10%,
-                        $alpha         : -0.000
-
-                    );
+                    padding: 5rem 5rem 5rem 5rem;
 
                     @include fill( $sidebar );
 
@@ -311,7 +340,47 @@
 
                     }
 
+                    // headings
+                    h2 {
+
+                        @include font( $klavislim, 2rem, 400 );
+
+                    }
+
+                    // buttons
+                    .content-with-image__button {
+
+                        margin: 0 0 1rem 0;
+
+                        border: none;
+
+                        @include color( white );
+
+                        // @include fill( $sec_temp_link_color );
+                        @include fill( $g140 );
+
+                        @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+                        // hover state
+                        &:hover {
+
+                            // @include fill( lighten( $sec_temp_link_color, 5% ) );
+                            @include fill( $dark, 0.115 );
+
+                        }
+
+                    }
+
                 }
+
+            }
+
+            // headings
+            h3 {
+
+                margin: 0.5rem 0 1rem 0;
+
+                @include font( $klavislim, 1.75rem, 400 );
 
             }
 
