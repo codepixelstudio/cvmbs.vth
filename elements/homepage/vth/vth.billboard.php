@@ -102,7 +102,7 @@
             // setup icons
             switch ( true ) {
 
-                case $quick_link_title == 'client portal' :
+                case $quick_link_title == 'for clients' :
 
                     $link_ID = 'client-portal';
                     break;
