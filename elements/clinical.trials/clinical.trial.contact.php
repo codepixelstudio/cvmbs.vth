@@ -29,13 +29,6 @@
 
     <?php endif; ?>
 
-    <pre class="developer">
-
-        <?php print_r( $contacts ); ?>
-
-    </pre>
-
-    <?php // foreach ( $contacts as $contact ) : ?>
     <?php while ( have_rows('contact') ) : the_row(); ?>
 
     <div class="group-bios__grid-item">
@@ -133,7 +126,6 @@
     </div><!-- .group-bios__grid-item -->
 
     <?php endwhile; ?>
-    <?php // endforeach; ?>
 
 </div>
 <!-- END service section -->
