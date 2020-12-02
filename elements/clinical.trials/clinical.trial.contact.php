@@ -1,9 +1,10 @@
 <?php
 
-    $contacts = get_field( 'contact' );
-
     // contact info test
     $contact_info = get_field( 'contact_info_text' );
+
+    // contact info
+    $contacts = get_field( 'contact' );
 
 ?>
 
@@ -28,47 +29,111 @@
 
     <?php endif; ?>
 
-    <?php foreach ( $contacts as $contact ) : ?>
+    <pre class="developer">
 
-    <!-- contact entry -->
-    <div class="entry <?php echo $contact[ 'type' ]; ?>">
+        <?php print_r( $contacts ); ?>
 
-        <?php if ( $contact[ 'type' ][ 'value' ] !== 'name' ) : ?>
+    </pre>
 
-        <span class="type">
+    <?php // foreach ( $contacts as $contact ) : ?>
+    <?php while ( have_rows('contact') ) : the_row(); ?>
 
-            <?php echo $contact[ 'type' ][ 'label' ]; ?> :
+    <div class="group-bios__grid-item">
 
-        </span>
+        <div class="group-bios__image">
 
-        <?php endif; ?>
+            <?php if ( get_sub_field( 'directory_link' ) ) : ?>
 
-        <?php if ( $contact[ 'type' ][ 'value' ] == 'email' ) : ?>
+            <!-- directory link -->
+            <a href="<?php the_sub_field( 'directory_link' ); ?>">
 
-        <!-- email -->
-        <a class="email" href="mailto:<?php echo $contact[ 'info' ]; ?>">
+                <?php echo wp_get_attachment_image( get_sub_field('photo'), 'thumbnail' ); ?>
 
-            <?php echo $contact[ 'info' ]; ?>
+            </a>
+            <!-- END directory link -->
 
-        </a>
-        <!-- END email -->
+            <?php else : ?>
 
-        <?php else : ?>
+            <?php echo wp_get_attachment_image( get_sub_field('photo'), 'thumbnail' ); ?>
 
-        <!-- text -->
-        <span class="info">
+            <?php endif; ?>
 
-            <?php echo $contact[ 'info' ]; ?>
+        </div><!-- .group-bios__image -->
 
-        </span>
-        <!-- END text -->
+        <div class="group-bios__details">
 
-        <?php endif; ?>
+            <?php if ( get_sub_field( 'directory_link' ) ) : ?>
 
-    </div>
-    <!-- END contact entry -->
+            <a class="group-bios__name" href="<?php the_sub_field( 'directory_link' ); ?>">
 
-    <?php endforeach; ?>
+                <?php the_sub_field('name'); ?>
+
+            </a>
+
+            <?php else : ?>
+
+            <span class="group-bios__name" href="<?php the_sub_field( 'directory_link' ); ?>">
+
+                <?php the_sub_field('name'); ?>
+
+            </span>
+
+            <?php endif; ?>
+
+            <?php if ( get_sub_field('desc') ) : ?>
+
+            <div class="group-bios__desc">
+
+                <?php the_sub_field('desc'); ?>
+
+            </div><!-- .group-bios__desc -->
+
+            <?php endif; ?>
+
+            <?php if ( have_rows('phones') || get_sub_field('email') ) : ?>
+
+            <div class="group-bios__contact">
+
+                <?php while ( have_rows('phones') ) : the_row(); ?>
+
+                <p>
+
+                    <?php if ( get_sub_field('type') ) : ?>
+
+                    <span class="group-bios__contact-detail"><?php the_sub_field('type'); ?></span>:
+
+                    <?php endif; ?>
+
+                    <?php the_sub_field('number'); ?>
+
+                </p>
+
+                <?php endwhile; ?>
+
+                <?php if ( get_sub_field('email') ) : ?>
+
+                <p>
+
+                    <a href="mailto:<?php the_sub_field('email'); ?>">
+
+                        <?php the_sub_field('email'); ?>
+
+                    </a>
+
+                </p>
+
+                <?php endif; ?>
+
+            </div><!-- .group-bios__contact -->
+
+            <?php endif; ?>
+
+        </div><!-- .group-bios__details -->
+
+    </div><!-- .group-bios__grid-item -->
+
+    <?php endwhile; ?>
+    <?php // endforeach; ?>
 
 </div>
 <!-- END service section -->
