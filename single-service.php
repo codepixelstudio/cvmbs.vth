@@ -158,9 +158,79 @@
 
 				<?php endif; ?>
 
+				<?php
+
+					// global
+					global $post;
+					$slug = $post->post_name;
+
+					// setup today
+					$today = date( 'Ymd' );
+
+					// setup query parameters
+					$clinical_trials_query = array(
+
+						'post_type'      => 'clinical_trial',
+						'tag'            => $slug,
+						'posts_per_page' => 3,
+						'orderby'        => 'meta_value',
+						'meta_query'     => array(
+
+							'relation'       => 'OR',
+							array(
+
+								'key'        => 'trial_expiration',
+								'value'      => $today,
+								'compare'    => '>'
+
+							),
+
+							array(
+
+								'key'        => 'trial_expiration',
+								'compare'    => 'NOT EXISTS'
+
+							),
+
+							array(
+
+								'key'        => 'trial_expiration',
+								'value'      => '',
+								'compare'    => '='
+
+							),
+
+						),
+						'order'          => 'ASC'
+
+					);
+
+					// setup query
+					$clinical_trials = new WP_Query( $clinical_trials_query );
+
+					if ( $clinical_trials->have_posts() ) {
+
+						$pet_health_container = 'stacked';
+
+					} else {
+
+						$pet_health_container = 'standalone';
+
+					}
+
+					wp_reset_postdata();
+
+				?>
+
 				<?php get_template_part( 'elements/services/service.clinical.trials' ); ?>
 
-				<?php get_template_part( 'elements/services/service.pet.health' ); ?>
+				<!-- service section -->
+				<div class="service_section pet_health <?php echo $pet_health_container; ?>">
+
+					<?php get_template_part( 'elements/services/service.pet.health' ); ?>
+
+				</div>
+				<!-- END service section -->
 
 				<?php if ( $giving_option ) : ?>
 

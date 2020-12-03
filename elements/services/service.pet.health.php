@@ -4,16 +4,20 @@
     global $post;
     $slug = $post->post_name;
 
-    $pet_health_query = new WP_Query( array(
+    // setup query parameters
+    $pet_health_query = array(
 
         'post_type'      => 'pet-health',
         'posts_per_page' => 3,
         'tag'            => $slug
 
-    ));
+    );
 
     // test for number of posts
     $count = count( $pet_health_query->posts );
+
+    // setup query
+    $pet_health = new WP_Query( $pet_health_query );
 
     // setup query parameters
     $view_all_query = array(
@@ -35,10 +39,7 @@
 
 ?>
 
-<?php if ( $pet_health_query->have_posts() ) : ?>
-
-<!-- service section -->
-<div class="service_section pet_health">
+<?php if ( $pet_health->have_posts() ) : ?>
 
     <!-- header -->
     <div class="header_block">
@@ -73,7 +74,7 @@
     <!-- container -->
     <div class="links">
 
-        <?php while ( $pet_health_query->have_posts()) : $pet_health_query->the_post(); ?>
+        <?php while ( $pet_health->have_posts()) : $pet_health->the_post(); ?>
 
         <?php
 
@@ -118,8 +119,5 @@
     <!-- END container -->
 
     <?php wp_reset_postdata(); ?>
-
-</div>
-<!-- END service section -->
 
 <?php endif; ?>
