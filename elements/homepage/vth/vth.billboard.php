@@ -119,7 +119,7 @@
                     $link_ID = 'staff-directory';
                     break;
 
-                case $quick_link_title == 'emergency' :
+                case $quick_link_title == 'emergencies' :
 
                     $link_ID = 'emergency';
                     break;
