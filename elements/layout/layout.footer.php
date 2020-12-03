@@ -174,9 +174,9 @@
                 </div>
 
                 <!-- campaign button -->
-                <a id="campaign-button" class="campaign-button" href="https://advancing.colostate.edu/CVMBS">
+                <a id="campaign-button" class="campaign-button" href="https://advancing.colostate.edu/VTH">
 
-                    <span class="text">Support the College</span>
+                    <span class="text">Support the Hospital</span>
 
                 </a>
                 <!-- END campaign button -->
