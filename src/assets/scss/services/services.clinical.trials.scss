@@ -10,7 +10,7 @@
         &.clinical_trials {
 
             padding: 2rem calc( 8vw - 1rem ) 2rem calc( 8vw - 1rem );
-            padding: 5rem 4rem 2.5rem 4rem;
+            padding: 5rem 4rem 5rem 4rem;
 
             // mobile
             @include breakpoint ( small only ) {
@@ -93,8 +93,6 @@
                 @include flex-v-b-h-s( true );
 
                 width: 33.3333333%;
-                // min-width: 16rem;
-                // height: 16rem;
                 margin: 0 1rem 0 1rem;
                 padding: 2rem 2rem 2rem 2rem;
 

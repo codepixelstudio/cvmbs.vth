@@ -41,83 +41,83 @@
 
 <?php if ( $pet_health->have_posts() ) : ?>
 
-    <!-- header -->
-    <div class="header_block">
+<!-- header -->
+<div class="header_block">
 
-        <h2>
+    <h2>
 
-            pet health
+        pet health
 
-        </h2>
+    </h2>
 
-        <?php if ( $total_posts > 3 ) : ?>
+    <?php if ( $total_posts > 3 ) : ?>
 
-        <a href="<?php echo get_site_url() . '/pet-health/?tag=' . $slug; ?>">
+    <a href="<?php echo get_site_url() . '/pet-health/?tag=' . $slug; ?>">
 
-            view all &raquo;
+        view all &raquo;
 
-        </a>
+    </a>
 
-        <?php endif; ?>
+    <?php endif; ?>
 
-    </div>
-    <!-- END header -->
+</div>
+<!-- END header -->
 
-    <!-- text info -->
-    <div class="text_info">
+<!-- text info -->
+<div class="text_info">
 
-        <?php echo $pet_health_text; ?>
+    <?php echo $pet_health_text; ?>
 
-    </div>
-    <!-- END text info -->
+</div>
+<!-- END text info -->
 
-    <!-- container -->
-    <div class="links">
+<!-- container -->
+<div class="links">
 
-        <?php while ( $pet_health->have_posts()) : $pet_health->the_post(); ?>
+    <?php while ( $pet_health->have_posts()) : $pet_health->the_post(); ?>
 
-        <?php
+    <?php
 
-            // get featured image
-            $header_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
+        // get featured image
+        $header_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 
-            // setup URL redirect
-            $post_redirect = get_field( 'post_redirect' );
+        // setup URL redirect
+        $post_redirect = get_field( 'post_redirect' );
 
-            // test for redirect
-            if ( $post_redirect ) {
+        // test for redirect
+        if ( $post_redirect ) {
 
-                $post_link = get_field( 'redirect_url' );
+            $post_link = get_field( 'redirect_url' );
 
-            } else {
+        } else {
 
-                $post_link = get_permalink();
+            $post_link = get_permalink();
 
-            }
+        }
 
-        ?>
+    ?>
 
-        <a class="post_link" href="<?php echo $post_link; ?>" style="background-image:url(<?php echo $header_image; ?>);">
+    <a class="post_link" href="<?php echo $post_link; ?>" style="background-image:url(<?php echo $header_image; ?>);">
 
-            <div class="post_link_header" >
+        <div class="post_link_header" >
 
 
 
-            </div>
+        </div>
 
-            <span class="post_link_label">
+        <span class="post_link_label">
 
-                <?php the_title(); ?>
+            <?php the_title(); ?>
 
-            </span>
+        </span>
 
-        </a>
+    </a>
 
-        <?php endwhile; ?>
+    <?php endwhile; ?>
 
-    </div>
-    <!-- END container -->
+</div>
+<!-- END container -->
 
-    <?php wp_reset_postdata(); ?>
+<?php wp_reset_postdata(); ?>
 
 <?php endif; ?>

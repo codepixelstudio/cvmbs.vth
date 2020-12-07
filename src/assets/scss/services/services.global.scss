@@ -72,6 +72,13 @@
             }
 
             // mobile
+            @include breakpoint ( medium down ) {
+
+                padding: 0 3rem 3rem 3rem;
+
+            }
+
+            // mobile
             @include breakpoint ( small only ) {
 
                 // @include flex-v-b-h-st( false );
@@ -301,6 +308,13 @@
                     @include fill( $main );
 
                     // mobile
+                    @include breakpoint ( medium only ) {
+
+                        padding: 3rem 3rem 3rem 3rem;
+
+                    }
+
+                    // mobile
                     @include breakpoint ( small only ) {
 
                         width: 100vw;
@@ -329,6 +343,7 @@
                     @include breakpoint ( medium only ) {
 
                         width: 40vw;
+                        padding: 3rem 3rem 3rem 3rem;
 
                     }
 
@@ -378,7 +393,7 @@
             // headings
             h3 {
 
-                margin: 0.5rem 0 1rem 0;
+                margin: 2rem 0 1rem 0;
 
                 @include font( $klavislim, 1.75rem, 400 );
 

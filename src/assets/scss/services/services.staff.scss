@@ -23,9 +23,9 @@
         }
 
         // mobile
-        @include breakpoint ( small only ) {
+        @include breakpoint ( medium down ) {
 
-            // padding: 2rem 2rem 2rem 2rem;
+            background-attachment: scroll;
 
         }
 
@@ -68,7 +68,7 @@
             @include flex-h-c-v-c( true );
 
             height: 4rem;
-            padding: 0.0625rem 1.5rem 0 1.5rem;
+            padding: 0.125rem 1.5rem 0 1.5rem;
 
             @include font( $klavislim, 1rem, 400 );
 
@@ -78,9 +78,20 @@
 
             @include color( white );
 
-            @include fill( $g140, 0.000 );
+            @include fill( $dark, 0.275 );
+
+            transition: $all220;
 
             @include shadowbox( 1rem, 3rem, black, 0.685 );
+
+            // hover state
+            &:hover {
+
+                @include color( $gold );
+
+                @include fill( $g135, 0.000 );
+
+            }
 
         }
 
