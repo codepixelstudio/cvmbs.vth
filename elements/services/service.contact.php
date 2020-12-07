@@ -46,7 +46,7 @@
         <span class="contact_info email">E-mail:
 
             <!-- email -->
-            <a class="email_link" href="mailto:<?php echo $entry[ 'info' ]; ?>">
+            <a class="email_link" href="mailto:<?php echo $entry[ 'contact_info' ]; ?>">
 
                 <?php echo $entry[ 'contact_info' ]; ?>
 
