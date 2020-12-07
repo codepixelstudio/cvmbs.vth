@@ -635,11 +635,6 @@
                         "field": "field_5f188a20bc57e",
                         "operator": "!=",
                         "value": "1"
-                    },
-                    {
-                        "field": "field_5f2241bbc910f",
-                        "operator": "!=",
-                        "value": "1"
                     }
                 ]
             ],
@@ -1236,5 +1231,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1605629324
+    "modified": 1607364282
 }
