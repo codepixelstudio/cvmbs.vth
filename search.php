@@ -1,42 +1,17 @@
 <?php
 
-    // test for URL query string
-    if ( $_GET ) {
+    $search = get_search_query();
 
-        // retrieve query string
-        $query = $_GET[ 'tag' ];
+    // setup query parameters
+    $news = array(
 
-        // setup query
-        if ( $query ) {
+        's'         => $search,
+        'post_type' => 'pet-health'
 
-            // query
-            $pet_health = array(
-
-                'post_type' => 'pet-health',
-                'post_tag'  => $query
-
-            );
-
-        }
-
-    } else {
-
-        // setup query parameters
-        $pet_health = array(
-
-            'post_type'      => 'pet-health',
-            'posts_per_page' => -1,
-            // 'paged'          => 1
-
-        );
-
-    }
+    );
 
     // setup query
-    $pet_health_query = new WP_Query( $pet_health );
-
-    // text content
-    $pet_health_info = get_field( 'pet_health_info', 'options' );
+    $news_query = new WP_Query( $news );
 
 ?>
 
@@ -54,53 +29,13 @@
             <!-- heading -->
             <h1>
 
-                <?php if ( $_GET ) : ?>
-
                 <span class="tagline">
 
-                    pet health articles
+                    search results for
 
                 </span>
 
-                <?php // echo key( $_GET ); ?>
-
-                <?php
-
-                    if ( key( $_GET ) === 'tag' ) {
-
-                        $get_title   = $_GET[ 'tag' ];
-                        $page_title  = explode( '-', $get_title );
-                        $query_title = get_term_by(
-
-                            'name', $_GET[ 'tag' ], 'post_tag'
-
-                        );
-
-                    } else if ( key( $_GET ) === 'topic' ) {
-
-                        $get_title   = $_GET[ 'topic' ];
-                        $page_title  = explode( '-', $get_title );
-                        $query_title = get_term_by(
-
-                            'name', $_GET[ 'topic' ], 'topic'
-
-                        );
-
-                    }
-
-                ?>
-
-                <?php foreach ( $page_title as $title ) {
-
-                    echo $title . '&nbsp;';
-
-                } ?>
-
-                <?php else : ?>
-
-                pet health
-
-                <?php endif; ?>
+                "<?php echo $search; ?>"
 
             </h1>
             <!-- END heading -->
@@ -110,25 +45,12 @@
         </header>
         <!-- END header -->
 
-        <?php if ( !$_GET ) : ?>
-
-        <!-- custom archive page content -->
-        <div id="pet_health_info" class="fixed_width">
-
-            <?php echo $pet_health_info; ?>
-
-        </div>
-        <!-- END custom archive page content -->
-
-        <?php endif; ?>
-
-        <?php if ( have_posts() ) : ?>
+        <?php if ( $news_query->have_posts() ) : ?>
 
         <!-- grid -->
         <div id="news_grid">
 
-        	<?php //while ( $pet_health_query->have_posts() ) : $pet_health_query->the_post(); ?>
-            <?php while ( have_posts() ) : the_post(); ?>
+    	<?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 
             <?php
 
@@ -243,10 +165,20 @@
             </article>
             <!-- END post -->
 
-        	<?php endwhile; ?>
+    	<?php endwhile; ?>
 
         </div>
         <!-- END grid -->
+
+        <?php else : ?>
+
+        <!-- empty -->
+        <div class="empty">
+
+            Nothing matched your search.<br />Select a tag or topic below, or <a href="pet-health">view all pet health posts</a>.
+
+        </div>
+        <!-- END empty -->
 
         <?php endif; ?>
 

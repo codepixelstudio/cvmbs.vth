@@ -33,12 +33,13 @@
         // text
         #pet_health_info {
 
-            margin: 1rem 0 0 0;
+            margin: 2rem 0 0 0;
             // padding-bottom: 4rem;
 
             // mobile
             @include breakpoint ( small only ) {
 
+                margin: 1rem 0 0 0;
                 padding-bottom: 3rem;
 
             }
@@ -64,6 +65,13 @@
 
                 @include flex-h-j-v-s( false );
 
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include flex-v-t-h-s( false );
+
+                }
+
                 // search
                 #news_search,
                 #searchform {
@@ -73,9 +81,9 @@
                     // mobile
                     @include breakpoint ( small only ) {
 
-                        @include hide;
+                        // @include hide;
 
-                        // width: 60%;
+                        width: 100%;
 
                     }
 
@@ -148,14 +156,20 @@
                                 // mobile
                                 @include breakpoint ( small only ) {
 
-                                    width: 2rem;
-                                    height: 2rem;
-                                    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+                                    // width: 2rem;
+                                    // height: 2rem;
+                                    // padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
                                 }
 
                             }
 
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                // height: 2rem;
+
+                            }
 
                         }
 
@@ -182,8 +196,8 @@
                             // mobile
                             @include breakpoint ( small only ) {
 
-                                width: 2rem;
-                                height: 2rem;
+                                // width: 2rem;
+                                // height: 2rem;
 
                             }
 
@@ -203,15 +217,6 @@
                                 z-index: 10;
 
                                 text-indent: 0;
-
-                                // mobile
-                                @include breakpoint ( small only ) {
-
-                                    width: 2rem;
-                                    height: 2rem;
-                                    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-
-                                }
 
                             }
 
@@ -242,8 +247,8 @@
                         // mobile
                         @include breakpoint ( small only ) {
 
-                            height: 2rem;
-                            padding: 0.0625rem 1rem 0 2rem;
+                            // height: 2rem;
+                            // padding: 0.0625rem 1rem 0 2rem;
 
                         }
 
@@ -264,7 +269,7 @@
                             // mobile
                             @include breakpoint ( large down ) {
 
-                                @include font( $industry, 0.6875rem, 600 );
+                                // @include font( $industry, 0.6875rem, 600 );
 
                             }
 
@@ -293,7 +298,7 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    // padding: 0 0 0 1.5rem;
+                    font-size: 2rem;
 
                 }
 
@@ -351,9 +356,16 @@
 
                     order: 10;
 
-                    margin: 0 0 2rem 0;
+                    margin: 2rem 0 2rem 0;
 
                 }
+
+            }
+
+            // empty
+            .empty {
+
+                margin: 2.5rem 0 0 0;
 
             }
 

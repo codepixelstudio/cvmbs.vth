@@ -48,13 +48,16 @@
         &.page-template-secondary-main,
         // &.single-degree-program,
         &.archive,
-        &.single-place {
+        &.single-place,
+        &.search {
 
             height: auto;
             padding: 5rem 0 0 0;
 
             @include breakpoint ( small only ) {
+
                 padding: 4rem 0 0 0;
+
             }
 
         }
