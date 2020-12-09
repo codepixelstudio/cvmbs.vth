@@ -42,6 +42,27 @@
 
             }
 
+            // flexible blocks
+            .template-block {
+
+                padding: 2rem 0 2rem 0;
+
+                // first
+                &:first-of-type {
+
+                    padding: 0 0 2rem 0;
+
+                }
+
+                // last
+                &:last-of-type {
+
+                    padding: 2rem 0 0 0;
+
+                }
+
+            }
+
         }
 
     }
