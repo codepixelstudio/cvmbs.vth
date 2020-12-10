@@ -678,6 +678,13 @@
                 // clients
                 #client-portal {
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                    }
+
                     // before
                     &:before {
 
@@ -690,6 +697,13 @@
                 // veterinarians
                 #veterinarians {
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                    }
+
                     // before
                     &:before {
 
@@ -701,6 +715,13 @@
 
                 // directory
                 #staff-directory {
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include hide;
+
+                    }
 
                     // before
                     &:before {

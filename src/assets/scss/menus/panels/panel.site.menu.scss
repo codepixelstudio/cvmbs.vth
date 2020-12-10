@@ -427,6 +427,110 @@
 
                 }
 
+                // emergency
+                &.emergency {
+
+                    // @include fill( $roarange, 0.665 );
+
+                    // open state
+                    &[aria-expanded='true'] {
+
+                        // first link
+                        > a {
+
+                            @include color( white );
+
+                            @include fill( $roarange, 0.665 );
+
+                            // after
+                            &:after {
+
+                                @include color( white );
+
+                            }
+
+                        }
+
+                    }
+
+                    // link
+                    > a {
+
+                        // padding-left: 3rem;
+                        position: relative;
+
+                        padding-left: 2.5rem;
+
+                        @include fill( $roarange, 0.665 );
+
+                        // before
+                        &:before {
+
+                            @include codicon( 1rem, 1rem, 0, 1rem, $roarange, '\ED59');
+
+                            position: absolute;
+
+                            left: 1rem;
+
+                            transition: all 220ms linear 0ms;
+
+                        }
+
+                        // after
+                        &:after {
+
+                            @include color( $roarange );
+
+                        }
+
+                        // hover state
+                        &:hover {
+
+                            @include color( white );
+
+                            @include fill( $roarange, 0.315 );
+
+                            // before
+                            &:before {
+
+                                @include color( white );
+
+                            }
+
+                            // after
+                            &:after {
+
+                                @include color( white );
+
+                            }
+
+                        }
+
+                    }
+
+                    // submenu
+                    .submenu {
+
+                        @include fill( $roarange, 0.865 );
+
+                        // links
+                        a {
+
+                            padding-left: 1rem;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( $roarange );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
                 // link
                 a {
 
@@ -478,6 +582,7 @@
                 }
 
             }
+
             // global link
             #global-menu-link {
 
