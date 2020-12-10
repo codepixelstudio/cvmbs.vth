@@ -222,7 +222,60 @@
 
 				?>
 
-				<?php get_template_part( 'elements/services/service.clinical.trials' ); ?>
+				<?php if ( $clinical_trials->have_posts() ) : ?>
+
+				<!-- service section -->
+				<div class="service_section clinical_trials">
+
+					<?php get_template_part( 'elements/services/service.clinical.trials' ); ?>
+
+				</div>
+				<!-- END service section -->
+
+				<?php endif; ?>
+
+				<?php
+
+				    // global
+				    global $post;
+				    $slug = $post->post_name;
+
+				    // setup query parameters
+				    $pet_health_query = array(
+
+				        'post_type'      => 'pet-health',
+				        'posts_per_page' => 3,
+				        'tag'            => $slug
+
+				    );
+
+				    // test for number of posts
+				    $count = count( $pet_health_query->posts );
+
+				    // setup query
+				    $pet_health = new WP_Query( $pet_health_query );
+
+				    // setup query parameters
+				    $view_all_query = array(
+
+				        'post_type'      => 'pet-health',
+				        'tag'            => $slug,
+				        'posts_per_page' => -1,
+
+				    );
+
+				    // setup query
+				    $view_all = new WP_Query( $view_all_query );
+
+				    // count total posts
+				    $total_posts = count( $view_all->posts );
+
+				    // pet health text
+				    $pet_health_text = get_field( 'pet_health_service_page', 'options' );
+
+				?>
+
+				<?php if ( $pet_health->have_posts() ) : ?>
 
 				<!-- service section -->
 				<div class="service_section pet_health <?php echo $pet_health_container; ?>">
@@ -231,6 +284,10 @@
 
 				</div>
 				<!-- END service section -->
+
+				<?php wp_reset_postdata(); ?>
+
+				<?php endif; ?>
 
 				<?php if ( $giving_option ) : ?>
 

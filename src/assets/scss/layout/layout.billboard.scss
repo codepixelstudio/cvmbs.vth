@@ -578,6 +578,8 @@
 
                     @include flex-v-t-h-e( false );
 
+                    flex-wrap: wrap;
+
                     top: 5rem;
                     right: 1rem;
 
@@ -647,7 +649,7 @@
                     @include breakpoint ( small only ) {
 
                         margin: 0 0 1rem 0;
-                        padding: 0 0.75rem 0 2rem;
+                        padding: 0.0625rem 0.75rem 0 2rem;
 
                     }
 

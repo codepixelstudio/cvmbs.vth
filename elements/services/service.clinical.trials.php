@@ -86,76 +86,70 @@
 
 <?php if ( $clinical_trials->have_posts() ) : ?>
 
-<!-- service section -->
-<div class="service_section clinical_trials">
+<!-- header -->
+<div class="header_block">
 
-    <!-- header -->
-    <div class="header_block">
+    <h2>
 
-        <h2>
+        clinical trials
 
-            clinical trials
+    </h2>
 
-        </h2>
+    <?php if ( $total_posts > 3 ) : ?>
 
-        <?php if ( $total_posts > 3 ) : ?>
+    <a href="<?php echo get_site_url() . '/clinical-trials/?tag=' . $slug; ?>">
 
-        <a href="<?php echo get_site_url() . '/clinical-trials/?tag=' . $slug; ?>">
+        view all &raquo;
 
-            view all &raquo;
+    </a>
 
-        </a>
-
-        <?php endif; ?>
-
-    </div>
-    <!-- END header -->
-
-    <!-- text info -->
-    <div class="text_info">
-
-        <?php echo $clinical_trial_text; ?>
-
-    </div>
-    <!-- END text info -->
-
-    <!-- container -->
-    <div class="links">
-
-        <?php while ( $clinical_trials->have_posts() ) : $clinical_trials->the_post(); ?>
-
-        <?php
-
-            // get redirect status
-            $redirect = get_field( 'post_redirect' );
-
-            // test for redirect
-            if ( $redirect ) {
-
-                $permalink = get_field( 'redirect_url' );
-
-            } else {
-
-                $permalink = get_the_permalink();
-
-            }
-
-        ?>
-
-        <a class="post_link" href="<?php echo $permalink; ?>">
-
-            <?php the_title(); ?>
-
-        </a>
-
-        <?php endwhile; ?>
-
-    </div>
-    <!-- END container -->
-
-    <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 
 </div>
-<!-- END service section -->
+<!-- END header -->
+
+<!-- text info -->
+<div class="text_info">
+
+    <?php echo $clinical_trial_text; ?>
+
+</div>
+<!-- END text info -->
+
+<!-- container -->
+<div class="links">
+
+    <?php while ( $clinical_trials->have_posts() ) : $clinical_trials->the_post(); ?>
+
+    <?php
+
+        // get redirect status
+        $redirect = get_field( 'post_redirect' );
+
+        // test for redirect
+        if ( $redirect ) {
+
+            $permalink = get_field( 'redirect_url' );
+
+        } else {
+
+            $permalink = get_the_permalink();
+
+        }
+
+    ?>
+
+    <a class="post_link" href="<?php echo $permalink; ?>">
+
+        <?php the_title(); ?>
+
+    </a>
+
+    <?php endwhile; ?>
+
+</div>
+<!-- END container -->
+
+<?php wp_reset_postdata(); ?>
 
 <?php endif; ?>
