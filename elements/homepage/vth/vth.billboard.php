@@ -54,7 +54,7 @@
             <!-- message -->
             <span class="alert_message">
 
-                <?php echo $homepage_alert[ 'alert_text' ]; ?>&nbsp;-&nbsp;
+                <?php echo $homepage_alert[ 'alert_text' ]; ?>
 
             </span>
             <!-- END message -->
