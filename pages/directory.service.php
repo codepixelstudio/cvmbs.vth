@@ -210,11 +210,9 @@
 
                                 . $faculty_member->EmployeeTitle .
 
-                            '</span>'
+                            '</span>
 
-                            . $phoneHTML .
-
-                            '<a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
+                            <a class="email_link" href="mailto:' . $eMail . '">' . $eMail . '</a>
 
                         </div>
 
