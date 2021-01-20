@@ -42,9 +42,10 @@
 
             }
 
-            // header
+            // styled header
             header {
 
+                height: auto;
                 padding: 0 0 0 0;
 
                 // before
@@ -55,6 +56,100 @@
                     background: {
 
                         image: none;
+
+                    }
+
+                }
+
+                // after
+                &:after {
+
+                    z-index: 0;
+
+                }
+
+                // container
+                .flexible-page-header--styled__inner {
+
+                    position: relative;
+
+                    z-index: 100;
+
+                    @include flex-v-b-h-s( false );
+
+                }
+
+                // parent link
+                .parent_link {
+
+                    @include flex-h-c-v-c( true );
+
+                    height: 2rem;
+                    margin: 0 0 1rem 0;
+                    padding: 0.0625rem 0.75rem 0 0.75rem;
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    @include text( normal );
+
+                    @include typo( 0.5rem, 0.015em );
+
+                    @include color( white );
+
+                    @include fill( white, 0.925 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $roarange, 0.125 );
+
+                    }
+
+                }
+
+            }
+
+            // basic header
+            .flexible-page-header {
+
+                @include flex-h-j-v-c( false );
+
+                // heading
+                .entry-title {
+
+                    margin: 0 0 0 0;
+
+                }
+
+                // parent link
+                .parent_link {
+
+                    @include flex-h-c-v-c( true );
+
+                    height: 2rem;
+                    margin: 0 0 0 0;
+                    padding: 0.0625rem 0.75rem 0 0.75rem;
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    @include text( normal );
+
+                    @include typo( 0.5rem, 0.015em );
+
+                    @include color( $roarange );
+
+                    // @include fill( white, 0.925 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include color( white );
+
+                        @include fill( $roarange, 0.125 );
 
                     }
 

@@ -20,7 +20,7 @@
 		<!-- service post -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php get_template_part( $block_path . 'page-header' ); ?>
+			<?php get_template_part( $block_path . 'service-header' ); ?>
 
 			<div class="flexible-page-content">
 
