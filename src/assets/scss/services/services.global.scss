@@ -38,26 +38,46 @@
             // content
             .service {
 
-                padding: 10rem 5rem 4rem 5rem;
+                // padding: 10rem 5rem 4rem 5rem;
+
+            }
+
+            // header
+            header {
+
+                padding: 0 0 0 0;
+
+                // before
+                &:before {
+
+                    // @include fill( red, 0.485 );
+
+                    background: {
+
+                        image: none;
+
+                    }
+
+                }
 
             }
 
             // flexible blocks
             .template-block {
 
-                padding: 2rem 0 2rem 0;
+                padding: 2rem 8vw 2rem 8vw;
 
                 // first
                 &:first-of-type {
 
-                    padding: 0 0 2rem 0;
+                    // padding: 0 0 2rem 0;
 
                 }
 
                 // last
                 &:last-of-type {
 
-                    padding: 2rem 0 0 0;
+                    // padding: 2rem 0 0 0;
 
                 }
 
