@@ -17,22 +17,23 @@
 
         <?php
 
+            $form_class = $form[ 'resource_class' ];
+
             if ( $form[ 'form_type' ] === 'upload' ) {
 
                 $form_url   = $form[ 'url' ];
-                $form_class = 'upload';
 
             } elseif ( $form[ 'form_type' ] === 'digital' ) {
 
-                $form_url   = $form[ 'form_page' ];
-                $form_class = 'digital';
+                $form_url   = $form[ 'form_page' ][ 'url' ];
+                $form_open  = $form[ 'form_page' ][ 'target' ];
 
             }
 
         ?>
 
         <!-- link -->
-        <a class="form_link <?php echo $form_class; ?>" href="<?php echo $form_url; ?>">
+        <a class="form_link <?php echo $form_class; ?>" href="<?php echo $form_url; ?>" <?php if ( $form[ 'form_page' ][ 'target' ] ) { echo 'target="_blank"'; }?>>
 
             <?php echo $form[ 'name' ]; ?>
 

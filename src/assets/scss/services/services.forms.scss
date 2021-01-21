@@ -102,8 +102,20 @@
 
                 }
 
-                // digital
-                &.digital {
+                // pdf
+                &.pdf {
+
+                    // before
+                    &:before {
+
+                        content: '\EF3E';
+
+                    }
+
+                }
+
+                // form
+                &.form {
 
                     // before
                     &:before {
@@ -114,13 +126,49 @@
 
                 }
 
-                // upload
-                &.upload {
+                // video
+                &.video {
 
                     // before
                     &:before {
 
-                        content: '\EF3E';
+                        content: '\E961';
+
+                    }
+
+                }
+
+                // external
+                &.external {
+
+                    // before
+                    &:before {
+
+                        content: '\EC99';
+
+                    }
+
+                }
+
+                // internal
+                &.internal {
+
+                    // before
+                    &:before {
+
+                        content: '\E9BF';
+
+                    }
+
+                }
+
+                // misc
+                &.misc {
+
+                    // before
+                    &:before {
+
+                        content: '\EA83';
 
                     }
 
