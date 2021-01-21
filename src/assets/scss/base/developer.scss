@@ -10,9 +10,9 @@
 
         z-index: 200;
 
-        width: 100%;
-        height: 100%;
         padding: 5rem 5rem 5rem 5rem;
+
+        box-sizing: border-box;
 
         @include color( white, 0.000 );
 

@@ -587,6 +587,25 @@
             "layout": "row",
             "sub_fields": [
                 {
+                    "key": "field_60089980026c9",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5f224219c9110",
                     "label": "Text",
                     "name": "text",
@@ -618,13 +637,13 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url"
+                    "return_format": "array"
                 }
             ]
         },
         {
             "key": "field_5f2266c8a0631",
-            "label": "Forms Option",
+            "label": "Resources\/Forms Option",
             "name": "forms_option",
             "type": "true_false",
             "instructions": "display forms section?",
@@ -651,7 +670,7 @@
         },
         {
             "key": "field_5f226810c9faf",
-            "label": "Forms",
+            "label": "Resources",
             "name": "forms",
             "type": "repeater",
             "instructions": "",
@@ -677,8 +696,36 @@
             "button_label": "Add Form",
             "sub_fields": [
                 {
+                    "key": "field_600882d67ac83",
+                    "label": "Resource Classification",
+                    "name": "resource_class",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "pdf": "PDF",
+                        "form": "Form",
+                        "video": "Video",
+                        "external": "External Link",
+                        "internal": "Internal Link",
+                        "misc": "Miscellaneous"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
                     "key": "field_5f29a414e8f40",
-                    "label": "Form Type",
+                    "label": "Resource Type",
                     "name": "form_type",
                     "type": "radio",
                     "instructions": "",
@@ -690,8 +737,8 @@
                         "id": ""
                     },
                     "choices": {
-                        "digital": "Gravity Form",
-                        "upload": "Document Upload"
+                        "digital": "Select Link",
+                        "upload": "Upload Document"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -767,7 +814,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url"
+                    "return_format": "array"
                 }
             ]
         },
@@ -1231,5 +1278,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1607364282
+    "modified": 1611176351
 }
