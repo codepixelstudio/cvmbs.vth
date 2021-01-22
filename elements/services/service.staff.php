@@ -19,7 +19,7 @@
     <!-- content -->
     <div class="section_content">
 
-        <h2><?php the_title(); ?> staff</h2>
+        <h2><?php echo $staff_content[ 'section_title' ]; ?></h2>
 
         <p>
 
@@ -27,9 +27,9 @@
 
         </p>
 
-        <a class="staff_link" href="<?php echo $staff_content[ 'link' ]; ?>">
+        <a class="staff_link" href="<?php echo $staff_content[ 'link' ][ 'url' ]; ?>">
 
-            <?php the_title(); ?> staff directory
+            <?php echo $staff_content[ 'link' ][ 'title' ]; ?>
 
         </a>
 
