@@ -19,6 +19,9 @@
 
     }
 
+    // random
+    $group_ID = get_field( 'staff_directory_group_id' );
+
     // set WSDL service URL
     $serviceURL = 'http://www.cvmbs.colostate.edu/directoryservice/DirectoryService.svc?wsdl';
 
@@ -132,7 +135,7 @@
 
                 </span>
 
-                <?php echo the_title(); ?>&nbsp;<em class="count">[<?php echo $count; ?>]</em>
+                <?php echo the_title(); ?>
 
             </h1>
 
@@ -319,6 +322,36 @@
 
             echo $residents_group;
 
+            if ( $group_ID == 579 ) {
+
+                echo '
+
+                    <div class="contact">
+
+                        <div class="contact_photo" style="background-image:url(https://www.cvmbs.colostate.edu/DirectorySearch/Search/MemberPhoto/39384)">
+
+                            <a class="contact_photo_link" href="' . $directoryURL . '/directory/member/?id=39384"></a>
+
+                        </div>
+
+                        <div class="contact_info">
+
+                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=39384">Tricia Culbertson</a>
+
+                            <span class="contact_title">Associate</span>
+
+                            <span class="contact_phone">Phone: 970-297-3777</span>
+
+                            <a class="email_link" href="mailto:tricia.culbertson@colostate.edu">tricia.culbertson@colostate.edu</a>
+
+                        </div>
+
+                    </div>
+
+                ';
+
+            }
+
         ?>
 
         </div>
@@ -419,32 +452,6 @@
         <!-- END contact cards -->
 
         <?php endif; ?>
-
-        <pre class="developer">
-
-            <?php
-
-                if ( is_array( $members ) ) {
-
-                    echo 'data is array';
-
-                } else {
-
-                    echo 'not an array';
-
-                }
-
-            ?>
-
-            Faculty<br />
-            <?php print_r( $faculty ); ?><br />
-            Residents, Interns, and Post Docs<br />
-            <?php print_r( $residents ); ?><br />
-            Staff<br />
-            <?php print_r( $staff ); ?><br />
-            <?php print_r( $members ); ?>
-
-        </pre>
 
     </div>
     <!-- END directory -->
