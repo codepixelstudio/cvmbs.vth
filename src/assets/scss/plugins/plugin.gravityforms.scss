@@ -1,0 +1,35 @@
+// stylesheet :: TablePress styles
+
+    // settings
+    $tablepress : 1rem;
+
+    // styles
+    .gsurvey-survey-field {
+
+        // table
+        table {
+
+            // head
+            thead {
+
+                // cell
+                th {
+
+                    @include font( $industry, 0.875rem, 600 );
+
+                    background-color: $g135 !important;
+
+                }
+
+            }
+
+            // row labels
+            .gsurvey-likert-row-label {
+
+                @include font( $industry, 0.875rem, 600 );
+
+            }
+
+        }
+
+    }
