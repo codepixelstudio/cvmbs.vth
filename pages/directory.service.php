@@ -320,8 +320,38 @@
 
             }
 
+            // manual member addition
+            if ( $group_ID == 556 ) {
+
+                echo '
+
+                    <div class="contact">
+
+                        <div class="contact_photo" style="background-image:url(https://www.cvmbs.colostate.edu/DirectorySearch/Search/MemberPhoto/37350)">
+
+                            <a class="contact_photo_link" href="' . $directoryURL . '/directory/member/?id=37350"></a>
+
+                        </div>
+
+                        <div class="contact_info">
+
+                            <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=37350">I Jung Chi</a>
+
+                            <span class="contact_title">Associate</span>
+
+                            <a class="email_link" href="mailto:i.chi@colostate.edu">i.chi@colostate.edu</a>
+
+                        </div>
+
+                    </div>
+
+                ';
+
+            }
+
             echo $residents_group;
 
+            // manual member addition
             if ( $group_ID == 579 ) {
 
                 echo '
@@ -339,8 +369,6 @@
                             <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=39384">Tricia Culbertson</a>
 
                             <span class="contact_title">Associate</span>
-
-                            <span class="contact_phone">Phone: 970-297-3777</span>
 
                             <a class="email_link" href="mailto:tricia.culbertson@colostate.edu">tricia.culbertson@colostate.edu</a>
 

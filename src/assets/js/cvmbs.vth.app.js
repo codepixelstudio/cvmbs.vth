@@ -31,8 +31,6 @@
     // you know what it is bruh
     $(document).ready( function() {
 
-        console.log( 'ball so hard' );
-
         // archive views
         var pagination = $('#news_navigation');
 
