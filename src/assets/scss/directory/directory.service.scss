@@ -242,6 +242,8 @@
                     // phone
                     .contact_phone {
 
+                        @include hide;
+
                         // mobile
                         @include breakpoint ( small only ) {
 
