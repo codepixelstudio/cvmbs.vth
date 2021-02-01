@@ -9,7 +9,6 @@
         // class
         &.pet_health {
 
-            // padding: 2rem calc( 8vw - 1rem ) 2rem calc( 8vw - 1rem );
             padding: 0 4rem 5rem 4rem;
 
             // mobile
@@ -127,9 +126,17 @@
                 @include shadowbox( 1rem, 3rem, black, 0.635 );
 
                 // mobile
+                @include breakpoint ( xxlarge down ) {
+
+                    height: 16rem;
+
+                }
+
+                // mobile
                 @include breakpoint ( small only ) {
 
                     width: 100%;
+                    height: 12rem;
                     margin: 0 0 2rem 0;
 
                 }
