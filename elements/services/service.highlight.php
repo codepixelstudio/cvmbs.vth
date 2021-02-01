@@ -33,6 +33,14 @@
             </div>
             <!-- END container -->
 
+            <!-- text -->
+            <div class="video_text">
+
+                <?php echo $service_highlight[ 'video_text' ]; ?>
+
+            </div>
+            <!-- END text -->
+
         </div>
         <!-- END layers -->
 

@@ -922,6 +922,33 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_6018361397fac",
+                    "label": "Video Text",
+                    "name": "video_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ec3f4eeec561",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": ""
+                },
+                {
                     "key": "field_5ec3f5ecf95f0",
                     "label": "Statistic Block",
                     "name": "statistic_block",
@@ -1278,5 +1305,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1611176351
+    "modified": 1612199488
 }
