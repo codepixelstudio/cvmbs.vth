@@ -85,6 +85,13 @@
                     width: calc( 25% - 2rem );
                     height: 16rem;
 
+                    // mobile
+                    @include breakpoint ( medium only ) {
+
+                        width: calc( 50% - 2rem );
+
+                    }
+
                 }
 
             }
