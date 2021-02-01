@@ -76,12 +76,14 @@
             }
 
             // layout four
-            &.four {
+            &.four,
+            &.eights {
 
                 // launchpad
                 .launchpad {
 
                     width: calc( 25% - 2rem );
+                    height: 16rem;
 
                 }
 
