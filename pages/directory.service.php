@@ -105,16 +105,7 @@
     $siteurl = str_replace( '/', '', $siteinfo->path );
 
     // set member bio link URL
-    if ( $siteurl === 'dvm' ) {
-
-        $directoryURL = '//vetmedbiosci.colostate.edu';
-
-    } else {
-
-        // $directoryURL = esc_url( home_url() );
-        $directoryURL = '//vetmedbiosci.colostate.edu';
-
-    }
+    $directoryURL = '//vetmedbiosci.colostate.edu';
 
 ?>
 
@@ -337,7 +328,7 @@
 
                             <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=37350">I Jung Chi</a>
 
-                            <span class="contact_title">Associate</span>
+                            <span class="contact_title">PhD Candidate</span>
 
                             <a class="email_link" href="mailto:i.chi@colostate.edu">i.chi@colostate.edu</a>
 
@@ -368,7 +359,7 @@
 
                             <a class="contact_link" href="' . $directoryURL . '/directory/member/?id=39384">Tricia Culbertson</a>
 
-                            <span class="contact_title">Associate</span>
+                            <span class="contact_title">Veterinary Resident</span>
 
                             <a class="email_link" href="mailto:tricia.culbertson@colostate.edu">tricia.culbertson@colostate.edu</a>
 
