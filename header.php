@@ -16,7 +16,13 @@
 
 			<?php wp_head(); ?>
 
+			<?php $environment = $_SERVER[ 'DOCUMENT_ROOT' ]; ?>
+
+            <?php if ( $environment !== '/var/www/html' ) : ?>
+
 			<script type="text/javascript" src="//cdn.rlets.com/capture_configs/7d5/bc1/c8e/682409b896c129fc25d93d8.js" async="async"></script>
+
+			<?php endif; ?>
 
 		</head>
 
