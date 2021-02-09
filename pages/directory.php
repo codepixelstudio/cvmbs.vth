@@ -27,31 +27,6 @@
     // parse URL for site path
     $siteurl = str_replace( '/', '', $siteinfo->path );
 
-    // set department ID for REST API tasks
-    switch ( $siteurl ) {
-
-        case 'cs' :
-
-            $department_ID = 1002;
-            break;
-
-        case 'bms' :
-
-            $department_ID = 1003;
-            break;
-
-        case 'mip' :
-
-            $department_ID = 1004;
-            break;
-
-        case 'erhs' :
-
-            $department_ID = 1005;
-            break;
-
-    }
-
 ?>
 
 <!-- directory -->
@@ -127,14 +102,6 @@
         <!-- toolbar.DEV -->
         <div id="directory-toolbar" class="toolbar">
 
-            <!-- alphabet -->
-            <div id="directory-alphabet" class="toolbar-control-group">
-
-
-
-            </div>
-            <!-- END alphabet -->
-
             <!-- fiels -->
             <div id="directory-fields" class="toolbar-control-group">
 
@@ -142,6 +109,14 @@
 
             </div>
             <!-- END fiels -->
+
+            <!-- alphabet -->
+            <div id="directory-alphabet" class="toolbar-control-group">
+
+
+
+            </div>
+            <!-- END alphabet -->
 
         </div>
         <!-- END toolbar.DEV -->
@@ -154,29 +129,15 @@
 
                 <tr>
 
-                    <!-- <th width="180"> -->
                     <th>
 
                         Name
 
                     </th>
 
-                    <th>
+                    <th class="right">
 
                         E-mail Address
-
-                    </th>
-
-                    <th width="180">
-                    <!-- <th> -->
-
-                        Phone
-
-                    </th>
-
-                    <th>
-
-                        Title
 
                     </th>
 
@@ -203,7 +164,7 @@
                         $department = $member->directoryGroup;
                         $title      = $member->title;
 
-                        $results .= '<tr class="record"><td class="link-column"><span class="mobile-toggle"></span><a class="member-link" href="//vetmedbiosci.colostate.edu/directory/member/?id=' . $query . '">' . $tableName . '</a></td><td class="link-column"><a class="email-link" href="mailto:' . $eMail . '">' . $eMail . '</a></td><td>' . $phone . '</td><td>' . $title . '</td></tr>';
+                        $results .= '<tr class="record"><td class="link-column"><span class="mobile-toggle"></span><a class="member-link" href="//vetmedbiosci.colostate.edu/directory/member/?id=' . $query . '">' . $tableName . '</a></td><td align="right" class="link-column"><a class="email-link" href="mailto:' . $eMail . '">' . $eMail . '</a></td></tr>';
 
                     }
 
