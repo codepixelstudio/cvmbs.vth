@@ -47,7 +47,35 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    margin: 0 0 0 0;
+                    margin: 0 0 1rem 0;
+
+                }
+
+                // heading
+                h1 {
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        line-height: 2rem;
+
+                    }
+
+                }
+
+                // label
+                span {
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        display: inline-block;
+
+                        margin: 0 0 0 0;
+
+                        @include font( $klavislim, 1rem, 400 );
+
+                    }
 
                 }
 
@@ -67,6 +95,19 @@
 
                 margin: 0 0 0 1rem;
 
+                @include font( $klavislim, 2rem, 400 );
+
+                @include color( $g140 );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    margin: 0 0 0 0;
+
+                    @include font( $klavislim, 1.25rem, 400 );
+
+                }
+
             }
 
             // contact cards
@@ -81,7 +122,7 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    margin: 2rem 0 0 0;
+                    margin: 1rem 0 0 0;
 
                 }
 
@@ -101,7 +142,7 @@
 
                 width: calc( 50% - 2rem );
                 margin: 1rem 1rem 1rem 1rem;
-                padding: 1rem 2rem 0 0;
+                padding: 0 2rem 0 0;
 
                 @include fill( white, 0.000 );
 
@@ -124,10 +165,8 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    @include flex-h-s-v-b( false )
-
                     margin: 0 0 2rem 0;
-                    padding: 1rem 1rem 0 0;
+                    padding: 0 1rem 0 0;
 
                 }
 
@@ -139,7 +178,7 @@
                     width: 10rem;
                     min-width: 10rem;
                     height: 10rem;
-                    margin: 0 2rem 0 0;
+                    margin: 0 1rem 0 0;
 
                     background: {
 
@@ -150,11 +189,26 @@
                     }
 
                     // mobile
+                    @include breakpoint ( xlarge up ) {
+
+                        margin: 0 2rem 0 0;
+
+                    }
+
+                    // mobile
                     @include breakpoint ( large only ) {
 
                         width: 8rem;
                         min-width: 8rem;
                         height: 8rem;
+                        margin: 0 1rem 0 0;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( medium only ) {
+
+                        margin: 0 2rem 0 0;
 
                     }
 
@@ -187,28 +241,55 @@
 
                     @include flex-v-t-h-s( true );
 
-                    // padding: 0 0 2rem 0;
+                    padding: 1rem 0 0 0;
+
+                    // mobile
+                    @include breakpoint ( xlarge up ) {
+
+                        padding: 2rem 0 0 0;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( medium only ) {
+
+                        padding: 2rem 0 0 0;
+
+                    }
 
                     // mobile
                     @include breakpoint ( small only ) {
 
-                        padding: 0 0 1rem 0;
+                        padding: 1rem 0 0 0;
 
                     }
 
                     // link
                     .contact_link {
 
+                        margin: 0 0 0.5rem 0;
+
                         @include font( $klavislim, 1.5rem, 400 );
 
                         @include text( $up, none );
 
+                        @include typo( 1.5rem, 0.035em );
+
                         @include color( $g140 );
+
+                        // mobile
+                        @include breakpoint ( large only ) {
+
+                            @include font( $klavislim, 1.125rem, 400 );
+
+                        }
 
                         // mobile
                         @include breakpoint ( small only ) {
 
                             @include font( $klavislim, 1rem, 400 );
+
+                            @include typo( 1rem, 0.035em );
 
                         }
 
@@ -227,6 +308,13 @@
                         margin: 0 0 0.5rem 0;
 
                         @include font( $industry, 0.75rem, 700 );
+
+                        // mobile
+                        @include breakpoint ( large only ) {
+
+                            @include font( $industry, 0.6875rem, 700 );
+
+                        }
 
                         // mobile
                         @include breakpoint ( small only ) {
@@ -257,6 +345,15 @@
                     .email_link {
 
                         @include color( $g140 );
+
+                        // mobile
+                        @include breakpoint ( large only ) {
+
+                            word-break: break-word;
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                        }
 
                         // mobile
                         @include breakpoint ( small only ) {
