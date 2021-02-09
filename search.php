@@ -175,7 +175,7 @@
         <!-- empty -->
         <div class="empty">
 
-            Nothing matched your search.<br />Select a tag or topic below, or <a href="pet-health">view all pet health posts</a>.
+            Nothing matched your search.<br />Select a tag or topic below, or <a href="pet-health">view all animal health posts</a>.
 
         </div>
         <!-- END empty -->

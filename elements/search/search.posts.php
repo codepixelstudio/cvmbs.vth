@@ -6,7 +6,7 @@
     <span class="input_wrap input_query">
 
         <label for="s">search</label>
-        <input type="text" class="text" value="" name="s" id="s" placeholder="search pet health content">
+        <input type="text" class="text" value="" name="s" id="s" placeholder="search animal health">
         <input type="submit" value="search" class="submit">
 
     </span>

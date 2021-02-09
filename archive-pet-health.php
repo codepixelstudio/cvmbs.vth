@@ -58,7 +58,7 @@
 
                 <span class="tagline">
 
-                    pet health articles
+                    animal health articles
 
                 </span>
 
@@ -98,7 +98,7 @@
 
                 <?php else : ?>
 
-                pet health
+                animal health
 
                 <?php endif; ?>
 

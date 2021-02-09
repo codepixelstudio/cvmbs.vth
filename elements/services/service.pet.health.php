@@ -34,7 +34,7 @@
     // count total posts
     $total_posts = count( $view_all->posts );
 
-    // pet health text
+    // animal health text
     $pet_health_text = get_field( 'pet_health_service_page', 'options' );
 
 ?>
@@ -46,7 +46,7 @@
 
     <h2>
 
-        pet health
+        animal health
 
     </h2>
 

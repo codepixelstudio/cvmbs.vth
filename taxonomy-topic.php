@@ -42,7 +42,7 @@
                     <!-- title -->
                     <span class="metadata_title">
 
-                        browse pet health articles by topic
+                        browse animal health articles by topic
 
                     </span>
                     <!-- END title -->
