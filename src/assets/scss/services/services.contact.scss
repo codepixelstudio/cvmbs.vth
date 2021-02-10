@@ -78,6 +78,13 @@
 
                 }
 
+                // phone
+                .phone_number {
+
+                    @include color( white );
+
+                }
+
                 // email
                 .email_link {
 

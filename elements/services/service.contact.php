@@ -29,7 +29,9 @@
 
         <span class="contact_info phone">
 
-            <?php echo $entry[ 'contact_type' ][ 'label' ]; ?>: <?php echo $entry[ 'contact_info' ]; ?>
+            <?php $phone_link = preg_replace( '/\D+/', '', $entry[ 'contact_info' ] ); ?>
+
+            <?php echo $entry[ 'contact_type' ][ 'label' ]; ?>: <a class="phone_number" href="tel:<?php echo $phone_link; ?>"><?php echo $entry[ 'contact_info' ]; ?></a>
 
         </span>
 

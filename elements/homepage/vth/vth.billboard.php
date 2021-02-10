@@ -231,6 +231,9 @@
             $directions  = $info_bar[ 'directions' ];
             $appointment = $info_bar[ 'appointment' ];
 
+            // format phone number link
+            $phone_link = preg_replace( '/\D+/', '', $appointment[ 'content' ] );
+
         ?>
 
         <!-- item -->
@@ -345,7 +348,11 @@
             <!-- info -->
             <span class="info">
 
-                <?php echo $appointment[ 'content' ]; ?>
+                <a class="phone_number" href="tel:<?php echo $phone_link; ?>">
+
+                    <?php echo $appointment[ 'content' ]; ?>
+
+                </a>
 
             </span>
             <!-- END info -->

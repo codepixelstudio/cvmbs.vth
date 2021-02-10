@@ -940,6 +940,13 @@
 
                     }
 
+                    // phone
+                    .phone_number {
+
+                        @include color( white );
+
+                    }
+
                 }
 
             }

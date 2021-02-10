@@ -17,6 +17,20 @@
 
     }
 
+    // phone numbers
+    .phone_number {
+
+        text-decoration: none;
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            text-decoration: underline;
+
+        }
+
+    }
+
     .screen-reader-text {
         clip: rect(1px, 1px, 1px, 1px);
         position: absolute !important;
