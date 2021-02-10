@@ -11,6 +11,7 @@
 
 	);
 
+	// vth directory
 	function vth_directory_menu() {
 
 		wp_nav_menu( array(
@@ -29,5 +30,15 @@
 		));
 
 	}
+
+	// unregister research topic menu
+	function unregister_parent_menus() {
+
+		unregister_nav_menu( 'research-topics-menu' );
+
+	}
+
+	// action reference
+	add_action( 'after_setup_theme', 'unregister_parent_menus', 10 );
 
 ?>
