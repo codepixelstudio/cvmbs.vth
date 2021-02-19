@@ -344,12 +344,12 @@
                     // email
                     .email_link {
 
+                        word-break: break-word;
+
                         @include color( $g140 );
 
                         // mobile
                         @include breakpoint ( large only ) {
-
-                            word-break: break-word;
 
                             @include font( $industry, 0.75rem, 600 );
 

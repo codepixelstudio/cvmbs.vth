@@ -10,12 +10,30 @@
 
         z-index: 200;
 
+        margin: 3rem 0 3rem 0;
         padding: 5rem 5rem 5rem 5rem;
 
         box-sizing: border-box;
 
+        @include font( 'Roboto Mono Medium', 0.625rem, 400 );
+
         @include color( white, 0.000 );
 
-        @include fill( $dark, 0.365 );
+        @include fill( $dark-nite, 0.085 );
+
+        background: {
+
+            image:
+
+                linear-gradient( 315deg,
+
+                    transparentize( $g140, 0.245 ) 0%,
+                    transparent 100%
+
+                )
+
+            ;
+
+        }
 
     }

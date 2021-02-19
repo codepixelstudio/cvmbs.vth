@@ -25,8 +25,6 @@
 
                 margin: 0 0 0 0;
 
-                // @include fill( red );
-
                 // menu
                 #menu-vth-directory-menu {
 
@@ -37,13 +35,6 @@
                     margin: 0 0 0 0;
 
                     list-style: none;
-
-                    // list
-                    ul {
-
-
-
-                    }
 
                     // menu items
                     li {
@@ -128,6 +119,73 @@
             #directory_buttons {
 
                 margin: 0 0 2rem 0;
+
+            }
+
+            // controls
+            #directory-fields {
+
+                border-top: 1px solid transparentize( $app05, 0.825 );
+
+            }
+
+            // search
+            #directory-records_filter {
+
+                // text input
+                input {
+
+                    // @include shadowbox( 1rem, 2.5rem, black, 0.525 );
+
+                }
+
+            }
+
+            // length
+            #directory-records_length {
+
+                // dropdown
+                select {
+
+                    // @include shadowbox( 1rem, 2.5rem, black, 0.525 );
+
+                }
+
+            }
+
+            // alphabet
+            #directory-alphabet {
+
+                // alphabet
+                .alphabet {
+
+                    border-bottom: 1px solid transparent;
+
+                }
+
+            }
+
+            // table
+            #directory-records {
+
+                // headers
+                thead th.right {
+
+                    text-align: right;
+
+                }
+
+                // rows
+                tr {
+
+                    // hover state
+                    &:hover {
+
+                        // @include shadowbox( 0.75rem, 2.5rem, black, 0.685 );
+
+                    }
+
+                }
 
             }
 
