@@ -100,7 +100,7 @@
 
         if ( is_post_type_archive( 'pet-health' ) ){
 
-            $title = 'Animal Health - ' . get_bloginfo('name');
+            $title = 'Animal Health - ' . get_bloginfo( 'name' );
             return $title;
 
         }
@@ -109,6 +109,6 @@
     }
 
     // filter hook
-    // add_filter( 'pre_get_document_title', 'animal_health_archive_title', 1000 );
+    add_filter( 'pre_get_document_title', 'animal_health_archive_title', 1000 );
 
 ?>

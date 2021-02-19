@@ -67,4 +67,20 @@
 
     add_action( 'init', 'clinical_trials_post_type', 0 );
 
+    // replace
+    function clinical_trials_archive_title( $title ){
+
+        if ( is_post_type_archive( 'clinical_trial' ) ){
+
+            $title = 'Clinical Trials - ' . get_bloginfo( 'name' );
+            return $title;
+
+        }
+
+        return $title;
+    }
+
+    // filter hook
+    add_filter( 'pre_get_document_title', 'clinical_trials_archive_title', 1000 );
+
 ?>
