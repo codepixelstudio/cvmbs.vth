@@ -26,7 +26,7 @@
 
 			if ( $group_ID ) {
 
-				echo $group_ID;
+				echo '<span style="color:#97CA3D;background:#003E46;font-family:monospace;">&nbsp;' . $group_ID . '&nbsp;</span>';
 
 			}
 
@@ -40,7 +40,7 @@
 	// custom status column width
 	function group_ID_column_width () {
 
-		echo '<style type="text/css">.column-directory_ID{width:160px;}</style>';
+		echo '<style type="text/css">.column-directory_ID{width:64px;text-align:right;}</style>';
 
 	}
 

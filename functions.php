@@ -24,7 +24,4 @@
     // menus
     require_once( 'library/menus.php' );
 
-    // theme support
-    require_once( 'library/theme.support.php' );
-
 ?>
