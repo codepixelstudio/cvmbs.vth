@@ -171,7 +171,7 @@
                 // mobile
                 @include breakpoint ( medium down ) {
 
-                    padding: 5rem 2rem 16rem 2rem;
+                    padding: 5rem 2rem 17rem 2rem;
 
                 }
 
@@ -319,7 +319,7 @@
                 @include breakpoint ( medium down ) {
 
                     right: 1rem;
-                    // bottom: 1rem;
+                    bottom: 7rem;
                     left: 1rem;
 
                     @include flex-h-j-v-s( false );
@@ -337,7 +337,7 @@
                     // @include flex-v-b-h-s( false );
 
                     width: 100%;
-                    margin: 0 0 9rem 0;
+                    margin: 0 0 7rem 0;
                     padding: 0 2rem 0 2rem;
 
                 }
@@ -390,6 +390,7 @@
                 // mobile
                 @include breakpoint ( medium down ) {
 
+                    width: 50%;
                     height: auto;
                     margin: 0 1rem 0 1rem;
                     padding: 1.5rem 1rem 1.5rem 1.5rem;
@@ -773,7 +774,7 @@
                 height: 3rem;
 
                 // mobile
-                @include breakpoint ( small only ) {
+                @include breakpoint ( medium down ) {
 
                     right: 1rem;
 
@@ -792,7 +793,7 @@
 
                     @include flex-v-c-h-s( false );
 
-                    padding: 0.5rem 1rem 0 2.5rem;
+                    padding: 0.5rem 1rem 0 3rem;
 
                     // icon
                     .icon {
@@ -828,13 +829,20 @@
 
                         @include flex-h-s-v-c( false );
 
-                        @include font( $industry, 0.625rem, 700 );
+                        @include font( $industry, 0.75rem, 700 );
 
                         @include text( $up );
 
                         @include typo( 0.5rem, 0.035em );
 
                         @include color( white, 0.425 );
+
+                        // mobile
+                        @include breakpoint ( medium down ) {
+
+                            @include font( $industry, 0.6875rem, 700 );
+
+                        }
 
                         // mobile
                         @include breakpoint ( small only ) {
@@ -850,7 +858,7 @@
 
                         @include flex-h-s-v-c( false );
 
-                        @include font( $klavislim, 1rem, 500 );
+                        @include font( $klavislim, 1.25rem, 400 );
 
                         @include text( $up );
 
