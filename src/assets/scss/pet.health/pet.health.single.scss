@@ -25,11 +25,12 @@
         // header
         .entry_header {
 
-            // padding: 9rem 8vw 0 8vw;
             padding: 0 0 0 0;
 
             // image
             .entry_image {
+
+                position: relative;
 
                 height: 24rem;
 
@@ -55,6 +56,61 @@
 
                 }
 
+                // archive link
+                .archive_link {
+
+                    position: absolute;
+
+                    // left: 10vw;
+                    bottom: -4rem;
+
+                    z-index: 20;
+
+                    @include flex-h-c-v-c( false );
+
+                    height: 2rem;
+                    padding: 0 0.75rem 0 0;
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    text-decoration: none;
+
+                    @include color( $app05, 0.385 );
+
+                    @include fill( $pagebase, 0.0000 );
+
+                    // mobile
+                    @include breakpoint ( xlarge ) {
+
+                        left: 10vw;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( large down ) {
+
+                        left: 5rem;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        left: 2rem;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        @include codicon( 1rem, 1rem, 0, 1rem, $g140, '\EDCA' );
+
+                        margin: -0.125rem 0 0 0;
+
+                    }
+
+                }
+
             }
 
             // h1
@@ -75,7 +131,7 @@
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    padding: 2rem 2rem 1.5rem 2rem;
+                    padding: 5rem 2rem 1.5rem 2rem;
 
                 }
 
@@ -86,9 +142,9 @@
 
                 padding: 0 5rem 0 5rem;
 
-                @include font( $industry, 0.875rem, 700 );
+                @include font( $industry, 0.75rem, 600 );
 
-                @include color( $app05, 0.385 );
+                @include color( $app05, 0.485 );
 
                 // mobile
                 @include breakpoint ( xlarge ) {
@@ -101,6 +157,38 @@
                 @include breakpoint ( small only ) {
 
                     padding: 0 2rem 0 2rem;
+
+                }
+
+                // links
+                .taxonomy_link {
+
+                    text-decoration: none;
+
+                    // @include color( $g140 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        text-decoration: underline;
+
+                    }
+
+                }
+
+                // tags
+                .tags {
+
+                    margin: 1rem 0 0 0;
+
+                    // link
+                    .taxonomy_link {
+
+                        //
+
+                    }
 
                 }
 

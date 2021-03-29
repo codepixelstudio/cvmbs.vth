@@ -1,7 +1,4 @@
-<?php
-
-
-?>
+<?php // single animal health post template ?>
 
 <?php get_header(); ?>
 
@@ -43,7 +40,13 @@
 			<!-- image -->
 			<div class="entry_image" <?php echo $image; ?>>
 
-				<!--  -->
+				<!-- archive link -->
+				<a class="archive_link" href="<?php echo get_site_url(); ?>/animal-health">
+
+					back to all Animal Health
+
+				</a>
+				<!-- END archive link -->
 
 			</div>
 			<!-- END image -->
@@ -59,15 +62,39 @@
 			<!-- metadata -->
 			<div class="entry_metadata">
 
-				<!-- author -->
-				<span class="author">
+				<?php
 
-					<?php echo $author; ?>
+					// get topics
+					$topics = get_the_terms( $post->ID, 'topic' );
 
-				</span>
-				<!-- END author -->
+					// topics list iteration
+					foreach ( $topics as $topic ) {
 
-				&nbsp;|&nbsp;
+						if ( $topic->slug != 'uncategorized' ) {
+
+							$topic_link = get_category_link( $topic->term_id );
+
+							$topic_list .= '<a class="taxonomy_link" href="' . get_site_url() . '/animal-health/?topic=' . $topic->slug . '" class="taxonomy_item">' . $topic->name . '</a>';
+
+						}
+
+					}
+
+				?>
+
+				<!-- author/topic -->
+				<div class="author_topic">
+
+					<!-- author -->
+					<span class="author">
+
+						<?php echo $author; ?>&nbsp;in&nbsp;<?php echo $topic_list; ?>
+
+					</span>
+					<!-- END author -->
+
+				</div>
+				<!-- END author/topic -->
 
 				<!-- date -->
 				<span class="date">
@@ -76,6 +103,36 @@
 
 				</span>
 				<!-- END date -->
+
+				<?php
+
+					// get tags
+					$tags = get_the_tags( $post->ID );
+
+					// tags list iteration
+					foreach ( $tags as $tag ) {
+
+						$tag_list .= '
+
+							<a class="taxonomy_link" href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">
+
+								' . $tag->name . '
+
+							</a>
+
+						';
+
+					}
+
+				?>
+
+				<!-- tags -->
+				<div class="tags">
+
+					Tags: <?php echo $tag_list; ?>
+
+				</div>
+				<!-- END tags -->
 
 			</div>
 			<!-- END metadata -->
@@ -88,122 +145,6 @@
 			<?php the_content(); ?>
 
 		</div>
-
-		<!-- news navigation -->
-        <div id="news_controls" class="news_navigation">
-
-            <!-- navigation -->
-            <aside id="news_taxonomy">
-
-                <!-- metadata group -->
-                <section class="metadata topics">
-
-                    <!-- title -->
-                    <span class="metadata_title">
-
-                        browse articles by topic
-
-                    </span>
-                    <!-- END title -->
-
-					<!-- taxonomy group -->
-	                <div class="taxonomy_group">
-
-	                    <?php // get_template_part( 'elements/pet.health/pet.health.topics' ); ?>
-
-	                    <?php
-
-	                        // setup topics list
-	                        $topics = get_terms( array(
-
-	                            'taxonomy' => 'topic',
-	                            'hide_empty' => true,
-
-	                        ));
-
-	                        // topics list iteration
-	                        foreach ( $topics as $topic ) {
-
-	                            if ( $topic->slug != 'uncategorized' ) {
-
-	                                $topic_link = get_category_link( $topic->term_id );
-
-	                                $topic_list .= '<a href="' . get_site_url() . '/pet-health/?topic=' . $topic->slug . '" class="taxonomy_item">' . $topic->name . '</a>';
-
-	                            }
-
-	                        }
-
-	                        // output topics
-	                        echo $topic_list;
-
-	                    ?>
-
-	                </div>
-	                <!-- END taxonomy group -->
-
-                </section>
-                <!-- END metadata group -->
-
-                <!-- metadata group -->
-                <section class="metadata tags">
-
-                    <!-- title -->
-                    <span class="metadata_title">
-
-                        browse articles by tag
-
-                    </span>
-                    <!-- END title -->
-
-					<!-- taxonomy group -->
-	                <div class="taxonomy_group">
-
-	                    <?php
-
-	                        // setup topics list
-	                        $tags = get_terms( array(
-
-	                            'taxonomy' => 'post_tag',
-	                            'hide_empty' => true,
-
-	                        ));
-
-						?>
-
-						<?php
-
-	                        // topics list iteration
-	                        foreach ( $tags as $tag ) {
-
-								$tag_list .= '
-
-									<a href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">
-
-										' . $tag->name . '
-
-									</a>
-
-								';
-
-	                        }
-
-	                        // output topics
-	                        echo $tag_list;
-
-	                    ?>
-
-	                </div>
-	                <!-- END taxonomy group -->
-
-                </section>
-                <!-- END metadata group -->
-
-            </aside>
-            <!-- END navigation -->
-
-        </div>
-        <!-- END news navigation -->
 
 	</article>
 	<!-- #post-<?php the_ID(); ?> -->
