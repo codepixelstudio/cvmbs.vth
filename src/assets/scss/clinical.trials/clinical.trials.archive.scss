@@ -107,6 +107,13 @@
 
                 }
 
+                // filtered view
+                &.filtered_view {
+
+                    padding-bottom: 2rem;
+
+                }
+
             }
 
             // tags
@@ -121,6 +128,13 @@
                 @include breakpoint ( small only ) {
 
                     padding: 3rem 3rem 3rem 3rem;
+
+                }
+
+                // filtered view
+                &.filtered_view {
+
+                    padding: 0 5rem 0 5rem;
 
                 }
 

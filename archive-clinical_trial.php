@@ -9,6 +9,9 @@
     // setup query
     if ( $query_URL ) {
 
+        // dynamic layout class
+        $dynamic_layout = 'filtered_view';
+
         // setup query parameters
         $clinical_trials = array(
 
@@ -49,6 +52,9 @@
         );
 
     } else {
+
+        // dynamic layout class
+        $dynamic_layout = 'default_view';
 
         // setup query parameters
         $clinical_trials = array(
@@ -168,17 +174,21 @@
         <!-- END header -->
 
         <!-- custom archive page content -->
-        <div id="clinical_trial_info" class="fixed_width">
+        <div id="clinical_trial_info" class="fixed_width <?php echo $dynamic_layout; ?>">
 
             <?php echo $clinical_trials_info; ?>
 
         </div>
         <!-- END custom archive page content -->
 
+        <?php if ( !$query_URL ) : ?>
+
         <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
 
+        <?php endif; ?>
+
         <!-- news navigation -->
-        <div id="news_controls" class="news_navigation fixed_width">
+        <div id="news_controls" class="news_navigation fixed_width <?php echo $dynamic_layout; ?>">
 
             <!-- navigation -->
             <aside id="news_taxonomy">
