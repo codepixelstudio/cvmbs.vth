@@ -142,7 +142,7 @@
 
                 padding: 0 5rem 0 5rem;
 
-                @include font( $industry, 0.75rem, 600 );
+                @include font( $industry, 0.875rem, 600 );
 
                 @include color( $app05, 0.485 );
 
@@ -163,7 +163,7 @@
                 // links
                 .taxonomy_link {
 
-                    text-decoration: none;
+                    // text-decoration: none;
 
                     // @include color( $g140 );
 

@@ -112,15 +112,8 @@
 					// tags list iteration
 					foreach ( $tags as $tag ) {
 
-						$tag_list .= '
-
-							<a class="taxonomy_link" href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">
-
-								' . $tag->name . '
-
-							</a>
-
-						';
+						// $tag_list .= '<a class="taxonomy_link" href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>,&nbsp;';
+						$tag_list[] .= '<a class="taxonomy_link" href="' . get_site_url() . '/pet-health/?tag=' . $tag->slug . '" class="taxonomy_item">' . $tag->name . '</a>';
 
 					}
 
@@ -129,7 +122,7 @@
 				<!-- tags -->
 				<div class="tags">
 
-					Tags: <?php echo $tag_list; ?>
+					Tags: <?php echo implode( ', ', $tag_list ); ?>
 
 				</div>
 				<!-- END tags -->
