@@ -268,7 +268,7 @@
         <!-- END news navigation -->
 
         <!-- grid -->
-        <div id="news_grid" class="fixed_width">
+        <div id="news_grid" class="fixed_width experimental">
 
             <?php if ( $clinical_trials_query->have_posts() ) : ?>
 

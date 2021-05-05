@@ -90,6 +90,44 @@
 
                     }
 
+                    // experimental
+                    &.experimental {
+
+                        display: grid;
+
+                        // grid-template-columns: calc( 33.3333333% - 2rem ) 2rem;
+
+                        // trial
+                        .clinical_trial {
+
+                            @include flex-h-s-v-b( true );
+
+                            min-height: 8rem;
+                            padding: 2rem 2rem 2rem 2rem;
+
+                            @include font( $industry, 0.875rem, 700 );
+
+                            @include color( $g140 );
+
+                            @include fill( white, 0.485 );
+
+                            @include shadowbox( 1rem, 3rem, black, 0.585 );
+
+                            transition: $all220;
+
+                            // hover state
+                            &:hover {
+
+                                @include color( white );
+
+                                @include fill( $cvnavy, 0.115 );
+
+                            }
+
+                        }
+
+                    }
+
                 }
 
             }
@@ -160,6 +198,13 @@
                     padding-left: 3rem;
 
                 }
+
+            }
+
+            // re-build
+            #news_grid {
+
+                //
 
             }
 
