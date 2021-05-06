@@ -31,6 +31,13 @@
                 "operator": "==",
                 "value": "pages\/directory.service.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "pages\/directory.service.api.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -41,5 +48,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1612463131
+    "modified": 1620243907
 }
