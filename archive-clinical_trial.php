@@ -183,7 +183,7 @@
 
         <?php if ( !$query_URL ) : ?>
 
-        <?php get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
+        <?php // get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
 
         <?php endif; ?>
 
@@ -320,7 +320,11 @@
         </div>
         <!-- END grid -->
 
+        <?php if ( !$query_URL ) : ?>
+
         <?php get_template_part( 'elements/clinical.trials/clinical.trial.source' ); ?>
+
+        <?php endif; ?>
 
     </section>
     <!-- END news -->
