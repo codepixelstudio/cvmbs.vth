@@ -13,10 +13,10 @@
     $service_ID = get_field( 'staff_directory_group_id' );
 
     // construct member detail query
-    $service_api = 'https://webservicesdev.cvmbs.colostate.edu/pmiservice/api/directory/GetPublicDirectoryMemberList?groupId=' . $service_ID;
+    $service_api = 'https://webservices.cvmbs.colostate.edu/pmiservice/api/directory/GetPublicDirectoryMemberList?groupId=' . $service_ID;
 
     // construct member photo query
-    $member_photo  = 'https://webservicesdev.cvmbs.colostate.edu/pmiservice/api/directory/GetPublicDirectoryMemberPhoto?memberId=';
+    $member_photo  = 'https://webservices.cvmbs.colostate.edu/pmiservice/api/directory/GetPublicDirectoryMemberPhoto?memberId=';
 
     // debug output
     $service_members = json_decode( file_get_contents( $service_api ) );
