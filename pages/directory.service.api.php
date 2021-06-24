@@ -443,15 +443,6 @@
 
         <?php endif; ?>
 
-        <pre class="developer">
-
-            <br />
-            Service Directory Query : <?php echo $service_ID; ?>
-            <br />
-            <?php print_r( $service_members ); ?>
-
-        </pre>
-
     </div>
     <!-- END directory -->
 
