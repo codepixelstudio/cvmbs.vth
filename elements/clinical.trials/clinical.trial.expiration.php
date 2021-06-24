@@ -13,13 +13,13 @@
 
     <h3>
 
-        deadline
+        Enrollment Deadline
 
     </h3>
 
     <p class="expiration_text">
 
-        Trial ends <?php echo date( 'n/j/Y' , $expiration_date ); ?>
+        Enrollment ends <?php echo date( 'F j, Y' , $expiration_date ); ?>
 
     </p>
 
