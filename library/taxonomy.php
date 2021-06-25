@@ -9,4 +9,10 @@
     // clinical trial tags
     require_once( 'taxonomy/clinical.trial.tags.php' );
 
+    // clinical trial conditions
+    require_once( 'taxonomy/clinical.trial.conditions.php' );
+
+    // clinical trial species
+    require_once( 'taxonomy/clinical.trial.species.php' );
+
 ?>
