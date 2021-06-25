@@ -3,6 +3,47 @@
     "title": "Clinical Trial Archive Options",
     "fields": [
         {
+            "key": "field_60d566d9015a0",
+            "label": "Clinical Trial Archive Header",
+            "name": "clinical_trial_archive_header",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_60d56704015a1",
+                    "label": "Background Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "large",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
             "key": "field_5f3ec242ebc15",
             "label": "Clinical Trials Archive View(s)",
             "name": "",
@@ -179,7 +220,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "clinical_trial_options"
+                "value": "clinical_trial_settings"
             }
         ]
     ],
@@ -191,5 +232,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "something goes here",
-    "modified": 1605632182
+    "modified": 1624598324
 }
