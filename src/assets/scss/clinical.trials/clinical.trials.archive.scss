@@ -12,9 +12,9 @@
         &.post-type-archive-clinical_trial {
 
             // content
-            #news_content {
+            #clinical_trials_content {
 
-                padding: 5rem 0 0 0;
+                // padding: 5rem 0 0 0;
 
                 // mobile
                 @include breakpoint ( small only ) {
@@ -23,64 +23,146 @@
 
                 }
 
+                // default view
+                &.default_view {
+
+                    padding: 0 0 0 0;
+
+                }
+
+                // filtered
+                &.filtered_view {
+
+                    // padding: 5rem 0 0 0;
+
+                    // header
+                    #news_header {
+
+                        padding: 0 5rem 0 5rem;
+
+                    }
+
+                }
+
                 // heading
                 h1 {
 
-                    @include flex-v-c-h-s( true );
+                    // class hook
+                    &.filtered_view {
 
-                    flex-grow: 1;
+                        @include flex-v-c-h-s( true );
 
-                    position: relative;
+                        flex-grow: 1;
 
-                    margin: 0 0 0 0;
-                    // padding: 0 0 0 2.75rem;
+                        position: relative;
 
-                    @include typo( 3rem, 0.025em );
+                        margin: 0 0 0 0;
+                        // padding: 0 0 0 2.75rem;
 
-                    // mobile
-                    @include breakpoint ( small only ) {
+                        @include typo( 3rem, 0.025em );
 
-                        // padding: 0 0 0 1.5rem;
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            // padding: 0 0 0 1.5rem;
+
+                        }
+
+                        // page parent title
+                        span {
+
+                            @include flex-h-s-v-c( false );
+
+                            height: 0.75rem;
+                            margin: 0 0 0.25rem 0;
+
+                            // @include font( $industry, 0.875rem, 700 );
+                            @include font( $klavislim, 1.125rem, 400 );
+
+                            @include typo( 0.6875rem, 0.035em );
+
+                            @include color( $app05, 0.365 );
+
+                        }
+
+                        // tagline
+                        .tagline {
+
+                            display: block;
+
+                            // @include font( $);
+
+                        }
 
                     }
 
-                    // page parent title
-                    span {
+                }
 
-                        @include flex-h-s-v-c( false );
+                // header
+                #clinical_trials_list_header {
 
-                        height: 0.75rem;
-                        margin: 0 0 0.25rem 0;
+                    @include flex-h-j-v-c( false );
 
-                        // @include font( $industry, 0.875rem, 700 );
-                        @include font( $klavislim, 1.125rem, 400 );
+                    height: 3rem;
+                    // padding: 0 1rem 0 0;
 
-                        @include typo( 0.6875rem, 0.035em );
+                    @include font( $klavislim, 1rem, 400 );
 
-                        @include color( $app05, 0.365 );
+                    @include text( $up );
 
-                    }
+                    @include typo( 0.875rem, 0.035em );
 
-                    // tagline
-                    .tagline {
+                    // common
+                    .clinical_trial_heading {
 
-                        display: block;
+                        transition: $all220;
 
-                        // @include font( $);
+                        // title
+                        &.title {
+
+                            flex-grow: 1;
+
+                            width: 72.5%;
+
+                        }
+
+                        // conditions
+                        &.conditions {
+
+                            @include flex-h-e-v-c( true );
+
+                            flex-grow: 0;
+
+                            width: 15%;
+                            padding: 0 1.5rem 0 1rem;
+
+                        }
+
+                        // enrollment
+                        &.enrollment {
+
+                            @include flex-h-e-v-c( true );
+
+                            flex-grow: 0;
+
+                            width: 12.5%;
+                            padding: 0 0 0 1rem;
+
+                        }
 
                     }
 
                 }
 
                 // grid
-                #news_grid {
+                #clinical_trials_list {
 
                     order: 0;
 
                     display: block;
 
                     margin: 0 0 0 0;
-                    padding: 3rem 5rem 4rem 5rem;
+                    padding: 2rem 5rem 3rem 5rem;
 
                     // mobile
                     @include breakpoint ( small only ) {
@@ -93,25 +175,29 @@
                     // experimental
                     &.experimental {
 
-                        display: grid;
+                        // display: grid;
 
-                        // grid-template-columns: calc( 33.3333333% - 2rem ) 2rem;
+                        // grid-template-columns: calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem ) calc( 33.3333333% - 1.3333333rem );
+                        // gap: 2rem;
 
                         // trial
                         .clinical_trial {
 
-                            @include flex-h-s-v-b( true );
+                            @include flex-h-s-v-t( false );
 
-                            min-height: 8rem;
-                            padding: 2rem 2rem 2rem 2rem;
+                            // min-height: 8rem;
+                            margin: 0 0 1rem 0;
+                            padding: 1.125rem 1rem 1rem 1rem;
 
                             @include font( $industry, 0.875rem, 700 );
+
+                            line-height: 1rem;
 
                             @include color( $g140 );
 
                             @include fill( white, 0.485 );
 
-                            @include shadowbox( 1rem, 3rem, black, 0.585 );
+                            // @include shadowbox( 1rem, 3rem, black, 0.585 );
 
                             transition: $all220;
 
@@ -122,6 +208,75 @@
 
                                 @include fill( $cvnavy, 0.115 );
 
+                                @include shadowbox( 1rem, 3rem, black, 0.585 );
+
+                                // common
+                                .clinical_trial_entry {
+
+                                    transition: $all220;
+
+                                    // conditions
+                                    &.conditions {
+
+                                        @include color( white );
+
+                                    }
+
+                                    // enrollment
+                                    &.enrollment {
+
+                                        // @include color( white );
+
+                                    }
+
+                                }
+
+                            }
+
+                            // common
+                            .clinical_trial_entry {
+
+                                transition: $all220;
+
+                                // title
+                                &.title {
+
+                                    // @include flex-h-c-v-c( true );
+
+                                    flex-grow: 1;
+
+                                    width: 72.5%;
+
+                                }
+
+                                // conditions
+                                &.conditions {
+
+                                    @include flex-h-e-v-t( true );
+
+                                    flex-grow: 0;
+
+                                    width: 15%;
+                                    padding: 0 1rem 0 1rem;
+
+                                    @include color( $app05, 0.425 );
+
+                                }
+
+                                // enrollment
+                                &.enrollment {
+
+                                    @include flex-h-e-v-t( true );
+
+                                    flex-grow: 0;
+
+                                    width: 12.5%;
+                                    padding: 0 0 0 1rem;
+
+                                    @include color( $roarange );
+
+                                }
+
                             }
 
                         }
@@ -131,7 +286,7 @@
                     // filtered
                     &.filtered_view {
 
-                        padding: 5rem 5rem 5rem 5rem;
+                        padding: 2rem 5rem 2rem 5rem;
 
                     }
 
@@ -153,9 +308,148 @@
                 }
 
                 // filtered view
+                &.default_view {
+
+                    padding: 0 0 0 0;
+
+                    @include color( white );
+
+                    // last
+                    p {
+
+                        // last child
+                        &:last-child {
+
+                            margin-bottom: 0;
+
+                        }
+
+                    }
+
+                }
+
+                // filtered
                 &.filtered_view {
 
-                    padding-bottom: 2rem;
+                    padding: 0 5rem 0 5rem;
+
+                }
+
+            }
+
+            // header
+            #clinical_trials_header {
+
+                // styled
+                &.styled {
+
+                    position: relative;
+
+                    @include flex-v-b-h-s( false );
+
+                    // height: calc( 100vh - 5rem );
+                    height: calc( 60vh - 5rem );
+                    padding: 5rem 5rem 5rem 5rem;
+
+                    background: {
+
+                        repeat: no-repeat;
+                        size: cover;
+                        position: center center;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        content: '';
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        z-index: 10;
+
+                        background: {
+
+                            image:
+
+                                linear-gradient(
+
+                                    0deg,
+                                    transparentize( $g135, 0.105 ) 0%,
+                                    transparent 100%
+
+                                ),
+
+                                linear-gradient(
+
+                                    20deg,
+                                    transparentize( $dark, 0.105 ) 30%,
+                                    transparent 100%
+
+                                )
+
+                            ;
+
+                        }
+
+                    }
+
+                    // heading
+                    h1 {
+
+                        position: relative;
+
+                        z-index: 100;
+
+                        // class
+                        &.default_view {
+
+                            @include color( white );
+
+                        }
+
+                    }
+
+                    // text
+                    #clinical_trial_info {
+
+                        position: relative;
+
+                        z-index: 100;
+
+                    }
+
+                }
+
+                // filtered
+                &.filtered {
+
+                    display: block;
+
+                    height: auto;
+                    padding: 5rem 5rem 0rem 5rem;
+
+                    background: {
+
+                        image: none !important;
+
+                    }
+
+                    // label
+                    .heading_label {
+
+                        display: block;
+
+                        @include font( $klavislim, 1rem, 400 );
+
+                        @include text( $up );
+
+                    }
 
                 }
 
@@ -195,14 +489,14 @@
             // common
             .fixed_width {
 
-                padding-right: 5rem;
-                padding-left: 5rem;
+                // padding-right: 5rem;
+                // padding-left: 5rem;
 
                 // mobile
                 @include breakpoint ( small only ) {
 
-                    padding-right: 3rem;
-                    padding-left: 3rem;
+                    // padding-right: 3rem;
+                    // padding-left: 3rem;
 
                 }
 

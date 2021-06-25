@@ -4,7 +4,7 @@
     $today = date( 'Ymd' );
 
     // retrieve query string
-    $query_URL = $_GET[ 'clinical_trial_species' ];
+    $query_URL = $_GET[ 'tag' ];
 
     // setup query
     if ( $query_URL ) {
@@ -16,7 +16,7 @@
         $clinical_trials = array(
 
             'post_type'          => 'clinical_trial',
-            'clinical_trial_species' => $query_URL,
+            'clinical_trial_tag' => $query_URL,
             'posts_per_page'     => -1,
             'orderby'            => 'title',
             'meta_query'         => array(
@@ -121,7 +121,7 @@
         <?php if ( !$query_URL ) : ?>
 
         <!-- styled header -->
-        <header id="clinical_trials_header" class="styled" style="background-image:url(<?php echo $header_background; ?>);">
+        <header id="clinical_trials_header" class="styled_header" style="background-image:url(<?php echo $header_background; ?>);">
 
             <!-- heading -->
             <h1 class="<?php echo $dynamic_layout; ?>">
@@ -142,68 +142,90 @@
         </header>
         <!-- END styled header -->
 
-        <?php endif; ?>
+        <?php else : ?>
 
-        <?php if ( $query_URL ) : ?>
-
-        <?php $filtered_species = $query_URL; ?>
-
-        <!-- styled header -->
-        <header id="clinical_trials_header" class="filtered" style="background-image:url(<?php echo $header_background; ?>);">
-
-            <!-- heading -->
-            <span class="heading_label">
-
-                clinical trials for
-
-            </span>
-            <!-- END heading -->
+        <!-- header -->
+        <div id="news_header" class="fixed_width">
 
             <!-- heading -->
             <h1 class="<?php echo $dynamic_layout; ?>">
 
-                 <?php echo $filtered_species; ?>
+                <?php if ( $_GET ) : ?>
+
+                <span class="tagline">
+
+                    clinical trials
+
+                </span>
+
+                <?php // echo key( $_GET ); ?>
+
+                <?php
+
+                    if ( key( $_GET ) === 'tag' ) {
+
+                        $get_title   = $_GET[ 'tag' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'tag' ], 'post_tag'
+
+                        );
+
+                    } else if ( key( $_GET ) === 'topic' ) {
+
+                        $get_title   = $_GET[ 'topic' ];
+                        $page_title  = explode( '-', $get_title );
+                        $query_title = get_term_by(
+
+                            'name', $_GET[ 'topic' ], 'topic'
+
+                        );
+
+                    }
+
+                ?>
+
+                <?php foreach ( $page_title as $title ) {
+
+                    echo $title . '&nbsp;';
+
+                } ?>
+
+                <?php else : ?>
+
+                clinical trials
+
+                <?php endif; ?>
 
             </h1>
             <!-- END heading -->
 
-        </header>
-        <!-- END styled header -->
+        </div>
+        <!-- END header -->
+
+        <!-- custom archive page content -->
+        <div id="clinical_trial_info" class="fixed_width <?php echo $dynamic_layout; ?>">
+
+            <?php echo $clinical_trials_info; ?>
+
+        </div>
+        <!-- END custom archive page content -->
+
+        <?php endif; ?>
+
+        <?php if ( !$query_URL ) : ?>
+
+        <?php // get_template_part( 'elements/clinical.trials/clinical.trial.statistics' ); ?>
+
+        <?php endif; ?>
+
+        <?php if ( $query_URL ) : ?>
 
         <!-- grid -->
         <div id="clinical_trials_list" class="fixed_width experimental filtered_view">
 
             <?php if ( $clinical_trials_query->have_posts() ) : ?>
-
-            <!-- faux table header -->
-            <div id="clinical_trials_list_header">
-
-                <!-- title -->
-                <span class="clinical_trial_heading title">
-
-                    trial name
-
-                </span>
-                <!-- END title -->
-
-                <!-- conditions -->
-                <span class="clinical_trial_heading conditions">
-
-                    conditions
-
-                </span>
-                <!-- END conditions -->
-
-                <!-- enrollment -->
-                <span class="clinical_trial_heading enrollment">
-
-                    enrollment ends
-
-                </span>
-                <!-- END enrollment -->
-
-            </div>
-            <!-- END faux table header -->
 
         	<?php while ( $clinical_trials_query->have_posts() ) : $clinical_trials_query->the_post(); ?>
 
@@ -318,7 +340,7 @@
                             // setup tag cloud
                             $tags = get_terms( array(
 
-                                'taxonomy'   => 'clinical_trial_species',
+                                'taxonomy'   => 'clinical_trial_tag',
                                 'hide_empty' => true,
 
                             ));
@@ -329,7 +351,7 @@
                                 $tag_link = get_tag_link( $tag->term_id );
 
                                 // retrieve query string
-                                $query_URL = $_GET[ 'clinical_trial_species' ];
+                                $query_URL = $_GET[ 'tag' ];
 
                                 if ( $tag->slug == $query_URL ) {
 
@@ -343,7 +365,7 @@
 
                                 $tag_list .= '
 
-                                    <a href="?clinical_trial_species=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
+                                    <a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
 
                                         ' . $tag->name . '
 
@@ -400,7 +422,7 @@
                             // setup tag cloud
                             $tags = get_terms( array(
 
-                                'taxonomy'   => 'clinical_trial_species',
+                                'taxonomy'   => 'clinical_trial_tag',
                                 'hide_empty' => true,
 
                             ));
@@ -411,7 +433,7 @@
                                 $tag_link = get_tag_link( $tag->term_id );
 
                                 // retrieve query string
-                                $query_URL = $_GET[ 'clinical_trial_species' ];
+                                $query_URL = $_GET[ 'tag' ];
 
                                 if ( $tag->slug == $query_URL ) {
 
@@ -425,7 +447,7 @@
 
                                 $tag_list .= '
 
-                                    <a href="?clinical_trial_species=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
+                                    <a href="?tag=' . $tag->slug . '" class="taxonomy_item ' . $active_class . '">
 
                                         ' . $tag->name . '
 
