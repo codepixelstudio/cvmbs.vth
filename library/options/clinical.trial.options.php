@@ -4,9 +4,9 @@
 
 		$cvmbs_site_options = array(
 
-			'page_title' 	=> 'Clinical Trial Options',
-			'menu_title' 	=> 'Clinical Trial Options',
-			'menu_slug' 	=> 'clinical_trial_options',
+			'page_title' 	=> 'Clinical Trial Settings',
+			'menu_title' 	=> 'Clinical Trial Settings',
+			'menu_slug' 	=> 'clinical_trial_settings',
 			'capability' 	=> 'manage_options',
 			// 'position' 		=> '61',
 			// 'icon_url' 		=> get_stylesheet_directory_uri().'/assets/img/icons/admin/icon_site_settings.svg',
